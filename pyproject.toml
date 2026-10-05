@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "omega-log"
+version = "0.1.0"
+description = "Gestionnaire et visualisateur de logs serveur, omega-log"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "kraynux", email = "kraynux@proton.me" }]
+requires-python = ">=3.10"
+dependencies = [
+    "omega-lib>=0.1.0",
+    "textual>=0.60",
+    "jinja2>=3.1",
+    "pydantic>=2.0",
+    "pyte>=0.8",
+]
+# jinja2 : export HTML 5 themes (Phase 7, infrastructure/exporters/html_exporter.py).
+# pyte : emulation de terminal pour le Viewer 3 (lnav), voir infrastructure/lnav/render.py.
+# psutil RETIRE (2026-10-04, retour utilisateur : "psutil n'est pas necessaire pour
+# cette application") — jamais importe nulle part dans src/, confirme par recherche
+# avant retrait, pas une simple supposition.
+# pydantic : pas encore utilise non plus (meme situation que psutil), retenu pour
+# l'instant par le plan pour une phase ulterieure (validation de donnees) — a retirer
+# lui aussi s'il reste inutilise au-dela du plan initial, pas a garder par principe.
+# lnav lui-meme N'EST PAS ici : binaire systeme externe, pas un paquet Python
+# (voir infrastructure/probe/lnav_capability.py, detecte au runtime).
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+
+[project.scripts]
+omega-log = "omega_log.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/omega_log"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+# DTZ00x (datetime naif, sans timezone) : le style coherent de tout le
+# code porte depuis omega-fire/omega-serv (horodatage de logs, mtime de
+# fichiers, "maintenant" pour les exports) — rendre une partie du code
+# timezone-aware sans le faire partout introduirait des comparaisons
+# naif/aware incoherentes, pas une amelioration. A traiter comme une
+# decision de conception a part entiere si jamais necessaire, pas un
+# correctif ponctuel de Phase 8.
+# DTZ001 ajoute Phase 9 (2026-10-04) : domain/logs/parser.py construit
+# desormais `datetime(...)` directement (optimisation performance, voir
+# le module) plutot que de passer par `datetime.strptime()` (deja
+# couvert par DTZ005/006/007 ci-dessus) — meme choix de style naif,
+# juste un constructeur different, pas une regle differente a traiter.
+ignore = ["DTZ001", "DTZ005", "DTZ006", "DTZ007"]
+
+[tool.mypy]
+python_version = "3.10"
+mypy_path = "src"
+disallow_untyped_defs = true
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
+no_implicit_optional = true

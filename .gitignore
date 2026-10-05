@@ -1,0 +1,53 @@
+# Environnement Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Etat runtime genere localement (recree automatiquement au demarrage) —
+# donnees et config PERSONNELLES de l'utilisateur (logs reels suivis,
+# archives de sauvegarde, favoris, bibliotheque, theme choisi...), jamais
+# du code source. Les dossiers eux-memes restent presents via .gitkeep
+# pour exister dès l'extraction de l'archive, avant tout premier lancement.
+var/app.log
+var/*.jsonl
+var/favorites.json
+var/library.json
+var/settings.json
+var/backups/*
+var/exports/*
+!var/backups/.gitkeep
+!var/exports/.gitkeep
+
+# Vendoring (reconstruit par build-release.sh, jamais versionne tel quel)
+vendor/
+
+# Archives de release (generees, pas du code source)
+*.tar.gz
+
+# Dependance editable omega-lib (chemin local de developpement)
+omega-lib/
+
+# Secrets locaux
+.env
+
+# Editeurs
+*~
+*.bak
+*.swp
+
+# Fichiers systeme
+.DS_Store
+Thumbs.db
+
+# Couverture de tests
+.coverage
+htmlcov/
+
+# Build / packaging
+dist/
+build/
