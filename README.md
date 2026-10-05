@@ -125,28 +125,7 @@ Parcours général : écran de démarrage → menu principal (deux colonnes — 
 | `a` | Afficher l'aide (exhaustive, un chapitre par écran) |
 | `q` | Quitter (avec confirmation) |
 
-### 3.2. Mode ligne de commande (CLI)26:22:38:52 +0200] "GET /textfiles/ufo/aether.html HTTP/1.1" 200 4408 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 15_3_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.?
-?177.116.50.56 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:39:03 +0200] "GET /textfiles/ufo/alienlet.html HTTP/1.1" 200 2109 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:135.0) Gecko/20100101 Firefox/135.0" "/var/www/html/pu?
-?2a03:2880:f80e:40:: kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:39:11 +0200] "GET / HTTP/1.1" 403 2481 "-" "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)" "/var/www/html/.errors/status-403.html"          ?
-?78.39.235.54 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:39:14 +0200] "GET /textfiles/ufo/augforc.html HTTP/1.1" 200 9538 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.6478.1?
-?154.80.106.67 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:39:27 +0200] "GET /textfiles/ufo/bibleufo.html HTTP/1.1" 200 3083 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 15_4_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.6533?
-?189.203.150.134 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:39:38 +0200] "GET /textfiles/ufo/chapt1asc.html HTTP/1.1" 200 56305 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11.3; rv:136.0) Gecko/20100101 Firefox/136.0" "/var/www/html?
-?168.205.180.161 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:39:51 +0200] "GET /textfiles/ufo/fryaquadoc.html HTTP/1.1" 200 1123 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 15_4_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.?
-?177.152.30.151 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:40:04 +0200] "GET /textfiles/ufo/greys.html HTTP/1.1" 200 22804 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:127.0) Gecko/20100101 Firefox/127.0" "/var/www/html/pub?
-?102.91.72.65 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:40:24 +0200] "GET /textfiles/ufo/insd0288.asc HTTP/1.1" 200 4122 "-" "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/312.5 (KHTML, like Gecko) Safari/312.3" "/var/ww?
-?190.154.221.80 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:40:27 +0200] "GET /textfiles/ufo/insd0288.asc HTTP/1.1" 200 4122 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_6_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668?
-?187.89.187.237 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:40:27 +0200] "GET /textfiles/ufo/letdix.html HTTP/1.1" 200 3093 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 15_3_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.6422.?
-?170.203.199.73 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:40:39 +0200] "GET /textfiles/ufo/meirflm.html HTTP/1.1" 200 8184 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.6533.120 ?
-?14.231.221.77 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:40:51 +0200] "GET /textfiles/ufo/navy.html HTTP/1.1" 200 3998 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.29 ?
-?177.37.152.118 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:41:04 +0200] "GET /textfiles/ufo/presrel.html HTTP/1.1" 200 2556 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 12.1; rv:136.0) Gecko/20100101 Firefox/136.0" "/var/www/html/pub?
-?134.236.17.237 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:41:14 +0200] "GET /textfiles/ufo/setilaw.html HTTP/1.1" 200 5115 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13.4; rv:132.0) Gecko/20100101 Firefox/132.0" "/var/www/html/pub?
-?212.47.145.172 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:41:26 +0200] "GET /textfiles/ufo/tidbitsss.html HTTP/1.1" 200 1197 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.6478.12?
-?177.87.252.5 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:41:38 +0200] "GET /textfiles/ufo/ufo-cons.html HTTP/1.1" 200 72851 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13.6; rv:125.0) Gecko/20100101 Firefox/125.0" "/var/www/html/pub?
-?45.168.91.140 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:41:51 +0200] "GET /textfiles/uploads/ircweekly-2.html HTTP/1.1" 200 19838 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.6?
-?41.123.33.123 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:42:03 +0200] "GET /textfiles/virus/avcr-7.html HTTP/1.1" 200 21995 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.699?
-?189.217.42.7 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:42:14 +0200] "GET /textfiles/virus/cnws2007.html HTTP/1.1" 200 8956 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.6367.155?
-?5.36.55.62 kraynux.snake-mackarel.ts.net - [04/Oct/2026:22:42:26 +0200] "GET /textfiles/virus/cnws2008.html HTTP/1.1" 200 91748 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13.1; rv:132.0) Gecko/20100101 Firefox/132.0" "/var/www/html/pub?
-                                                                                                          
+### 3.2. Mode ligne de commande (CLI)                                                              
 
 Limité au scan de services pour l'instant (pas encore de parité complète avec la TUI — favoris, rotate, purge viendront avec leurs propres phases, voir `plan_omega_log.md` §12) :
 
