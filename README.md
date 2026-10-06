@@ -23,7 +23,7 @@ Page officielle : [OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/) 
 
 ---
 
-**Omega-log** est l'outil de la suite `omega-` dédié à la gestion, la lecture et l'analyse de fichiers logs serveur en TUI — détection automatique des services actifs et de leurs logs, bibliothèque centrale, trois modes de lecture (suivi simple, lecture classique, fusion multi-fichiers via `lnav`), traitement des IP, statistiques, rotation/sauvegarde/restauration, purge sécurisée et export. Construit par **portage et adaptation** du code déjà mûr d'[omega-fire](https://github.com/kraynux/omega-fire) et [omega-serv](https://github.com/kraynuxomega-serv) plutôt que réécrit depuis zéro.
+**Omega-log** est l'outil de la suite `omega-` dédié à la gestion, la lecture et l'analyse de fichiers logs serveur en TUI — détection automatique des services actifs et de leurs logs, bibliothèque centrale, trois modes de lecture (suivi simple, lecture classique, fusion multi-fichiers via `lnav`), traitement des IP, statistiques, rotation/sauvegarde/restauration, purge sécurisée et export. Construit par **portage et adaptation** du code déjà mûr d'[omega-fire](https://github.com/kraynux/omega-fire) et [omega-serv](https://github.com/kraynux/omega-serv) plutôt que réécrit depuis zéro.
 
 ## 1. Vision et périmètre
 
