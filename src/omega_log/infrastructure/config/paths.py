@@ -76,3 +76,20 @@ def default_elevated_tmp_dir(var_dir: Path | None = None) -> Path:
     original protege)."""
     base = var_dir if var_dir is not None else resolve_var_dir()
     return base / "elevated_tmp"
+
+
+def default_remote_sources_path(var_dir: Path | None = None) -> Path:
+    base = var_dir if var_dir is not None else resolve_var_dir()
+    return base / "remote-log-sources.json"
+
+
+def default_remote_cache_dir(var_dir: Path | None = None) -> Path:
+    """Copies des logs distants recuperees par scp (sources SSH, 2026-11-06)."""
+    base = var_dir if var_dir is not None else resolve_var_dir()
+    return base / "remote"
+
+
+def default_declaration_path(var_dir: Path | None = None) -> Path:
+    """Declaration anonyme (Aide -> Contact et support, 2026-11-06)."""
+    base = var_dir if var_dir is not None else resolve_var_dir()
+    return base / "declaration.json"

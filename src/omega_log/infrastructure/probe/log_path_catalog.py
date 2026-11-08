@@ -22,6 +22,8 @@ import subprocess
 from collections.abc import Callable
 from dataclasses import dataclass
 
+from omega_log.shared.i18n import _
+
 
 @dataclass(frozen=True, slots=True)
 class LogPathCandidate:
@@ -40,29 +42,29 @@ SERVICE_LOG_PATHS: dict[str, tuple[LogPathCandidate, ...]] = {
         LogPathCandidate("/var/log/apache2/error.log", "file"),
     ),
     "httpd": (
-        LogPathCandidate("/var/log/httpd/access_log", "file", "Arch : nom sans extension .log"),
-        LogPathCandidate("/var/log/httpd/error_log", "file", "Arch : nom sans extension .log"),
+        LogPathCandidate("/var/log/httpd/access_log", "file", _("Arch : nom sans extension .log")),
+        LogPathCandidate("/var/log/httpd/error_log", "file", _("Arch : nom sans extension .log")),
     ),
     "lighttpd": (
         LogPathCandidate("/var/log/lighttpd/access.log", "file"),
         LogPathCandidate("/var/log/lighttpd/error.log", "file"),
     ),
     "caddy": (
-        LogPathCandidate("/var/log/caddy/access.log", "file_or_journald", "seulement si directive log explicite"),
-        LogPathCandidate("/var/log/caddy/error.log", "file_or_journald", "seulement si directive log explicite"),
+        LogPathCandidate("/var/log/caddy/access.log", "file_or_journald", _("seulement si directive log explicite")),
+        LogPathCandidate("/var/log/caddy/error.log", "file_or_journald", _("seulement si directive log explicite")),
     ),
     "openresty": (
-        LogPathCandidate("/var/log/openresty/access.log", "file", "chemin variable selon build"),
-        LogPathCandidate("/var/log/openresty/error.log", "file", "chemin variable selon build"),
+        LogPathCandidate("/var/log/openresty/access.log", "file", _("chemin variable selon build")),
+        LogPathCandidate("/var/log/openresty/error.log", "file", _("chemin variable selon build")),
     ),
     "php-fpm": (
         LogPathCandidate("/var/log/php-fpm.log", "file"),
     ),
     "mysqld": (
-        LogPathCandidate("/var/log/mysql/error.log", "file_or_journald", "souvent desactive par defaut"),
+        LogPathCandidate("/var/log/mysql/error.log", "file_or_journald", _("souvent désactivé par défaut")),
     ),
     "mariadbd": (
-        LogPathCandidate("/var/log/mysql/error.log", "file_or_journald", "souvent desactive par defaut"),
+        LogPathCandidate("/var/log/mysql/error.log", "file_or_journald", _("souvent désactivé par défaut")),
     ),
     "redis-server": (
         LogPathCandidate("/var/log/redis/redis-server.log", "file_or_journald"),
@@ -120,15 +122,16 @@ SERVICE_LOG_PATHS: dict[str, tuple[LogPathCandidate, ...]] = {
 
 SYSTEM_LOG_PATHS: tuple[LogPathCandidate, ...] = (
     LogPathCandidate("/var/log/syslog", "file_or_journald"),
-    LogPathCandidate("/var/log/messages", "file_or_journald", "variante RHEL/Fedora de syslog"),
+    LogPathCandidate("/var/log/messages", "file_or_journald", _("variante RHEL/Fedora de syslog")),
     LogPathCandidate("/var/log/auth.log", "file_or_journald"),
-    LogPathCandidate("/var/log/secure", "file_or_journald", "variante RHEL/Fedora de auth.log"),
+    LogPathCandidate("/var/log/secure", "file_or_journald", _("variante RHEL/Fedora de auth.log")),
     LogPathCandidate("/var/log/kern.log", "file_or_journald"),
-    LogPathCandidate("/var/log/pacman.log", "file", "gestionnaire de paquets Arch/Manjaro"),
-    LogPathCandidate("/var/log/apt/history.log", "file", "gestionnaire de paquets Debian/Ubuntu"),
-    LogPathCandidate("/var/log/dpkg.log", "file", "gestionnaire de paquets Debian/Ubuntu"),
-    LogPathCandidate("/var/log/dnf.log", "file", "gestionnaire de paquets RHEL/Fedora"),
-    LogPathCandidate("/var/log/audit/audit.log", "file", "root uniquement, format structure type=... — pas de parseur dedie, voir plan §4.2"),
+    LogPathCandidate("/var/log/pacman.log", "file", _("gestionnaire de paquets Arch/Manjaro")),
+    LogPathCandidate("/var/log/apt/history.log", "file", _("gestionnaire de paquets Debian/Ubuntu")),
+    LogPathCandidate("/var/log/dpkg.log", "file", _("gestionnaire de paquets Debian/Ubuntu")),
+    LogPathCandidate("/var/log/dnf.log", "file", _("gestionnaire de paquets RHEL/Fedora")),
+    LogPathCandidate("/var/log/audit/audit.log", "file", _("root uniquement, format structuré "
+                                                           "type=... — pas de parseur dédié")),
 )
 """Chemins verifies independamment de toute detection de service — voir
 annuaire §1. Certains n'existent jamais ensemble sur une meme machine

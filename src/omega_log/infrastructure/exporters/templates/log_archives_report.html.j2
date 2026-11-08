@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="fr">
+<html lang="{{ html_lang() }}" dir="{{ html_dir() }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OMEGA-LOG — Archives de logs</title>
+<title>{{ _("OMEGA-LOG — Archives de logs") }}</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -52,13 +52,13 @@
 </head>
 <body>
   <div class="container">
-    <h1>OMEGA-LOG — Archives de logs</h1>
-    <p class="meta">Genere le {{ generated_at }} - {{ archives|length }} archive(s)</p>
+    <h1>{{ _("OMEGA-LOG — Archives de logs") }}</h1>
+    <p class="meta">{{ _("Généré le {generated_at} - {archives} archive(s)").format(generated_at=generated_at, archives=(archives|length)) }}</p>
 
     <div class="box">
       <table>
         <thead>
-          <tr><th>Archive</th><th>Taille (octets)</th><th>Cree le</th></tr>
+          <tr><th>{{ _("Archive") }}</th><th>{{ _("Taille (octets)") }}</th><th>{{ _("Créé le") }}</th></tr>
         </thead>
         <tbody>
           {% for archive in archives %}
@@ -72,7 +72,7 @@
       </table>
     </div>
 
-    <footer>Rapport genere par <strong>OMEGA-LOG</strong></footer>
+    <footer>{{ _("Rapport généré par") }} <strong>OMEGA-LOG</strong></footer>
   </div>
 </body>
 </html>

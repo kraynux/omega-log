@@ -21,7 +21,7 @@ def test_probe_unit_not_found() -> None:
         result = probe.probe_unit("unknown.service")
     assert result == {
         "available": True, "exists": False, "active": False, "enabled": False,
-        "state": "not_found", "message": "Unite systemd 'unknown.service' introuvable",
+        "state": "not_found", "message": "Unité systemd 'unknown.service' introuvable",
     }
 
 

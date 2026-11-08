@@ -49,11 +49,15 @@ plus". Corrige en empechant tout nouveau calcul de demarrer tant qu'un
 autre est en cours (boutons de periode desactives + indicateur "Calcul
 en cours..." — qui corrige du meme coup l'autre retour "y'a pas
 d'indications" : il n'y en avait effectivement aucune sur cet ecran,
-contrairement a Statistiques qui l'avait deja)."""
+contrairement a Statistiques qui l'avait deja).
+
+Recherche manuelle d'une IP (portee d'omega-serv 2.6.0, 2026-11-07) : saisir une IP, compter ses lignes dans les
+logs selectionnes (fichier entier, sudo si besoin) et pouvoir la retirer, sans attendre qu'elle apparaisse dans le
+top. Meme regle que le retrait (domain/logs/ip_match.py) : le compte affiche est exactement ce qui sera retire."""
 from __future__ import annotations
 
 import asyncio
-import functools
+from pathlib import Path
 from typing import TYPE_CHECKING
 
 from textual.app import ComposeResult
@@ -63,15 +67,25 @@ from textual.widgets import Button, DataTable, Footer, Header, Input, Static
 
 from omega_log.application.use_cases.library import list_library
 from omega_log.application.use_cases.process_ip import (
-    compute_top_ips_for_paths,
+    count_ip_occurrences,
     remove_ip_from_file,
 )
+from omega_log.domain.logs.ip_match import normalize_ip
 from omega_log.domain.logs.models import TopIP
-from omega_log.infrastructure.concurrency.process_pool import STATS_PROCESS_POOL
 from omega_log.infrastructure.privileged.elevation import PermissionRequiredError
 from omega_log.interfaces.tui.screens._base import OmegaScreen
 from omega_log.interfaces.tui.screens._elevation import request_elevation
+from omega_log.interfaces.tui.screens._parallel_compute import accumulate_in_pool
 from omega_log.interfaces.tui.screens.confirm import ConfirmScreen
+from omega_log.interfaces.tui.widgets.busy_indicator import (
+    PERIOD_BUTTON_LABELS,
+    PERIOD_HINT,
+    BusyIndicator,
+    describe_selection,
+)
+from omega_log.interfaces.tui.widgets.library_selection import SELECTION_HINT, LibrarySelectionMixin
+from omega_log.interfaces.tui.widgets.log_library_table import LogLibraryTable
+from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
     from omega_log.app.dependency_container import DependencyContainer
@@ -82,7 +96,7 @@ _PERIODS: tuple[tuple[str, str | None], ...] = (
 )
 
 
-class ProcessIpScreen(OmegaScreen):
+class ProcessIpScreen(LibrarySelectionMixin, OmegaScreen):
     def __init__(self, *, container: DependencyContainer) -> None:
         super().__init__()
         self._container = container
@@ -91,37 +105,64 @@ class ProcessIpScreen(OmegaScreen):
         self._selected_ip: str | None = None
         self._elevated = False
         self._computing = False
+        self._searched_ip: str | None = None
+        """IP de la derniere recherche manuelle : apres un retrait, c'est elle qu'on recompte."""
 
     def compose(self) -> ComposeResult:
         yield Header()
         with Vertical(classes="omega-panel"):
-            yield Static("VOIR ET TRAITER IP", classes="omega-title")
-            yield DataTable(id="library-table")
-            yield Static("Logs a analyser (numeros ci-dessus, separes par des virgules)", classes="omega-subtitle")
-            yield Input(placeholder="ex: 1,2", id="selection-input")
+            yield Static(_("VOIR ET TRAITER IP"), classes="omega-title")
+            yield LogLibraryTable(id="library-table")
+            yield Static(_("Logs à analyser (numéros ci-dessus, séparés par des virgules)"), classes="omega-subtitle")
+            yield Input(placeholder=_("ex: 1,2"), id="selection-input")
+            yield Static(SELECTION_HINT, classes="omega-hint")
             with Horizontal(classes="omega-actions"):
                 for label, period in _PERIODS:
                     with Container(classes="omega-btn-frame"):
-                        yield Button(label, id=f"period-{label}")
+                        yield Button(_(PERIOD_BUTTON_LABELS[label]), id=f"period-{label}")
+            yield Static(PERIOD_HINT, classes="omega-hint")
+            yield Static("", id="selection-size", classes="omega-hint")
+            yield Static(_("Ou cherchez une IP précise dans ces logs (fichier entier) :"), classes="omega-subtitle")
+            with Horizontal(classes="omega-actions"):
+                yield Input(placeholder=_("ex: 203.0.113.42"), id="ip-input")
+                with Container(classes="omega-btn-frame"):
+                    yield Button(_("Rechercher cette IP"), id="search-ip")
+            yield BusyIndicator(id="busy")
             yield Static("", id="ip-status", classes="omega-hint")
+            yield Static("", id="ip-search-result", classes="omega-hint")
             yield DataTable(id="top-ips-table")
             with Horizontal(classes="omega-actions"), Container(classes="omega-btn-frame"):
-                yield Button("Retirer cette IP des logs analyses", id="remove-ip", variant="error", disabled=True)
+                yield Button(_("Retirer cette IP des logs analysés"), id="remove-ip", variant="error", disabled=True)
             with Horizontal(classes="omega-actions"), Container(classes="omega-btn-frame"):
-                yield Button("Retour", id="back")
+                yield Button(_("Retour"), id="back")
         yield Footer()
 
     def on_mount(self) -> None:
-        self.query_one("#library-table", DataTable).cursor_type = "row"
-        self.query_one("#library-table", DataTable).add_columns("#", "Chemin")
         self.query_one("#top-ips-table", DataTable).cursor_type = "row"
-        self.query_one("#top-ips-table", DataTable).add_columns("IP", "Occurrences")
+        self.query_one("#top-ips-table", DataTable).add_columns(_("IP"), _("Occurrences"))
         self._entries = list_library(self._container.log_repository)
-        table = self.query_one("#library-table", DataTable)
-        for idx, entry in enumerate(self._entries, start=1):
-            table.add_row(str(idx), entry.path)
+        self.query_one("#library-table", LogLibraryTable).load(self._entries)
+
+    def on_input_submitted(self, event: Input.Submitted) -> None:
+        if event.input.id == "ip-input":
+            self._search_ip()
+
+    def on_input_changed(self, event: Input.Changed) -> None:
+        if event.input.id == "selection-input":
+            self._refresh_selection_size()
+
+    def _refresh_selection_size(self) -> None:
+        """Taille et nombre de lignes estime de la selection, affiches AVANT le calcul (2026-11-06)."""
+        raw = self._library_selection()
+        tokens = [token.strip() for token in raw.split(",") if token.strip()]
+        paths = [self._entries[int(t) - 1].path for t in tokens if t.isdigit() and 1 <= int(t) <= len(self._entries)]
+        description = describe_selection(paths)
+        self.query_one("#selection-size", Static).update(_("Sélection : {description}").format(description=description) if description else "")
 
     def on_data_table_row_highlighted(self, event: DataTable.RowHighlighted) -> None:
+        if event.data_table.id == "library-table":
+            self._refresh_selection_size()
+            return
         if event.data_table.id != "top-ips-table":
             return
         row = event.data_table.get_row_at(event.cursor_row)
@@ -136,41 +177,116 @@ class ProcessIpScreen(OmegaScreen):
             label = button_id.removeprefix("period-")
             period = dict(_PERIODS)[label]
             self._compute(period)
+        elif button_id == "search-ip":
+            self._search_ip()
         elif button_id == "remove-ip":
             self._remove_selected_ip()
 
     def _selected_paths(self) -> list[str] | None:
-        raw = self.query_one("#selection-input", Input).value.strip()
+        raw = self._library_selection()
         if not raw:
-            self.app.notify("Saisissez au moins un numero de ligne.", severity="warning")
+            self.app.notify(_("Saisissez au moins un numéro de ligne."), severity="warning")
             return None
         paths: list[str] = []
         for token in raw.split(","):
             token = token.strip()
             if not token.isdigit() or not (1 <= int(token) <= len(self._entries)):
-                self.app.notify(f"Numero invalide : '{token}'.", severity="warning")
+                self.app.notify(_("Numéro invalide : '{token}'.").format(token=token), severity="warning")
                 return None
             paths.append(self._entries[int(token) - 1].path)
         return paths
 
     def _compute(self, period: str | None) -> None:
         if self._computing:
-            self.app.notify("Un calcul est deja en cours, patientez.", severity="warning")
+            self.app.notify(_("Un calcul est déjà en cours, patientez."), severity="warning")
             return
         paths = self._selected_paths()
         if paths is None:
             return
         self._current_paths = paths
+        self._searched_ip = None
+        self.query_one("#ip-search-result", Static).update("")
         runner = self._container.process_runner if self._elevated else None
         self._computing = True
         self._set_period_buttons_disabled(True)
-        self._set_status("Calcul en cours...")
+        self._set_status("")
+        self.query_one("#busy", BusyIndicator).start(paths, period)
         self.run_worker(self._compute_async(paths, period, runner))
+
+    def _search_ip(self) -> None:
+        if self._computing:
+            self.app.notify(_("Un calcul est déjà en cours, patientez."), severity="warning")
+            return
+        paths = self._selected_paths()
+        if paths is None:
+            return
+        typed = self.query_one("#ip-input", Input).value
+        ip = normalize_ip(typed)
+        if ip is None:
+            self._set_status(_("Adresse IP invalide : {value!r}.").format(value=typed.strip()))
+            return
+        self._run_search(ip, paths)
+
+    def _run_search(self, ip: str, paths: list[str]) -> None:
+        self._current_paths = paths
+        self._searched_ip = ip
+        self._computing = True
+        self._set_period_buttons_disabled(True)
+        self._set_status("")
+        self.query_one("#busy", BusyIndicator).start(paths, None)
+        self.run_worker(self._search_async(ip, paths))
+
+    def _count_all(self, ip: str, paths: list[str], runner: ProcessRunnerPort | None) -> list[tuple[str, int]]:
+        return [(path, count_ip_occurrences(path, ip, runner=runner)) for path in paths]
+
+    async def _search_async(self, ip: str, paths: list[str]) -> None:
+        """Comptage dans un thread (lecture en flux) ; un log illisible : authentification sudo dans le
+        processus de l'interface (jamais dans le thread), puis nouvel essai avec sudo."""
+        runner = self._container.process_runner if self._elevated else None
+        try:
+            try:
+                results = await asyncio.to_thread(self._count_all, ip, paths, runner)
+            except PermissionRequiredError:
+                if not request_elevation(self, self._container.process_runner):
+                    self.app.notify(_("Permission refusée sur au moins un log sélectionné."), severity="error")
+                    self._finish_computing()
+                    return
+                self._elevated = True
+                results = await asyncio.to_thread(self._count_all, ip, paths, self._container.process_runner)
+        except Exception as exc:  # noqa: BLE001 - jamais planter l'appli pour une recherche
+            self._show_compute_error(str(exc))
+            return
+        self._apply_ip_search(ip, results)
+
+    def _apply_ip_search(self, ip: str, results: list[tuple[str, int]]) -> None:
+        self._finish_computing()
+        try:
+            table = self.query_one("#top-ips-table", DataTable)
+            remove_button = self.query_one("#remove-ip", Button)
+            result_line = self.query_one("#ip-search-result", Static)
+        except NoMatches:
+            return  # ecran deja ferme
+        total = sum(count for _path, count in results)
+        names = [Path(path).name for path, _count in results]
+        # Nom seul, sauf si deux logs portent le meme (deux access.log) : chemin complet
+        labels = [path if names.count(name) > 1 else name for (path, _count), name in zip(results, names, strict=True)]
+        detail = " · ".join(f"{label} : {count}" for label, (_path, count) in zip(labels, results, strict=True))
+        result_line.update(_("{ip} : {total} ligne(s) - {detail}").format(ip=ip, total=total, detail=detail))
+        table.clear()
+        self._selected_ip = None
+        remove_button.disabled = True
+        if not total:
+            self.app.notify(_("{ip} est absente des log(s) sélectionné(s).").format(ip=ip))
+            return
+        table.add_row(ip, str(total), key=ip)
+        self._selected_ip = ip
+        remove_button.disabled = False
 
     def _set_period_buttons_disabled(self, disabled: bool) -> None:
         try:
             for label, _period in _PERIODS:
                 self.query_one(f"#period-{label}", Button).disabled = disabled
+            self.query_one("#search-ip", Button).disabled = disabled
         except NoMatches:
             pass  # ecran deja ferme (utilisateur reparti avant la fin du calcul) — rien a mettre a jour
 
@@ -183,21 +299,18 @@ class ProcessIpScreen(OmegaScreen):
     async def _compute_async(
         self, paths: list[str], period: str | None, runner: ProcessRunnerPort | None,
     ) -> None:
-        loop = asyncio.get_running_loop()
-        func = functools.partial(compute_top_ips_for_paths, paths, period=period, n=10, runner=runner)
         try:
-            top_ips = await loop.run_in_executor(STATS_PROCESS_POOL, func)
+            accumulator = await accumulate_in_pool(paths, period, runner, self._show_progress)
         except PermissionRequiredError:
             if not request_elevation(self, self._container.process_runner):
-                self.app.notify("Permission refusee sur au moins un log selectionne.", severity="error")
+                self.app.notify(_("Permission refusée sur au moins un log sélectionné."), severity="error")
                 self._finish_computing()
                 return
             self._elevated = True
-            func = functools.partial(
-                compute_top_ips_for_paths, paths, period=period, n=10, runner=self._container.process_runner,
-            )
             try:
-                top_ips = await loop.run_in_executor(STATS_PROCESS_POOL, func)
+                accumulator = await accumulate_in_pool(
+                    paths, period, self._container.process_runner, self._show_progress,
+                )
             except Exception as exc:  # noqa: BLE001 - jamais planter l'appli pour un calcul de top IP
                 self._show_compute_error(str(exc))
                 return
@@ -205,7 +318,14 @@ class ProcessIpScreen(OmegaScreen):
             self._show_compute_error(str(exc))
             return
 
+        top_ips = accumulator.top_ips(10)
         self._apply_top_ips(top_ips)
+
+    def _show_progress(self, done_bytes: int, total_bytes: int, done_parts: int, total_parts: int) -> None:
+        try:
+            self.query_one("#busy", BusyIndicator).set_progress(done_bytes, total_bytes, done_parts, total_parts)
+        except NoMatches:
+            pass  # ecran deja ferme
 
     def _finish_computing(self) -> None:
         """A appeler sur TOUTE sortie de `_compute_async` (succes, erreur,
@@ -214,10 +334,14 @@ class ProcessIpScreen(OmegaScreen):
         pour toujours."""
         self._computing = False
         self._set_period_buttons_disabled(False)
+        try:
+            self.query_one("#busy", BusyIndicator).stop()
+        except NoMatches:
+            pass  # ecran deja ferme
 
     def _show_compute_error(self, message: str) -> None:
-        self.app.notify(f"Erreur de calcul : {message}", severity="error")
-        self._set_status(f"Erreur : {message}")
+        self.app.notify(_("Erreur de calcul : {message}").format(message=message), severity="error")
+        self._set_status(_("Erreur : {message}").format(message=message))
         self._finish_computing()
 
     def _apply_top_ips(self, top_ips: list[TopIP]) -> None:
@@ -235,7 +359,8 @@ class ProcessIpScreen(OmegaScreen):
         for top_ip in top_ips:
             table.add_row(top_ip.ip, str(top_ip.count), key=top_ip.ip)
         if not top_ips:
-            self.app.notify("Aucune IP trouvee dans les log(s) selectionne(s) pour cette periode.")
+            self.app.notify(_("Aucune IP trouvée dans les log(s) sélectionné(s) pour cette "
+                              "période."))
 
     def _remove_selected_ip(self) -> None:
         if self._selected_ip is None or not self._current_paths:
@@ -243,8 +368,8 @@ class ProcessIpScreen(OmegaScreen):
         ip = self._selected_ip
         self.app.push_screen(
             ConfirmScreen(
-                title="RETIRER CETTE IP ?",
-                message=f"Retirer toutes les lignes contenant {ip} de {len(self._current_paths)} fichier(s).",
+                title=_("RETIRER CETTE IP ?"),
+                message=_("Retirer toutes les lignes contenant {ip} de {count} fichier(s).").format(ip=ip, count=len(self._current_paths)),
             ),
             lambda confirmed: self._remove_if_confirmed(confirmed, ip),
         )
@@ -260,7 +385,7 @@ class ProcessIpScreen(OmegaScreen):
                 result = remove_ip_from_file(path, ip, runner=runner)
             except PermissionRequiredError:
                 if not request_elevation(self, self._container.process_runner):
-                    errors.append(f"{path} : permission refusee.")
+                    errors.append(_("{path} : permission refusée.").format(path=path))
                     continue
                 self._elevated = True
                 result = remove_ip_from_file(path, ip, runner=self._container.process_runner)
@@ -270,5 +395,8 @@ class ProcessIpScreen(OmegaScreen):
                 errors.append(f"{path} : {result.message}")
         if errors:
             self.app.notify("; ".join(errors), severity="error")
-        self.app.notify(f"{total} occurrence(s) de {ip} retiree(s) au total.")
-        self._compute(None)
+        self.app.notify(_("{total} occurrence(s) de {ip} retirée(s) au total.").format(total=total, ip=ip))
+        if self._searched_ip == ip:
+            self._run_search(ip, list(self._current_paths))  # recherche manuelle : on recompte cette IP
+        else:
+            self._compute(None)

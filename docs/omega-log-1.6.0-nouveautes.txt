@@ -1,0 +1,85 @@
+OMEGA-LOG 1.6.0 - Ce qui change pour vous
+=========================================
+
+Une version qui reprend les nouveautés du gestionnaire de logs d'omega-serv 2.6.0 :
+contrôler, sauvegarder chaque nuit, chercher une IP précise. Le détail technique complet
+reste dans le CHANGELOG.
+
+
+SANTÉ DES LOGS : UN CONTRÔLE QUI DIT QUOI FAIRE
+-----------------------------------------------
+- Nouveau bouton Santé des logs dans la colonne Maintenance, après Exporter.
+- Pour chaque log de la Bibliothèque : droits, log muet depuis des jours, fichier vide
+  ou abîmé, dates illisibles ou dans le futur, gros log sans règle logrotate, doublon.
+- Pour le disque : la croissance des logs et le nombre de jours avant qu'il soit plein.
+- Les sauvegardes et les sauvegardes planifiées sont contrôlées aussi.
+- Chaque constat dit quoi faire. Un log inscriptible par tout le monde se corrige en un
+  clic (avec sudo si le fichier ne vous appartient pas, la commande est montrée avant).
+- Export JSON, HTML ou TXT.
+
+
+DES SAUVEGARDES PLANIFIÉES QUI S'EXÉCUTENT CHAQUE NUIT
+------------------------------------------------------
+- Rotate → « Sauvegardes planifiées » : un log est sauvegardé tous les jours, toutes les
+  semaines ou tous les mois, avec le nombre de sauvegardes à garder.
+- La première installe une tâche quotidienne : timer systemd, sinon une ligne de votre
+  crontab (OpenRC, runit), sinon la ligne à ajouter vous-même est affichée.
+- Tout se fait sous votre compte, jamais en root. L'écran montre la dernière et la
+  prochaine exécution ; Santé des logs signale un échec ou un retard.
+- « Désinstaller l'exécution » retire la tâche quotidienne sans effacer vos
+  sauvegardes planifiées ; « Réinstaller l'exécution » la remet en place.
+- Un log protégé (/var/log/...) ne peut pas être sauvegardé la nuit sans mot de passe :
+  sauvegardez-le depuis Rotate.
+
+
+VOIR ET TRAITER IP : CHERCHER UNE IP PRÉCISE
+--------------------------------------------
+- Saisissez une adresse (IPv4 ou IPv6) : ses lignes sont comptées dans chaque log
+  choisi, puis retirées en un clic, sans attendre qu'elle apparaisse dans le top.
+
+
+VERSION ET MISES À JOUR
+-----------------------
+- La version d'omega-log est affichée dans la barre de titre et sur l'écran de démarrage.
+- Aide → Contact et support → « Vérifier les mises à jour » : omega-log compare votre
+  version à la liste des versions publiées sur le site. Seulement quand vous cliquez,
+  et rien n'est envoyé. « Voir les nouveautés » ouvre le résumé d'une nouvelle version.
+- En ligne de commande : omega-log version --check.
+
+
+PLUS CONFORTABLE
+----------------
+- Le bouton « Quitter » du menu est retiré : q, Ctrl+Q et Échap sur l'accueil quittent
+  toujours, avec confirmation.
+- Viewer Simple : le cadre de statistiques gagne trois lignes, et les chiffres ne se
+  cachent plus derrière l'ascenseur.
+- lnav se lance directement quand vous le choisissez (plus d'écran intermédiaire qui
+  redemande « Lancer lnav ») ; en le quittant, vous revenez à l'écran précédent.
+- Les 16 langues de l'interface sont validées : plus de mention « (en test) » dans le
+  choix de la langue.
+- Hindi et arabe : cadres, boutons et colonnes ne se décalent plus (même affichage
+  qu'omega-serv et omega-fire).
+
+
+CORRECTIONS
+-----------
+- « Retirer cette IP » ne retirait rien pour une adresse IPv6 terminée par « :: ». Une
+  IP n'est plus jamais confondue avec une IP plus longue (1.1.1.1 et 1.1.1.11).
+- Statistiques et Voir et Traiter IP lisent bien un log protégé après votre mot de passe
+  sudo, même quand sudo mémorise l'authentification par processus.
+- L'archive 1.5.0 contenait par erreur la déclaration anonyme du développeur
+  (var/declaration.json) : elle n'est plus jamais livrée.
+
+
+APRÈS LA MISE À JOUR
+--------------------
+1. Relancez omega-log.
+2. Rien d'autre à faire : votre Bibliothèque, vos favoris, vos réglages et vos sauvegardes
+   sont conservés.
+3. Si vous aviez installé la 1.5.0 et que l'écran Contact et support vous indique
+   « déclaré le 2026-11-06 » alors que vous ne vous êtes jamais déclaré : supprimez
+   seulement le fichier var/declaration.json de votre installation (n'utilisez pas
+   « Ne plus me déclarer », qui retirerait l'entrée de quelqu'un d'autre), puis, si
+   vous le souhaitez, déclarez-vous.
+
+Vérifier le fichier téléchargé : sha256sum -c --ignore-missing sha.txt

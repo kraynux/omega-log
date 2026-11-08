@@ -19,6 +19,7 @@ from omega_log.core.enums import CapabilityStatus
 from omega_log.infrastructure.probe.capability_mapper import CapabilityMapper
 from omega_log.infrastructure.probe.known_services import KNOWN_SERVICES, SYSTEMD_UNIT_SERVICES
 from omega_log.infrastructure.probe.systemd_unit_probe import SystemdUnitProbe
+from omega_log.shared.i18n import _
 
 
 class SystemScanner:
@@ -40,12 +41,12 @@ class SystemScanner:
         try:
             registered += self._scan_known_services()
         except Exception as e:  # noqa: BLE001 - un probe en echec ne doit jamais arreter le scan
-            errors.append(f"Known services scan failed: {e}")
+            errors.append(_("Échec de l'analyse des services connus : {e}").format(e=e))
 
         try:
             registered += self._scan_systemd_unit_services()
         except Exception as e:  # noqa: BLE001
-            errors.append(f"Systemd unit scan failed: {e}")
+            errors.append(_("Échec de l'analyse des unités systemd : {e}").format(e=e))
 
         counts = {status: 0 for status in CapabilityStatus}
         for cap in self._registry.list_all():
@@ -80,7 +81,7 @@ class SystemScanner:
                     "present": present,
                     "functional": present,
                     "path": None,
-                    "message": "Processus detecte" if present else "Processus non detecte",
+                    "message": _("Processus détecté") if present else _("Processus non détecté"),
                 }
                 capability = self._mapper.map_command_probe_result(cap_id, probe_result, category=category)
 

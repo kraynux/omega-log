@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "omega-log"
-version = "0.1.0"
+version = "1.6.0"
 description = "Gestionnaire et visualisateur de logs serveur, omega-log"
 readme = "README.md"
 license = { file = "LICENSE" }

@@ -261,6 +261,16 @@ DataTable {
     height: 1fr;
 }
 
+/* Tables des listes (Bibliotheque, favoris, top IP, sources SSH, archives) : hauteur du contenu, plafonnee
+   (2026-11-06, retour utilisateur Statistiques : « la liste des logs disparait, seul le titre reste »).
+   `1fr` dans un panneau qui defile = ecrasee a l'en-tete des que le resultat remplit l'ecran - meme piege
+   et meme correctif qu'omega-fire (2026-10-28). Au-dela du plafond, la table defile elle-meme. */
+#library-table, #log-list, #favorites-table, #top-ips-table, #sources-table, #backups-table,
+#health-table, #automations-table {
+    height: auto;
+    max-height: 14;
+}
+
 #profile-table {
     height: 10;
 }
@@ -299,6 +309,11 @@ ToggleButton.-on > .toggle--button {
     margin-right: 1;
 }
 
+/* Voir et Traiter IP, recherche manuelle (portee d'omega-serv, 2026-11-07) : une IPv6 complete fait 39 caracteres. */
+#ip-input {
+    width: 44;
+}
+
 /* Viewer 1 (live_tail_screen.py) — panneau stats a gauche (largeur
    fixe), tableau a droite (flexible). Repris d'omega-fire. */
 .omega-dash-box {
@@ -306,9 +321,63 @@ ToggleButton.-on > .toggle--button {
     padding: 0 1;
     height: 1fr;
     overflow-y: auto;
+    scrollbar-size-vertical: 1;  /* cadres etroits : une seule colonne pour la barre (comme omega-serv) */
 }
 
-#stats-box {
+/* Cadre de stats qui defile (omega-serv 2026-11-05, repris 2026-11-06) : #stats-box y prend sa hauteur
+   naturelle, le cadre garde la largeur fixe (sans elle, le tableau voisin est ecrase a 1 colonne). */
+#stats-frame {
     width: 34;
     height: 1fr;
+}
+
+/* Viewer Simple remonte (porte d'omega-serv, 2026-11-07 : l'ascenseur cachait la fin du cadre de stats) : ni
+   retrait haut et bas du panneau ni marge au-dessus du titre - 3 lignes de plus pour les cadres. */
+#simple-viewer-panel {
+    padding: 0 2 0 2;  /* les 4 cotes : un `padding-top` seul remettait tout a zero */
+}
+
+#simple-viewer-panel .omega-title {
+    margin: 0 0 1 0;
+}
+
+/* Viewer Simple (identique a omega-serv, 2026-11-02) : le corps prend toute la hauteur et le tableau
+   defile - sans elle, hauteur auto : 30 lignes visibles, aucun ascenseur. */
+#simple-viewer-body {
+    height: 1fr;
+}
+
+#simple-viewer-body > DataTable {
+    width: 1fr;
+    height: 1fr;
+}
+
+/* Barre d'actions HORS de la zone qui defile (toujours visible), comme omega-serv (2026-11-06) :
+   Contact et support, Se declarer. */
+.omega-fixed-actions {
+    padding: 0 2;
+    margin-top: 0;
+}
+
+/* Sante des logs (portee d'omega-serv 2.6.0, 2026-11-07) : une ligne vide entre les sections DISQUES,
+   SAUVEGARDES et SAUVEGARDES PLANIFIEES, comme dans omega-serv. */
+LogHealthScreen #health-disks, LogHealthScreen #health-archives, LogHealthScreen #health-automations {
+    margin-bottom: 1;
+}
+
+/* Sauvegardes planifiees : le choix de frequence n'a pas besoin de toute la largeur. */
+#frequency-select {
+    width: 32;
+}
+
+/* Options (2026-11-07, retour utilisateur « le menu Options a perdu son centre ») : le bloc de choix de langue
+   (LanguageSetting, ajoute en 1.5.0) prenait toute la largeur, le formulaire n'etait plus centre. Meme largeur
+   de 70 que les autres champs du formulaire. */
+.omega-form-panel > LanguageSetting {
+    width: 70;
+}
+
+.omega-form-panel > LanguageSetting > Select {
+    width: 70;
+    margin-bottom: 1;
 }

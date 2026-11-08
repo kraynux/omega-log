@@ -22,12 +22,19 @@ from omega_log.interfaces.tui.screens.confirm import ConfirmScreen
 from omega_log.interfaces.tui.screens.live_tail_screen import LiveTailScreen
 from omega_log.interfaces.tui.screens.lnav_screen import LnavScreen
 from omega_log.interfaces.tui.screens.log_viewer_screen import LogViewerScreen
+from omega_log.interfaces.tui.widgets.library_selection import SELECTION_HINT, LibrarySelectionMixin
+from omega_log.interfaces.tui.widgets.log_library_table import LogLibraryTable
+from omega_log.shared.i18n import N_, _
 
 if TYPE_CHECKING:
     from omega_log.app.dependency_container import DependencyContainer
 
 
-class FavoritesScreen(OmegaScreen):
+_VIEWER_LABELS = {"simple": N_("Simple"), "classique": N_("Classique")}
+"""Libelle traduit du selecteur ; la valeur (enregistree dans le favori) ne change jamais."""
+
+
+class FavoritesScreen(LibrarySelectionMixin, OmegaScreen):
     def __init__(self, *, container: DependencyContainer) -> None:
         super().__init__()
         self._container = container
@@ -37,33 +44,33 @@ class FavoritesScreen(OmegaScreen):
     def compose(self) -> ComposeResult:
         yield Header()
         with Vertical(classes="omega-panel"):
-            yield Static("FAVORIS", classes="omega-title")
+            yield Static(_("FAVORIS"), classes="omega-title")
 
             yield DataTable(id="favorites-table")
             with Horizontal(classes="omega-actions"):
                 with Container(classes="omega-btn-frame"):
-                    yield Button("Lancer", id="launch", variant="primary")
+                    yield Button(_("Lancer"), id="launch", variant="primary")
                 with Container(classes="omega-btn-frame"):
-                    yield Button("Supprimer", id="delete", variant="error")
+                    yield Button(_("Supprimer"), id="delete", variant="error")
 
-            yield Static("Creer un favori", classes="omega-subtitle")
-            yield DataTable(id="library-table")
-            yield Input(placeholder="Numeros separes par des virgules (ex: 1,3)", id="selection-input")
+            yield Static(_("Créer un favori"), classes="omega-subtitle")
+            yield LogLibraryTable(id="library-table")
+            yield Input(placeholder=_("Numéros séparés par des virgules (ex: 1,3)"), id="selection-input")
+            yield Static(SELECTION_HINT, classes="omega-hint")
             with Horizontal(classes="omega-actions"):
-                yield Input(placeholder="Nom du favori", id="name-input")
-                yield Select([(v.value, v.value) for v in ViewerType], value=ViewerType.SIMPLE.value, id="viewer-select")
+                yield Input(placeholder=_("Nom du favori"), id="name-input")
+                yield Select([(_(_VIEWER_LABELS.get(v.value, v.value)), v.value) for v in ViewerType],
+                             value=ViewerType.SIMPLE.value, id="viewer-select")
                 with Container(classes="omega-btn-frame"):
-                    yield Button("Enregistrer", id="save")
+                    yield Button(_("Enregistrer"), id="save")
 
             with Horizontal(classes="omega-actions"), Container(classes="omega-btn-frame"):
-                yield Button("Retour", id="back")
+                yield Button(_("Retour"), id="back")
         yield Footer()
 
     def on_mount(self) -> None:
         self.query_one("#favorites-table", DataTable).cursor_type = "row"
-        self.query_one("#favorites-table", DataTable).add_columns("Nom", "Logs", "Viewer")
-        self.query_one("#library-table", DataTable).cursor_type = "row"
-        self.query_one("#library-table", DataTable).add_columns("#", "Chemin")
+        self.query_one("#favorites-table", DataTable).add_columns(_("Nom"), _("Logs"), _("Viewer"))
         self._refresh_favorites()
         self._refresh_library()
 
@@ -75,10 +82,7 @@ class FavoritesScreen(OmegaScreen):
 
     def _refresh_library(self) -> None:
         self._library_entries = list_library(self._container.log_repository)
-        table = self.query_one("#library-table", DataTable)
-        table.clear()
-        for idx, entry in enumerate(self._library_entries, start=1):
-            table.add_row(str(idx), entry.path)
+        self.query_one("#library-table", LogLibraryTable).load(self._library_entries)
 
     def on_data_table_row_highlighted(self, event: DataTable.RowHighlighted) -> None:
         if event.data_table.id == "favorites-table":
@@ -98,7 +102,7 @@ class FavoritesScreen(OmegaScreen):
 
     def _launch(self) -> None:
         if self._selected_favorite is None:
-            self.app.notify("Selectionnez un favori.", severity="warning")
+            self.app.notify(_("Sélectionnez un favori."), severity="warning")
             return
         favorite = next(
             (f for f in list_favorites(self._container.favorite_repository) if f.name == self._selected_favorite),
@@ -115,11 +119,11 @@ class FavoritesScreen(OmegaScreen):
 
     def _delete(self) -> None:
         if self._selected_favorite is None:
-            self.app.notify("Selectionnez un favori.", severity="warning")
+            self.app.notify(_("Sélectionnez un favori."), severity="warning")
             return
         name = self._selected_favorite
         self.app.push_screen(
-            ConfirmScreen(title="SUPPRIMER CE FAVORI ?", message=name),
+            ConfirmScreen(title=_("SUPPRIMER CE FAVORI ?"), message=name),
             lambda confirmed: self._delete_if_confirmed(confirmed, name),
         )
 
@@ -131,7 +135,7 @@ class FavoritesScreen(OmegaScreen):
         self._refresh_favorites()
 
     def _save(self) -> None:
-        raw_selection = self.query_one("#selection-input", Input).value.strip()
+        raw_selection = self._library_selection()
         name = self.query_one("#name-input", Input).value.strip()
         viewer_value = self.query_one("#viewer-select", Select).value
 
@@ -141,7 +145,7 @@ class FavoritesScreen(OmegaScreen):
             if not token:
                 continue
             if not token.isdigit() or not (1 <= int(token) <= len(self._library_entries)):
-                self.app.notify(f"Numero invalide : '{token}'.", severity="warning")
+                self.app.notify(_("Numéro invalide : '{token}'.").format(token=token), severity="warning")
                 return
             paths.append(self._library_entries[int(token) - 1].path)
 

@@ -8,8 +8,7 @@
 
 **Gestionnaire et visualisateur de logs serveur**
 
-> Élaboré par **kraynux** pour **Omega-server**
-[https://kraynux.snake-mackarel.ts.net](https://kraynux.snake-mackarel.ts.net)
+> Élaboré par [kraynux](https://github.com/kraynux) pour [Omega-Server](https://kraynux.snake-mackarel.ts.net)   
 
 Page officielle : [OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/) &nbsp; Aperçu : [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
 
@@ -18,12 +17,20 @@ Page officielle : [OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/) 
 [![Platform](https://img.shields.io/badge/Platform-Linux-informational.svg)](https://www.linux.org/)
 [![Interface](https://img.shields.io/badge/Interface-Textual%20TUI-cyan.svg)](https://github.com/Textualize/textual)
 
-**Langues:**
-🇫🇷 **[Français](README.md)** · 🇬🇧 [English](README.en.md) · 🇪🇸 [Español](README.es.md) · 🇷🇺 [Русский](README.ru.md) · 🇨🇳 [中文](README.zh.md)
+🌐 Interface, documentation et exports disponibles en **17 langues**.  
+**Langues :**
+<img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](docs/translation/en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](docs/translation/es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](docs/translation/pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](docs/translation/it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](docs/translation/de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](docs/translation/nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](docs/translation/pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](docs/translation/ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](docs/translation/zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](docs/translation/vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](docs/translation/th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](docs/translation/id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](docs/translation/ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](docs/translation/ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](docs/translation/hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](docs/translation/ar/README.md)
 
 ---
 
 **Omega-log** est l'outil de la suite `omega-` dédié à la gestion, la lecture et l'analyse de fichiers logs serveur en TUI — détection automatique des services actifs et de leurs logs, bibliothèque centrale, trois modes de lecture (suivi simple, lecture classique, fusion multi-fichiers via `lnav`), traitement des IP, statistiques, rotation/sauvegarde/restauration, purge sécurisée et export. Construit par **portage et adaptation** du code déjà mûr d'[omega-fire](https://github.com/kraynux) et [omega-serv](https://github.com/kraynux) plutôt que réécrit depuis zéro.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kraynux/kraynux/refs/heads/main/docs/assets/omega-log/A.png" width="24%" />
+  <img src="https://raw.githubusercontent.com/kraynux/kraynux/refs/heads/main/docs/assets/omega-log/B.png" width="24%" />
+  <img src="https://raw.githubusercontent.com/kraynux/kraynux/refs/heads/main/docs/assets/omega-log/C.png" width="24%" />
+  <img src="https://raw.githubusercontent.com/kraynux/kraynux/refs/heads/main/docs/assets/omega-log/D.png" width="24%" />
+</p>
 
 ## 1. Vision et périmètre
 
@@ -35,9 +42,10 @@ Omega-log répond à une question simple : « qu'est-ce qui se passe dans mes lo
 - Centralise les logs à traiter dans une Bibliothèque unique, point d'entrée de tous les autres écrans.
 - Lit un log suivant trois modes selon le besoin : suivi simple avec parsing et statistiques, lecture classique brute avec suivi en direct, ou fusion multi-fichiers encapsulant `lnav`.
 - Mémorise des combinaisons logs + viewer sous forme de Favoris, pour un lancement direct.
-- Calcule le top 10 des IP par période et permet leur suppression ciblée dans un ou plusieurs fichiers.
+- Calcule le top 10 des IP par période, ou cherche une IP précise, et permet leur suppression ciblée dans un ou plusieurs fichiers.
 - Calcule des statistiques d'accès (volume, IPs uniques, taux d'erreur, répartition horaire) exportables en JSON ou HTML à thème.
-- Sauvegarde (compression + rétention automatique), restaure (fusion ou écrasement, avec sauvegarde de sécurité) et purge (troncature en place ou suppression) les fichiers de log, toujours avec confirmation explicite.
+- Sauvegarde (compression + rétention automatique), à la main ou chaque nuit par des sauvegardes planifiées, restaure (fusion ou écrasement, avec sauvegarde de sécurité) et purge (troncature en place ou suppression) les fichiers de log, toujours avec confirmation explicite.
+- Contrôle la santé des logs (droits, logs muets ou abîmés, place sur le disque, sauvegardes) et dit quoi faire pour chaque constat.
 - S'adapte automatiquement aux capacités du terminal (couleurs, taille) via `omega-lib`, comme le reste de la suite.
 
 ### Ce qu'Omega-log ne fait pas
@@ -74,7 +82,7 @@ sudo apt install lnav
 ### Installation
 
 ```bash
-[ -d omega-log ] && echo "ℹ️ Déjà extrait ici, étape ignorée." || tar -xzf omega-log.tar.gz
+[ -d omega-log ] && echo "ℹ️ Déjà extrait ici, étape ignorée." || tar -xzf omega-log-1.6.0.tar.gz
 cd omega-log/
 chmod +x install.sh
 ./install.sh
@@ -111,7 +119,7 @@ si vous avez créé l'alias, tapez juste `log` dans un nouveau terminal :
 log
 ```
 
-Parcours général : écran de démarrage → menu principal (deux colonnes — Registre/Bibliothèque/Voir les logs/Favoris/Voir et Traiter IP/Statistiques d'un côté, Rotate/Purger/Exporter/Options/Aide/Quitter de l'autre) → écran de la fonction choisie → retour au menu (`Échap`). L'aide complète (`a`) détaille chaque écran, chaque viewer et les concepts transverses (élévation sudo ponctuelle, états des logs, sélection par numéros) — voir §4 pour l'essentiel.
+Parcours général : écran de démarrage → menu principal (deux colonnes — Registre/Bibliothèque/Voir les logs/Favoris/Voir et Traiter IP/Statistiques d'un côté, Rotate/Purger/Exporter/Santé des logs/Options/Aide de l'autre) → écran de la fonction choisie → retour au menu (`Échap`). L'aide complète (`a`) détaille chaque écran, chaque viewer et les concepts transverses (élévation sudo ponctuelle, états des logs, sélection par numéros) — voir §4 pour l'essentiel.
 
 #### Raccourcis clavier
 
@@ -127,7 +135,7 @@ Parcours général : écran de démarrage → menu principal (deux colonnes — 
 
 ### 3.2. Mode ligne de commande (CLI)                                                              
 
-Limité au scan de services pour l'instant (pas encore de parité complète avec la TUI — favoris, rotate, purge viendront avec leurs propres phases, voir `plan_omega_log.md` §12) :
+Pas encore de parité complète avec la TUI (favoris, purge... viendront avec leurs propres phases, voir `plan_omega_log.md` §12) :
 
 ```bash
 # Detecte les services actifs et leurs logs connus
@@ -135,6 +143,12 @@ python -m omega_log scan
 
 # + scan manuel d'un dossier supplementaire
 python -m omega_log scan --path /var/log
+
+# Version installee, et comparaison avec la derniere version publiee
+python -m omega_log version --check
+
+# Sauvegardes planifiees arrivees a echeance (lancee chaque nuit par le timer systemd ou la crontab)
+python -m omega_log rotate run-automations
 ```
 
 ### 3.3. Variables d'environnement
@@ -142,21 +156,23 @@ python -m omega_log scan --path /var/log
 | Variable | Effet |
 |---|---|
 | `OMEGA_LOG_VAR_DIR` | Change l'emplacement du dossier d'état applicatif (`./var` par défaut, relatif au dossier de lancement) |
+| `OMEGA_LOG_LANG` | Force la langue de l'interface pour la session (ex. `en`, `de`, `ja`) sans changer le réglage enregistré |
 
 ## 4. Fonctionnalités
 
 | Écran | Description |
 |---|---|
 | **Registre des capacités** | Détecte les services actifs sur la machine et propose l'import de leurs logs connus, au détail ou en totalité. Scan manuel d'un dossier en complément. |
-| **Bibliothèque** | Hub central référençant tous les logs à traiter — alimentée par le Registre ou par import manuel. |
+| **Bibliothèque** | Hub central référençant tous les logs à traiter — alimentée par le Registre, par import manuel, par les logs connus d'Omega-Serv ou par une copie récupérée en SSH. |
 | **Voir les logs** | Sélection d'un ou plusieurs logs de la Bibliothèque + choix du viewer (1 log → les 3 viewers ; 2+ logs → `lnav` uniquement). |
 | **Favoris** | Combinaisons logs + viewer enregistrées sous un nom, pour un lancement direct. |
-| **Voir et Traiter IP** | Top 10 des IP par période (24h/7j/30j/tout) et suppression ciblée d'une IP d'un ou plusieurs logs. |
+| **Voir et Traiter IP** | Top 10 des IP par période (24h/7j/30j/tout), ou recherche d'une IP précise (IPv4 ou IPv6), et suppression ciblée d'une IP d'un ou plusieurs logs. |
 | **Statistiques (accès)** | Volume, IPs uniques, taux d'erreur, top IP, répartition horaire — export JSON/HTML à 5 thèmes. |
-| **Rotate** | Sauvegarde compressée d'un log + rétention automatique des archives excédentaires + restauration (fusion ou écrasement, avec sauvegarde de sécurité). |
+| **Rotate** | Sauvegarde compressée d'un log + rétention automatique des archives excédentaires + restauration (fusion ou écrasement, avec sauvegarde de sécurité). **Sauvegardes planifiées** : un log sauvegardé chaque jour, semaine ou mois, exécuté chaque nuit par un timer systemd ou une ligne de votre crontab (OpenRC, runit), sous votre compte, jamais root. |
 | **Purger** | Vide le contenu d'un log (troncature en place, sûre pour un service qui l'a encore ouvert) ou supprime complètement un ou plusieurs fichiers — toujours avec confirmation. |
 | **Exporter** | Export de la liste des archives (Rotate) en JSON ou HTML à thème. |
-| **Options** | Thème, profil de rendu, purge des dossiers applicatifs (exports/screenshots). |
+| **Santé des logs** | Contrôle en lecture seule des logs de la Bibliothèque, du disque, des sauvegardes et des sauvegardes planifiées : droits, logs muets ou abîmés, dates, logrotate, jours avant disque plein, avec le geste à faire. Correction des droits trop ouverts (avec sudo si besoin), export JSON/HTML/TXT. |
+| **Options** | Thème, profil de rendu, langue de l'interface et langue des exports (17 langues), purge des dossiers applicatifs (exports/screenshots). |
 
 ### Les 3 viewers
 
@@ -210,7 +226,7 @@ Dépend d'[`omega-lib`](../LIB/omega-lib) pour le thème (10 thèmes TUI + 5 th�
 
 ```bash
 source .venv/bin/activate
-pytest tests/ -q      # 171 tests
+pytest tests/ -q      # 243 tests
 ruff check .
 mypy src
 ```
@@ -219,7 +235,7 @@ Structure : `tests/unit/` (domaine et application, sans I/O réelle), `tests/int
 
 ## 8. État du développement
 
-Les 10 phases du plan de développement sont terminées : socle, domaine, TUI de base, viewers, favoris/bibliothèque/IP, maintenance, statistiques/export, finalisation, élévation sudo ponctuelle, calculs CPU-bound déportés en processus séparé — voir `plan_omega_log.md` pour le détail de chaque décision de portage.
+Les 10 phases du plan de développement sont terminées : socle, domaine, TUI de base, viewers, favoris/bibliothèque/IP, maintenance, statistiques/export, finalisation, élévation sudo ponctuelle, calculs CPU-bound déportés en processus séparé — voir `plan_omega_log.md` pour le détail de chaque décision de portage. Depuis la 1.6.0, les nouveautés du gestionnaire de logs d'omega-serv 2.6.0 sont reprises : Santé des logs, sauvegardes planifiées, recherche d'une IP précise, version affichée et vérification des mises à jour.
 
 ## 9. Licence
 

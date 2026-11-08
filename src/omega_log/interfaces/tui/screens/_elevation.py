@@ -8,6 +8,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from omega_log.infrastructure.privileged.elevation import authenticate_sudo
+from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
     from omega_log.interfaces.tui.screens._base import OmegaScreen
@@ -24,6 +25,6 @@ def request_elevation(screen: OmegaScreen, runner: ProcessRunnerPort) -> bool:
     with screen._maybe_suspend():
         result = authenticate_sudo(runner)
     if not result.success:
-        screen.app.notify(result.message or "Authentification sudo echouee ou annulee.", severity="error")
+        screen.app.notify(result.message or _("Authentification sudo échouée ou annulée."), severity="error")
         return False
     return True

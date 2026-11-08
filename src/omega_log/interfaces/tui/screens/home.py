@@ -27,6 +27,7 @@ from omega_log.interfaces.tui.screens.export_screen import ExportScreen
 from omega_log.interfaces.tui.screens.favorites import FavoritesScreen
 from omega_log.interfaces.tui.screens.help_screen import HelpScreen
 from omega_log.interfaces.tui.screens.library import LibraryScreen
+from omega_log.interfaces.tui.screens.log_health_screen import LogHealthScreen
 from omega_log.interfaces.tui.screens.process_ip_screen import ProcessIpScreen
 from omega_log.interfaces.tui.screens.purge_screen import PurgeScreen
 from omega_log.interfaces.tui.screens.quit_confirm import QuitConfirmScreen
@@ -35,27 +36,30 @@ from omega_log.interfaces.tui.screens.rotate_screen import RotateScreen
 from omega_log.interfaces.tui.screens.settings_screen import SettingsScreen
 from omega_log.interfaces.tui.screens.view_logs import ViewLogsScreen
 from omega_log.interfaces.tui.widgets.home_wordmark import HomeWordmark
+from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
     from omega_log.app.dependency_container import DependencyContainer
 
 # (id, label) — labels repris tels quels du menu revise (plan §7).
 _COLUMN_1: tuple[tuple[str, str], ...] = (
-    ("registry", "Registre des capacites"),
-    ("library", "Bibliotheque"),
-    ("view_logs", "Voir les logs"),
-    ("favorites", "Favoris"),
-    ("process_ip", "Voir et Traiter IP"),
-    ("access_log_stats", "Statistiques (acces)"),
+    ("registry", _("Registre des capacités")),
+    ("library", _("Bibliothèque")),
+    ("view_logs", _("Voir les logs")),
+    ("favorites", _("Favoris")),
+    ("process_ip", _("Voir et Traiter IP")),
+    ("access_log_stats", _("Statistiques (accès)")),
 )
 _COLUMN_2: tuple[tuple[str, str], ...] = (
-    ("rotate", "Rotate"),
-    ("purge", "Purger"),
-    ("export", "Exporter"),
-    ("options", "Options"),
-    ("help", "Aide"),
-    ("quit", "Quitter"),
+    ("rotate", _("Rotate")),
+    ("purge", _("Purger")),
+    ("export", _("Exporter")),
+    ("log_health", _("Santé des logs")),
+    ("options", _("Options")),
+    ("help", _("Aide")),
 )
+"""« Santé des logs » apres Exporter, « Quitter » retire (demande utilisateur 2026-11-07) : Echap ici, q et
+ctrl+q quittent toujours, avec confirmation."""
 
 _NOT_YET_BUILT: set[str] = set()
 _SCREEN_BY_ID = {
@@ -65,6 +69,7 @@ _SCREEN_BY_ID = {
     "process_ip": ProcessIpScreen,
     "access_log_stats": AccessLogStatsScreen,
     "export": ExportScreen,
+    "log_health": LogHealthScreen,
     "rotate": RotateScreen,
     "purge": PurgeScreen,
 }
@@ -77,9 +82,9 @@ class HomeScreen(Screen[None]):
     dismiss() (rien "en dessous" de cet ecran)."""
 
     BINDINGS: ClassVar[list[BindingType]] = [
-        Binding("escape", "back", "Retour", show=True),
-        Binding("up", "focus_previous_item", "Monter", show=False),
-        Binding("down", "focus_next_item", "Descendre", show=False),
+        Binding("escape", "back", _("Retour"), show=True),
+        Binding("up", "focus_previous_item", _("Monter"), show=False),
+        Binding("down", "focus_next_item", _("Descendre"), show=False),
     ]
 
     def __init__(self, *, container: DependencyContainer) -> None:
@@ -96,18 +101,18 @@ class HomeScreen(Screen[None]):
                     for item_id, label in _COLUMN_1:
                         with Container(classes="omega-btn-frame"):
                             yield Button(label.upper(), id=item_id)
-                col1.border_title = "MENU PRINCIPAL"
+                col1.border_title = _("MENU PRINCIPAL")
                 with Vertical(classes="omega-home-menu") as col2:
                     for item_id, label in _COLUMN_2:
                         with Container(classes="omega-btn-frame"):
                             yield Button(label.upper(), id=item_id)
-                col2.border_title = "MAINTENANCE"
+                col2.border_title = _("MAINTENANCE")
         yield Footer()
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         item_id = event.button.id
         if item_id == "help":
-            self.app.push_screen(HelpScreen())
+            self.app.push_screen(HelpScreen(container=self._container))
             return
         if item_id == "options":
             self.app.push_screen(SettingsScreen(container=self._container))
@@ -118,12 +123,10 @@ class HomeScreen(Screen[None]):
         if item_id in _SCREEN_BY_ID:
             self.app.push_screen(_SCREEN_BY_ID[item_id](container=self._container))
             return
-        if item_id == "quit":
-            self.app.push_screen(QuitConfirmScreen(), self._quit_if_confirmed)
-            return
         if item_id in _NOT_YET_BUILT:
             self.app.notify(
-                "Cet ecran n'est pas encore construit (voir plan_omega_log.md, phases suivantes).",
+                _("Cet écran n'est pas encore construit (voir plan_omega_log.md, phases "
+                  "suivantes)."),
                 title=_LABEL_BY_ID.get(item_id, ""),
                 severity="information",
             )

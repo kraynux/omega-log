@@ -17,6 +17,8 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
+from omega_log.shared.i18n import _
+
 
 @dataclass(frozen=True, slots=True)
 class PermissionCheckResult:
@@ -34,7 +36,7 @@ def check_path_writable(path: str) -> PermissionCheckResult:
 
     if not check_target.exists():
         return PermissionCheckResult(
-            writable=False, reason=f"Dossier introuvable : {check_target}",
+            writable=False, reason=_("Dossier introuvable : {check_target}").format(check_target=check_target),
         )
 
     if os.access(check_target, os.W_OK):
@@ -43,8 +45,8 @@ def check_path_writable(path: str) -> PermissionCheckResult:
     return PermissionCheckResult(
         writable=False,
         reason=(
-            f"Permission d'ecriture refusee sur {check_target}. "
-            "Ajoutez votre utilisateur au groupe proprietaire si possible, "
-            "ou relancez cette action avec les droits necessaires (sudo)."
+            _("Permission d'écriture refusée sur {check_target}. Ajoutez votre utilisateur au "
+              "groupe propriétaire si possible, ou relancez cette action avec les droits "
+              "nécessaires (sudo).").format(check_target=check_target)
         ),
     )

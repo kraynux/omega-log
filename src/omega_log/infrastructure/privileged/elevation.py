@@ -13,6 +13,7 @@ import os
 from dataclasses import dataclass
 
 from omega_log.ports.process_runner_port import ProcessRunnerPort
+from omega_log.shared.i18n import _
 
 
 class PermissionRequiredError(OSError):
@@ -35,7 +36,7 @@ class PermissionRequiredError(OSError):
     corrige ici proprement plutot que laisse comme curiosite."""
 
     def __init__(self, path: str) -> None:
-        super().__init__(f"Permission refusee sur {path} (elevation requise).")
+        super().__init__(_("Permission refusée sur {path} (élévation requise).").format(path=path))
         self.path = path
 
     def __reduce__(self) -> tuple:
@@ -64,5 +65,6 @@ def authenticate_sudo(runner: ProcessRunnerPort) -> ElevationResult:
         return ElevationResult(success=True)
     code = runner.run_interactive(["sudo", "-v"])
     if code != 0:
-        return ElevationResult(success=False, message="Authentification sudo echouee ou annulee.")
+        return ElevationResult(success=False, message=_("Authentification sudo échouée ou "
+                                                        "annulée."))
     return ElevationResult(success=True)

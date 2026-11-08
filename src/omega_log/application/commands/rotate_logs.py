@@ -26,6 +26,7 @@ from omega_log.infrastructure.privileged.elevation import PermissionRequiredErro
 from omega_log.infrastructure.privileged.privileged_file_ops import stage_protected_copy_privileged
 from omega_log.ports.persistence import PersistencePort
 from omega_log.ports.process_runner_port import ProcessRunnerPort
+from omega_log.shared.i18n import _
 
 
 @dataclass
@@ -39,7 +40,7 @@ class RotateLogsRequest:
         if not self.source_path:
             errors.append("source_path must not be empty")
         elif not Path(self.source_path).exists():
-            errors.append(f"Source file not found: {self.source_path}")
+            errors.append(_("Fichier source introuvable : {source_path}").format(source_path=self.source_path))
         if self.keep < 1:
             errors.append("Keep must be at least 1")
         return errors
@@ -80,11 +81,12 @@ class RotateLogsCommand:
             if runner is None:
                 raise PermissionRequiredError(str(source))
             if self._elevated_tmp_dir is None:
-                return RotateLogsResult(success=False, message="Elevation non configuree pour cette commande.")
+                return RotateLogsResult(success=False, message=_("Élévation non configurée pour cette "
+                                                                 "commande."))
             self._elevated_tmp_dir.mkdir(parents=True, exist_ok=True)
             stage_result = stage_protected_copy_privileged(runner, source, self._elevated_tmp_dir)
             if not stage_result.success:
-                return RotateLogsResult(success=False, message=f"Elevation impossible : {stage_result.message}")
+                return RotateLogsResult(success=False, message=_("Élévation impossible : {message}").format(message=stage_result.message))
             staged_copy = Path(stage_result.content)
             actual_source = staged_copy
 
@@ -96,7 +98,8 @@ class RotateLogsCommand:
                 metadata={"reason": request.reason or ""},
             )
         except StorageError as e:
-            return RotateLogsResult(success=False, message=f"Erreur technique lors de la sauvegarde : {e}")
+            return RotateLogsResult(success=False, message=_("Erreur technique lors de la "
+                                                             "sauvegarde : {e}").format(e=e))
         finally:
             if staged_copy is not None:
                 staged_copy.unlink(missing_ok=True)
@@ -107,7 +110,8 @@ class RotateLogsCommand:
             return RotateLogsResult(
                 success=True,
                 message=(
-                    f"Sauvegarde creee avec succes, mais la purge des anciennes archives a echoue : {e}"
+                    _("Sauvegarde créée avec succès, mais la purge des anciennes archives a "
+                      "échoué : {e}").format(e=e)
                 ),
                 backup_path=backup_info.path,
                 backup_size_bytes=backup_info.size_bytes,
@@ -134,7 +138,7 @@ class RotateLogsCommand:
 
         return RotateLogsResult(
             success=True,
-            message=f"Sauvegarde creee avec succes : {backup_info.path.name}",
+            message=_("Sauvegarde créée avec succès : {name}").format(name=backup_info.path.name),
             backup_path=backup_info.path,
             backup_size_bytes=backup_info.size_bytes,
             deleted_count=deleted_count,

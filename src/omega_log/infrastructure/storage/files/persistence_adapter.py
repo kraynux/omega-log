@@ -17,6 +17,7 @@ from pathlib import Path
 from omega_log.infrastructure.exceptions import StorageError
 from omega_log.infrastructure.storage.files.archive_store import ArchiveStore, ArchiveStoreError
 from omega_log.ports.persistence import BackupInfo
+from omega_log.shared.i18n import _
 
 
 class FileBackupAdapter:
@@ -46,7 +47,7 @@ class FileBackupAdapter:
             archive_path = self._archive_store.create_archive(archive_name=archive_name, source_paths=source_paths)
             info = self._archive_store.get_archive_info(archive_path)
         except ArchiveStoreError as e:
-            raise StorageError(f"Failed to create backup: {e}") from e
+            raise StorageError(_("Échec de la sauvegarde : {e}").format(e=e)) from e
 
         return BackupInfo(
             path=archive_path,
@@ -60,7 +61,7 @@ class FileBackupAdapter:
         try:
             self._archive_store.extract_archive(backup.path, dest_dir)
         except ArchiveStoreError as e:
-            raise StorageError(f"Failed to restore backup {backup.path}: {e}") from e
+            raise StorageError(_("Échec de la restauration de {path} : {e}").format(path=backup.path, e=e)) from e
 
     def list_backups(self, backup_dir: Path) -> list[BackupInfo]:
         try:
@@ -75,7 +76,7 @@ class FileBackupAdapter:
                     metadata=None,
                 ))
         except ArchiveStoreError as e:
-            raise StorageError(f"Failed to list backups in {backup_dir}: {e}") from e
+            raise StorageError(_("Impossible de lister les sauvegardes de {backup_dir} : {e}").format(backup_dir=backup_dir, e=e)) from e
 
         return sorted(infos, key=lambda b: b.created_at, reverse=True)
 

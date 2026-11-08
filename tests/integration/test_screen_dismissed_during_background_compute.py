@@ -59,7 +59,7 @@ async def test_process_ip_apply_top_ips_after_dismiss_does_not_raise(container) 
 
 @pytest.mark.asyncio
 async def test_access_log_stats_apply_result_after_dismiss_does_not_raise(container) -> None:
-    from omega_log.domain.logs.models import LogStats
+    from omega_log.domain.logs.stats_report import StatsReport
 
     app = OmegaLogApp(container)
     async with app.run_test(size=(120, 50)) as pilot:
@@ -71,7 +71,7 @@ async def test_access_log_stats_apply_result_after_dismiss_does_not_raise(contai
 
         from omega_log.application.use_cases.access_log_stats import AccessLogStatsResult
 
-        fake_result = AccessLogStatsResult(sources=["/tmp/x.log"], period=None, stats=LogStats())
+        fake_result = AccessLogStatsResult(sources=["/tmp/x.log"], period=None, report=StatsReport())
         screen._apply_result(["/tmp/x.log"], None, fake_result)
         screen._show_compute_error("erreur de test")
         screen._clear_summary()

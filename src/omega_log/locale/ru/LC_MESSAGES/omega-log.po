@@ -1,0 +1,3221 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: omega-log\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Omega-Status: validated\n"
+
+#: src/omega_log/application/commands/restore_backup.py:51 src/omega_log/domain/logs/exceptions.py:65
+#, python-brace-format
+msgid "Archive introuvable : {backup_path}"
+msgstr "Архив не найден: {backup_path}"
+
+#: src/omega_log/application/commands/restore_backup.py:97
+#, python-brace-format
+msgid "Échec de l'extraction : {e}"
+msgstr "Ошибка распаковки: {e}"
+
+#: src/omega_log/application/commands/restore_backup.py:102
+msgid "L'archive extraite est vide."
+msgstr "Распакованный архив пуст."
+
+#: src/omega_log/application/commands/restore_backup.py:120 src/omega_log/application/commands/rotate_logs.py:84
+msgid "Élévation non configurée pour cette commande."
+msgstr "Повышение прав для этой команды не настроено."
+
+#: src/omega_log/application/commands/restore_backup.py:125 src/omega_log/application/commands/rotate_logs.py:89
+#, python-brace-format
+msgid "Élévation impossible : {message}"
+msgstr "Не удалось повысить права: {message}"
+
+#: src/omega_log/application/commands/restore_backup.py:145 src/omega_log/application/commands/restore_backup.py:161 src/omega_log/application/use_cases/process_ip.py:139
+#, python-brace-format
+msgid "Écriture privilégiée impossible : {message}"
+msgstr "Не удалось выполнить запись с повышенными правами: {message}"
+
+#: src/omega_log/application/commands/restore_backup.py:149
+msgid "Remplacement complet (écrasement)"
+msgstr "Полная замена (перезапись)"
+
+#: src/omega_log/application/commands/restore_backup.py:166
+msgid "Fusion incrémentale (ajout en fin de fichier)"
+msgstr "Инкрементное слияние (добавление в конец файла)"
+
+#: src/omega_log/application/commands/restore_backup.py:169
+msgid "Fusion incrémentale (fichier cible créé)"
+msgstr "Инкрементное слияние (целевой файл создан)"
+
+#: src/omega_log/application/commands/restore_backup.py:171
+#, python-brace-format
+msgid "Échec de la restauration : {e}"
+msgstr "Ошибка восстановления: {e}"
+
+#: src/omega_log/application/commands/restore_backup.py:177
+#, python-brace-format
+msgid "Restauration effectuée avec succès : {summary}."
+msgstr "Восстановление успешно выполнено: {summary}."
+
+#: src/omega_log/application/commands/rotate_logs.py:43
+#, python-brace-format
+msgid "Fichier source introuvable : {source_path}"
+msgstr "Исходный файл не найден: {source_path}"
+
+#: src/omega_log/application/commands/rotate_logs.py:101
+#, python-brace-format
+msgid "Erreur technique lors de la sauvegarde : {e}"
+msgstr "Техническая ошибка при резервном копировании: {e}"
+
+#: src/omega_log/application/commands/rotate_logs.py:113
+#, python-brace-format
+msgid "Sauvegarde créée avec succès, mais la purge des anciennes archives a échoué : {e}"
+msgstr "Резервная копия успешно создана, но очистка старых архивов не удалась: {e}"
+
+#: src/omega_log/application/commands/rotate_logs.py:141
+#, python-brace-format
+msgid "Sauvegarde créée avec succès : {name}"
+msgstr "Резервная копия успешно создана: {name}"
+
+#: src/omega_log/application/guards/permission_guard.py:39
+#, python-brace-format
+msgid "Dossier introuvable : {check_target}"
+msgstr "Папка не найдена: {check_target}"
+
+#: src/omega_log/application/guards/permission_guard.py:48
+#, python-brace-format
+msgid "Permission d'écriture refusée sur {check_target}. Ajoutez votre utilisateur au groupe propriétaire si possible, ou relancez cette action avec les droits nécessaires (sudo)."
+msgstr "Отказано в праве записи в {check_target}. По возможности добавьте своего пользователя в группу-владельца или повторите это действие с необходимыми правами (sudo)."
+
+#: src/omega_log/application/use_cases/manage_favorites.py:33
+msgid "Nom requis."
+msgstr "Требуется имя."
+
+#: src/omega_log/application/use_cases/manage_favorites.py:35
+msgid "Au moins un log est requis."
+msgstr "Требуется хотя бы один журнал."
+
+#: src/omega_log/application/use_cases/manage_favorites.py:39 src/omega_log/interfaces/tui/screens/view_logs.py:99
+#, python-brace-format
+msgid "{count} log(s) sélectionné(s) : seul {value} est compatible."
+msgstr "Выбрано журналов: {count}: совместим только {value}."
+
+#: src/omega_log/application/use_cases/manage_favorites.py:43
+#, python-brace-format
+msgid "Favori '{name}' enregistré."
+msgstr "Избранное '{name}' сохранено."
+
+#: src/omega_log/application/use_cases/process_ip.py:96
+#, python-brace-format
+msgid "Adresse IP invalide : {ip}"
+msgstr "Недопустимый IP-адрес: {ip}"
+
+#: src/omega_log/application/use_cases/process_ip.py:100 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:84
+#, python-brace-format
+msgid "Fichier introuvable : {path}"
+msgstr "Файл не найден: {path}"
+
+#: src/omega_log/application/use_cases/process_ip.py:111 src/omega_log/interfaces/tui/screens/live_tail_screen.py:157 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:113
+#, python-brace-format
+msgid "Lecture privilégiée impossible : {message}"
+msgstr "Не удалось выполнить чтение с повышенными правами: {message}"
+
+#: src/omega_log/application/use_cases/process_ip.py:115 src/omega_log/interfaces/tui/screens/live_tail_screen.py:194 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:94 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:152
+#, python-brace-format
+msgid "Lecture impossible : {exc}"
+msgstr "Не удалось прочитать: {exc}"
+
+#: src/omega_log/application/use_cases/process_ip.py:120
+#, python-brace-format
+msgid "Aucune occurrence de {ip} trouvée."
+msgstr "Вхождений {ip} не найдено."
+
+#: src/omega_log/application/use_cases/process_ip.py:143
+#, python-brace-format
+msgid "Écriture impossible : {exc}"
+msgstr "Не удалось записать: {exc}"
+
+#: src/omega_log/application/use_cases/process_ip.py:145
+#, python-brace-format
+msgid "{occurrences} occurrence(s) de {ip} retirée(s)."
+msgstr "Убрано вхождений {ip}: {occurrences}."
+
+#: src/omega_log/application/use_cases/purge_logs.py:68
+#, python-brace-format
+msgid "Troncature privilégiée impossible : {message}"
+msgstr "Не удалось выполнить усечение с повышенными правами: {message}"
+
+#: src/omega_log/application/use_cases/purge_logs.py:70 src/omega_log/application/use_cases/purge_logs.py:80
+#, python-brace-format
+msgid "Contenu vide (fichier conservé) : {path}"
+msgstr "Пустое содержимое (файл сохранён): {path}"
+
+#: src/omega_log/application/use_cases/purge_logs.py:79
+#, python-brace-format
+msgid "Troncature impossible : {exc}"
+msgstr "Не удалось усечь файл: {exc}"
+
+#: src/omega_log/application/use_cases/purge_logs.py:87
+#, python-brace-format
+msgid "Recréation impossible : {exc}"
+msgstr "Не удалось пересоздать файл: {exc}"
+
+#: src/omega_log/application/use_cases/purge_logs.py:88
+#, python-brace-format
+msgid "Fichier recréé vide (était absent) : {path}"
+msgstr "Файл пересоздан пустым (отсутствовал): {path}"
+
+#: src/omega_log/application/use_cases/remote_fetch.py:35
+#, python-brace-format
+msgid "Récupéré dans {local_dest}."
+msgstr "Получено в {local_dest}."
+
+#: src/omega_log/application/use_cases/remote_fetch.py:36
+#, python-brace-format
+msgid "code de retour {returncode}"
+msgstr "код возврата {returncode}"
+
+#: src/omega_log/application/use_cases/remote_fetch.py:37
+#, python-brace-format
+msgid "Échec de la récupération : {detail}"
+msgstr "Ошибка получения: {detail}"
+
+#: src/omega_log/application/use_cases/remote_sources.py:29
+msgid "Label requis."
+msgstr "Требуется метка."
+
+#: src/omega_log/application/use_cases/remote_sources.py:31
+msgid "Hôte requis."
+msgstr "Требуется хост."
+
+#: src/omega_log/application/use_cases/remote_sources.py:33
+msgid "Chemin distant requis."
+msgstr "Требуется удалённый путь."
+
+#: src/omega_log/application/use_cases/remote_sources.py:35
+msgid "Port invalide (1-65535)."
+msgstr "Недопустимый порт (1-65535)."
+
+#: src/omega_log/application/use_cases/remote_sources.py:43
+#, python-brace-format
+msgid "Source '{label}' enregistrée."
+msgstr "Источник '{label}' сохранён."
+
+#: src/omega_log/domain/logs/exceptions.py:17
+#, python-brace-format
+msgid "Fichier de log introuvable : {log_path}"
+msgstr "Файл журнала не найден: {log_path}"
+
+#: src/omega_log/domain/logs/exceptions.py:26
+#, python-brace-format
+msgid "Erreur d'analyse dans {log_path}, ligne {line_number} : {reason}"
+msgstr "Ошибка анализа в {log_path}, строка {line_number}: {reason}"
+
+#: src/omega_log/domain/logs/exceptions.py:34
+#, python-brace-format
+msgid "Format de log invalide pour {log_path} : {reason}"
+msgstr "Недопустимый формат журнала для {log_path}: {reason}"
+
+#: src/omega_log/domain/logs/exceptions.py:42
+#, python-brace-format
+msgid "Erreur d'analyse ({analysis_type}) : {reason}"
+msgstr "Ошибка анализа ({analysis_type}): {reason}"
+
+#: src/omega_log/domain/logs/exceptions.py:50
+#, python-brace-format
+msgid "Erreur de rotation pour {log_path} : {reason}"
+msgstr "Ошибка ротации для {log_path}: {reason}"
+
+#: src/omega_log/domain/logs/exceptions.py:58
+#, python-brace-format
+msgid "Erreur de nettoyage pour {log_path} : {reason}"
+msgstr "Ошибка очистки для {log_path}: {reason}"
+
+#: src/omega_log/infrastructure/lnav/render.py:88
+msgid "Viewer 3 (lnav) — fusion multi-logs"
+msgstr "Просмотрщик 3 (lnav) — объединение нескольких журналов"
+
+#: src/omega_log/infrastructure/lnav/render.py:310
+#, python-brace-format
+msgid "OMEGA-LOG  |  {MENU_LABEL}"
+msgstr "OMEGA-LOG  |  {MENU_LABEL}"
+
+#: src/omega_log/infrastructure/lnav/render.py:320
+#, python-brace-format
+msgid "lnav  |  [up/down] Naviguer  |  [left/right] Défiler  |  [g/G] Début/Fin  |  [Ctrl-C] Marquer+Copier  |  [t] Thème: {theme_name}  |  [Ctrl-Q] Quitter"
+msgstr "lnav  |  [up/down] Навигация  |  [left/right] Прокрутка  |  [g/G] Начало/Конец  |  [Ctrl-C] Отметить+Копировать  |  [t] Тема: {theme_name}  |  [Ctrl-Q] Выход"
+
+#: src/omega_log/infrastructure/lnav/render.py:324
+msgid "lnav  |  "
+msgstr "lnav  |  "
+
+#: src/omega_log/infrastructure/lnav/render.py:325
+msgid "[up/down] Naviguer"
+msgstr "[up/down] Навигация"
+
+#: src/omega_log/infrastructure/lnav/render.py:327
+msgid "[left/right] Défiler"
+msgstr "[left/right] Прокрутка"
+
+#: src/omega_log/infrastructure/lnav/render.py:329
+msgid "[g/G] Début/Fin"
+msgstr "[g/G] Начало/Конец"
+
+#: src/omega_log/infrastructure/lnav/render.py:331
+msgid "[Ctrl-C] Marquer+Copier"
+msgstr "[Ctrl-C] Отметить+Копировать"
+
+#: src/omega_log/infrastructure/lnav/render.py:333
+#, python-brace-format
+msgid "[t] Thème: {theme_name}"
+msgstr "[t] Тема: {theme_name}"
+
+#: src/omega_log/infrastructure/lnav/render.py:335
+msgid "[Ctrl-Q] Quitter"
+msgstr "[Ctrl-Q] Выход"
+
+#: src/omega_log/infrastructure/lnav/render.py:340
+#, python-brace-format
+msgid "Fichiers ({count}) : {names}"
+msgstr "Файлы ({count}): {names}"
+
+#: src/omega_log/infrastructure/privileged/elevation.py:39
+#, python-brace-format
+msgid "Permission refusée sur {path} (élévation requise)."
+msgstr "Доступ к {path} запрещён (требуется повышение прав)."
+
+#: src/omega_log/infrastructure/privileged/elevation.py:68 src/omega_log/interfaces/tui/screens/_elevation.py:28
+msgid "Authentification sudo échouée ou annulée."
+msgstr "Аутентификация sudo не удалась или отменена."
+
+#: src/omega_log/application/use_cases/rotation_automation.py:110 src/omega_log/application/use_cases/rotation_automation.py:112 src/omega_log/application/use_cases/rotation_automation.py:117 src/omega_log/infrastructure/privileged/privileged_file_ops.py:41 src/omega_log/infrastructure/privileged/privileged_file_ops.py:57 src/omega_log/infrastructure/privileged/privileged_file_ops.py:68 src/omega_log/infrastructure/privileged/privileged_file_ops.py:75 src/omega_log/infrastructure/privileged/privileged_file_ops.py:97 src/omega_log/infrastructure/privileged/privileged_file_ops.py:107 src/omega_log/infrastructure/privileged/privileged_file_ops.py:122 src/omega_log/infrastructure/privileged/privileged_file_ops.py:129
+#, python-brace-format
+msgid "code {returncode}"
+msgstr "код {returncode}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:30
+msgid "Binaire introuvable sur le système"
+msgstr "Бинарный файл не найден в системе"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:30
+#, python-brace-format
+msgid "Composant non installé : {message}"
+msgstr "Компонент не установлен: {message}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:39
+#, python-brace-format
+msgid "Binaire présent mais non fonctionnel : {message}"
+msgstr "Бинарный файл есть, но не работает: {message}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:47
+#, python-brace-format
+msgid "Binaire opérationnel ({path})"
+msgstr "Бинарный файл работает ({path})"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:66
+#, python-brace-format
+msgid "Gestionnaire de services indisponible : {message}"
+msgstr "Менеджер служб недоступен: {message}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:75
+msgid "Service introuvable"
+msgstr "Служба не найдена"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:75
+#, python-brace-format
+msgid "Service non installé sur le système ({message})"
+msgstr "Служба не установлена в системе ({message})"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:84
+#, python-brace-format
+msgid "Service installé mais INACTIF (arrêté) : {message}"
+msgstr "Служба установлена, но НЕАКТИВНА (остановлена): {message}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:92
+#, python-brace-format
+msgid "Service actif : {message}"
+msgstr "Служба активна: {message}"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:30 src/omega_log/infrastructure/probe/command_probe.py:58
+#, python-brace-format
+msgid "Programme « {binary_name} » introuvable dans le PATH"
+msgstr "Программа «{binary_name}» не найдена в PATH"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:41
+#, python-brace-format
+msgid "Code de sortie {returncode}"
+msgstr "Код выхода {returncode}"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:42
+#, python-brace-format
+msgid "Test du programme « {binary_name} » échoué : {error_msg}"
+msgstr "Проверка программы «{binary_name}» не пройдена: {error_msg}"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:44
+#, python-brace-format
+msgid "Test du programme « {binary_name} » : délai dépassé ({timeout} s)"
+msgstr "Проверка программы «{binary_name}»: превышено время ожидания ({timeout} с)"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:46
+#, python-brace-format
+msgid "Programme « {binary_name} » disparu pendant le test"
+msgstr "Программа «{binary_name}» исчезла во время проверки"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:48
+#, python-brace-format
+msgid "Erreur pendant le test du programme « {binary_name} » : {e}"
+msgstr "Ошибка при проверке программы «{binary_name}»: {e}"
+
+#: src/omega_log/infrastructure/probe/exceptions.py:23
+#, python-brace-format
+msgid "Échec de la sonde « {probe_name} » : {reason}"
+msgstr "Ошибка зонда «{probe_name}»: {reason}"
+
+#: src/omega_log/infrastructure/probe/exceptions.py:40
+#, python-brace-format
+msgid "Échec de l'analyse : {reason}"
+msgstr "Ошибка анализа: {reason}"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:45 src/omega_log/infrastructure/probe/log_path_catalog.py:46
+msgid "Arch : nom sans extension .log"
+msgstr "Arch: имя без расширения .log"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:53 src/omega_log/infrastructure/probe/log_path_catalog.py:54
+msgid "seulement si directive log explicite"
+msgstr "только при явной директиве log"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:57 src/omega_log/infrastructure/probe/log_path_catalog.py:58
+msgid "chemin variable selon build"
+msgstr "путь зависит от сборки"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:64 src/omega_log/infrastructure/probe/log_path_catalog.py:67
+msgid "souvent désactivé par défaut"
+msgstr "часто отключён по умолчанию"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:125
+msgid "variante RHEL/Fedora de syslog"
+msgstr "вариант syslog в RHEL/Fedora"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:127
+msgid "variante RHEL/Fedora de auth.log"
+msgstr "вариант auth.log в RHEL/Fedora"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:129
+msgid "gestionnaire de paquets Arch/Manjaro"
+msgstr "менеджер пакетов Arch/Manjaro"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:130 src/omega_log/infrastructure/probe/log_path_catalog.py:131
+msgid "gestionnaire de paquets Debian/Ubuntu"
+msgstr "менеджер пакетов Debian/Ubuntu"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:132
+msgid "gestionnaire de paquets RHEL/Fedora"
+msgstr "менеджер пакетов RHEL/Fedora"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:133
+msgid "root uniquement, format structuré type=... — pas de parseur dédié"
+msgstr "только root, структурированный формат type=... — отдельного парсера нет"
+
+#: src/omega_log/infrastructure/probe/scanner.py:44
+#, python-brace-format
+msgid "Échec de l'analyse des services connus : {e}"
+msgstr "Ошибка анализа известных служб: {e}"
+
+#: src/omega_log/infrastructure/probe/scanner.py:49
+#, python-brace-format
+msgid "Échec de l'analyse des unités systemd : {e}"
+msgstr "Ошибка анализа юнитов systemd: {e}"
+
+#: src/omega_log/infrastructure/probe/scanner.py:84
+msgid "Processus détecté"
+msgstr "Процесс обнаружен"
+
+#: src/omega_log/infrastructure/probe/scanner.py:84
+msgid "Processus non détecté"
+msgstr "Процесс не обнаружен"
+
+#: src/omega_log/infrastructure/probe/systemd_unit_probe.py:56
+#, python-brace-format
+msgid "Unité systemd '{unit_name}' introuvable"
+msgstr "Юнит systemd '{unit_name}' не найден"
+
+#: src/omega_log/infrastructure/probe/systemd_unit_probe.py:70
+#, python-brace-format
+msgid "Unité '{unit_name}' : {value} ({value2} au démarrage)"
+msgstr "Юнит '{unit_name}': {value} ({value2} при загрузке)"
+
+#: src/omega_log/infrastructure/probe/systemd_unit_probe.py:70
+msgid "inconnu"
+msgstr "неизвестно"
+
+#: src/omega_log/infrastructure/storage/files/archive_store.py:37
+#, python-brace-format
+msgid "Impossible de créer l'archive {archive_name} : {e}"
+msgstr "Не удалось создать архив {archive_name}: {e}"
+
+#: src/omega_log/infrastructure/storage/files/archive_store.py:45
+#, python-brace-format
+msgid "Impossible d'extraire l'archive {archive_path} : {e}"
+msgstr "Не удалось распаковать архив {archive_path}: {e}"
+
+#: src/omega_log/infrastructure/storage/files/archive_store.py:61
+#, python-brace-format
+msgid "Impossible de lire les informations de {archive_path} : {e}"
+msgstr "Не удалось прочитать сведения о {archive_path}: {e}"
+
+#: src/omega_log/infrastructure/storage/files/persistence_adapter.py:50
+#, python-brace-format
+msgid "Échec de la sauvegarde : {e}"
+msgstr "Ошибка резервного копирования: {e}"
+
+#: src/omega_log/infrastructure/storage/files/persistence_adapter.py:64
+#, python-brace-format
+msgid "Échec de la restauration de {path} : {e}"
+msgstr "Ошибка восстановления {path}: {e}"
+
+#: src/omega_log/infrastructure/storage/files/persistence_adapter.py:79
+#, python-brace-format
+msgid "Impossible de lister les sauvegardes de {backup_dir} : {e}"
+msgstr "Не удалось вывести список резервных копий в {backup_dir}: {e}"
+
+#: src/omega_log/interfaces/tui/app.py:57 src/omega_log/interfaces/tui/screens/help_screen.py:271 src/omega_log/interfaces/tui/screens/home.py:58
+msgid "Options"
+msgstr "Параметры"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+msgid "24 dernières heures"
+msgstr "Последние 24 часа"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+msgid "30 derniers jours"
+msgstr "Последние 30 дней"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+msgid "7 derniers jours"
+msgstr "Последние 7 дней"
+
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+msgid "Go"
+msgstr "ГБ"
+
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+msgid "Ko"
+msgstr "КБ"
+
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+msgid "Mo"
+msgstr "МБ"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:125
+msgid "STATISTIQUES"
+msgstr "СТАТИСТИКА"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:127 src/omega_log/interfaces/tui/screens/purge_screen.py:46
+msgid "Numéros séparés par des virgules (ex: 1,2)"
+msgstr "Номера через запятую (напр.: 1,2)"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:141 src/omega_log/interfaces/tui/screens/export_screen.py:42 src/omega_log/interfaces/tui/screens/log_health_screen.py:114
+msgid "Thème d'export HTML"
+msgstr "Тема экспорта HTML"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:146 src/omega_log/interfaces/tui/screens/export_screen.py:48 src/omega_log/interfaces/tui/screens/log_health_screen.py:119
+msgid "Exporter JSON"
+msgstr "Экспорт JSON"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:148 src/omega_log/interfaces/tui/screens/export_screen.py:50 src/omega_log/interfaces/tui/screens/log_health_screen.py:121
+msgid "Exporter HTML"
+msgstr "Экспорт HTML"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:171 src/omega_log/interfaces/tui/screens/process_ip_screen.py:160
+#, python-brace-format
+msgid "Sélection : {description}"
+msgstr "Выбрано: {description}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:189 src/omega_log/interfaces/tui/screens/process_ip_screen.py:188 src/omega_log/interfaces/tui/screens/purge_screen.py:76 src/omega_log/interfaces/tui/screens/view_logs.py:82
+msgid "Saisissez au moins un numéro de ligne."
+msgstr "Введите хотя бы один номер строки."
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:195 src/omega_log/interfaces/tui/screens/favorites.py:148 src/omega_log/interfaces/tui/screens/process_ip_screen.py:194 src/omega_log/interfaces/tui/screens/purge_screen.py:82 src/omega_log/interfaces/tui/screens/view_logs.py:88
+#, python-brace-format
+msgid "Numéro invalide : '{token}'."
+msgstr "Недопустимый номер: '{token}'."
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:202 src/omega_log/interfaces/tui/screens/process_ip_screen.py:201 src/omega_log/interfaces/tui/screens/process_ip_screen.py:218
+msgid "Un calcul est déjà en cours, patientez."
+msgstr "Расчёт уже выполняется, подождите."
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:246 src/omega_log/interfaces/tui/screens/process_ip_screen.py:251 src/omega_log/interfaces/tui/screens/process_ip_screen.py:306
+msgid "Permission refusée sur au moins un log sélectionné."
+msgstr "Доступ запрещён как минимум к одному выбранному журналу."
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:278 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:281 src/omega_log/interfaces/tui/screens/process_ip_screen.py:343
+#, python-brace-format
+msgid "Erreur de calcul : {message}"
+msgstr "Ошибка расчёта: {message}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:315 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:408
+msgid "tout le fichier"
+msgstr "весь файл"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:316
+#, python-brace-format
+msgid "── SYNTHÈSE — {period_label}, {log_count} log(s) ──\n"
+msgstr "── СВОДКА — {period_label}, журналов: {log_count} ──\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:318
+msgid " Aucune ligne sur cette période.\n"
+msgstr " За этот период строк нет.\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:323
+#, python-brace-format
+msgid " Lignes analysées   : {total}\n"
+msgstr " Проанализ. строк   : {total}\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:324
+#, python-brace-format
+msgid " Requêtes HTTP      : {http_total}\n"
+msgstr " HTTP-запросы       : {http_total}\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:325
+#, python-brace-format
+msgid " IPs uniques        : {unique_ips}\n"
+msgstr " Уникальные IP      : {unique_ips}\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:326
+#, python-brace-format
+msgid " Taux d'erreur      : {error_rate:.1f} %\n"
+msgstr " Доля ошибок        : {error_rate:.1f} %\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:327
+#, python-brace-format
+msgid " Volume transféré   : {volume}\n"
+msgstr " Передано данных    : {volume}\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:328
+#, python-brace-format
+msgid " Heure de pointe    : {peak_hour:02d}h ({peak_count} lignes)\n"
+msgstr " Час пик            : {peak_hour:02d} ч (строк: {peak_count})\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:329
+#, python-brace-format
+msgid ""
+" Période couverte   : {covered}\n"
+"\n"
+msgstr ""
+" Охвачен. период    : {covered}\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:332
+msgid "── STATUTS HTTP ──\n"
+msgstr "── СТАТУСЫ HTTP ──\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:335 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:143
+#, python-brace-format
+msgid "Refus {name}"
+msgstr "Отказы {name}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:345
+msgid "TOP IP"
+msgstr "ТОП IP"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:347
+msgid "CHEMINS DEMANDÉS"
+msgstr "ЗАПРОШЕННЫЕ ПУТИ"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:348
+msgid "CHEMINS EN 404"
+msgstr "ПУТИ С 404"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:355 src/omega_log/interfaces/tui/screens/live_tail_screen.py:278
+msgid "(aucun)"
+msgstr "(нет)"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:360 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:154
+#, python-brace-format
+msgid "dont {errors} en erreur"
+msgstr "из них с ошибкой: {errors}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:370
+msgid "── RÉPARTITION HORAIRE (24 h) ──\n"
+msgstr "── РАСПРЕДЕЛЕНИЕ ПО ЧАСАМ (24 ч) ──\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:376
+#, python-brace-format
+msgid "── TENDANCE PAR JOUR ({count} j) ──\n"
+msgstr "── ДИНАМИКА ПО ДНЯМ ({count} д) ──\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:384 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:401
+msgid "Calculez d'abord les statistiques (choisissez une période)."
+msgstr "Сначала рассчитайте статистику (выберите период)."
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:397 src/omega_log/interfaces/tui/screens/export_screen.py:90
+#, python-brace-format
+msgid "Export JSON : {out_path}"
+msgstr "Экспорт JSON: {out_path}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:417 src/omega_log/interfaces/tui/screens/export_screen.py:100
+#, python-brace-format
+msgid "Export HTML : {out_path}"
+msgstr "Экспорт HTML: {out_path}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:41
+msgid "CONTACT ET SUPPORT"
+msgstr "КОНТАКТЫ И ПОДДЕРЖКА"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:42
+msgid "Aidez le développeur : omega-log est développé et maintenu par une seule personne."
+msgstr "Помогите разработчику: omega-log разрабатывает и поддерживает один человек."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:46 src/omega_log/interfaces/tui/screens/contact_support_screen.py:50
+msgid "Payer un café"
+msgstr "Угостить кофе"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:47
+msgid "Un don aide à couvrir les frais des serveurs (électricité)."
+msgstr "Пожертвование помогает покрывать расходы на серверы (электричество)."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:52 src/omega_log/interfaces/tui/screens/contact_support_screen.py:59 src/omega_log/interfaces/tui/screens/contact_support_screen.py:95
+msgid "Se déclarer utilisateur (anonyme)"
+msgstr "Зарегистрироваться как пользователь (анонимно)"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:53
+msgid "Une déclaration volontaire et anonyme, qui sert uniquement à compter les utilisateurs et, si vous le souhaitez, leur continent ou leur pays."
+msgstr "Добровольная анонимная регистрация, которая служит только для подсчёта пользователей и, по вашему желанию, их континента или страны."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:61
+msgid "Ne plus me déclarer"
+msgstr "Больше не регистрировать меня"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:63 src/omega_log/interfaces/tui/screens/contact_support_screen.py:67
+msgid "Contacter le support"
+msgstr "Связаться с поддержкой"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:64
+#, python-brace-format
+msgid "Mail : {SUPPORT_MAIL}"
+msgstr "Почта: {SUPPORT_MAIL}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:65
+#, python-brace-format
+msgid "Formulaire de contact : {CONTACT_FORM_URL}"
+msgstr "Форма обратной связи: {CONTACT_FORM_URL}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:94
+msgid "État : non déclaré."
+msgstr "Статус: не зарегистрирован."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:98
+#, python-brace-format
+msgid "État : déclaré le {value} (envoi : une seule fois)."
+msgstr "Статус: зарегистрирован {value} (отправка: только один раз)."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:99
+msgid "Modifier ma déclaration"
+msgstr "Изменить мою регистрацию"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:118
+msgid "NE PLUS ME DÉCLARER ?"
+msgstr "БОЛЬШЕ НЕ РЕГИСТРИРОВАТЬ МЕНЯ?"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:119
+msgid "Votre entrée sera supprimée du compteur et la clé effacée de cette installation."
+msgstr "Ваша запись будет удалена из счётчика, а ключ стёрт с этой установки."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:124
+msgid "Ouverture dans le navigateur..."
+msgstr "Открытие в браузере..."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:131
+#, python-brace-format
+msgid "Aucun navigateur disponible ici (session sans affichage) : ouvrez cette adresse vous-même : {url}"
+msgstr "Браузер здесь недоступен (сеанс без экрана): откройте этот адрес сами: {url}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:146
+msgid "Vous n'êtes plus déclaré : votre entrée est supprimée et la clé effacée."
+msgstr "Вы больше не зарегистрированы: ваша запись удалена, ключ стёрт."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:149
+msgid "Clé effacée. Réception injoignable : votre entrée y disparaîtra seule (1 an)."
+msgstr "Ключ стёрт. Приёмник недоступен: ваша запись там исчезнет сама (1 год)."
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:28
+msgid "Afrique"
+msgstr "Африка"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:29
+msgid "Antarctique"
+msgstr "Антарктида"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:30
+msgid "Asie"
+msgstr "Азия"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:31
+msgid "Europe"
+msgstr "Европа"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:32
+msgid "Amérique du Nord"
+msgstr "Северная Америка"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:33
+msgid "Océanie"
+msgstr "Океания"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:34
+msgid "Amérique du Sud"
+msgstr "Южная Америка"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:56 src/omega_log/interfaces/tui/screens/declaration_screen.py:60
+msgid "Autre (non référencé)"
+msgstr "Другое (нет в списке)"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:74
+msgid "SE DÉCLARER UTILISATEUR (ANONYME)"
+msgstr "ЗАРЕГИСТРИРОВАТЬСЯ КАК ПОЛЬЗОВАТЕЛЬ (АНОНИМНО)"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:75
+msgid "Une déclaration volontaire et anonyme : elle sert uniquement à compter les utilisateurs d'omega-log et, si vous le souhaitez, leur continent ou leur pays. Une clé tirée au hasard est créée pour cette installation ; elle n'a aucun lien avec vous ni avec votre machine. Envoi : une seule fois, maintenant."
+msgstr "Добровольная анонимная регистрация: она служит только для подсчёта пользователей omega-log и, по вашему желанию, их континента или страны. Для этой установки создаётся случайный ключ; он никак не связан ни с вами, ни с вашей машиной. Отправка: только один раз, сейчас."
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:81
+msgid "Continent (facultatif)"
+msgstr "Континент (необязательно)"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:83 src/omega_log/interfaces/tui/screens/declaration_screen.py:86
+msgid "Non précisé"
+msgstr "Не указан"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:84
+msgid "Pays (facultatif)"
+msgstr "Страна (необязательно)"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:88
+msgid "Message envoyé"
+msgstr "Отправляемое сообщение"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:90
+#, python-brace-format
+msgid "Destination : {RECEPTION_URL}"
+msgstr "Адрес назначения: {RECEPTION_URL}"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:91
+msgid "Jamais envoyés : votre nom, le nom de la machine, vos logs."
+msgstr "Никогда не отправляются: ваше имя, имя машины, ваши журналы."
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:92
+msgid "Votre adresse IP n'est pas enregistrée dans les déclarations. Comme pour toute visite d'un site, elle passe par les contrôles de sécurité et le journal technique du serveur de réception."
+msgstr "Ваш IP-адрес не сохраняется в регистрациях. Как и при любом посещении сайта, он проходит через проверки безопасности и технический журнал принимающего сервера."
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:95
+msgid "Vous pouvez retirer votre déclaration à tout moment depuis Contact et support."
+msgstr "Вы можете отозвать регистрацию в любой момент в разделе «Контакты и поддержка»."
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:101
+msgid "Envoyer"
+msgstr "Отправить"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:120
+msgid "<clé tirée au hasard à l'envoi>"
+msgstr "<случайный ключ, создаётся при отправке>"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:133
+msgid "Envoi en cours..."
+msgstr "Отправка..."
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:144
+msgid "Merci ! Vous êtes déclaré utilisateur anonyme."
+msgstr "Спасибо! Вы зарегистрированы как анонимный пользователь."
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:149
+msgid "Réception injoignable : rien n'a été enregistré, réessayez plus tard."
+msgstr "Приёмник недоступен: ничего не сохранено, попробуйте позже."
+
+#: src/omega_log/interfaces/tui/screens/export_screen.py:39
+msgid "EXPORTER LA LISTE DES ARCHIVES"
+msgstr "ЭКСПОРТ СПИСКА АРХИВОВ"
+
+#: src/omega_log/interfaces/tui/screens/export_screen.py:57 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+msgid "Archive"
+msgstr "Архив"
+
+#: src/omega_log/interfaces/tui/screens/export_screen.py:57
+msgid "Créée le"
+msgstr "Создана"
+
+#: src/omega_log/interfaces/tui/screens/export_screen.py:57 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+msgid "Taille (octets)"
+msgstr "Размер (байт)"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:33
+msgid "Classique"
+msgstr "Классический"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:33
+msgid "Simple"
+msgstr "Простой"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:47
+msgid "FAVORIS"
+msgstr "ИЗБРАННОЕ"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:56
+msgid "Créer un favori"
+msgstr "Создать избранное"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:58
+msgid "Numéros séparés par des virgules (ex: 1,3)"
+msgstr "Номера через запятую (напр.: 1,3)"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:61
+msgid "Nom du favori"
+msgstr "Имя избранного"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:65 src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:88
+msgid "Enregistrer"
+msgstr "Сохранить"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:73 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:103
+msgid "Logs"
+msgstr "Журналы"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:73
+msgid "Viewer"
+msgstr "Просмотрщик"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:105 src/omega_log/interfaces/tui/screens/favorites.py:122
+msgid "Sélectionnez un favori."
+msgstr "Выберите избранное."
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:126
+msgid "SUPPRIMER CE FAVORI ?"
+msgstr "УДАЛИТЬ ЭТО ИЗБРАННОЕ?"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:40
+msgid "Activer le bouton ou le champ sélectionné"
+msgstr "Активировать выбранную кнопку или поле"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:40
+msgid "Entrée / Clic"
+msgstr "Enter / Щелчок"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:43
+msgid "Rafraîchir la détection du terminal (adapte le profil d'affichage)"
+msgstr "Обновить определение терминала (подстраивает профиль отображения)"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:44
+msgid "Cette aide, accessible depuis n'importe quel écran"
+msgstr "Эта справка, доступная с любого экрана"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:49
+msgid "Thème suivant — intercepté avant lnav, jamais transmis"
+msgstr "Следующая тема — перехватывается до lnav, никогда не передаётся"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:50
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:50
+msgid "Marque la ligne courante et la copie (presse-papier terminal, OSC 52) — jamais transmis à lnav tel quel"
+msgstr "Отмечает текущую строку и копирует её (буфер обмена терминала, OSC 52) — никогда не передаётся в lnav как есть"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:52
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:52
+msgid "Quitte lnav et revient à l'application — jamais transmis à lnav"
+msgstr "Выходит из lnav и возвращает в приложение — никогда не передаётся в lnav"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:53
+msgid "Haut/Bas, g/G, /, m, q..."
+msgstr "Вверх/Вниз, g/G, /, m, q..."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:53
+msgid "Raccourcis propres à lnav lui-même (navigation, recherche, marquage, vues) — voir sa documentation"
+msgstr "Собственные сочетания клавиш lnav (навигация, поиск, отметки, представления) — см. его документацию"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:57
+msgid ""
+"1. [b]Registre des capacités[/b] : lancez un scan au premier démarrage pour\n"
+"   que l'application découvre les logs déjà présents sur la machine.\n"
+"2. Importez les logs qui vous intéressent dans la [b]Bibliothèque[/b]\n"
+"   (au détail ou en totalité depuis le Registre, ou manuellement).\n"
+"3. Ouvrez-les depuis [b]Voir les logs[/b] (ou créez un [b]Favori[/b] pour\n"
+"   un lancement direct la prochaine fois).\n"
+"4. Pour un accès root (ex. /var/log/audit/), l'application ne tourne\n"
+"   jamais en root elle-même — elle demande une authentification sudo\n"
+"   ponctuelle, UNE SEULE FOIS par log protégé, au moment précis où elle\n"
+"   en a besoin.\n"
+"5. [b]Voir et Traiter IP[/b] et [b]Statistiques[/b] pour l'analyse ;\n"
+"   [b]Rotate[/b]/[b]Purger[/b]/[b]Exporter[/b] pour la maintenance.\n"
+msgstr ""
+"1. [b]Реестр возможностей[/b]: при первом запуске запустите сканирование,\n"
+"   чтобы приложение обнаружило журналы, уже имеющиеся на машине.\n"
+"2. Импортируйте нужные журналы в [b]Библиотеку[/b]\n"
+"   (по одному или все сразу из Реестра, либо вручную).\n"
+"3. Открывайте их через [b]Просмотр журналов[/b] (или создайте\n"
+"   [b]избранное[/b] для прямого запуска в следующий раз).\n"
+"4. Для доступа root (напр. /var/log/audit/) само приложение никогда\n"
+"   не работает от root — оно запрашивает разовую аутентификацию sudo,\n"
+"   ТОЛЬКО ОДИН РАЗ для каждого защищённого журнала, ровно в тот\n"
+"   момент, когда она нужна.\n"
+"5. [b]IP-адреса: просмотр и обработка[/b] и [b]Статистика[/b] для анализа;\n"
+"   [b]Rotate[/b]/[b]Очистить[/b]/[b]Экспорт[/b] для обслуживания.\n"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:71 src/omega_log/interfaces/tui/screens/home.py:46
+msgid "Registre des capacités"
+msgstr "Реестр возможностей"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:72
+msgid ""
+"Détecte automatiquement les services/serveurs actifs sur la machine\n"
+"(serveurs web, bases de données, mail, DNS, sécurité, omega-serv...) et\n"
+"propose l'import de leurs logs connus — fonctionne même sans aucun log\n"
+"présent, dégrade proprement.\n"
+"\n"
+"- [b]Scanner les services[/b] : sonde chaque capacité connue (~45 appels\n"
+"  système en arrière-plan, jamais sur le thread d'affichage — l'écran\n"
+"  reste réactif pendant le scan). Remplit la liste de ce qui a été\n"
+"  découvert, et sépare les logs \"suspects\" (fichier présent mais vide,\n"
+"  très probablement routé vers journald plutôt qu'un fichier classique).\n"
+"- [b]Scanner ce dossier[/b] : scan manuel non récursif d'un chemin de\n"
+"  votre choix (ex. /var/log), en complément du scan automatique.\n"
+"- Sélectionnez une ligne puis [b]Voir (simple/classique/lnav)[/b] pour\n"
+"  un aperçu immédiat SANS importer, ou [b]Importer la sélection[/b] /\n"
+"  [b]Importer tout[/b] pour les ajouter à la Bibliothèque.\n"
+"- L'état \"SUSPECT\" n'est jamais bloquant : vous pouvez importer et ouvrir\n"
+"  un log suspect normalement, l'application affichera simplement ce\n"
+"  qu'il contient réellement (potentiellement rien)."
+msgstr ""
+"Автоматически обнаруживает активные службы/серверы на машине\n"
+"(веб-серверы, базы данных, почта, DNS, безопасность, omega-serv...) и\n"
+"предлагает импортировать их известные журналы — работает даже при\n"
+"полном отсутствии журналов, корректно обрабатывает их нехватку.\n"
+"\n"
+"- [b]Сканировать службы[/b]: опрашивает каждую известную возможность\n"
+"  (~45 системных вызовов в фоне, никогда в потоке отображения — экран\n"
+"  остаётся отзывчивым во время сканирования). Заполняет список\n"
+"  найденным и отделяет «подозрительные» журналы (файл есть, но пуст,\n"
+"  скорее всего направлен в journald, а не в обычный файл).\n"
+"- [b]Сканировать эту папку[/b]: ручное нерекурсивное сканирование\n"
+"  выбранного пути (напр. /var/log) в дополнение к автоматическому.\n"
+"- Выберите строку, затем [b]Просмотр (простой/классический/lnav)[/b]\n"
+"  для немедленного просмотра БЕЗ импорта, или [b]Импортировать\n"
+"  выбранное[/b] / [b]Импортировать всё[/b], чтобы добавить их в\n"
+"  Библиотеку.\n"
+"- Состояние «ПОДОЗРИТЕЛЬНО» никогда не блокирует: подозрительный журнал\n"
+"  можно импортировать и открыть как обычно, приложение просто покажет\n"
+"  то, что в нём действительно есть (возможно, ничего)."
+
+#: src/omega_log/application/use_cases/health_presentation.py:111 src/omega_log/interfaces/tui/screens/help_screen.py:89 src/omega_log/interfaces/tui/screens/home.py:47
+msgid "Bibliothèque"
+msgstr "Библиотека"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:90
+msgid ""
+"Hub central référençant tous les logs à traiter — point de départ de\n"
+"tous les autres écrans (Voir les logs, Favoris, Voir et Traiter IP,\n"
+"Statistiques, Rotate, Purger). Alimentée par le Registre (import au\n"
+"détail ou en totalité) OU par ajout manuel ici — jamais l'inverse.\n"
+"\n"
+"- [b]Ajouter[/b] : saisissez un chemin absolu et validez — aucune\n"
+"  vérification d'existence à l'ajout, l'état réel (OK/SUSPECT/ABSENT)\n"
+"  n'est évalué qu'à l'affichage de la liste.\n"
+"- Colonne \"État\" : [b]OK[/b] (fichier présent, non vide), [b]SUSPECT[/b]\n"
+"  (présent mais vide), [b]ABSENT[/b] (chemin introuvable — le fichier a\n"
+"  pu être supprimé, déplacé par une rotation, ou n'a jamais existé). Un log\n"
+"  ABSENT reste dans la liste (rien ne le retire automatiquement) : utile\n"
+"  si le fichier réapparaît (rotation logrotate externe, par exemple).\n"
+"- [b]Retirer la sélection[/b] : retire uniquement la référence dans la\n"
+"  Bibliothèque, après confirmation — NE TOUCHE JAMAIS au fichier réel\n"
+"  sur le disque (pour ça, voir l'écran Purger).\n"
+"- [b]Rafraîchir[/b] : relit l'état de chaque entrée sans tout re-scanner.\n"
+"- Colonnes : [b]#[/b] (numéro à cliquer ou à saisir dans les autres\n"
+"  écrans), Chemin, Service, Accès, Taille, [b]Modifié[/b] (dernière\n"
+"  écriture ; pour une copie SSH, date de la dernière récupération), État.\n"
+"- [b]Ajouter les logs connus d'Omega-Serv[/b] : cherche les installations\n"
+"  omega-serv de la machine (alias `serv` de ~/.bashrc et ~/.zshrc,\n"
+"  registre des instances ~/.config/omega-serv/instances.json, services\n"
+"  systemd) et ajoute leurs logs access et error, les alertes WAF si le\n"
+"  WAF est actif, et les 2 logs magnet si le magnet l'est aussi. Lecture\n"
+"  seule, uniquement au clic ; un log déjà présent est remplacé, jamais\n"
+"  dupliqué. Une instance supplémentaire apparaît en \"omega-serv:<nom>\".\n"
+"- [b]Sources distantes (SSH)[/b] : définissez une source (label, hôte,\n"
+"  chemin distant, utilisateur/port/clé facultatifs) puis [b]Récupérer\n"
+"  maintenant[/b] : une COPIE du log est rapatriée par scp dans\n"
+"  var/remote/ et ajoutée à la Bibliothèque (Accès \"ssh\"). Ce n'est pas\n"
+"  une lecture en direct : chaque récupération remplace la copie\n"
+"  précédente. Aucun mot de passe n'est demandé ni stocké,\n"
+"  l'authentification reste celle de votre configuration SSH."
+msgstr ""
+"Центральный узел, в котором зарегистрированы все обрабатываемые\n"
+"журналы — отправная точка всех остальных экранов (Просмотр журналов,\n"
+"Избранное, IP-адреса: просмотр и обработка, Статистика, Rotate,\n"
+"Очистить). Пополняется из Реестра (импорт по одному или всех сразу)\n"
+"ИЛИ ручным добавлением здесь — никогда наоборот.\n"
+"\n"
+"- [b]Добавить[/b]: введите абсолютный путь и подтвердите — при\n"
+"  добавлении существование не проверяется, реальное состояние\n"
+"  (OK/ПОДОЗРИТЕЛЬНО/ОТСУТСТВУЕТ) определяется только при показе списка.\n"
+"- Столбец «Состояние»: [b]OK[/b] (файл есть, не пуст),\n"
+"  [b]ПОДОЗРИТЕЛЬНО[/b] (есть, но пуст), [b]ОТСУТСТВУЕТ[/b] (путь не\n"
+"  найден — файл мог быть удалён, перемещён ротацией или никогда не\n"
+"  существовал). Журнал в состоянии ОТСУТСТВУЕТ остаётся в списке\n"
+"  (ничто не удаляет его автоматически): полезно, если файл появится\n"
+"  снова (например, после внешней ротации logrotate).\n"
+"- [b]Убрать выбранное[/b]: после подтверждения убирает только ссылку в\n"
+"  Библиотеке — НИКОГДА НЕ ТРОГАЕТ реальный файл на диске (для этого\n"
+"  см. экран Очистить).\n"
+"- [b]Обновить[/b]: перечитывает состояние каждой записи без повторного\n"
+"  сканирования всего.\n"
+"- Столбцы: [b]#[/b] (номер для щелчка или ввода на других экранах),\n"
+"  Путь, Служба, Доступ, Размер, [b]Изменён[/b] (последняя запись; для\n"
+"  копии SSH — дата последнего получения), Состояние.\n"
+"- [b]Добавить известные журналы Omega-Serv[/b]: ищет установки\n"
+"  omega-serv на машине (псевдоним `serv` в ~/.bashrc и ~/.zshrc,\n"
+"  реестр экземпляров ~/.config/omega-serv/instances.json, службы\n"
+"  systemd) и добавляет их журналы access и error, оповещения WAF,\n"
+"  если WAF включён, и 2 журнала magnet, если magnet тоже включён.\n"
+"  Только чтение, только по щелчку; уже имеющийся журнал заменяется,\n"
+"  а не дублируется. Дополнительный экземпляр отображается как\n"
+"  «omega-serv:<имя>».\n"
+"- [b]Удалённые источники (SSH)[/b]: задайте источник (метка, хост,\n"
+"  удалённый путь, необязательно пользователь/порт/ключ), затем\n"
+"  [b]Получить сейчас[/b]: КОПИЯ журнала загружается через scp в\n"
+"  var/remote/ и добавляется в Библиотеку (Доступ «ssh»). Это не\n"
+"  чтение в реальном времени: каждое получение заменяет предыдущую\n"
+"  копию. Пароль не запрашивается и не хранится, аутентификация\n"
+"  остаётся той, что задана в вашей конфигурации SSH."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:122 src/omega_log/interfaces/tui/screens/home.py:48
+msgid "Voir les logs"
+msgstr "Просмотр журналов"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:123
+msgid ""
+"Ouvre un ou plusieurs logs DÉJÀ référencés dans la Bibliothèque\n"
+"(aucun import manuel ici — importez depuis le Registre ou la\n"
+"Bibliothèque au préalable).\n"
+"\n"
+"- Sélection au clic : un simple clic choisit la ligne ; double-clic\n"
+"  ou Entrée ajoute ou retire son numéro dans le champ (plusieurs logs,\n"
+"  ex. \"1,3\"). Le champ, s'il est rempli, a priorité.\n"
+"- Règle de compatibilité des viewers : [b]1 seul log[/b] -> les 3\n"
+"  viewers sont proposés (Simple, Classique, lnav) ; [b]2 logs ou plus[/b]\n"
+"  -> seul [b]lnav[/b] est compatible (fusion multi-fichiers), les deux\n"
+"  autres sont refusés avec une notification explicite si vous insistez.\n"
+"- Les 3 viewers sont détaillés dans leur propre section ci-dessous."
+msgstr ""
+"Открывает один или несколько журналов, УЖЕ зарегистрированных в\n"
+"Библиотеке (здесь нет ручного импорта — сначала импортируйте их из\n"
+"Реестра или Библиотеки).\n"
+"\n"
+"- Выбор щелчком: одиночный щелчок выбирает строку; двойной щелчок\n"
+"  или Enter добавляет или убирает её номер в поле (несколько\n"
+"  журналов, напр. «1,3»). Заполненное поле имеет приоритет.\n"
+"- Правило совместимости просмотрщиков: [b]только 1 журнал[/b] ->\n"
+"  доступны 3 просмотрщика (Простой, Классический, lnav); [b]2 журнала\n"
+"  и более[/b] -> совместим только [b]lnav[/b] (объединение нескольких\n"
+"  файлов), два других отклоняются с понятным сообщением, если вы\n"
+"  настаиваете.\n"
+"- 3 просмотрщика подробно описаны ниже, каждый в своём разделе."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:134 src/omega_log/interfaces/tui/screens/home.py:49
+msgid "Favoris"
+msgstr "Избранное"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:135
+msgid ""
+"Enregistre une combinaison (log(s) + viewer) sous un nom, pour un\n"
+"lancement direct sans re-sélectionner chaque fois.\n"
+"\n"
+"- Partie haute : liste des favoris existants — [b]Lancer[/b] ouvre\n"
+"  directement le viewer enregistré sur les logs enregistrés ;\n"
+"  [b]Supprimer[/b] retire le favori (après confirmation, ne touche\n"
+"  jamais aux fichiers de log réels).\n"
+"- Partie basse (\"Créer un favori\") : mêmes NUMÉROS séparés par des\n"
+"  virgules que \"Voir les logs\", + un nom + le viewer souhaité (Select),\n"
+"  puis [b]Enregistrer[/b].\n"
+"- Aucune vérification de compatibilité n'est faite à la CRÉATION (vous\n"
+"  pouvez enregistrer 3 logs + viewer \"lnav\" sans problème) — la règle\n"
+"  1 log/3 viewers vs 2+/lnav uniquement, elle, s'applique normalement au\n"
+"  moment du [b]Lancer[/b].\n"
+"- Un favori référence des CHEMINS, pas des entrées de Bibliothèque : si\n"
+"  le fichier est déplacé ou supprimé, le favori reste mais son\n"
+"  lancement échouera comme une ouverture normale sur un chemin absent."
+msgstr ""
+"Сохраняет сочетание (журнал(ы) + просмотрщик) под именем для прямого\n"
+"запуска без повторного выбора каждый раз.\n"
+"\n"
+"- Верхняя часть: список существующих избранных — [b]Запустить[/b]\n"
+"  сразу открывает сохранённый просмотрщик с сохранёнными журналами;\n"
+"  [b]Удалить[/b] удаляет избранное (после подтверждения, никогда не\n"
+"  трогает реальные файлы журналов).\n"
+"- Нижняя часть («Создать избранное»): те же НОМЕРА через запятую, что\n"
+"  и в «Просмотр журналов», + имя + нужный просмотрщик (Select), затем\n"
+"  [b]Сохранить[/b].\n"
+"- При СОЗДАНИИ совместимость не проверяется (можно без проблем\n"
+"  сохранить 3 журнала + просмотрщик «lnav») — правило 1 журнал/\n"
+"  3 просмотрщика против 2+/только lnav применяется как обычно в\n"
+"  момент [b]Запустить[/b].\n"
+"- Избранное ссылается на ПУТИ, а не на записи Библиотеки: если файл\n"
+"  перемещён или удалён, избранное остаётся, но его запуск завершится\n"
+"  ошибкой, как обычное открытие отсутствующего пути."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:150 src/omega_log/interfaces/tui/screens/home.py:50
+msgid "Voir et Traiter IP"
+msgstr "IP-адреса: просмотр и обработка"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:151
+msgid ""
+"Top 10 des adresses IP les plus actives sur une période, et suppression\n"
+"ciblée d'une IP dans un ou plusieurs logs.\n"
+"\n"
+"- Sélection des logs par numéros (comme \"Voir les logs\"), puis une\n"
+"  période : [b]24h / 7j / 30j / Tout[/b]. Le calcul se lance au clic sur\n"
+"  une période, jamais automatiquement.\n"
+"- Le calcul s'exécute en ARRIÈRE-PLAN dans un processus séparé (jamais\n"
+"  sur le thread d'affichage, même pour un gros fichier) — un indicateur\n"
+"  \"Calcul en cours...\" s'affiche pendant l'attente, les boutons de\n"
+"  période sont désactivés jusqu'à la fin pour éviter de lancer plusieurs\n"
+"  calculs en même temps sur le même écran.\n"
+"- Périodes courtes (24h/7j/30j) : lecture optimisée EN PARTANT DE LA FIN\n"
+"  du fichier, avec arrêt anticipé dès que les lignes deviennent trop\n"
+"  anciennes — très rapide même sur un fichier de plusieurs centaines de\n"
+"  milliers de lignes. \"Tout\" lit l'intégralité du fichier, forcément\n"
+"  plus lent sur un gros volume.\n"
+"- Cliquez une ligne du tableau de résultat pour la sélectionner, puis\n"
+"  [b]Retirer cette IP des logs analysés[/b] (toujours avec confirmation)\n"
+"  pour supprimer DÉFINITIVEMENT toutes les lignes contenant cette IP,\n"
+"  dans TOUS les fichiers analysés pour ce calcul.\n"
+"- Logs protégés (ex. /var/log/audit) : une authentification sudo\n"
+"  ponctuelle est demandée automatiquement au moment où elle est\n"
+"  nécessaire (lecture ou suppression), jamais à l'avance."
+msgstr ""
+"Топ-10 самых активных IP-адресов за период и точечное удаление\n"
+"IP-адреса из одного или нескольких журналов.\n"
+"\n"
+"- Выбор журналов по номерам (как в «Просмотр журналов»), затем\n"
+"  период: [b]24ч / 7д / 30д / Всё[/b]. Расчёт запускается по щелчку на\n"
+"  периоде, никогда автоматически.\n"
+"- Расчёт выполняется в ФОНЕ в отдельном процессе (никогда в потоке\n"
+"  отображения, даже для большого файла) — во время ожидания\n"
+"  показывается «Идёт расчёт...», кнопки периодов отключены до конца,\n"
+"  чтобы не запустить несколько расчётов одновременно на одном\n"
+"  экране.\n"
+"- Короткие периоды (24ч/7д/30д): оптимизированное чтение С КОНЦА\n"
+"  файла с досрочной остановкой, как только строки становятся слишком\n"
+"  старыми — очень быстро даже для файла в несколько сотен тысяч\n"
+"  строк. «Всё» читает файл целиком, что на большом объёме неизбежно\n"
+"  медленнее.\n"
+"- Щёлкните строку таблицы результатов, чтобы выбрать её, затем\n"
+"  [b]Убрать этот IP из анализируемых журналов[/b] (всегда с\n"
+"  подтверждением), чтобы ОКОНЧАТЕЛЬНО удалить все строки с этим IP\n"
+"  во ВСЕХ файлах, проанализированных для этого расчёта.\n"
+"- Защищённые журналы (напр. /var/log/audit): разовая аутентификация\n"
+"  sudo запрашивается автоматически в тот момент, когда она нужна\n"
+"  (чтение или удаление), никогда заранее."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:180 src/omega_log/interfaces/tui/screens/home.py:51
+msgid "Statistiques (accès)"
+msgstr "Статистика (доступ)"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:181
+msgid ""
+"Volume, IPs uniques, taux d'erreur, top IPs, répartition horaire sur un\n"
+"ou plusieurs logs d'accès — avec export.\n"
+"\n"
+"- Mêmes principes que \"Voir et Traiter IP\" : sélection par numéros,\n"
+"  période 24h/7j/30j/Tout, calcul en arrière-plan dans un processus\n"
+"  séparé (boutons de période désactivés pendant le calcul), lecture\n"
+"  optimisée par période courte, élévation sudo ponctuelle automatique\n"
+"  sur un log protégé.\n"
+"- Le rapport affiché (présentation du rapport d'omega-fire) : une\n"
+"  [b]synthèse[/b] (lignes analysées, requêtes HTTP, IPs uniques, taux\n"
+"  d'erreur, volume transféré, heure de pointe, période couverte), les\n"
+"  [b]statuts HTTP[/b] en jauges (2xx/3xx/4xx/5xx, refus 403 et 429), les\n"
+"  [b]top IP[/b], [b]chemins demandés[/b] et [b]chemins en 404[/b] (avec la\n"
+"  part en erreur), la [b]répartition horaire[/b] (24 jauges, heure de\n"
+"  pointe en couleur d'alerte) et la [b]tendance par jour[/b] (7 j / 30 j).\n"
+"- Une valeur que le log ne fournit pas s'affiche \"-\" (jamais estimée) ;\n"
+"  pour un log non HTTP (auth.log, syslog...), statuts et chemins sont\n"
+"  absents et le taux d'erreur compte les lignes de niveau erreur.\n"
+"- [b]Exporter JSON[/b] / [b]Exporter HTML[/b] (5 thèmes graphiques au\n"
+"  choix) : le même rapport, avec cartes, histogramme horaire et jauges.\n"
+"  Nécessite d'avoir calculé au moins une fois (choisi une période) avant\n"
+"  de pouvoir exporter — le fichier produit est horodaté,\n"
+"  déposé dans var/exports/."
+msgstr ""
+"Объём, уникальные IP, доля ошибок, топ IP, распределение по часам\n"
+"для одного или нескольких журналов доступа — с экспортом.\n"
+"\n"
+"- Те же принципы, что и в «IP-адреса: просмотр и обработка»: выбор по\n"
+"  номерам, период 24ч/7д/30д/Всё, расчёт в фоне в отдельном процессе\n"
+"  (кнопки периодов отключены во время расчёта), оптимизированное\n"
+"  чтение для короткого периода, автоматическое разовое повышение sudo\n"
+"  для защищённого журнала.\n"
+"- Показываемый отчёт (оформление отчёта omega-fire): [b]сводка[/b]\n"
+"  (проанализированные строки, HTTP-запросы, уникальные IP, доля\n"
+"  ошибок, переданный объём, час пик, охваченный период), [b]статусы\n"
+"  HTTP[/b] в виде шкал (2xx/3xx/4xx/5xx, отказы 403 и 429), [b]топ\n"
+"  IP[/b], [b]запрошенные пути[/b] и [b]пути с 404[/b] (с долей ошибок),\n"
+"  [b]распределение по часам[/b] (24 шкалы, час пик выделен цветом\n"
+"  предупреждения) и [b]динамика по дням[/b] (7 д / 30 д).\n"
+"- Значение, которое журнал не предоставляет, отображается как «-»\n"
+"  (никогда не оценивается); для журнала не HTTP (auth.log, syslog...)\n"
+"  статусы и пути отсутствуют, а доля ошибок считает строки уровня\n"
+"  ошибки.\n"
+"- [b]Экспорт JSON[/b] / [b]Экспорт HTML[/b] (5 графических тем на выбор):\n"
+"  тот же отчёт, с карточками, почасовой гистограммой и шкалами.\n"
+"  Требует хотя бы одного расчёта (выбора периода) перед экспортом —\n"
+"  созданный файл получает отметку времени и сохраняется в\n"
+"  var/exports/."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:201 src/omega_log/interfaces/tui/screens/home.py:54
+msgid "Rotate"
+msgstr "Rotate"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:202
+msgid ""
+"Sauvegarde compressée d'un log et restauration depuis une archive\n"
+"précédente.\n"
+"\n"
+"- [b]Sauvegarder maintenant[/b] : numéro du log (un seul à la fois) +\n"
+"  nombre de rotations à conserver (champ \"Rotations à conserver\", 7 par\n"
+"  défaut) — au-delà de ce nombre, les archives les plus anciennes sont\n"
+"  supprimées automatiquement à chaque nouvelle sauvegarde (rétention\n"
+"  automatique, jamais d'accumulation illimitée).\n"
+"- Liste \"Archives disponibles\" : toutes les sauvegardes existantes,\n"
+"  triées des plus récentes aux plus anciennes, avec taille et date.\n"
+"- [b]Restaurer[/b] : sélectionnez une archive dans la liste, choisissez\n"
+"  le mode — [b]Fusion (append)[/b] ajoute le contenu de l'archive à la\n"
+"  fin du fichier actuel ; [b]Écrasement (overwrite)[/b] remplace\n"
+"  entièrement le contenu actuel par celui de l'archive. Une sauvegarde\n"
+"  de sécurité du fichier cible est prise automatiquement AVANT toute\n"
+"  restauration, pour pouvoir annuler en cas d'erreur.\n"
+"- [b]Supprimer l'archive[/b] : suppression définitive d'une sauvegarde\n"
+"  (après confirmation) — ne touche jamais au log source.\n"
+"- Log protégé : élévation sudo ponctuelle automatique si nécessaire,\n"
+"  pour la sauvegarde comme pour la restauration."
+msgstr ""
+"Сжатая резервная копия журнала и восстановление из предыдущего\n"
+"архива.\n"
+"\n"
+"- [b]Создать копию сейчас[/b]: номер журнала (только один за раз) +\n"
+"  число хранимых ротаций (поле «Хранить ротаций», по умолчанию 7) —\n"
+"  сверх этого числа самые старые архивы автоматически удаляются при\n"
+"  каждой новой копии (автоматическое хранение, никогда не\n"
+"  неограниченное накопление).\n"
+"- Список «Доступные архивы»: все существующие копии, отсортированные\n"
+"  от новых к старым, с размером и датой.\n"
+"- [b]Восстановить[/b]: выберите архив в списке, выберите режим —\n"
+"  [b]Слияние (append)[/b] добавляет содержимое архива в конец текущего\n"
+"  файла; [b]Перезапись (overwrite)[/b] полностью заменяет текущее\n"
+"  содержимое содержимым архива. ПЕРЕД любым восстановлением\n"
+"  автоматически создаётся страховочная копия целевого файла, чтобы\n"
+"  можно было откатить изменения в случае ошибки.\n"
+"- [b]Удалить архив[/b]: окончательное удаление резервной копии (после\n"
+"  подтверждения) — никогда не трогает исходный журнал.\n"
+"- Защищённый журнал: автоматическое разовое повышение sudo при\n"
+"  необходимости, как для резервного копирования, так и для\n"
+"  восстановления."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:231 src/omega_log/interfaces/tui/screens/home.py:55
+msgid "Purger"
+msgstr "Очистить"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:232
+msgid ""
+"Deux actions DISTINCTES et toutes deux irréversibles sans confirmation\n"
+"préalable — à ne jamais confondre :\n"
+"\n"
+"- [b]Vider le contenu[/b] : TRONQUE le(s) fichier(s) EN PLACE (le\n"
+"  fichier continue d'exister, vide). Méthode sûre pour un log encore\n"
+"  activement écrit par un service qui le garde ouvert (contrairement à\n"
+"  une suppression, qui casserait le descripteur de fichier du service\n"
+"  tant qu'il n'est pas redémarré).\n"
+"- [b]Supprimer le(s) fichier(s)[/b] : efface COMPLÈTEMENT le(s)\n"
+"  fichier(s) du disque — plus aucune trace, le fichier disparaît aussi\n"
+"  de la Bibliothèque.\n"
+"- Les deux actions acceptent une sélection MULTIPLE par numéros séparés\n"
+"  par des virgules, et demandent TOUJOURS confirmation avant d'agir\n"
+"  (la liste exacte des fichiers concernés est affichée dans la boîte de\n"
+"  confirmation).\n"
+"- Pensez à [b]Rotate -> Sauvegarder maintenant[/b] avant de purger si\n"
+"  vous voulez garder une trace du contenu actuel."
+msgstr ""
+"Два РАЗНЫХ действия, оба необратимые и выполняемые только после\n"
+"подтверждения — никогда их не путайте:\n"
+"\n"
+"- [b]Очистить содержимое[/b]: УСЕКАЕТ файл(ы) НА МЕСТЕ (файл продолжает\n"
+"  существовать, пустым). Безопасный способ для журнала, в который\n"
+"  служба всё ещё активно пишет и держит его открытым (в отличие от\n"
+"  удаления, которое сломало бы файловый дескриптор службы до её\n"
+"  перезапуска).\n"
+"- [b]Удалить файл(ы)[/b]: ПОЛНОСТЬЮ стирает файл(ы) с диска — никаких\n"
+"  следов не остаётся, файл исчезает и из Библиотеки.\n"
+"- Оба действия принимают МНОЖЕСТВЕННЫЙ выбор по номерам через\n"
+"  запятую и ВСЕГДА запрашивают подтверждение перед выполнением\n"
+"  (точный список затронутых файлов показывается в окне\n"
+"  подтверждения).\n"
+"- Не забудьте про [b]Rotate -> Создать копию сейчас[/b] перед очисткой,\n"
+"  если хотите сохранить след текущего содержимого."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:247
+msgid ""
+"Export de la liste des ARCHIVES (sauvegardes Rotate) en JSON ou en HTML\n"
+"à thème — distinct de l'export des statistiques (présent directement\n"
+"dans l'écran Statistiques).\n"
+"\n"
+"- [b]Rafraîchir[/b] : relit la liste des archives présentes sur le\n"
+"  disque (utile si vous venez de sauvegarder ou de supprimer une archive\n"
+"  depuis l'écran Rotate).\n"
+"- [b]Exporter JSON[/b] : structure brute (nom, taille en octets, date de\n"
+"  création) de chaque archive listée.\n"
+"- [b]Exporter HTML[/b] : même contenu, mis en forme avec le thème\n"
+"  graphique choisi dans le Select au-dessus (5 thèmes disponibles,\n"
+"  mêmes palettes que l'export des Statistiques).\n"
+"- Le fichier produit est horodaté et déposé dans var/exports/ (le même\n"
+"  dossier que les exports de Statistiques)."
+msgstr ""
+"Экспорт списка АРХИВОВ (копий Rotate) в JSON или в HTML с темой —\n"
+"отдельно от экспорта статистики (доступного прямо на экране\n"
+"Статистика).\n"
+"\n"
+"- [b]Обновить[/b]: перечитывает список архивов, имеющихся на диске\n"
+"  (полезно, если вы только что создали или удалили архив на экране\n"
+"  Rotate).\n"
+"- [b]Экспорт JSON[/b]: необработанная структура (имя, размер в байтах,\n"
+"  дата создания) каждого архива из списка.\n"
+"- [b]Экспорт HTML[/b]: то же содержимое, оформленное графической темой,\n"
+"  выбранной в Select выше (доступно 5 тем, те же палитры, что и в\n"
+"  экспорте Статистики).\n"
+"- Созданный файл получает отметку времени и сохраняется в\n"
+"  var/exports/ (та же папка, что и для экспорта Статистики)."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:272
+msgid ""
+"Réglages de l'application elle-même (pas des logs traités).\n"
+"\n"
+"- [b]Thème[/b] : 10 thèmes disponibles, appliqué IMMÉDIATEMENT à la\n"
+"  sélection, sans confirmation ni redémarrage (équivalent à appuyer\n"
+"  plusieurs fois sur la touche [b]t[/b]).\n"
+"- [b]Profil de rendu[/b] : force un niveau d'adaptation au terminal\n"
+"  (complet/standard/réduit/mono) au lieu de la détection automatique —\n"
+"  nécessite un REDÉMARRAGE de l'application pour prendre effet\n"
+"  (\"Automatique\" restaure la détection normale).\n"
+"- [b]Vider le dossier exports[/b] / [b]Vider le dossier screenshots[/b] :\n"
+"  supprime définitivement TOUS les fichiers de ces dossiers applicatifs\n"
+"  (après confirmation) — n'affecte jamais les logs surveillés ni leurs\n"
+"  archives Rotate."
+msgstr ""
+"Настройки самого приложения (а не обрабатываемых журналов).\n"
+"\n"
+"- [b]Тема[/b]: доступно 10 тем, применяется СРАЗУ при выборе, без\n"
+"  подтверждения и перезапуска (то же, что несколько раз нажать\n"
+"  клавишу [b]t[/b]).\n"
+"- [b]Режим отображения[/b]: принудительно задаёт уровень адаптации к\n"
+"  терминалу (полный/стандартный/упрощённый/моно) вместо\n"
+"  автоматического определения — для вступления в силу требуется\n"
+"  ПЕРЕЗАПУСК приложения («Автоматически» восстанавливает обычное\n"
+"  определение).\n"
+"- [b]Очистить папку exports[/b] / [b]Очистить папку screenshots[/b]:\n"
+"  окончательно удаляет ВСЕ файлы в этих папках приложения (после\n"
+"  подтверждения) — никогда не затрагивает отслеживаемые журналы и их\n"
+"  архивы Rotate."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:291
+msgid "Aide, export et contact"
+msgstr "Справка, экспорт и контакты"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:292
+msgid ""
+"- [b]Exporter l'aide en HTML[/b] : toute cette aide dans un fichier\n"
+"  HTML horodaté (thème au choix, comme les autres exports), déposé dans\n"
+"  var/exports/.\n"
+"- [b]Contact et support[/b] : payer un café (PayPal), se déclarer\n"
+"  utilisateur anonyme, contacter le support (mail et formulaire du site).\n"
+"  Les adresses sont toujours affichées en clair : sans session graphique\n"
+"  (SSH), recopiez-les dans votre navigateur.\n"
+"- [b]Se déclarer utilisateur (anonyme)[/b] : volontaire, une seule fois,\n"
+"  au clic. Le message exact est affiché avant l'envoi : une clé tirée au\n"
+"  hasard, le logiciel (omega-log), sa version et, facultatifs, un\n"
+"  continent et un pays. [b]Ne plus me déclarer[/b] supprime l'entrée à la\n"
+"  réception et efface la clé locale."
+msgstr ""
+"- [b]Экспорт справки в HTML[/b]: вся эта справка в HTML-файле с\n"
+"  отметкой времени (тема на выбор, как в других экспортах),\n"
+"  сохраняемом в var/exports/.\n"
+"- [b]Контакты и поддержка[/b]: угостить кофе (PayPal), зарегистрироваться\n"
+"  как анонимный пользователь, связаться с поддержкой (почта и форма\n"
+"  на сайте). Адреса всегда показываются открытым текстом: без\n"
+"  графического сеанса (SSH) перепишите их в свой браузер.\n"
+"- [b]Зарегистрироваться как пользователь (анонимно)[/b]: добровольно,\n"
+"  только один раз, по щелчку. Точное сообщение показывается до\n"
+"  отправки: случайный ключ, программа (omega-log), её версия и,\n"
+"  по желанию, континент и страна. [b]Больше не регистрировать\n"
+"  меня[/b] удаляет запись у приёмника и стирает локальный ключ."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:305
+msgid ""
+"[b]1. Simple[/b] — suivi en direct avec parsing générique (horodatage,\n"
+"niveau, IP, service détecté). Le tableau garde tout le tampon (500\n"
+"lignes, 200 chargées à l'ouverture) avec ascenseurs vertical et\n"
+"horizontal ; il suit les nouvelles lignes seulement si vous êtes déjà en\n"
+"bas. À gauche, un tableau de bord qui défile (identique à omega-serv) :\n"
+"rendement, bande passante, statuts HTTP (dont refus 403 et 429), IPs\n"
+"uniques et top 5 IP, chemins les plus demandes et chemins en 404, santé\n"
+"et tampon. Une valeur que le log ne fournit pas s'affiche \"-\", jamais\n"
+"estimée. Pour un access log HTTP reconnu\n"
+"(format Combined/Common), deux colonnes supplémentaires apparaissent\n"
+"automatiquement : [b]Code[/b] (statut HTTP, coloré 2xx vert/3xx cyan/\n"
+"4xx jaune/5xx rouge) et [b]Timeout[/b] (latence si le format source la\n"
+"fournit, coloré selon le seuil) — ces colonnes affichent \"-\" pour tout\n"
+"ce qui n'est pas un format HTTP reconnu (auth.log, syslog, fail2ban...).\n"
+"\n"
+"[b]2. Classique[/b] — affiche les dernières lignes BRUTES du fichier\n"
+"(aucun parsing, aucune coloration), avec un bouton [b]Suivre en\n"
+"direct[/b] pour basculer en mode tail -f. Le plus simple et le plus\n"
+"fiable quel que soit le format du fichier.\n"
+"\n"
+"[b]3. lnav[/b] — encapsule le programme externe `lnav` dans un terminal\n"
+"dédié (pty), pour une fusion et une analyse croisée de PLUSIEURS\n"
+"fichiers à la fois (merge automatique par horodatage). Nécessite que\n"
+"`lnav` soit installé sur le système (sudo pacman -S lnav / sudo apt\n"
+"install lnav) — sans lui, ce viewer est proposé mais refuse de se\n"
+"lancer avec un message explicite. Raccourcis spécifiques pendant une\n"
+"session lnav :"
+msgstr ""
+"[b]1. Простой[/b] — отслеживание в реальном времени с универсальным\n"
+"разбором (отметка времени, уровень, IP, обнаруженная служба). Таблица\n"
+"хранит весь буфер (500 строк, 200 загружаются при открытии) с\n"
+"вертикальной и горизонтальной прокруткой; новые строки она\n"
+"отслеживает, только если вы уже внизу. Слева прокручиваемая панель\n"
+"(как в omega-serv): производительность, пропускная способность,\n"
+"статусы HTTP (включая отказы 403 и 429), уникальные IP и топ-5 IP,\n"
+"самые запрашиваемые пути и пути с 404, состояние и буфер. Значение,\n"
+"которое журнал не предоставляет, отображается как «-», никогда не\n"
+"оценивается. Для распознанного журнала доступа HTTP\n"
+"(формат Combined/Common) автоматически появляются два дополнительных\n"
+"столбца: [b]Код[/b] (статус HTTP, цвет 2xx зелёный/3xx голубой/\n"
+"4xx жёлтый/5xx красный) и [b]Timeout[/b] (задержка, если исходный\n"
+"формат её содержит, цвет по порогу) — эти столбцы показывают «-»\n"
+"для всего, что не является распознанным форматом HTTP (auth.log,\n"
+"syslog, fail2ban...).\n"
+"\n"
+"[b]2. Классический[/b] — показывает последние НЕОБРАБОТАННЫЕ строки\n"
+"файла (без разбора, без подсветки), с кнопкой [b]Отслеживать[/b] для\n"
+"переключения в режим tail -f. Самый простой и самый надёжный при\n"
+"любом формате файла.\n"
+"\n"
+"[b]3. lnav[/b] — встраивает внешнюю программу `lnav` в отдельный\n"
+"терминал (pty) для объединения и перекрёстного анализа НЕСКОЛЬКИХ\n"
+"файлов сразу (автоматическое слияние по отметкам времени). Требует,\n"
+"чтобы `lnav` был установлен в системе (sudo pacman -S lnav / sudo apt\n"
+"install lnav) — без него этот просмотрщик предлагается, но\n"
+"отказывается запускаться с понятным сообщением. Особые сочетания\n"
+"клавиш во время сеанса lnav:"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:328
+msgid ""
+"[b]Élévation sudo ponctuelle[/b] — l'application ne tourne JAMAIS en\n"
+"root par défaut. Quand une action rencontre réellement une permission\n"
+"refusée (ex. /var/log/audit/, lisible seulement par root), une\n"
+"authentification sudo est demandée À CE moment précis, dans le\n"
+"terminal réel (l'interface se suspend brièvement) — jamais à l'avance,\n"
+"jamais pour des actions qui n'en ont pas besoin. Une fois authentifié\n"
+"pour un écran donné, les actions suivantes sur ce même écran réutilisent\n"
+"l'autorisation sans redemander.\n"
+"\n"
+"[b]États SUSPECT / ABSENT / OK[/b] — SUSPECT : fichier présent mais\n"
+"vide (très souvent un service qui route en réalité vers journald plutôt\n"
+"que vers un fichier classique). ABSENT : chemin introuvable au moment de\n"
+"l'affichage (supprimé, pas encore créé, ou chemin erroné). OK : fichier\n"
+"présent et non vide. Ces états sont INFORMATIFS, jamais bloquants —\n"
+"vous pouvez toujours ouvrir, exporter ou purger un log quel que soit son\n"
+"état affiché.\n"
+"\n"
+"[b]Sélection des logs[/b] — convention commune (Voir les logs, Favoris,\n"
+"Voir et Traiter IP, Statistiques, Rotate, Purger) : le tableau affiche\n"
+"un numéro par ligne. Simple clic : la ligne surlignée suffit. Double-clic\n"
+"ou Entrée : ajoute ou retire son numéro dans le champ (ex. \"1,3,4\").\n"
+"Vous pouvez aussi saisir les numéros à la main ; le champ, s'il est\n"
+"rempli, a priorité.\n"
+"\n"
+"[b]Dossier var/[/b] — tout l'état propre à l'application (bibliothèque,\n"
+"favoris, thème choisi, archives de sauvegarde, exports, journal\n"
+"applicatif) vit dans ./var/, relatif au dossier où vous lancez\n"
+"l'application (ou $OMEGA_LOG_VAR_DIR si défini) — jamais dans votre\n"
+"dossier personnel. Ce dossier est entièrement local à la machine, ne\n"
+"contient aucun des LOGS SURVEILLÉS eux-mêmes (seulement des références\n"
+"vers leurs chemins)."
+msgstr ""
+"[b]Разовое повышение sudo[/b] — по умолчанию приложение НИКОГДА не\n"
+"работает от root. Когда действие действительно наталкивается на отказ\n"
+"в доступе (напр. /var/log/audit/, доступен для чтения только root),\n"
+"аутентификация sudo запрашивается ИМЕННО В ЭТОТ момент, в реальном\n"
+"терминале (интерфейс ненадолго приостанавливается) — никогда заранее,\n"
+"никогда для действий, которым она не нужна. После аутентификации на\n"
+"данном экране следующие действия на этом же экране повторно\n"
+"используют разрешение, не спрашивая снова.\n"
+"\n"
+"[b]Состояния ПОДОЗРИТЕЛЬНО / ОТСУТСТВУЕТ / OK[/b] — ПОДОЗРИТЕЛЬНО: файл\n"
+"есть, но пуст (очень часто служба на самом деле пишет в journald, а\n"
+"не в обычный файл). ОТСУТСТВУЕТ: путь не найден в момент показа\n"
+"(удалён, ещё не создан или путь ошибочен). OK: файл есть и не пуст.\n"
+"Эти состояния ИНФОРМАЦИОННЫЕ, никогда не блокирующие — вы всегда\n"
+"можете открыть, экспортировать или очистить журнал независимо от\n"
+"показанного состояния.\n"
+"\n"
+"[b]Выбор журналов[/b] — общее правило (Просмотр журналов, Избранное,\n"
+"IP-адреса: просмотр и обработка, Статистика, Rotate, Очистить):\n"
+"таблица показывает номер в каждой строке. Одиночный щелчок: достаточно\n"
+"подсвеченной строки. Двойной щелчок или Enter: добавляет или убирает\n"
+"её номер в поле (напр. «1,3,4»). Номера можно также ввести вручную;\n"
+"заполненное поле имеет приоритет.\n"
+"\n"
+"[b]Папка var/[/b] — всё собственное состояние приложения (библиотека,\n"
+"избранное, выбранная тема, архивы резервных копий, экспорты, журнал\n"
+"приложения) находится в ./var/ относительно папки, из которой вы\n"
+"запускаете приложение (или в $OMEGA_LOG_VAR_DIR, если задана), —\n"
+"никогда в вашей домашней папке. Эта папка полностью локальна для\n"
+"машины и не содержит ни одного из самих ОТСЛЕЖИВАЕМЫХ ЖУРНАЛОВ (только\n"
+"ссылки на их пути)."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:358
+msgid "Raccourcis pendant une session lnav"
+msgstr "Сочетания клавиш во время сеанса lnav"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:361 src/omega_log/interfaces/tui/screens/help_screen.py:400
+msgid "Démarrage rapide"
+msgstr "Быстрый старт"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:363 src/omega_log/interfaces/tui/screens/help_screen.py:408
+msgid "Les 3 viewers (Simple / Classique / lnav)"
+msgstr "3 просмотрщика (Простой / Классический / lnav)"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:364 src/omega_log/interfaces/tui/screens/help_screen.py:413
+msgid "Concepts et glossaire"
+msgstr "Понятия и глоссарий"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:388
+msgid "Exporter l'aide en HTML"
+msgstr "Экспорт справки в HTML"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:390
+msgid "Contact et support"
+msgstr "Контакты и поддержка"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:397
+#, python-brace-format
+msgid "{key:<16} {description}"
+msgstr "{key:<16} {description}"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:403
+msgid "Fonctions, écran par écran"
+msgstr "Функции, экран за экраном"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:411
+#, python-brace-format
+msgid "  {key:<24} {description}"
+msgstr "  {key:<24} {description}"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:437
+#, python-brace-format
+msgid "Export écrit : {path}"
+msgstr "Экспорт записан: {path}"
+
+#: src/omega_log/interfaces/tui/screens/home.py:109
+msgid "MAINTENANCE"
+msgstr "ОБСЛУЖИВАНИЕ"
+
+#: src/omega_log/interfaces/tui/screens/home.py:128
+msgid "Cet écran n'est pas encore construit (voir plan_omega_log.md, phases suivantes)."
+msgstr "Этот экран ещё не создан (см. plan_omega_log.md, следующие этапы)."
+
+#: src/omega_log/interfaces/tui/screens/library.py:43
+msgid "BIBLIOTHÈQUE"
+msgstr "БИБЛИОТЕКА"
+
+#: src/omega_log/interfaces/tui/screens/library.py:46
+msgid "Chemin à ajouter manuellement"
+msgstr "Путь для ручного добавления"
+
+#: src/omega_log/interfaces/tui/screens/library.py:50
+msgid "Ajouter les logs connus d'Omega-Serv"
+msgstr "Добавить известные журналы Omega-Serv"
+
+#: src/omega_log/interfaces/tui/screens/library.py:52
+msgid "Sources distantes (SSH)"
+msgstr "Удалённые источники (SSH)"
+
+#: src/omega_log/interfaces/tui/screens/library.py:56
+msgid "Retirer la sélection"
+msgstr "Убрать выбранное"
+
+#: src/omega_log/interfaces/tui/screens/library.py:97
+#, python-brace-format
+msgid "{count} log(s) référencé(s) — {stale} suspect(s), {missing} introuvable(s) actuellement."
+msgstr "Журналов в списке: {count} — подозрительных: {stale}, сейчас не найдено: {missing}."
+
+#: src/omega_log/interfaces/tui/screens/library.py:105
+msgid "Saisissez un chemin."
+msgstr "Введите путь."
+
+#: src/omega_log/interfaces/tui/screens/library.py:116
+msgid "Aucune installation d'Omega-Serv trouvée sur cette machine."
+msgstr "На этой машине не найдено ни одной установки Omega-Serv."
+
+#: src/omega_log/interfaces/tui/screens/library.py:120
+#, python-brace-format
+msgid "{count} installation(s) d'Omega-Serv trouvée(s), {added} log(s) ajouté(s) (déjà présents remplacés, jamais dupliqués)."
+msgstr "Найдено установок Omega-Serv: {count}, добавлено журналов: {added} (существующие заменены, дубликатов нет)."
+
+#: src/omega_log/interfaces/tui/screens/library.py:124
+#, python-brace-format
+msgid "Configuration illisible : {root}/config/omega-serve.json"
+msgstr "Не удалось прочитать конфигурацию: {root}/config/omega-serve.json"
+
+#: src/omega_log/interfaces/tui/screens/library.py:129 src/omega_log/interfaces/tui/screens/registry.py:100 src/omega_log/interfaces/tui/screens/registry.py:106 src/omega_log/interfaces/tui/screens/registry.py:116
+msgid "Sélectionnez une ligne dans la liste."
+msgstr "Выберите строку в списке."
+
+#: src/omega_log/interfaces/tui/screens/library.py:133
+msgid "RETIRER DE LA BIBLIOTHÈQUE ?"
+msgstr "УБРАТЬ ИЗ БИБЛИОТЕКИ?"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:107
+#, python-brace-format
+msgid "VOIR LES LOGS — SIMPLE — {path}"
+msgstr "ПРОСМОТР ЖУРНАЛОВ — ПРОСТОЙ — {path}"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Code"
+msgstr "Код"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Heure"
+msgstr "Время"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Message"
+msgstr "Сообщение"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Niveau"
+msgstr "Уровень"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Timeout"
+msgstr "Timeout"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:153 src/omega_log/interfaces/tui/screens/live_tail_screen.py:183 src/omega_log/interfaces/tui/screens/rotate_screen.py:138
+#, python-brace-format
+msgid "Permission refusée sur {path}."
+msgstr "Доступ к {path} запрещён."
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:190
+#, python-brace-format
+msgid "Lecture privilégiée impossible : {exc}"
+msgstr "Не удалось выполнить чтение с повышенными правами: {exc}"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:226
+msgid "── RENDEMENT ──────────────\n"
+msgstr "── ПРОИЗВОДИТЕЛЬНОСТЬ ─────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:227
+#, python-brace-format
+msgid "{requests_per_second:.1f} req/s"
+msgstr "{requests_per_second:.1f} req/s"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:228
+#, python-brace-format
+msgid " ⚡ Débit        : {rps}\n"
+msgstr " ⚡ Темп         : {rps}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:230
+#, python-brace-format
+msgid ""
+" ⏱ Latence moy. : {none}\n"
+"\n"
+msgstr ""
+" ⏱ Ср. задержка : {none}\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:234
+#, python-brace-format
+msgid ""
+" ⏱ Latence moy. : {latency:.0f} ms\n"
+"\n"
+msgstr ""
+" ⏱ Ср. задержка : {latency:.0f} мс\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:236
+msgid "── BANDE PASSANTE ─────────\n"
+msgstr "── ПРОПУСКНАЯ СПОСОБНОСТЬ ──\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:240
+#, python-brace-format
+msgid " 🌐 Débit réseau : {bps}\n"
+msgstr " 🌐 Сетевой поток: {bps}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:241
+#, python-brace-format
+msgid " 📦 Volume total : {total}\n"
+msgstr " 📦 Общий объём  : {total}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:242
+#, python-brace-format
+msgid ""
+" 🗜 Taille moy.  : {average}\n"
+"\n"
+msgstr ""
+" 🗜 Ср. размер   : {average}\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:244
+msgid "── STATUTS HTTP ───────────\n"
+msgstr "── СТАТУСЫ HTTP ───────────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:245
+#, python-brace-format
+msgid " 📊 Requêtes     : {http_total}\n"
+msgstr " 📊 Запросы      : {http_total}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:246
+#, python-brace-format
+msgid " √  Succès 2xx   : {status_2xx}\n"
+msgstr " √  Успех 2xx    : {status_2xx}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:247
+#, python-brace-format
+msgid " ↔  Redir. 3xx   : {status_3xx}\n"
+msgstr " ↔  Редир. 3xx   : {status_3xx}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:248
+#, python-brace-format
+msgid " ⚠  Erreurs 4xx  : {status_4xx}\n"
+msgstr " ⚠  Ошибки 4xx   : {status_4xx}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:249
+#, python-brace-format
+msgid " ❌ Erreurs 5xx  : {status_5xx}\n"
+msgstr " ❌ Ошибки 5xx   : {status_5xx}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:250
+#, python-brace-format
+msgid " ⛔ Refus 403    : {status_403}\n"
+msgstr " ⛔ Отказы 403   : {status_403}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:251
+#, python-brace-format
+msgid ""
+" ⏳ Refus 429    : {status_429}\n"
+"\n"
+msgstr ""
+" ⏳ Отказы 429   : {status_429}\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:253
+msgid "── CLIENTS & RÉSEAU ───────\n"
+msgstr "── КЛИЕНТЫ И СЕТЬ ─────────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:254
+#, python-brace-format
+msgid " 💻 IPs uniques  : {unique_ips}\n"
+msgstr " 💻 Уник. IP     : {unique_ips}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:256
+msgid " 🖧 Top 5 IP     :\n"
+msgstr " 🖧 Топ-5 IP     :\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:259
+msgid "── CHEMINS DEMANDÉS ───────\n"
+msgstr "── ЗАПРОШЕННЫЕ ПУТИ ───────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:261
+msgid "── CHEMINS EN 404 ─────────\n"
+msgstr "── ПУТИ С 404 ─────────────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:264
+msgid "── SANTÉ & TAMPON ─────────\n"
+msgstr "── СОСТОЯНИЕ И БУФЕР ──────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:267
+msgid "DÉGRADÉ"
+msgstr "ОГРАНИЧЕНО"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:268
+#, python-brace-format
+msgid " 🌡 Santé        : {health}\n"
+msgstr " 🌡 Состояние    : {health}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:269
+#, python-brace-format
+msgid " ⚠  Taux d'erreur: {rate:.1f}%\n"
+msgstr " ⚠  Доля ошибок  : {rate:.1f}%\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:270
+#, python-brace-format
+msgid " 📥 Tampon       : {count}/{BUFFER_SIZE}"
+msgstr " 📥 Буфер        : {count}/{BUFFER_SIZE}"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:65
+msgid "lnav est introuvable ou non fonctionnel sur ce système. Sur Arch/Manjaro : sudo pacman -S lnav. Sur Debian/Ubuntu : sudo apt install lnav."
+msgstr "lnav не найден или не работает в этой системе. В Arch/Manjaro: sudo pacman -S lnav. В Debian/Ubuntu: sudo apt install lnav."
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:79
+msgid "VOIR LES LOGS — LNAV (FUSION MULTI-LOGS)"
+msgstr "ПРОСМОТР ЖУРНАЛОВ — LNAV (ОБЪЕДИНЕНИЕ НЕСКОЛЬКИХ ЖУРНАЛОВ)"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:80
+#, python-brace-format
+msgid "Fichiers : {join}"
+msgstr "Файлы: {join}"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:84
+msgid "Lancer lnav"
+msgstr "Запустить lnav"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:104
+#, python-brace-format
+msgid "Fichier(s) introuvable(s) : {join}"
+msgstr "Файл(ы) не найден(ы): {join}"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:110
+#, python-brace-format
+msgid "Échec du lancement de lnav : {exc}"
+msgstr "Не удалось запустить lnav: {exc}"
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:57
+#, python-brace-format
+msgid "VOIR LES LOGS — CLASSIQUE — {path}"
+msgstr "ПРОСМОТР ЖУРНАЛОВ — КЛАССИЧЕСКИЙ — {path}"
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:62 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:139
+msgid "Suivre en direct"
+msgstr "Отслеживать"
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:108
+#, python-brace-format
+msgid "Permission refusée sur {path} (authentification sudo requise)."
+msgstr "Доступ к {path} запрещён (требуется аутентификация sudo)."
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:127
+msgid "Rien à suivre (fichier introuvable)."
+msgstr "Нечего отслеживать (файл не найден)."
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:130
+msgid "Arrêter le suivi"
+msgstr "Остановить отслеживание"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:114
+msgid "VOIR ET TRAITER IP"
+msgstr "IP-АДРЕСА: ПРОСМОТР И ОБРАБОТКА"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:116
+msgid "Logs à analyser (numéros ci-dessus, séparés par des virgules)"
+msgstr "Журналы для анализа (номера выше через запятую)"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:117
+msgid "ex: 1,2"
+msgstr "напр.: 1,2"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:135
+msgid "Retirer cette IP des logs analysés"
+msgstr "Убрать этот IP из анализируемых журналов"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:142
+msgid "Occurrences"
+msgstr "Вхождения"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:186 src/omega_log/interfaces/tui/screens/process_ip_screen.py:344 src/omega_log/interfaces/tui/screens/registry.py:169
+#, python-brace-format
+msgid "Erreur : {message}"
+msgstr "Ошибка: {message}"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:362
+msgid "Aucune IP trouvée dans les log(s) sélectionné(s) pour cette période."
+msgstr "В выбранных журналах за этот период IP не найдено."
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:371
+msgid "RETIRER CETTE IP ?"
+msgstr "УБРАТЬ ЭТОТ IP?"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:372
+#, python-brace-format
+msgid "Retirer toutes les lignes contenant {ip} de {count} fichier(s)."
+msgstr "Убрать все строки, содержащие {ip}, из файлов: {count}."
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:388
+#, python-brace-format
+msgid "{path} : permission refusée."
+msgstr "{path}: доступ запрещён."
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:398
+#, python-brace-format
+msgid "{total} occurrence(s) de {ip} retirée(s) au total."
+msgstr "Всего убрано вхождений {ip}: {total}."
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:39
+msgid "PURGER"
+msgstr "ОЧИСТИТЬ"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:41
+msgid "Vider le contenu tronque le fichier EN PLACE (sécurisé pour un service qui l'a encore ouvert) ; supprimer efface complètement le(s) fichier(s)."
+msgstr "Очистка содержимого усекает файл НА МЕСТЕ (безопасно для службы, которая всё ещё держит его открытым); удаление полностью стирает файл(ы)."
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:50
+msgid "Vider le contenu"
+msgstr "Очистить содержимое"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:52
+msgid "Supprimer le(s) fichier(s)"
+msgstr "Удалить файл(ы)"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:93
+msgid "VIDER LE CONTENU ?"
+msgstr "ОЧИСТИТЬ СОДЕРЖИМОЕ?"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:94
+msgid "Le(s) fichier(s) seront conservés mais vides :\n"
+msgstr "Файл(ы) будут сохранены, но станут пустыми:\n"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:109
+#, python-brace-format
+msgid "ÉCHEC — {path} : permission refusée."
+msgstr "ОШИБКА — {path}: доступ запрещён."
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:113
+#, python-brace-format
+msgid "ÉCHEC — {message}"
+msgstr "ОШИБКА — {message}"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:122
+msgid "SUPPRIMER CES FICHIERS ?"
+msgstr "УДАЛИТЬ ЭТИ ФАЙЛЫ?"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:123
+msgid "Suppression définitive :\n"
+msgstr "Безвозвратное удаление:\n"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:136
+msgid "Permission refusée sur au moins un fichier."
+msgstr "Доступ запрещён как минимум к одному файлу."
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:141
+#, python-brace-format
+msgid "{count} fichier(s) supprimé(s)."
+msgstr "Удалено файлов: {count}."
+
+#: src/omega_log/interfaces/tui/screens/quit_confirm.py:21
+msgid "QUITTER OMEGA-LOG ?"
+msgstr "ВЫЙТИ ИЗ OMEGA-LOG?"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:45
+msgid "REGISTRE DES CAPACITÉS"
+msgstr "РЕЕСТР ВОЗМОЖНОСТЕЙ"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:49
+msgid "Scanner les services"
+msgstr "Сканировать службы"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:50
+msgid "Dossier à scanner (ex. /var/log)"
+msgstr "Папка для сканирования (напр. /var/log)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:52
+msgid "Scanner ce dossier"
+msgstr "Сканировать эту папку"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:56 src/omega_log/interfaces/tui/screens/view_logs.py:52
+msgid "Voir (simple)"
+msgstr "Просмотр (простой)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:58 src/omega_log/interfaces/tui/screens/view_logs.py:54
+msgid "Voir (classique)"
+msgstr "Просмотр (классический)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:60 src/omega_log/interfaces/tui/screens/view_logs.py:56
+msgid "Voir (lnav)"
+msgstr "Просмотр (lnav)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:62
+msgid "Importer la sélection"
+msgstr "Импортировать выбранное"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:64
+msgid "Importer tout"
+msgstr "Импортировать всё"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:120
+msgid "Ligne introuvable (relancez un scan)."
+msgstr "Строка не найдена (запустите сканирование заново)."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:123
+#, python-brace-format
+msgid "{selected_path} ajouté à la Bibliothèque."
+msgstr "{selected_path} добавлен в Библиотеку."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:128
+msgid "Rien à importer (lancez un scan)."
+msgstr "Нечего импортировать (запустите сканирование)."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:131
+#, python-brace-format
+msgid "{count} log(s) ajouté(s) à la Bibliothèque."
+msgstr "Добавлено журналов в Библиотеку: {count}."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:134
+msgid "Analyse des services en cours..."
+msgstr "Идёт анализ служб..."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:150
+msgid "Indiquez un dossier à scanner."
+msgstr "Укажите папку для сканирования."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:154
+#, python-brace-format
+msgid "Scan de {directory} en cours..."
+msgstr "Идёт сканирование {directory}..."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:176
+#, python-brace-format
+msgid "{capabilities_registered} capacités sondées — {count} log(s) découvert(s) ({count2} suspect(s)), {count3} erreur(s)."
+msgstr "Опрошено возможностей: {capabilities_registered} — обнаружено журналов: {count} (подозрительных: {count2}), ошибок: {count3}."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:183
+#, python-brace-format
+msgid "Scan manuel : {count} fichier(s) trouvé(s)."
+msgstr "Ручное сканирование: найдено файлов: {count}."
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:60
+msgid "SOURCES DISTANTES (SSH)"
+msgstr "УДАЛЁННЫЕ ИСТОЧНИКИ (SSH)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:62
+msgid "Récupère, sur demande, UNE COPIE du log d'un serveur du réseau local via scp - ce n'est jamais une consultation en direct, mais un instantané figé au moment du clic. Chaque nouvelle 'Récupération maintenant' remplace la copie précédente par une plus récente (la Bibliothèque affiche la date de cette dernière récupération, colonne 'Modifié'). Aucun mot de passe n'est jamais demandé ni stocké : une éventuelle clé privée n'est référencée que par son chemin - l'authentification reste entièrement gérée par votre propre configuration SSH."
+msgstr "По запросу получает КОПИЮ журнала сервера локальной сети через scp - это никогда не просмотр в реальном времени, а снимок на момент щелчка. Каждое новое 'Получить сейчас' заменяет предыдущую копию более свежей (Библиотека показывает дату последнего получения, столбец 'Изменён'). Пароль никогда не запрашивается и не хранится: закрытый ключ, если он есть, указывается только путём - аутентификацией полностью управляет ваша собственная конфигурация SSH."
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:76
+msgid "Récupérer maintenant"
+msgstr "Получить сейчас"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:80
+msgid "Ajouter une source"
+msgstr "Добавить источник"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:81 src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:97
+msgid "Label"
+msgstr "Метка"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:82
+msgid "Hôte (ex: backend1 ou 192.168.1.10)"
+msgstr "Хост (напр.: backend1 или 192.168.1.10)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:83
+msgid "Chemin distant (ex: /var/log/nginx/access.log)"
+msgstr "Удалённый путь (напр.: /var/log/nginx/access.log)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:84
+msgid "Utilisateur (optionnel)"
+msgstr "Пользователь (необязательно)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:85
+msgid "Port (optionnel)"
+msgstr "Порт (необязательно)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:86
+msgid "Chemin de la clé privée (optionnel)"
+msgstr "Путь к закрытому ключу (необязательно)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:97
+msgid "Chemin distant"
+msgstr "Удалённый путь"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:97
+msgid "Clé"
+msgstr "Ключ"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:97
+msgid "Utilisateur"
+msgstr "Пользователь"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:135
+msgid "Port invalide : {port_raw!r}."
+msgstr "Недопустимый порт: {port_raw!r}."
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:163
+msgid "SUPPRIMER CETTE SOURCE ?"
+msgstr "УДАЛИТЬ ЭТОТ ИСТОЧНИК?"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:190
+msgid "Récupération en cours..."
+msgstr "Получение..."
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:212
+msgid " Ajouté à la Bibliothèque."
+msgstr " Добавлено в Библиотеку."
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:46
+msgid "ROTATE — SAUVEGARDER / RESTAURER"
+msgstr "ROTATE — РЕЗЕРВНОЕ КОПИРОВАНИЕ / ВОССТАНОВЛЕНИЕ"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:50
+msgid "Numéro du log à sauvegarder (ex: 1)"
+msgstr "Номер журнала для резервного копирования (напр.: 1)"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:53 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:80
+msgid "Rotations à conserver"
+msgstr "Хранить ротаций"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:55
+msgid "Sauvegarder maintenant"
+msgstr "Создать копию сейчас"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:57
+msgid "Archives disponibles"
+msgstr "Доступные архивы"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:60
+msgid "Fusion (append)"
+msgstr "Слияние (append)"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:60
+msgid "Écrasement (overwrite)"
+msgstr "Перезапись (overwrite)"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:63
+msgid "Restaurer"
+msgstr "Восстановить"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:65
+msgid "Supprimer l'archive"
+msgstr "Удалить архив"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+msgid "Créé le"
+msgstr "Создан"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+msgid "Taille"
+msgstr "Размер"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:119 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:177
+msgid "Numéro de log invalide."
+msgstr "Недопустимый номер журнала."
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:147 src/omega_log/interfaces/tui/screens/rotate_screen.py:188
+msgid "Sélectionnez une archive."
+msgstr "Выберите архив."
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:156
+msgid "RESTAURER CETTE ARCHIVE ?"
+msgstr "ВОССТАНОВИТЬ ЭТОТ АРХИВ?"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:157
+#, python-brace-format
+msgid "Mode : {mode}. Cible : {path}."
+msgstr "Режим: {mode}. Цель: {path}."
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:179
+#, python-brace-format
+msgid "Permission refusée sur {target_path}."
+msgstr "Доступ к {target_path} запрещён."
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:192
+msgid "SUPPRIMER CETTE ARCHIVE ?"
+msgstr "УДАЛИТЬ ЭТОТ АРХИВ?"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:45
+msgid "OPTIONS"
+msgstr "ПАРАМЕТРЫ"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:60
+msgid "Maintenance des dossiers"
+msgstr "Обслуживание папок"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:63
+msgid "Vider le dossier exports"
+msgstr "Очистить папку exports"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:65
+msgid "Vider le dossier screenshots"
+msgstr "Очистить папку screenshots"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:106
+#, python-brace-format
+msgid "VIDER LE DOSSIER {upper} ?"
+msgstr "ОЧИСТИТЬ ПАПКУ {upper}?"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:107
+#, python-brace-format
+msgid "Supprime définitivement tous les fichiers de {directory}."
+msgstr "Безвозвратно удаляет все файлы из {directory}."
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:117
+#, python-brace-format
+msgid "{deleted_count} fichier(s) supprimé(s) dans {label}/."
+msgstr "Удалено файлов в {label}/: {deleted_count}."
+
+#: src/omega_log/interfaces/tui/screens/view_logs.py:40
+msgid "VOIR LES LOGS"
+msgstr "ПРОСМОТР ЖУРНАЛОВ"
+
+#: src/omega_log/interfaces/tui/screens/view_logs.py:42
+msgid "Logs référencés dans la Bibliothèque uniquement — importez-en d'autres depuis le Registre ou la Bibliothèque."
+msgstr "Только журналы, внесённые в Библиотеку, — другие импортируйте из Реестра или Библиотеки."
+
+#: src/omega_log/interfaces/tui/screens/view_logs.py:47
+msgid "Sources à ouvrir (numéros ci-dessus, séparés par des virgules)"
+msgstr "Источники для открытия (номера выше через запятую)"
+
+#: src/omega_log/interfaces/tui/screens/view_logs.py:48
+msgid "ex: 1,3"
+msgstr "напр.: 1,3"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+msgid "24h"
+msgstr "24ч"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+msgid "30j"
+msgstr "30д"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+msgid "7j"
+msgstr "7д"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+msgid "Tout (fichier entier)"
+msgstr "Всё (весь файл)"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:25
+msgid "24h, 7j, 30j : lecture depuis la fin du fichier, rapide. « Tout » lit le fichier entier : la durée dépend de sa taille (de quelques secondes à plusieurs minutes pour un gros log)."
+msgstr "24ч, 7д, 30д: чтение с конца файла, быстро. «Всё» читает файл целиком: время зависит от его размера (от нескольких секунд до нескольких минут для большого журнала)."
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:35
+msgid "Lecture du fichier entier, ligne par ligne…"
+msgstr "Чтение всего файла, строка за строкой…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:36
+msgid "Analyse des lignes (date, IP, code HTTP, chemin)…"
+msgstr "Анализ строк (дата, IP, код HTTP, путь)…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:37
+msgid "Plus le fichier est gros, plus c'est long : quelques secondes à plusieurs minutes."
+msgstr "Чем больше файл, тем дольше: от нескольких секунд до нескольких минут."
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:38
+msgid "Échap arrête l'analyse : il faudra la relancer."
+msgstr "Esc прерывает анализ: его придётся запустить заново."
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:39 src/omega_log/interfaces/tui/widgets/busy_indicator.py:44
+msgid "Toujours en cours, rien n'est bloqué…"
+msgstr "Всё ещё выполняется, ничего не зависло…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:42
+msgid "Lecture depuis la fin du fichier, arrêt dès que les lignes sortent de la période…"
+msgstr "Чтение с конца файла, остановка, как только строки выходят за пределы периода…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:43
+msgid "Analyse des lignes de la période…"
+msgstr "Анализ строк за период…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:94
+#, python-brace-format
+msgid "{count} log(s)"
+msgstr "журналов: {count}"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:97
+msgid " (au moins)"
+msgstr " (как минимум)"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:143
+msgid "Calcul en cours"
+msgstr "Идёт расчёт"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:153
+#, python-brace-format
+msgid " {value:3.0f} %  ({done_parts}/{total_parts} morceaux analysés)"
+msgstr " {value:3.0f} %  ({done_parts}/{total_parts} частей проанализировано)"
+
+#: src/omega_log/interfaces/tui/widgets/library_selection.py:17
+msgid "Clic : choisir un log. Double-clic ou Entrée : ajouter ou retirer son numéro dans le champ (plusieurs logs). Le champ, s'il est rempli, a priorité."
+msgstr "Щелчок: выбрать журнал. Двойной щелчок или Enter: добавить или убрать его номер в поле (несколько журналов). Заполненное поле имеет приоритет."
+
+#: src/omega_log/interfaces/tui/widgets/library_selection.py:21
+msgid "Clic : choisir un log. Double-clic ou Entrée : mettre son numéro dans le champ. Le champ, s'il est rempli, a priorité."
+msgstr "Щелчок: выбрать журнал. Двойной щелчок или Enter: внести его номер в поле. Заполненное поле имеет приоритет."
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+msgid "Accès"
+msgstr "Доступ"
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+msgid "Chemin"
+msgstr "Путь"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/widgets/log_library_table.py:27
+msgid "Modifié"
+msgstr "Изменён"
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:36
+msgid "ABSENT"
+msgstr "ОТСУТСТВУЕТ"
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:36 src/omega_log/interfaces/tui/widgets/log_list.py:40
+msgid "SUSPECT (vide)"
+msgstr "ПОДОЗРИТЕЛЬНО (пусто)"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:6
+msgid "OMEGA-LOG — Statistiques"
+msgstr "OMEGA-LOG — Статистика"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:87
+msgid "OMEGA-LOG — Statistiques de logs"
+msgstr "OMEGA-LOG — Статистика журналов"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:88
+#, python-brace-format
+msgid "Généré le {generated_at} · Période : {period_label} · Source(s) : {sources}"
+msgstr "Создано {generated_at} · Период: {period_label} · Источник(и): {sources}"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:99
+msgid "Synthèse"
+msgstr "Сводка"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:101
+msgid "Aucune ligne sur cette période."
+msgstr "За этот период строк нет."
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:105
+msgid "Lignes analysées"
+msgstr "Проанализировано строк"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:106
+msgid "Requêtes HTTP"
+msgstr "HTTP-запросы"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:107
+msgid "IPs uniques"
+msgstr "Уникальные IP"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:108
+msgid "Taux d'erreur"
+msgstr "Доля ошибок"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:109
+msgid "Volume transféré"
+msgstr "Передано данных"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:110
+#, python-brace-format
+msgid "Heure de pointe ({peak_count} lignes)"
+msgstr "Час пик (строк: {peak_count})"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:111
+msgid "Période couverte"
+msgstr "Охваченный период"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:118
+msgid "Répartition horaire (24 h)"
+msgstr "Распределение по часам (24 ч)"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:125
+#, python-brace-format
+msgid "{hour}h : {count} ligne(s)"
+msgstr "{hour} ч: строк: {count}"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:133
+#, python-brace-format
+msgid "Tendance par jour ({daily} j)"
+msgstr "Динамика по дням ({daily} д)"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:140
+msgid "Statuts HTTP"
+msgstr "Статусы HTTP"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:156
+msgid "Aucune donnée."
+msgstr "Нет данных."
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:161
+msgid "Top adresses IP"
+msgstr "Топ IP-адресов"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:163
+msgid "Chemins les plus demandés"
+msgstr "Самые запрашиваемые пути"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:164
+msgid "Chemins en 404"
+msgstr "Пути с 404"
+
+#: src/omega_log/infrastructure/exporters/templates/help_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/help_report.html.j2:61
+msgid "OMEGA-LOG — Aide"
+msgstr "OMEGA-LOG — Справка"
+
+#: src/omega_log/infrastructure/exporters/templates/help_report.html.j2:62
+#, python-brace-format
+msgid "Généré le {generated_at} · version {version}"
+msgstr "Создано {generated_at} · версия {version}"
+
+#: src/omega_log/infrastructure/exporters/templates/help_report.html.j2:82
+msgid "Aide générée par"
+msgstr "Справка создана"
+
+#: src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:55
+msgid "OMEGA-LOG — Archives de logs"
+msgstr "OMEGA-LOG — Архивы журналов"
+
+#: src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:56
+#, python-brace-format
+msgid "Généré le {generated_at} - {archives} archive(s)"
+msgstr "Создано {generated_at} - архивов: {archives}"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:97
+#, python-brace-format
+msgid "environ {lines} lignes"
+msgstr "около {lines} строк"
+
+#: src/omega_log/application/use_cases/health_presentation.py:22
+msgid "Attention"
+msgstr "Предупреждение"
+
+#: src/omega_log/application/use_cases/health_presentation.py:22
+msgid "Info"
+msgstr "Инфо"
+
+#: src/omega_log/application/use_cases/health_presentation.py:22
+msgid "OK"
+msgstr "OK"
+
+#: src/omega_log/application/use_cases/health_presentation.py:22
+msgid "Problème"
+msgstr "Проблема"
+
+#: src/omega_log/application/use_cases/health_presentation.py:119
+msgid "à l'instant"
+msgstr "только что"
+
+#: src/omega_log/application/use_cases/health_presentation.py:121
+#, python-brace-format
+msgid "il y a {count} min"
+msgstr "{count} мин назад"
+
+#: src/omega_log/application/use_cases/health_presentation.py:123
+#, python-brace-format
+msgid "il y a {count} h"
+msgstr "{count} ч назад"
+
+#: src/omega_log/application/use_cases/health_presentation.py:124
+#, python-brace-format
+msgid "il y a {count} j"
+msgstr "{count} дн. назад"
+
+#: src/omega_log/application/use_cases/health_presentation.py:128
+#, python-brace-format
+msgid "{size}/jour"
+msgstr "{size}/день"
+
+#: src/omega_log/application/use_cases/health_presentation.py:134
+msgid "Lien symbolique cassé : la cible n'existe plus."
+msgstr "Битая символическая ссылка: цель больше не существует."
+
+#: src/omega_log/application/use_cases/health_presentation.py:136
+msgid "Fichier absent : le chemin de la Bibliothèque ne mène plus à rien."
+msgstr "Файл отсутствует: путь в Библиотеке больше никуда не ведёт."
+
+#: src/omega_log/application/use_cases/health_presentation.py:138
+msgid "Ce n'est pas un fichier ordinaire (dossier, tube ou périphérique)."
+msgstr "Это не обычный файл (папка, канал или устройство)."
+
+#: src/omega_log/application/use_cases/health_presentation.py:140
+#, python-brace-format
+msgid "Illisible par votre compte (droits {mode}) : Statistiques, Voir et Traiter IP et les viewers demanderont votre mot de passe sudo."
+msgstr "Недоступно для вашей учётной записи (права {mode}): Статистика, IP-адреса: просмотр и обработка и просмотрщики запросят ваш пароль sudo."
+
+#: src/omega_log/application/use_cases/health_presentation.py:143
+#, python-brace-format
+msgid "Inscriptible par tout le monde (droits {mode}) : n'importe quel compte peut falsifier ce log."
+msgstr "Доступен на запись всем (права {mode}): любая учётная запись может подделать этот журнал."
+
+#: src/omega_log/application/use_cases/health_presentation.py:146
+msgid "Fichier vide."
+msgstr "Пустой файл."
+
+#: src/omega_log/application/use_cases/health_presentation.py:148
+#, python-brace-format
+msgid "Aucune écriture depuis {days} j."
+msgstr "Нет записи уже {days} дн."
+
+#: src/omega_log/application/use_cases/health_presentation.py:150
+msgid "Octets nuls à la fin du fichier : log abîmé (coupure ou disque plein pendant une écriture)."
+msgstr "Нулевые байты в конце файла: журнал повреждён (сбой или заполненный диск во время записи)."
+
+#: src/omega_log/application/use_cases/health_presentation.py:152
+#, python-brace-format
+msgid "Seules {percent} % des dernières lignes ont une date reconnue : les périodes 24h, 7j, 30j et les statistiques seront faussées."
+msgstr "Только у {percent} % последних строк распознана дата: периоды 24ч, 7д, 30д и статистика будут искажены."
+
+#: src/omega_log/application/use_cases/health_presentation.py:155
+#, python-brace-format
+msgid "Dernière ligne datée du {last}, dans le futur : horloge ou fuseau horaire faux."
+msgstr "Последняя строка датирована {last}, это в будущем: неверные часы или часовой пояс."
+
+#: src/omega_log/application/use_cases/health_presentation.py:158
+#, python-brace-format
+msgid "{size} et aucune règle logrotate ne couvre ce fichier : il grossira sans fin."
+msgstr "{size}, и ни одно правило logrotate не охватывает этот файл: он будет расти бесконечно."
+
+#: src/omega_log/application/use_cases/health_presentation.py:161
+#, python-brace-format
+msgid "Même fichier que {other} (lien ou chemin en double)."
+msgstr "Тот же файл, что и {other} (ссылка или дублирующийся путь)."
+
+#: src/omega_log/application/use_cases/health_presentation.py:163
+#, python-brace-format
+msgid "Disque rempli à {percent} %."
+msgstr "Диск заполнен на {percent} %."
+
+#: src/omega_log/application/use_cases/health_presentation.py:165
+#, python-brace-format
+msgid "À ce rythme, disque plein dans environ {days} j."
+msgstr "При таком темпе диск заполнится примерно через {days} дн."
+
+#: src/omega_log/application/use_cases/health_presentation.py:167
+msgid "Aucune sauvegarde."
+msgstr "Резервных копий нет."
+
+#: src/omega_log/application/use_cases/health_presentation.py:169
+#, python-brace-format
+msgid "{count} sauvegarde(s) planifiée(s), mais aucune tâche planifiée ne les exécute."
+msgstr "Запланированных резервных копий: {count}, но ни одна запланированная задача их не выполняет."
+
+#: src/omega_log/application/use_cases/health_presentation.py:172
+#, python-brace-format
+msgid "Sauvegarde planifiée de {path} en échec, en retard de {days} j : {error}"
+msgstr "Запланированная копия {path} не удалась, опоздание {days} дн.: {error}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:175
+#, python-brace-format
+msgid "Sauvegarde planifiée de {path} en retard de {days} j : la tâche planifiée ne s'exécute pas (machine éteinte la nuit sans systemd, démon cron arrêté ?)."
+msgstr "Запланированная копия {path} опаздывает на {days} дн.: запланированная задача не выполняется (машина выключена на ночь без systemd, демон cron остановлен?)."
+
+#: src/omega_log/application/use_cases/health_presentation.py:185
+#, python-brace-format
+msgid "Ajoutez votre compte au groupe du fichier (ls -l {path}), puis rouvrez votre session."
+msgstr "Добавьте свою учётную запись в группу файла (ls -l {path}), затем войдите в систему заново."
+
+#: src/omega_log/application/use_cases/health_presentation.py:187
+#, python-brace-format
+msgid "Santé des logs → « Corriger les droits » (chmod o-w {path})."
+msgstr "Состояние журналов → «Исправить права» (chmod o-w {path})."
+
+#: src/omega_log/application/use_cases/health_presentation.py:189
+msgid "Ajoutez une règle dans /etc/logrotate.d/ (voir man logrotate)."
+msgstr "Добавьте правило в /etc/logrotate.d/ (см. man logrotate)."
+
+#: src/omega_log/application/use_cases/health_presentation.py:191
+msgid "Bibliothèque : retirez ce log ou corrigez son chemin."
+msgstr "Библиотека: удалите этот журнал или исправьте его путь."
+
+#: src/omega_log/application/use_cases/health_presentation.py:193
+msgid "Supprimez les vieilles sauvegardes (Rotate → « Supprimer l'archive ») ou videz les gros logs (Purger)."
+msgstr "Удалите старые резервные копии (Rotate → «Удалить архив») или очистите большие журналы (Очистить)."
+
+#: src/omega_log/application/use_cases/health_presentation.py:196
+msgid "Vérifiez que le programme qui écrit ce log tourne encore."
+msgstr "Проверьте, что программа, пишущая этот журнал, ещё работает."
+
+#: src/omega_log/application/use_cases/health_presentation.py:198
+msgid "Vérifiez l'heure du serveur : timedatectl"
+msgstr "Проверьте время сервера: timedatectl"
+
+#: src/omega_log/application/use_cases/health_presentation.py:200
+msgid "Sauvegardez ce log (Rotate) puis videz-le (Purger) pour repartir d'un fichier propre."
+msgstr "Сделайте копию этого журнала (Rotate), затем очистите его (Очистить), чтобы начать с чистого файла."
+
+#: src/omega_log/application/use_cases/health_presentation.py:202
+msgid "Rotate → « Sauvegardes planifiées » → « Réinstaller l'exécution »."
+msgstr "Rotate → «Запланированные резервные копии» → «Переустановить запуск»."
+
+#: src/omega_log/application/use_cases/health_presentation.py:204
+msgid "Un log protégé ne peut pas être sauvegardé la nuit sans mot de passe : sauvegardez-le depuis Rotate, ou retirez sa sauvegarde planifiée."
+msgstr "Защищённый журнал нельзя копировать ночью без пароля: сделайте копию из Rotate или удалите его запланированную копию."
+
+#: src/omega_log/application/use_cases/health_presentation.py:217 src/omega_log/application/use_cases/health_presentation.py:291 src/omega_log/interfaces/tui/screens/log_health_screen.py:284 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:109
+msgid "Aucun problème."
+msgstr "Проблем нет."
+
+#: src/omega_log/application/use_cases/health_presentation.py:222
+#, python-brace-format
+msgid "(+{count} autre(s))"
+msgstr "(+{count} ещё)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:229
+#, python-brace-format
+msgid "Taille {size}"
+msgstr "Размер {size}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:230
+#, python-brace-format
+msgid "dernière écriture {age}"
+msgstr "последняя запись {age}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:231
+#, python-brace-format
+msgid "croissance {growth}"
+msgstr "рост {growth}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:234
+#, python-brace-format
+msgid "droits {mode}"
+msgstr "права {mode}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:236
+#, python-brace-format
+msgid "format {source}"
+msgstr "формат {source}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:245
+msgid "plus de 10 ans"
+msgstr "более 10 лет"
+
+#: src/omega_log/application/use_cases/health_presentation.py:246
+#, python-brace-format
+msgid "environ {days} j"
+msgstr "около {days} дн."
+
+#: src/omega_log/application/use_cases/health_presentation.py:251
+#, python-brace-format
+msgid "{mount} : {free} libres sur {total} ({used} % utilisés) · croissance des logs {growth} · plein dans {days}"
+msgstr "{mount}: свободно {free} из {total} (занято {used} %) · рост журналов {growth} · заполнится через {days}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:259
+msgid "Aucune sauvegarde planifiée."
+msgstr "Запланированных резервных копий нет."
+
+#: src/omega_log/application/use_cases/health_presentation.py:260
+msgid "aucune tâche planifiée"
+msgstr "нет запланированной задачи"
+
+#: src/omega_log/application/use_cases/health_presentation.py:260
+msgid "tâche planifiée installée"
+msgstr "запланированная задача установлена"
+
+#: src/omega_log/application/use_cases/health_presentation.py:261
+msgid "tâche planifiée non vérifiée"
+msgstr "запланированная задача не проверена"
+
+#: src/omega_log/application/use_cases/health_presentation.py:262
+#, python-brace-format
+msgid "{count} sauvegarde(s) planifiée(s) · {state}"
+msgstr "Запланированных резервных копий: {count} · {state}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:267
+#, python-brace-format
+msgid "{directory} : aucune sauvegarde."
+msgstr "{directory}: резервных копий нет."
+
+#: src/omega_log/application/use_cases/health_presentation.py:269
+#, python-brace-format
+msgid "{directory} : {count} sauvegarde(s), {size}, la plus ancienne du {oldest}."
+msgstr "{directory}: резервных копий: {count}, {size}, самая старая от {oldest}."
+
+#: src/omega_log/application/use_cases/health_presentation.py:279 src/omega_log/interfaces/tui/screens/help_screen.py:259 src/omega_log/interfaces/tui/screens/home.py:57 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:81
+msgid "Santé des logs"
+msgstr "Состояние журналов"
+
+#: src/omega_log/application/use_cases/health_presentation.py:280 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:82
+#, python-brace-format
+msgid "Généré le {date}"
+msgstr "Создано {date}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:281
+#, python-brace-format
+msgid "Résumé : {summary}"
+msgstr "Итог: {summary}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:283
+msgid "LOGS"
+msgstr "ЖУРНАЛЫ"
+
+#: src/omega_log/application/use_cases/health_presentation.py:298 src/omega_log/interfaces/tui/screens/log_health_screen.py:107
+msgid "DISQUES"
+msgstr "ДИСКИ"
+
+#: src/omega_log/application/use_cases/health_presentation.py:307 src/omega_log/interfaces/tui/screens/log_health_screen.py:109
+msgid "SAUVEGARDES"
+msgstr "РЕЗЕРВНЫЕ КОПИИ"
+
+#: src/omega_log/application/use_cases/health_presentation.py:310 src/omega_log/interfaces/tui/screens/log_health_screen.py:111 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:70
+msgid "SAUVEGARDES PLANIFIÉES"
+msgstr "ЗАПЛАНИРОВАННЫЕ РЕЗЕРВНЫЕ КОПИИ"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:95
+#, python-brace-format
+msgid "Exécution : timer systemd {timer} actif (chaque nuit)."
+msgstr "Запуск: таймер systemd {timer} активен (каждую ночь)."
+
+#: src/omega_log/application/use_cases/rotation_automation.py:96
+#, python-brace-format
+msgid "Exécution : timer systemd {timer} non installé."
+msgstr "Запуск: таймер systemd {timer} не установлен."
+
+#: src/omega_log/application/use_cases/rotation_automation.py:99
+msgid "Exécution : aucun planificateur (ni systemd, ni crontab)."
+msgstr "Запуск: планировщика нет (ни systemd, ни crontab)."
+
+#: src/omega_log/application/use_cases/rotation_automation.py:102
+msgid "Exécution : ligne crontab installée (chaque nuit)."
+msgstr "Запуск: строка crontab установлена (каждую ночь)."
+
+#: src/omega_log/application/use_cases/rotation_automation.py:103
+msgid "Exécution : aucune ligne crontab pour ce compte."
+msgstr "Запуск: нет строки crontab для этой учётной записи."
+
+#: src/omega_log/application/use_cases/rotation_automation.py:135
+#, python-brace-format
+msgid "Timer systemd non installé : {error}"
+msgstr "Таймер systemd не установлен: {error}"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:136
+#, python-brace-format
+msgid "Timer systemd {timer} installé : les automatisations s'exécutent chaque nuit."
+msgstr "Таймер systemd {timer} установлен: автоматизации выполняются каждую ночь."
+
+#: src/omega_log/application/use_cases/rotation_automation.py:146 src/omega_log/application/use_cases/rotation_automation.py:172
+#, python-brace-format
+msgid "Échec de l'écriture de la crontab : {value}"
+msgstr "Не удалось записать crontab: {value}"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:148
+msgid "Ligne crontab installée : les automatisations s'exécutent chaque nuit."
+msgstr "Строка crontab установлена: автоматизации выполняются каждую ночь."
+
+#: src/omega_log/application/use_cases/rotation_automation.py:162
+#, python-brace-format
+msgid "Timer systemd non retiré : {error}"
+msgstr "Таймер systemd не удалён: {error}"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:163
+msgid "Plus aucune automatisation : timer systemd retiré."
+msgstr "Автоматизаций больше нет: таймер systemd удалён."
+
+#: src/omega_log/application/use_cases/rotation_automation.py:174
+msgid "Plus aucune automatisation : ligne crontab retirée."
+msgstr "Автоматизаций больше нет: строка crontab удалена."
+
+#: src/omega_log/domain/logs/rotation_schedule.py:96
+#, python-brace-format
+msgid ""
+"Aucun planificateur détecté (ni systemd, ni crontab). Ajoutez cette ligne vous-même à votre planificateur (crontab -e, /etc/cron.d/, tâche OpenRC ou runit équivalente) :\n"
+"\n"
+"{cron_line}"
+msgstr ""
+"Планировщик не обнаружен (ни systemd, ни crontab). Добавьте эту строку в свой планировщик сами (crontab -e, /etc/cron.d/, аналогичная задача OpenRC или runit):\n"
+"\n"
+"{cron_line}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:71 src/omega_log/interfaces/tui/screens/help_screen.py:284
+msgid "Version et mises à jour"
+msgstr "Версия и обновления"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:72
+msgid "Compare votre version à la liste des versions publiées sur le site. Rien n'est envoyé, et rien n'est vérifié sans votre clic."
+msgstr "Сравнивает вашу версию со списком версий, опубликованных на сайте. Ничего не отправляется, и без вашего нажатия ничего не проверяется."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:74
+#, python-brace-format
+msgid "Version installée : {version}"
+msgstr "Установленная версия: {version}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:78
+msgid "Vérifier les mises à jour"
+msgstr "Проверить обновления"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:80
+msgid "Voir les nouveautés"
+msgstr "Что нового"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:156
+msgid "Vérification en cours..."
+msgstr "Выполняется проверка..."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:173
+#, python-brace-format
+msgid ""
+"Nouvelle version disponible : {latest} (installée : {installed}).\n"
+"Archive : {url}"
+msgstr ""
+"Доступна новая версия: {latest} (установлена: {installed}).\n"
+"Архив: {url}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:176
+#, python-brace-format
+msgid "Vous avez la dernière version publiée ({version})."
+msgstr "У вас последняя опубликованная версия ({version})."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:178
+#, python-brace-format
+msgid "Votre version ({installed}) est plus récente que la dernière publiée ({latest}) : version en cours, pas encore publiée."
+msgstr "Ваша версия ({installed}) новее последней опубликованной ({latest}): версия в разработке, ещё не опубликована."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:181
+#, python-brace-format
+msgid "Version installée : {version}. Site injoignable ou liste des versions illisible : réessayez plus tard."
+msgstr "Установленная версия: {version}. Сайт недоступен или список версий не читается: повторите попытку позже."
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:90
+msgid "SANTÉ DES LOGS"
+msgstr "СОСТОЯНИЕ ЖУРНАЛОВ"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:91
+msgid "Contrôle en lecture seule des logs de la Bibliothèque, du disque qui les porte, des sauvegardes et des sauvegardes planifiées. Surlignez un log pour voir le détail."
+msgstr "Проверка журналов Библиотеки, диска, на котором они хранятся, резервных копий и запланированных резервных копий в режиме только чтения. Выделите журнал, чтобы увидеть подробности."
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:100
+msgid "Relancer l'analyse"
+msgstr "Повторить анализ"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:102
+msgid "Analyser avec sudo"
+msgstr "Анализ через sudo"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:104
+msgid "Corriger les droits"
+msgstr "Исправить права"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:106
+msgid "Corriger avec sudo"
+msgstr "Исправить через sudo"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:123
+msgid "Exporter TXT"
+msgstr "Экспорт TXT"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131
+msgid "Constat"
+msgstr "Вывод"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Log"
+msgstr "Журнал"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:141
+msgid "Analyse en cours…"
+msgstr "Идёт анализ…"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:208
+#, python-brace-format
+msgid "Analysé {age}."
+msgstr "Проанализировано {age}."
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:211
+msgid "Résumé : "
+msgstr "Итог: "
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:301
+msgid "CORRIGER LES DROITS ?"
+msgstr "ИСПРАВИТЬ ПРАВА?"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:302
+#, python-brace-format
+msgid "{path} : retirer l'écriture pour tout le monde (droits {mode})."
+msgstr "{path}: убрать право записи для всех (права {mode})."
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:314 src/omega_log/interfaces/tui/screens/log_health_screen.py:342
+#, python-brace-format
+msgid "Correction impossible : {error}"
+msgstr "Исправление невозможно: {error}"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:316
+#, python-brace-format
+msgid "Droits corrigés : {path}."
+msgstr "Права исправлены: {path}."
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:327
+msgid "CORRIGER AVEC SUDO ?"
+msgstr "ИСПРАВИТЬ ЧЕРЕЗ SUDO?"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:328
+#, python-brace-format
+msgid ""
+"Commande lancée après votre mot de passe :\n"
+"{command}"
+msgstr ""
+"Команда, запускаемая после ввода пароля:\n"
+"{command}"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:344
+#, python-brace-format
+msgid "Droits corrigés avec sudo : {path}."
+msgstr "Права исправлены через sudo: {path}."
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:371
+msgid "Attendez la fin de l'analyse."
+msgstr "Дождитесь окончания анализа."
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:384
+#, python-brace-format
+msgid "Export écrit : {export_path}"
+msgstr "Экспорт записан: {export_path}"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:125
+msgid "Ou cherchez une IP précise dans ces logs (fichier entier) :"
+msgstr "Или найдите конкретный IP в этих журналах (весь файл):"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:127
+msgid "ex: 203.0.113.42"
+msgstr "напр.: 203.0.113.42"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:129
+msgid "Rechercher cette IP"
+msgstr "Найти этот IP"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:226
+msgid "Adresse IP invalide : {value!r}."
+msgstr "Недопустимый IP-адрес: {value!r}."
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:274
+#, python-brace-format
+msgid "{ip} : {total} ligne(s) - {detail}"
+msgstr "{ip}: строк: {total} - {detail}"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:279
+#, python-brace-format
+msgid "{ip} est absente des log(s) sélectionné(s)."
+msgstr "{ip} нет в выбранных журналах."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:220 src/omega_log/interfaces/tui/screens/rotate_screen.py:69 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:128
+msgid "Sauvegardes planifiées"
+msgstr "Запланированные резервные копии"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:47
+msgid "Tous les jours"
+msgstr "Каждый день"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:47
+msgid "Tous les mois"
+msgstr "Каждый месяц"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:47
+msgid "Toutes les semaines"
+msgstr "Каждую неделю"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:48
+#, python-brace-format
+msgid "Tous les {days} jours"
+msgstr "Каждые {days} дн."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:71
+msgid "Chaque nuit, omega-log sauvegarde, sous votre compte, chaque log arrivé à échéance (comme « Sauvegarder maintenant »). Un log protégé (/var/log/...) ne peut pas être sauvegardé la nuit sans mot de passe : faites-le depuis Rotate."
+msgstr "Каждую ночь omega-log создаёт под вашей учётной записью копию каждого журнала, срок которого подошёл (как «Создать копию сейчас»). Защищённый журнал (/var/log/...) нельзя копировать ночью без пароля: сделайте это из Rotate."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:75
+msgid "Numéro du log à planifier (ex: 1)"
+msgstr "Номер журнала для планирования (напр.: 1)"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:82
+msgid "Planifier ce log"
+msgstr "Запланировать этот журнал"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:84
+msgid "Automatisations planifiées"
+msgstr "Запланированные автоматизации"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:89
+msgid "Supprimer la sélection"
+msgstr "Удалить выбранное"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:91
+msgid "Réinstaller l'exécution"
+msgstr "Переустановить запуск"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Conservées"
+msgstr "Хранятся"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Dernière exécution"
+msgstr "Последний запуск"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Fréquence"
+msgstr "Частота"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Prochaine"
+msgstr "Следующий"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:114
+#, python-brace-format
+msgid "échec : {error}"
+msgstr "ошибка: {error}"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:120
+msgid "Utilisez « Réinstaller l'exécution »."
+msgstr "Используйте « Переустановить запуск »."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:185
+msgid "Ce log a déjà une sauvegarde planifiée : supprimez-la d'abord."
+msgstr "У этого журнала уже есть запланированная копия: сначала удалите её."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:190
+#, python-brace-format
+msgid "Sauvegarde planifiée : {path} ({frequency})."
+msgstr "Запланированная копия: {path} ({frequency})."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:198
+msgid "Sélectionnez une automatisation."
+msgstr "Выберите автоматизацию."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:202
+msgid "SUPPRIMER CETTE AUTOMATISATION ?"
+msgstr "УДАЛИТЬ ЭТУ АВТОМАТИЗАЦИЮ?"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:203
+msgid "Le log ne sera plus sauvegardé automatiquement. Les sauvegardes déjà faites sont conservées."
+msgstr "Журнал больше не будет копироваться автоматически. Уже сделанные копии сохраняются."
+
+#: src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:115
+msgid "Disques"
+msgstr "Диски"
+
+#: src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:138
+msgid "Sauvegardes"
+msgstr "Резервные копии"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:171
+msgid "Voir et Traiter IP : chercher une IP précise"
+msgstr "IP-адреса: просмотр и обработка: поиск конкретного IP"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:172
+msgid ""
+"Sans attendre qu'une IP apparaisse dans le top : saisissez-la (IPv4 ou\n"
+"IPv6) dans « Ou cherchez une IP précise », puis [b]Rechercher cette IP[/b]\n"
+"ou Entrée.\n"
+"\n"
+"- Ses lignes sont comptées dans chaque log sélectionné, fichier entier,\n"
+"  avec le total et le détail par log.\n"
+"- Ce sont exactement les lignes que le retrait supprimerait : si l'IP\n"
+"  est présente, elle est déjà sélectionnée, [b]Retirer cette IP[/b] est\n"
+"  actif, et elle est recomptée après le retrait.\n"
+"- Une IP n'est jamais confondue avec une IP plus longue (1.1.1.1 et\n"
+"  1.1.1.11), et une IPv6 terminée par « :: » est bien trouvée."
+msgstr ""
+"Не дожидаясь, пока IP появится в топе: введите его (IPv4 или\n"
+"IPv6) в поле «Или найдите конкретный IP», затем [b]Найти этот IP[/b]\n"
+"или Enter.\n"
+"\n"
+"- Его строки подсчитываются в каждом выбранном журнале, весь файл,\n"
+"  с общим итогом и разбивкой по журналам.\n"
+"- Это в точности те строки, которые удалит удаление: если IP\n"
+"  присутствует, он уже выбран, [b]Удалить этот IP[/b]\n"
+"  активна, и после удаления он пересчитывается.\n"
+"- IP никогда не путается с более длинным IP (1.1.1.1 и\n"
+"  1.1.1.11), а IPv6, оканчивающийся на «::», находится корректно."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:221
+msgid ""
+"Rotate → [b]Sauvegardes planifiées[/b] : un log de la Bibliothèque est\n"
+"sauvegardé automatiquement tous les jours, toutes les semaines ou tous\n"
+"les mois, avec le nombre de sauvegardes conservées.\n"
+"\n"
+"- La première sauvegarde planifiée installe une tâche quotidienne :\n"
+"  timer systemd (mot de passe sudo demandé), sinon une ligne de votre\n"
+"  crontab (OpenRC, runit), sinon la ligne à ajouter vous-même est\n"
+"  affichée. La dernière supprimée retire la tâche.\n"
+"- Chaque nuit, [b]omega-log rotate run-automations[/b] sauvegarde, sous\n"
+"  votre compte (jamais root), chaque log arrivé à échéance ; le tableau\n"
+"  montre la dernière et la prochaine exécution.\n"
+"- Un log protégé (/var/log/...) ne peut pas être sauvegardé la nuit\n"
+"  sans mot de passe : l'échec est noté, Santé des logs le signale."
+msgstr ""
+"Rotate → [b]Запланированные резервные копии[/b]: журнал из Библиотеки\n"
+"автоматически копируется каждый день, каждую неделю или каждый месяц,\n"
+"с указанным числом хранимых копий.\n"
+"\n"
+"- Первая запланированная копия устанавливает ежедневную задачу:\n"
+"  таймер systemd (запрашивается пароль sudo), иначе строку вашего\n"
+"  crontab (OpenRC, runit), иначе показывается строка, которую нужно\n"
+"  добавить самостоятельно. Удаление последней убирает задачу.\n"
+"- Каждую ночь [b]omega-log rotate run-automations[/b] создаёт от имени\n"
+"  вашей учётной записи (никогда root) копию каждого журнала, срок\n"
+"  которого подошёл; таблица показывает последний и следующий запуск.\n"
+"- Защищённый журнал (/var/log/...) нельзя копировать ночью без пароля:\n"
+"  сбой фиксируется, Состояние журналов его сообщает."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:260
+msgid ""
+"Contrôle en lecture seule des logs de la Bibliothèque, du disque qui les\n"
+"porte, des sauvegardes et des sauvegardes planifiées. Chaque log reçoit\n"
+"un niveau : OK, Info, Attention ou Problème, avec le geste à faire.\n"
+"\n"
+"- Contrôles : fichier absent ou lien cassé, illisible par votre compte,\n"
+"  inscriptible par tout le monde, log muet depuis plus de 7 jours, vide,\n"
+"  dates non reconnues ou dans le futur, octets nuls, gros log sans règle\n"
+"  logrotate, doublon ; disque (jours avant d'être plein) ; sauvegardes\n"
+"  planifiées en échec ou en retard.\n"
+"- [b]Analyser avec sudo[/b] : lit le début et la fin des logs illisibles.\n"
+"- [b]Corriger les droits[/b] / [b]Corriger avec sudo[/b] : retire l'écriture\n"
+"  pour tout le monde (chmod o-w), après confirmation.\n"
+"- [b]Exporter JSON / HTML / TXT[/b] : le rapport, dans la langue des\n"
+"  exports, déposé dans var/exports/."
+msgstr ""
+"Проверка только для чтения журналов Библиотеки, диска, на котором они\n"
+"находятся, резервных копий и запланированных резервных копий. Каждому\n"
+"журналу присваивается уровень: OK, Инфо, Предупреждение или Проблема, и что делать.\n"
+"\n"
+"- Проверки: файл отсутствует или битая ссылка, недоступен для вашей\n"
+"  учётной записи, доступен на запись всем, журнал молчит более 7 дней,\n"
+"  пуст, даты не распознаны или в будущем, нулевые байты, большой журнал\n"
+"  без правила logrotate, дубликат; диск (дней до заполнения);\n"
+"  запланированные резервные копии с ошибкой или с опозданием.\n"
+"- [b]Анализ через sudo[/b]: читает начало и конец недоступных журналов.\n"
+"- [b]Исправить права[/b] / [b]Исправить через sudo[/b]: убирает право\n"
+"  записи для всех (chmod o-w), после подтверждения.\n"
+"- [b]Экспорт JSON / HTML / TXT[/b]: отчёт, на языке экспорта, помещается\n"
+"  в var/exports/."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:285
+msgid ""
+"La version d'omega-log est affichée dans la barre de titre.\n"
+"\n"
+"- Aide → Contact et support → [b]Vérifier les mises à jour[/b] : compare\n"
+"  votre version à la liste des versions publiées sur le site. Seulement\n"
+"  sur votre clic, rien n'est envoyé.\n"
+"- Si une version plus récente existe, [b]Voir les nouveautés[/b] ouvre\n"
+"  son résumé dans votre navigateur.\n"
+"- En ligne de commande : omega-log version --check."
+msgstr ""
+"Версия omega-log отображается в строке заголовка.\n"
+"\n"
+"- Справка → Контакты и поддержка → [b]Проверить обновления[/b]: сравнивает\n"
+"  вашу версию со списком версий, опубликованных на сайте. Только\n"
+"  по вашему клику, ничего не отправляется.\n"
+"- Если существует более новая версия, [b]Что нового[/b] открывает её\n"
+"  описание в вашем браузере.\n"
+"- В командной строке: omega-log version --check."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:93
+msgid "Désinstaller l'exécution"
+msgstr "Удалить запуск"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:159
+msgid "DÉSINSTALLER L'EXÉCUTION ?"
+msgstr "УДАЛИТЬ ЗАПУСК?"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:160
+msgid "La tâche planifiée (timer systemd ou ligne crontab) est retirée. Vos sauvegardes planifiées restent enregistrées mais ne s'exécutent plus, jusqu'à « Réinstaller l'exécution »."
+msgstr "Запланированная задача (таймер systemd или строка crontab) удаляется. Ваши запланированные резервные копии остаются сохранёнными, но больше не выполняются до «Переустановить запуск»."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:171
+msgid "Aucune tâche planifiée à retirer."
+msgstr "Нет запланированной задачи для удаления."

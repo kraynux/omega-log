@@ -9,6 +9,7 @@ from typing import Any
 
 from omega_log.core.capability import Capability, create_capability
 from omega_log.core.enums import CapabilityStatus
+from omega_log.shared.i18n import _
 
 
 class CapabilityMapper:
@@ -26,7 +27,7 @@ class CapabilityMapper:
             return create_capability(
                 capability_id=capability_id,
                 status=CapabilityStatus.MISSING,
-                reason=f"Composant non installe : {message}" if message else "Binaire introuvable sur le systeme",
+                reason=_("Composant non installé : {message}").format(message=message) if message else _("Binaire introuvable sur le système"),
                 detail={"path": path, "message": message},
                 category=category,
             )
@@ -35,7 +36,7 @@ class CapabilityMapper:
             return create_capability(
                 capability_id=capability_id,
                 status=CapabilityStatus.DISQUALIFIED,
-                reason=f"Binaire present mais non fonctionnel : {message}",
+                reason=_("Binaire présent mais non fonctionnel : {message}").format(message=message),
                 detail={"path": path, "message": message},
                 category=category,
             )
@@ -43,7 +44,7 @@ class CapabilityMapper:
         return create_capability(
             capability_id=capability_id,
             status=CapabilityStatus.AVAILABLE,
-            reason=f"Binaire operationnel ({path})",
+            reason=_("Binaire opérationnel ({path})").format(path=path),
             detail={"path": path, "message": message},
             category=category,
         )
@@ -62,7 +63,7 @@ class CapabilityMapper:
             return create_capability(
                 capability_id=capability_id,
                 status=CapabilityStatus.MISSING,
-                reason=f"Gestionnaire de services indisponible : {message}",
+                reason=_("Gestionnaire de services indisponible : {message}").format(message=message),
                 detail={"state": state, "message": message},
                 category=category,
             )
@@ -71,7 +72,7 @@ class CapabilityMapper:
             return create_capability(
                 capability_id=capability_id,
                 status=CapabilityStatus.MISSING,
-                reason=f"Service non installe sur le systeme ({message})" if message else "Service introuvable",
+                reason=_("Service non installé sur le système ({message})").format(message=message) if message else _("Service introuvable"),
                 detail={"state": state, "message": message},
                 category=category,
             )
@@ -80,7 +81,7 @@ class CapabilityMapper:
             return create_capability(
                 capability_id=capability_id,
                 status=CapabilityStatus.DEGRADED,
-                reason=f"Service installe mais INACTIF (arrete) : {message}",
+                reason=_("Service installé mais INACTIF (arrêté) : {message}").format(message=message),
                 detail={"state": state, "active": active, "enabled": enabled, "message": message},
                 category=category,
             )
@@ -88,7 +89,7 @@ class CapabilityMapper:
         return create_capability(
             capability_id=capability_id,
             status=CapabilityStatus.AVAILABLE,
-            reason=f"Service actif : {message}",
+            reason=_("Service actif : {message}").format(message=message),
             detail={"state": state, "active": active, "enabled": enabled, "message": message},
             category=category,
         )

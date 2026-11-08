@@ -20,6 +20,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from omega_log.ports.process_runner_port import ProcessRunnerPort
+from omega_log.shared.i18n import _
 
 _TIMEOUT_SECONDS = 10.0
 
@@ -37,7 +38,7 @@ def read_file_privileged(runner: ProcessRunnerPort, path: str) -> PrivilegedOpRe
     les lectures non privilegiees)."""
     result = runner.run(["sudo", "cat", path], timeout=_TIMEOUT_SECONDS)
     if not result.ok:
-        return PrivilegedOpResult(success=False, message=result.stderr.strip() or f"code {result.returncode}")
+        return PrivilegedOpResult(success=False, message=result.stderr.strip() or _("code {returncode}").format(returncode=result.returncode))
     return PrivilegedOpResult(success=True, content=result.stdout)
 
 
@@ -53,7 +54,7 @@ def read_new_bytes_privileged(runner: ProcessRunnerPort, path: str, offset: int)
         return read_file_privileged(runner, path)
     result = runner.run(["sudo", "tail", "-c", f"+{offset + 1}", path], timeout=_TIMEOUT_SECONDS)
     if not result.ok:
-        return PrivilegedOpResult(success=False, message=result.stderr.strip() or f"code {result.returncode}")
+        return PrivilegedOpResult(success=False, message=result.stderr.strip() or _("code {returncode}").format(returncode=result.returncode))
     return PrivilegedOpResult(success=True, content=result.stdout)
 
 
@@ -64,14 +65,14 @@ def truncate_file_privileged(runner: ProcessRunnerPort, path: str) -> Privileged
     garde ce fichier ouvert ne doit jamais perdre son descripteur)."""
     result = runner.run(["sudo", "truncate", "-s", "0", path], timeout=_TIMEOUT_SECONDS)
     if not result.ok:
-        return PrivilegedOpResult(success=False, message=result.stderr.strip() or f"code {result.returncode}")
+        return PrivilegedOpResult(success=False, message=result.stderr.strip() or _("code {returncode}").format(returncode=result.returncode))
     return PrivilegedOpResult(success=True)
 
 
 def delete_file_privileged(runner: ProcessRunnerPort, path: str) -> PrivilegedOpResult:
     result = runner.run(["sudo", "rm", "-f", path], timeout=_TIMEOUT_SECONDS)
     if not result.ok:
-        return PrivilegedOpResult(success=False, message=result.stderr.strip() or f"code {result.returncode}")
+        return PrivilegedOpResult(success=False, message=result.stderr.strip() or _("code {returncode}").format(returncode=result.returncode))
     return PrivilegedOpResult(success=True)
 
 
@@ -93,7 +94,7 @@ def overwrite_file_privileged(runner: ProcessRunnerPort, path: str, content: str
         except OSError:
             pass
     if not result.ok:
-        return PrivilegedOpResult(success=False, message=result.stderr.strip() or f"code {result.returncode}")
+        return PrivilegedOpResult(success=False, message=result.stderr.strip() or _("code {returncode}").format(returncode=result.returncode))
     return PrivilegedOpResult(success=True)
 
 
@@ -103,7 +104,7 @@ def append_file_privileged(runner: ProcessRunnerPort, path: str, content: str) -
     overwrite_file_privileged : rien a faire lire a `cp`)."""
     result = runner.run(["sudo", "tee", "-a", "--", path], input_text=content, timeout=_TIMEOUT_SECONDS)
     if not result.ok:
-        return PrivilegedOpResult(success=False, message=result.stderr.strip() or f"code {result.returncode}")
+        return PrivilegedOpResult(success=False, message=result.stderr.strip() or _("code {returncode}").format(returncode=result.returncode))
     return PrivilegedOpResult(success=True)
 
 
@@ -118,13 +119,13 @@ def stage_protected_copy_privileged(runner: ProcessRunnerPort, source: Path, des
     dest = dest_dir / source.name
     copy_result = runner.run(["sudo", "cp", "--", str(source), str(dest)], timeout=_TIMEOUT_SECONDS)
     if not copy_result.ok:
-        return PrivilegedOpResult(success=False, message=copy_result.stderr.strip() or f"code {copy_result.returncode}")
+        return PrivilegedOpResult(success=False, message=copy_result.stderr.strip() or _("code {returncode}").format(returncode=copy_result.returncode))
 
     chown_result = runner.run(
         ["sudo", "chown", f"{os.getuid()}:{os.getgid()}", str(dest)], timeout=_TIMEOUT_SECONDS,
     )
     if not chown_result.ok:
         dest.unlink(missing_ok=True)
-        return PrivilegedOpResult(success=False, message=chown_result.stderr.strip() or f"code {chown_result.returncode}")
+        return PrivilegedOpResult(success=False, message=chown_result.stderr.strip() or _("code {returncode}").format(returncode=chown_result.returncode))
 
     return PrivilegedOpResult(success=True, content=str(dest))

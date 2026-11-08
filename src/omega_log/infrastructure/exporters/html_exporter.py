@@ -16,7 +16,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup, escape
 from omega_lib.theme.policies import DEFAULT_EXPORT_THEME
+
+from omega_log.shared.i18n import TRANSLATOR, _
 
 _TEMPLATES_DIR = Path(__file__).parent / "templates"
 
@@ -24,6 +27,18 @@ _env = Environment(
     loader=FileSystemLoader(_TEMPLATES_DIR),
     autoescape=select_autoescape(["html"]),
 )
+# Langue des exports (meme mecanisme que la suite omega) : texte des gabarits traduit par `_` dans la
+# langue active (celle des exports sous translating_as) ; lang= et dir= du document suivent.
+_env.globals.update(_=_, html_lang=TRANSLATOR.html_lang, html_dir=TRANSLATOR.html_dir)
+
+
+def _rich_markup(text: str) -> Markup:
+    """Texte de l'aide (balises Rich [b]...[/b]) vers HTML : tout est echappe d'abord, seules les
+    balises de gras deviennent <strong>."""
+    return Markup(str(escape(text)).replace("[b]", "<strong>").replace("[/b]", "</strong>"))
+
+
+_env.filters["rich_markup"] = _rich_markup
 
 
 def export_log_archives_html(archives: Sequence[dict], theme_name: str = DEFAULT_EXPORT_THEME) -> str:
@@ -41,26 +56,47 @@ def export_log_archives_html(archives: Sequence[dict], theme_name: str = DEFAULT
 def export_access_log_stats_html(
     *,
     sources: Sequence[str],
-    period: str | None,
-    total_entries: int,
-    unique_ips: int,
-    error_rate: float,
-    top_ips: Sequence[dict],
-    hourly_stats: Sequence[dict],
+    period_label: str,
+    report: dict,
+    volume: str,
     theme_name: str = DEFAULT_EXPORT_THEME,
 ) -> str:
+    """Rapport de statistiques (2026-11-06, presentation du rapport periodique d'omega-fire) : `report` =
+    `dataclasses.asdict(StatsReport)`, ce module reste agnostique du modele de domaine."""
     from omega_log.infrastructure.exporters.html_theme_resolver import resolve_export_palette
 
     template = _env.get_template("access_log_stats_report.html.j2")
-    palette = resolve_export_palette(theme_name)
     return template.render(
         sources=sources,
-        period=period,
-        total_entries=total_entries,
-        unique_ips=unique_ips,
-        error_rate=error_rate,
-        top_ips=top_ips,
-        hourly_stats=hourly_stats,
-        generated_at=datetime.now(timezone.utc).isoformat(),
-        palette=palette,
+        period_label=period_label,
+        report=report,
+        volume=volume,
+        generated_at=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        palette=resolve_export_palette(theme_name),
     )
+
+
+def export_help_html(
+    shortcut_tables: Sequence[dict], sections: Sequence[dict], version: str, theme_name: str = DEFAULT_EXPORT_THEME,
+) -> str:
+    """Aide d'omega-log en HTML (repris du guide d'omega-serv, 2026-11-06). `shortcut_tables` :
+    {title, rows: [(touche, description)]} ; `sections` : {title, body} avec balises Rich [b]."""
+    from omega_log.infrastructure.exporters.html_theme_resolver import resolve_export_palette
+
+    template = _env.get_template("help_report.html.j2")
+    return template.render(
+        shortcut_tables=shortcut_tables,
+        sections=sections,
+        version=version,
+        generated_at=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        palette=resolve_export_palette(theme_name),
+    )
+
+
+def export_log_health_html(*, theme_name: str = DEFAULT_EXPORT_THEME, **arguments: object) -> str:
+    """Sante des logs (portee d'omega-serv 2.6.0, 2026-11-07) : `arguments` =
+    `health_presentation.html_arguments(...)`, phrases deja traduites (appel sous translating_as)."""
+    from omega_log.infrastructure.exporters.html_theme_resolver import resolve_export_palette
+
+    template = _env.get_template("log_health_report.html.j2")
+    return template.render(palette=resolve_export_palette(theme_name), **arguments)

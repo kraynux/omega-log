@@ -7,7 +7,7 @@
   analytics}.py (generiques, Phase 2).
 - Retrait d'IP : ADAPTE depuis omega-fire/remove_ip_from_log_screen.py
   (complement, absent de SERV) — meme principe (filtrer les lignes
-  contenant l'IP via regex a limite de mot), mais ecriture atomique
+  contenant l'IP), mais ecriture atomique
   (fichier temporaire + remplacement) plutot qu'un `open(path, "w")`
   direct : une panne au milieu de l'ecriture source laisserait le
   fichier original tronque/corrompu, l'ecriture atomique ne le remplace
@@ -22,20 +22,20 @@ from __future__ import annotations
 
 import ipaddress
 import os
-import re
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from omega_log.application.use_cases._log_reading import read_entries_for_paths
-from omega_log.domain.logs.analytics import compute_top_ips
+from omega_log.application.use_cases.log_tasks import accumulate_paths
+from omega_log.domain.logs.ip_match import ip_line_pattern, line_contains_ip
 from omega_log.domain.logs.models import TopIP
 from omega_log.infrastructure.privileged.elevation import PermissionRequiredError
 from omega_log.infrastructure.privileged.privileged_file_ops import (
     overwrite_file_privileged,
     read_file_privileged,
 )
+from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
     from omega_log.ports.process_runner_port import ProcessRunnerPort
@@ -47,8 +47,7 @@ def compute_top_ips_for_paths(
 ) -> list[TopIP]:
     """Top N IP toutes sources confondues parmi `paths`. `period` filtre
     sur l'horodatage de chaque ligne ("24h"/"7d"/"30d"/None pour tout)."""
-    entries = read_entries_for_paths(paths, period=period, now=now, runner=runner)
-    return compute_top_ips(entries, n=n)
+    return accumulate_paths(paths, period=period, now=now, runner=runner).top_ips(n)
 
 
 @dataclass
@@ -64,17 +63,17 @@ def count_ip_occurrences(path: str, ip: str, *, runner: ProcessRunnerPort | None
         ipaddress.ip_address(ip)
     except ValueError:
         return 0
-    pattern = re.compile(rf"\b{re.escape(ip)}\b")
+    pattern = ip_line_pattern(ip)
     try:
         with open(path, encoding="utf-8", errors="replace") as f:
-            return sum(1 for line in f if pattern.search(line))
+            return sum(1 for line in f if line_contains_ip(line, ip, pattern))
     except PermissionError:
         if runner is None:
             raise PermissionRequiredError(path) from None
         result = read_file_privileged(runner, path)
         if not result.success:
             return 0
-        return sum(1 for line in result.content.splitlines() if pattern.search(line))
+        return sum(1 for line in result.content.splitlines() if line_contains_ip(line, ip, pattern))
     except OSError:
         return 0
 
@@ -94,13 +93,13 @@ def remove_ip_from_file(path: str, ip: str, *, runner: ProcessRunnerPort | None 
     try:
         ipaddress.ip_address(ip)
     except ValueError:
-        return RemoveIpResult(success=False, message=f"Adresse IP invalide : {ip}")
+        return RemoveIpResult(success=False, message=_("Adresse IP invalide : {ip}").format(ip=ip))
 
     target = Path(path)
     if not target.is_file():
-        return RemoveIpResult(success=False, message=f"Fichier introuvable : {path}")
+        return RemoveIpResult(success=False, message=_("Fichier introuvable : {path}").format(path=path))
 
-    pattern = re.compile(rf"\b{re.escape(ip)}\b")
+    pattern = ip_line_pattern(ip)
     try:
         with target.open(encoding="utf-8", errors="replace") as f:
             lines = f.readlines()
@@ -109,15 +108,16 @@ def remove_ip_from_file(path: str, ip: str, *, runner: ProcessRunnerPort | None 
             raise PermissionRequiredError(path) from None
         result = read_file_privileged(runner, path)
         if not result.success:
-            return RemoveIpResult(success=False, message=f"Lecture privilegiee impossible : {result.message}")
+            return RemoveIpResult(success=False, message=_("Lecture privilégiée impossible : "
+                                                           "{message}").format(message=result.message))
         lines = result.content.splitlines(keepends=True)
     except OSError as exc:
-        return RemoveIpResult(success=False, message=f"Lecture impossible : {exc}")
+        return RemoveIpResult(success=False, message=_("Lecture impossible : {exc}").format(exc=exc))
 
-    kept = [line for line in lines if not pattern.search(line)]
+    kept = [line for line in lines if not line_contains_ip(line, ip, pattern)]
     occurrences = len(lines) - len(kept)
     if occurrences == 0:
-        return RemoveIpResult(success=True, occurrences=0, message=f"Aucune occurrence de {ip} trouvee.")
+        return RemoveIpResult(success=True, occurrences=0, message=_("Aucune occurrence de {ip} trouvée.").format(ip=ip))
 
     new_content = "".join(kept)
     tmp_path = target.with_suffix(target.suffix + ".omega-log-tmp")
@@ -136,9 +136,11 @@ def remove_ip_from_file(path: str, ip: str, *, runner: ProcessRunnerPort | None 
             raise PermissionRequiredError(path) from None
         priv_result = overwrite_file_privileged(runner, path, new_content)
         if not priv_result.success:
-            return RemoveIpResult(success=False, message=f"Ecriture privilegiee impossible : {priv_result.message}")
+            return RemoveIpResult(success=False, message=_("Écriture privilégiée impossible : "
+                                                           "{message}").format(message=priv_result.message))
     except OSError as exc:
         tmp_path.unlink(missing_ok=True)
-        return RemoveIpResult(success=False, message=f"Ecriture impossible : {exc}")
+        return RemoveIpResult(success=False, message=_("Écriture impossible : {exc}").format(exc=exc))
 
-    return RemoveIpResult(success=True, occurrences=occurrences, message=f"{occurrences} occurrence(s) de {ip} retiree(s).")
+    return RemoveIpResult(success=True, occurrences=occurrences, message=_("{occurrences} occurrence(s) de {ip} "
+                                                                           "retirée(s).").format(occurrences=occurrences, ip=ip))

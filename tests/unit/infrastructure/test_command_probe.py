@@ -23,7 +23,7 @@ def test_probe_command_missing_binary_shape() -> None:
     probe = CommandProbe()
     result = probe.probe_command("this-binary-does-not-exist-omega-log")
     assert result == {"present": False, "functional": False, "path": None, "message": result["message"]}
-    assert "not found" in result["message"]
+    assert "introuvable" in result["message"]
 
 
 def test_probe_command_present_without_test_command() -> None:

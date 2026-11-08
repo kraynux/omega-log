@@ -44,6 +44,7 @@ observe (plus de prompt tant que le process du pool de calcul,
 collateral, ne recoit pas lui aussi le Ctrl+C de secours)."""
 from __future__ import annotations
 
+import logging
 import os
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -56,33 +57,49 @@ from omega_log.application.commands.select_theme import select_theme
 from omega_log.application.exceptions import UnknownThemeError
 from omega_log.infrastructure.probe.lnav_capability import probe_lnav
 from omega_log.interfaces.tui.screens._base import OmegaScreen
+from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
     from omega_log.app.dependency_container import DependencyContainer
 
 _ERROR_MESSAGE = (
-    "lnav est introuvable ou non fonctionnel sur ce systeme. "
-    "Sur Arch/Manjaro : sudo pacman -S lnav. Sur Debian/Ubuntu : sudo apt install lnav."
+    _("lnav est introuvable ou non fonctionnel sur ce système. Sur Arch/Manjaro : sudo pacman "
+      "-S lnav. Sur Debian/Ubuntu : sudo apt install lnav.")
 )
 
 
+_LOGGER = logging.getLogger(__name__)
+
+
 class LnavScreen(OmegaScreen):
+    """Lancement DIRECT (2026-11-07, retour utilisateur : « peut-on supprimer cette interface secondaire qui
+    redemande la meme operation ? ») : lnav part des l'ouverture ; a sa fermeture, retour a l'ecran precedent.
+    L'ecran ne reste affiche qu'en cas d'echec, avec l'erreur et « Lancer lnav » pour reessayer. La trace
+    complete d'un echec est ecrite dans var/app.log."""
+
     def __init__(self, *, container: DependencyContainer, paths: list[str]) -> None:
         super().__init__()
         self._container = container
         self._paths = paths
 
+    def on_mount(self) -> None:
+        self.call_after_refresh(self._launch_directly)
+
+    def _launch_directly(self) -> None:
+        if self._launch():
+            self.dismiss()
+
     def compose(self) -> ComposeResult:
         yield Header()
         with Vertical(classes="omega-panel"):
-            yield Static("VOIR LES LOGS — LNAV (FUSION MULTI-LOGS)", classes="omega-title")
-            yield Static(f"Fichiers : {', '.join(self._paths)}", classes="omega-hint")
+            yield Static(_("VOIR LES LOGS — LNAV (FUSION MULTI-LOGS)"), classes="omega-title")
+            yield Static(_("Fichiers : {join}").format(join=', '.join(self._paths)), classes="omega-hint")
             yield Static("", id="lnav-error", classes="omega-hint")
             with Horizontal(classes="omega-actions"):
                 with Container(classes="omega-btn-frame"):
-                    yield Button("Lancer lnav", id="launch", variant="primary")
+                    yield Button(_("Lancer lnav"), id="launch", variant="primary")
                 with Container(classes="omega-btn-frame"):
-                    yield Button("Retour", id="back")
+                    yield Button(_("Retour"), id="back")
         yield Footer()
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
@@ -91,22 +108,30 @@ class LnavScreen(OmegaScreen):
         elif event.button.id == "launch":
             self._launch()
 
-    def _launch(self) -> None:
+    def _launch(self) -> bool:
+        """True si lnav a tourne puis a ete quitte normalement ; False en cas d'echec (ecran garde)."""
         capability = probe_lnav()
         if not capability.is_usable():
             self.app.notify(_ERROR_MESSAGE, severity="error")
             self.query_one("#lnav-error", Static).update(_ERROR_MESSAGE)
-            return
+            return False
 
         missing = [p for p in self._paths if not Path(p).is_file()]
         if missing:
-            self.app.notify(f"Fichier(s) introuvable(s) : {', '.join(missing)}", severity="error")
-            return
+            message = _("Fichier(s) introuvable(s) : {join}").format(join=', '.join(missing))
+            self.app.notify(message, severity="error")
+            self.query_one("#lnav-error", Static).update(message)
+            return False
 
         try:
             self._run_lnav()
-        except Exception as exc:  # noqa: BLE001 - jamais planter l'appli pour un echec lnav
-            self.app.notify(f"Echec du lancement de lnav : {exc}", severity="error")
+        except Exception as exc:
+            _LOGGER.exception("Echec du lancement de lnav sur %s (theme %s)", self._paths, self.app.theme)
+            message = _("Échec du lancement de lnav : {exc}").format(exc=exc)
+            self.app.notify(message, severity="error")
+            self.query_one("#lnav-error", Static).update(message)
+            return False
+        return True
 
     def _run_lnav(self) -> None:
         """Isole pour etre substituable en test (lnav exige un vrai
@@ -130,5 +155,5 @@ class LnavScreen(OmegaScreen):
             self.app.notify(str(exc), severity="error")
             return
         except OSError as exc:
-            self.app.notify(f"Theme applique mais non enregistre : {exc}", severity="warning")
+            self.app.notify(_("Thème appliqué mais non enregistré : {exc}").format(exc=exc), severity="warning")
         self.app.theme = theme_name

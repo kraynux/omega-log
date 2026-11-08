@@ -34,6 +34,7 @@ from omega_log.infrastructure.privileged.privileged_file_ops import (
 )
 from omega_log.ports.persistence import BackupInfo, PersistencePort
 from omega_log.ports.process_runner_port import ProcessRunnerPort
+from omega_log.shared.i18n import _
 
 
 @dataclass
@@ -47,7 +48,7 @@ class RestoreBackupRequest:
         if not self.backup_path:
             errors.append("backup_path must not be empty")
         elif not Path(self.backup_path).exists():
-            errors.append(f"Backup file not found: {self.backup_path}")
+            errors.append(_("Archive introuvable : {backup_path}").format(backup_path=self.backup_path))
         if self.mode not in ("append", "overwrite"):
             errors.append(f"Invalid mode: {self.mode}")
         return errors
@@ -93,12 +94,12 @@ class RestoreBackupCommand:
         try:
             self._port.restore_backup(backup, dest_dir=self._temp_dir)
         except StorageError as e:
-            return RestoreBackupResult(success=False, message=f"Echec de l'extraction : {e}")
+            return RestoreBackupResult(success=False, message=_("Échec de l'extraction : {e}").format(e=e))
 
         extracted_files = list(self._temp_dir.glob("*"))
         if not extracted_files:
             shutil.rmtree(self._temp_dir, ignore_errors=True)
-            return RestoreBackupResult(success=False, message="L'archive extraite est vide.")
+            return RestoreBackupResult(success=False, message=_("L'archive extraite est vide."))
 
         extracted_file = extracted_files[0]
         target_file = target_dir / extracted_file.name
@@ -116,11 +117,12 @@ class RestoreBackupCommand:
                     staged_safety_copy: Path | None = None
                     if target_protected:
                         if self._elevated_tmp_dir is None:
-                            return RestoreBackupResult(success=False, message="Elevation non configuree pour cette commande.")
+                            return RestoreBackupResult(success=False, message=_("Élévation non configurée pour cette "
+                                                                                "commande."))
                         self._elevated_tmp_dir.mkdir(parents=True, exist_ok=True)
                         stage_result = stage_protected_copy_privileged(runner, target_file, self._elevated_tmp_dir)
                         if not stage_result.success:
-                            return RestoreBackupResult(success=False, message=f"Elevation impossible : {stage_result.message}")
+                            return RestoreBackupResult(success=False, message=_("Élévation impossible : {message}").format(message=stage_result.message))
                         staged_safety_copy = Path(stage_result.content)
                         safety_source = staged_safety_copy
                     try:
@@ -140,10 +142,11 @@ class RestoreBackupCommand:
                         runner, str(target_file), extracted_file.read_text(encoding="utf-8", errors="ignore"),
                     )
                     if not priv_result.success:
-                        return RestoreBackupResult(success=False, message=f"Ecriture privilegiee impossible : {priv_result.message}")
+                        return RestoreBackupResult(success=False, message=_("Écriture privilégiée impossible : "
+                                                                            "{message}").format(message=priv_result.message))
                 else:
                     shutil.copy2(extracted_file, target_file)
-                summary = "Remplacement complet (ecrasement)"
+                summary = _("Remplacement complet (écrasement)")
             else:
                 if target_file.exists():
                     content = extracted_file.read_text(encoding="utf-8", errors="ignore")
@@ -155,22 +158,23 @@ class RestoreBackupCommand:
                     if target_protected:
                         priv_result = append_file_privileged(runner, str(target_file), separator + content)
                         if not priv_result.success:
-                            return RestoreBackupResult(success=False, message=f"Ecriture privilegiee impossible : {priv_result.message}")
+                            return RestoreBackupResult(success=False, message=_("Écriture privilégiée impossible : "
+                                                                                "{message}").format(message=priv_result.message))
                     else:
                         with target_file.open("a", encoding="utf-8") as dst:
                             dst.write(separator + content)
-                    summary = "Fusion incrementale (ajout en fin de fichier)"
+                    summary = _("Fusion incrémentale (ajout en fin de fichier)")
                 else:
                     shutil.copy2(extracted_file, target_file)
-                    summary = "Fusion incrementale (fichier cible cree)"
+                    summary = _("Fusion incrémentale (fichier cible créé)")
         except OSError as e:
-            return RestoreBackupResult(success=False, message=f"Echec de la restauration : {e}")
+            return RestoreBackupResult(success=False, message=_("Échec de la restauration : {e}").format(e=e))
         finally:
             shutil.rmtree(self._temp_dir, ignore_errors=True)
 
         return RestoreBackupResult(
             success=True,
-            message=f"Restauration effectuee avec succes : {summary}.",
+            message=_("Restauration effectuée avec succès : {summary}.").format(summary=summary),
             target_file=target_file,
             safety_backup_path=safety_backup_path,
         )

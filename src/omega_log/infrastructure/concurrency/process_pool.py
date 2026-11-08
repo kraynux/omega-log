@@ -40,16 +40,20 @@ avant `App.run()`/le demarrage du driver reel : plus aucun fork n'a
 ensuite besoin de se reproduire depuis le processus principal durant
 toute la session.
 
-`max_workers=2` : largement suffisant pour ce TUI mono-utilisateur
-(au plus Statistiques + Voir et Traiter IP en meme temps), jamais besoin
-de paralleliser davantage. Arret propre via `atexit` — les processus du
-pool ne doivent jamais survivre au process principal."""
+Taille : coeurs LOGIQUES moins un (laisse a l'interface), entre 2 et 8 (2026-11-06, retour utilisateur
+« il y a des logs plus gros de serveurs ») - un gros fichier est decoupe en morceaux analyses en parallele
+(application/use_cases/log_tasks.py). Mesure sur un i5 M 480 (2 coeurs / 4 fils), access.log de 415 609 lignes,
+machine chargee : 1 processus 155 s, 2 processus 96 s, 4 processus 80 s - l'hyperthreading apporte encore
+~17 % sur ce calcul. Avant : `max_workers=2` fixe. Arret propre via `atexit` — les processus du pool ne
+doivent jamais survivre au process principal."""
 from __future__ import annotations
 
 import atexit
+import os
 from concurrent.futures import ProcessPoolExecutor
 
-STATS_PROCESS_POOL = ProcessPoolExecutor(max_workers=2)
+POOL_WORKERS = max(2, min(8, (os.cpu_count() or 2) - 1))
+STATS_PROCESS_POOL = ProcessPoolExecutor(max_workers=POOL_WORKERS)
 STATS_PROCESS_POOL.submit(int).result()
 """Amorce le forkserver/pool MAINTENANT (voir note ci-dessus) — jamais
 supprimer cet appel pour "simplifier", c'est le correctif lui-meme, pas

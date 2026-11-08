@@ -5,20 +5,23 @@ la Bibliotheque/Favoris plus tard (meme representation partout, pas une
 table reinventee par ecran)."""
 from __future__ import annotations
 
+from typing import Any
+
 from textual.widgets import DataTable
 
 from omega_log.domain.entities.log_file import LogFile
+from omega_log.shared.i18n import _
 
 
 class LogList(DataTable):
     """Table Chemin/Service/Acces/Taille/Etat pour une liste de LogFile."""
 
-    def __init__(self, **kwargs) -> None:
+    def __init__(self, **kwargs: Any) -> None:
         super().__init__(**kwargs)
         self.cursor_type = "row"
 
     def on_mount(self) -> None:
-        self.add_columns("Chemin", "Service", "Acces", "Taille", "Etat")
+        self.add_columns(_("Chemin"), _("Service"), _("Accès"), _("Taille"), _("État"))
 
     def load(self, log_files: list[LogFile]) -> None:
         """Remplace le contenu de la table par `log_files`.
@@ -34,5 +37,5 @@ class LogList(DataTable):
         self.clear()
         for log_file in log_files:
             size = f"{log_file.size_bytes} o" if log_file.size_bytes is not None else "?"
-            state = "SUSPECT (vide)" if log_file.is_stale else "OK"
+            state = _("SUSPECT (vide)") if log_file.is_stale else "OK"
             self.add_row(log_file.path, log_file.service_id or "-", log_file.access, size, state)

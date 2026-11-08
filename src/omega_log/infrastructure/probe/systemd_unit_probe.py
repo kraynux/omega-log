@@ -19,6 +19,8 @@ from __future__ import annotations
 
 import subprocess
 
+from omega_log.shared.i18n import _
+
 
 class SystemdUnitProbe:
     """Interroge `systemctl` pour une unite nommee explicitement."""
@@ -43,7 +45,7 @@ class SystemdUnitProbe:
         """Retourne la meme forme que ServiceProbe.check_service_status()
         de FIRE (available/exists/active/enabled/state/message), pour que
         capability_mapper.map_service_probe_result() reste inchange."""
-        returncode, _ = self._systemctl("cat", unit_name)
+        returncode, _cat_output = self._systemctl("cat", unit_name)
         if returncode != 0:
             return {
                 "available": True,
@@ -51,11 +53,11 @@ class SystemdUnitProbe:
                 "active": False,
                 "enabled": False,
                 "state": "not_found",
-                "message": f"Unite systemd '{unit_name}' introuvable",
+                "message": _("Unité systemd '{unit_name}' introuvable").format(unit_name=unit_name),
             }
 
-        _, active_state = self._systemctl("is-active", unit_name)
-        _, enabled_state = self._systemctl("is-enabled", unit_name)
+        _active_rc, active_state = self._systemctl("is-active", unit_name)
+        _enabled_rc, enabled_state = self._systemctl("is-enabled", unit_name)
         active = active_state == "active"
         enabled = enabled_state == "enabled"
 
@@ -65,5 +67,5 @@ class SystemdUnitProbe:
             "active": active,
             "enabled": enabled,
             "state": active_state or "unknown",
-            "message": f"Unite '{unit_name}' : {active_state or 'unknown'} ({enabled_state or 'unknown'} au demarrage)",
+            "message": _("Unité '{unit_name}' : {value} ({value2} au démarrage)").format(unit_name=unit_name, value=active_state or _("inconnu"), value2=enabled_state or _("inconnu")),
         }

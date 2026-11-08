@@ -10,6 +10,7 @@ from textual.screen import Screen
 from textual.widgets import Static
 
 from omega_log.interfaces.tui.widgets.splash_hero import SplashHero
+from omega_log.shared.i18n import _
 
 
 class SplashScreen(Screen[None]):
@@ -17,12 +18,16 @@ class SplashScreen(Screen[None]):
     contenu statique. Pas de temporisation automatique : seule une action
     explicite (touche ou clic) fait passer a la suite."""
 
+    def __init__(self, *, version: str) -> None:
+        super().__init__()
+        self._version = version
+
     def compose(self) -> ComposeResult:
         with Middle(classes="omega-splash-middle"):
             with Center():
-                yield SplashHero()
+                yield SplashHero(self._version)
             with Center():
-                yield Static("Appuyez sur une touche pour continuer...", classes="omega-splash-prompt")
+                yield Static(_("Appuyez sur une touche pour continuer..."), classes="omega-splash-prompt")
 
     def on_key(self, event: events.Key) -> None:
         event.stop()

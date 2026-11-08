@@ -37,6 +37,7 @@ from omega_log.infrastructure.privileged.privileged_file_ops import (
     delete_file_privileged,
     truncate_file_privileged,
 )
+from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
     from omega_log.ports.process_runner_port import ProcessRunnerPort
@@ -64,8 +65,10 @@ def purge_log_content(path: str, *, runner: ProcessRunnerPort | None = None) -> 
                 raise PermissionRequiredError(path)
             priv_result = truncate_file_privileged(runner, path)
             if not priv_result.success:
-                return PurgeContentResult(success=False, message=f"Troncature privilegiee impossible : {priv_result.message}")
-            return PurgeContentResult(success=True, message=f"Contenu vide (fichier conserve) : {path}")
+                return PurgeContentResult(success=False, message=_("Troncature privilégiée impossible : "
+                                                                   "{message}").format(message=priv_result.message))
+            return PurgeContentResult(success=True, message=_("Contenu vide (fichier conservé) : "
+                                                              "{path}").format(path=path))
         return PurgeContentResult(success=False, message=check.reason)
 
     if target.exists():
@@ -73,15 +76,17 @@ def purge_log_content(path: str, *, runner: ProcessRunnerPort | None = None) -> 
             with target.open("r+b") as f:
                 f.truncate(0)
         except OSError as exc:
-            return PurgeContentResult(success=False, message=f"Troncature impossible : {exc}")
-        return PurgeContentResult(success=True, message=f"Contenu vide (fichier conserve) : {path}")
+            return PurgeContentResult(success=False, message=_("Troncature impossible : {exc}").format(exc=exc))
+        return PurgeContentResult(success=True, message=_("Contenu vide (fichier conservé) : "
+                                                          "{path}").format(path=path))
 
     try:
         target.touch()
         os.chmod(target, _RECREATED_FILE_MODE)
     except OSError as exc:
-        return PurgeContentResult(success=False, message=f"Recreation impossible : {exc}")
-    return PurgeContentResult(success=True, message=f"Fichier recree vide (etait absent) : {path}", recreated=True)
+        return PurgeContentResult(success=False, message=_("Recréation impossible : {exc}").format(exc=exc))
+    return PurgeContentResult(success=True, message=_("Fichier recréé vide (était absent) : "
+                                                      "{path}").format(path=path), recreated=True)
 
 
 @dataclass

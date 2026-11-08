@@ -20,6 +20,7 @@ from omega_log.interfaces.tui.controllers.startup_controller import (
     StartupState,
     resolve_startup_state,
 )
+from omega_log.interfaces.tui.language_setting import notify_language_at_startup
 from omega_log.interfaces.tui.rendering.stylesheet_loader import load_paths_for
 from omega_log.interfaces.tui.rendering.textual_theme_builder import build_all_textual_themes
 from omega_log.interfaces.tui.screens.help_screen import HelpScreen
@@ -28,6 +29,7 @@ from omega_log.interfaces.tui.screens.quit_confirm import QuitConfirmScreen
 from omega_log.interfaces.tui.screens.settings_screen import SettingsScreen
 from omega_log.interfaces.tui.screens.splash import SplashScreen
 from omega_log.interfaces.tui.screens.terminal_warning import TerminalWarningScreen
+from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
     from textual.screen import Screen
@@ -47,12 +49,12 @@ class OmegaLogApp(App[None]):
 
     TITLE = TITLE
     BINDINGS: ClassVar[list[BindingType]] = [
-        Binding("q", "quit", "Quitter", show=True),
-        Binding("ctrl+q", "quit", "Quitter", show=False),
-        Binding("t", "cycle_theme", "Theme suivant", show=True),
-        Binding("r", "refresh_terminal", "Rafraichir", show=True),
-        Binding("a", "help", "Aide", show=True),
-        Binding("s", "open_settings", "Options", show=True),
+        Binding("q", "quit", _("Quitter"), show=True),
+        Binding("ctrl+q", "quit", _("Quitter"), show=False),
+        Binding("t", "cycle_theme", _("Thème suivant"), show=True),
+        Binding("r", "refresh_terminal", _("Rafraîchir"), show=True),
+        Binding("a", "help", _("Aide"), show=True),
+        Binding("s", "open_settings", _("Options"), show=True),
     ]
 
     def __init__(self, container: DependencyContainer) -> None:
@@ -68,9 +70,14 @@ class OmegaLogApp(App[None]):
         for theme in build_all_textual_themes():
             self.register_theme(theme)
         self.theme = self._startup_state.theme.theme_name
+        # Version dans la barre de titre (portee d'omega-serv 2.6.0, 2026-11-07) : pyproject.toml, seule source.
+        self.title = f"{TITLE} {self._container.app_version}"
+        self.pending_language: str | None = None
+        """Langue choisie dans les Options : __main__.py relance l'interface apres la sortie."""
 
     def on_mount(self) -> None:
-        self.push_screen(SplashScreen(), self._after_splash)
+        notify_language_at_startup(self)
+        self.push_screen(SplashScreen(version=self._container.app_version), self._after_splash)
 
     def _after_splash(self, _result: None) -> None:
         terminal = self._startup_state.terminal
@@ -79,9 +86,7 @@ class OmegaLogApp(App[None]):
         )
         if terminal.render_profile == RenderProfile.MONO or too_small:
             message = (
-                f"Terminal detecte : {terminal.signals.family} "
-                f"({terminal.signals.columns}x{terminal.signals.rows}). "
-                f"Rendu applique : {terminal.render_profile.value}."
+                _("Terminal détecté : {family} ({columns}x{rows}). Rendu appliqué : {value}.").format(family=terminal.signals.family, columns=terminal.signals.columns, rows=terminal.signals.rows, value=terminal.render_profile.value)
             )
             self.push_screen(TerminalWarningScreen(message=message), self._show_home)
         else:
@@ -120,7 +125,7 @@ class OmegaLogApp(App[None]):
             # action sans aucun rattrapage). Le theme change quand meme
             # visuellement (self.theme = next_name plus bas) : seule la
             # PERSISTANCE du choix echoue, pas la fonctionnalite immediate.
-            self.notify(f"Theme applique mais non enregistre : {exc}", severity="warning")
+            self.notify(_("Thème appliqué mais non enregistré : {exc}").format(exc=exc), severity="warning")
         self.theme = next_name
 
     def action_refresh_terminal(self) -> None:
@@ -131,11 +136,11 @@ class OmegaLogApp(App[None]):
         self.sub_title = f"{self.theme} | {terminal.signals.columns}x{terminal.signals.rows}"
         self.notify(
             f"{terminal.signals.family} ({terminal.signals.columns}x{terminal.signals.rows})",
-            title="Terminal rafraichi",
+            title=_("Terminal rafraîchi"),
         )
 
     def action_help(self) -> None:
-        self.push_screen(HelpScreen())
+        self.push_screen(HelpScreen(container=self._container))
 
     def action_open_settings(self) -> None:
         self.push_screen(SettingsScreen(container=self._container))
@@ -143,13 +148,13 @@ class OmegaLogApp(App[None]):
     def get_system_commands(self, screen: Screen) -> Iterable[SystemCommand]:
         """Remplace la liste par defaut de Textual plutot que d'appeler
         `super()` (meme raisonnement que le reste de la suite)."""
-        yield SystemCommand("Theme", "Changer le theme actif", self.action_change_theme)
+        yield SystemCommand(_("Thème"), _("Changer le thème actif"), self.action_change_theme)
         yield SystemCommand(
-            "Quitter", "Quitter l'application (avec confirmation)", self.action_quit
+            _("Quitter"), _("Quitter l'application (avec confirmation)"), self.action_quit
         )
         yield SystemCommand(
-            "Capture d'ecran",
-            "Enregistrer une capture SVG de l'ecran courant",
+            _("Capture d'écran"),
+            _("Enregistrer une capture SVG de l'écran courant"),
             self._deliver_screenshot_to_configured_dir,
         )
 
@@ -168,7 +173,7 @@ class OmegaLogApp(App[None]):
         logging.getLogger("omega_log").error("Exception non prevue", exc_info=error)
         self.notify(
             str(error) or type(error).__name__,
-            title="Erreur inattendue",
+            title=_("Erreur inattendue"),
             severity="error",
             timeout=10,
         )

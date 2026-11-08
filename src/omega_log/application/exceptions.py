@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from omega_log.core.exceptions import OmegaLogError
+from omega_log.shared.i18n import _
 
 
 class ApplicationError(OmegaLogError):
@@ -14,5 +15,5 @@ class UnknownThemeError(ApplicationError):
     """Nom de theme demande absent du catalogue omega_lib.theme.policies.TUI_THEMES."""
 
     def __init__(self, theme_name: str) -> None:
-        super().__init__(f"Theme inconnu : '{theme_name}'")
+        super().__init__(_("Thème inconnu : '{theme_name}'").format(theme_name=theme_name))
         self.theme_name = theme_name

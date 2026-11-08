@@ -7,6 +7,7 @@ from datetime import datetime
 from pathlib import Path
 
 from omega_log.core.exceptions import CoreError
+from omega_log.shared.i18n import _
 
 
 class ArchiveStoreError(CoreError):
@@ -33,7 +34,7 @@ class ArchiveStore:
                     tar.add(source, arcname=arcname)
             return archive_path
         except OSError as e:
-            raise ArchiveStoreError(f"Failed to create archive {archive_name}: {e}") from e
+            raise ArchiveStoreError(_("Impossible de créer l'archive {archive_name} : {e}").format(archive_name=archive_name, e=e)) from e
 
     def extract_archive(self, archive_path: Path, dest_dir: Path) -> None:
         try:
@@ -41,7 +42,7 @@ class ArchiveStore:
             with tarfile.open(archive_path, "r:gz") as tar:
                 tar.extractall(dest_dir)
         except (OSError, tarfile.TarError) as e:
-            raise ArchiveStoreError(f"Failed to extract archive {archive_path}: {e}") from e
+            raise ArchiveStoreError(_("Impossible d'extraire l'archive {archive_path} : {e}").format(archive_path=archive_path, e=e)) from e
 
     def list_archives(self, pattern: str = "*.tar.gz") -> list[Path]:
         return list(self._base_dir.glob(pattern))
@@ -57,7 +58,8 @@ class ArchiveStore:
                 "modified_at": datetime.fromtimestamp(stat.st_mtime).isoformat(),
             }
         except OSError as e:
-            raise ArchiveStoreError(f"Failed to get info for {archive_path}: {e}") from e
+            raise ArchiveStoreError(_("Impossible de lire les informations de {archive_path} : "
+                                      "{e}").format(archive_path=archive_path, e=e)) from e
 
     def delete_archive(self, archive_path: Path) -> bool:
         if archive_path.exists():

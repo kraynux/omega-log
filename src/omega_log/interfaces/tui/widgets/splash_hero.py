@@ -68,7 +68,15 @@ autre bloc, plus etroit, est centre sur cette meme largeur via
 _TITLE_BOX_TOP = "┌─────────────────────┐"
 _TITLE_BOX_MID = "│  LINUX LOG-VIEWVER  │"
 _TITLE_BOX_BOTTOM = "└─────────────────────┘"
-_VERSION_BAR = "▒V1.00▒"
+
+
+def version_bar(version: str) -> str:
+    """« ▒V1.60▒ » pour 1.6.0 : meme forme que la barre ecrite a la main jusqu'a la 1.5.0 (« ▒V1.50▒ »), mais
+    calculee depuis pyproject.toml, seule source de la version (portage d'omega-serv 2.6.0, 2026-11-07)."""
+    parts = version.split(".")
+    if len(parts) == 3 and all(part.isdigit() for part in parts):
+        return f"▒V{parts[0]}.{parts[1]}{parts[2]}▒"
+    return f"▒V{version}▒"
 
 _PILLAR_ROOF = (
     "____________________   ____________________",
@@ -144,13 +152,13 @@ def _tagline(line: str) -> str:
     return _span("|", "$accent").join(colored)
 
 
-def _build_markup() -> str:
+def _build_markup(version: str) -> str:
     lines: list[str] = []
 
     lines.append(_span(_centered(_TITLE_BOX_TOP), "$foreground"))
     lines.append(_title_text_line(_centered(_TITLE_BOX_MID)))
     lines.append(_span(_centered(_TITLE_BOX_BOTTOM), "$foreground"))
-    lines.append(_span(_centered(_VERSION_BAR), "$foreground"))
+    lines.append(_span(_centered(version_bar(version)), "$foreground"))
 
     for raw in _PILLAR_ROOF:
         lines.append(_span(_centered(raw), "$foreground"))
@@ -169,11 +177,8 @@ def _build_markup() -> str:
     return "\n".join(lines)
 
 
-_MARKUP = _build_markup()
-
-
 class SplashHero(Static):
-    """Bloc decoratif de l'ecran de demarrage (screens/splash.py)."""
+    """Bloc decoratif de l'ecran de demarrage (screens/splash.py). `version` : celle de pyproject.toml."""
 
-    def __init__(self) -> None:
-        super().__init__(_MARKUP, classes="omega-splash-hero")
+    def __init__(self, version: str) -> None:
+        super().__init__(_build_markup(version), classes="omega-splash-hero")

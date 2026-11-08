@@ -19,6 +19,8 @@ from textual.app import SuspendNotSupported
 from textual.binding import Binding, BindingType
 from textual.screen import Screen
 
+from omega_log.shared.i18n import _
+
 if TYPE_CHECKING:
     from textual.app import App
 
@@ -64,9 +66,9 @@ class OmegaScreen(Screen[None]):
     `quit_confirm.py` n'en heritent pas (voir leurs propres fichiers)."""
 
     BINDINGS: ClassVar[list[BindingType]] = [
-        Binding("escape", "back", "Retour", show=True),
-        Binding("up", "focus_previous_item", "Monter", show=False),
-        Binding("down", "focus_next_item", "Descendre", show=False),
+        Binding("escape", "back", _("Retour"), show=True),
+        Binding("up", "focus_previous_item", _("Monter"), show=False),
+        Binding("down", "focus_next_item", _("Descendre"), show=False),
     ]
 
     def action_back(self) -> None:

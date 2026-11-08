@@ -73,6 +73,7 @@ from omega_log.infrastructure.lnav.pty_session import (
     resize_pty,
     spawn_lnav,
 )
+from omega_log.shared.i18n import _
 
 HEADER_ROWS = 1
 FOOTER_ROWS = 3
@@ -84,7 +85,7 @@ HIDE_CURSOR = CSI + "?25l"
 SHOW_CURSOR = CSI + "?25h"
 CLEAR_SCREEN = CSI + "2J"
 
-MENU_LABEL = "Viewer 3 (lnav) — fusion multi-logs"
+MENU_LABEL = _("Viewer 3 (lnav) — fusion multi-logs")
 
 MAX_DRAIN_SECONDS = 0.02
 
@@ -306,7 +307,7 @@ def render_lnav_live(log_paths: list[Path], theme_name: str, *, use_sudo: bool =
         link_style = Style(color=palette.secondary)
         border_style = Style(color=palette.foreground, dim=True)
 
-        header_plain = f"OMEGA-LOG  |  {MENU_LABEL}"
+        header_plain = _("OMEGA-LOG  |  {MENU_LABEL}").format(MENU_LABEL=MENU_LABEL)
         header_line = (
             title_style.render("OMEGA-LOG")
             + muted_style.render(f"  |  {MENU_LABEL}")
@@ -316,27 +317,27 @@ def render_lnav_live(log_paths: list[Path], theme_name: str, *, use_sudo: bool =
         sep_line = border_style.render("─" * cols)
 
         shortcuts_plain = (
-            "lnav  |  [up/down] Naviguer  |  [left/right] Defiler  |  [g/G] Debut/Fin  |  "
-            f"[Ctrl-C] Marquer+Copier  |  [t] Theme: {theme_name}  |  [Ctrl-Q] Quitter"
+            _("lnav  |  [up/down] Naviguer  |  [left/right] Défiler  |  [g/G] Début/Fin  |  "
+              "[Ctrl-C] Marquer+Copier  |  [t] Thème: {theme_name}  |  [Ctrl-Q] Quitter").format(theme_name=theme_name)
         )
         shortcuts_line = (
-            muted_style.render("lnav  |  ")
-            + link_style.render("[up/down] Naviguer")
+            muted_style.render(_("lnav  |  "))
+            + link_style.render(_("[up/down] Naviguer"))
             + muted_style.render("  |  ")
-            + link_style.render("[left/right] Defiler")
+            + link_style.render(_("[left/right] Défiler"))
             + muted_style.render("  |  ")
-            + link_style.render("[g/G] Debut/Fin")
+            + link_style.render(_("[g/G] Début/Fin"))
             + muted_style.render("  |  ")
-            + link_style.render("[Ctrl-C] Marquer+Copier")
+            + link_style.render(_("[Ctrl-C] Marquer+Copier"))
             + muted_style.render("  |  ")
-            + link_style.render(f"[t] Theme: {theme_name}")
+            + link_style.render(_("[t] Thème: {theme_name}").format(theme_name=theme_name))
             + muted_style.render("  |  ")
-            + link_style.render("[Ctrl-Q] Quitter")
+            + link_style.render(_("[Ctrl-Q] Quitter"))
             + muted_style.render(" " * max(cols - len(shortcuts_plain), 0))
         )
 
         names = ", ".join(p.name for p in log_paths)
-        status_line = muted_style.render(pad_line(f"Fichiers ({len(log_paths)}) : {names}", cols))
+        status_line = muted_style.render(pad_line(_("Fichiers ({count}) : {names}").format(count=len(log_paths), names=names), cols))
 
         buf = (
             move_to(1) + header_line
@@ -369,7 +370,7 @@ def render_lnav_live(log_paths: list[Path], theme_name: str, *, use_sudo: bool =
         screen.dirty.clear()
         return n
 
-    def handle_resize(signum, frame):
+    def handle_resize(signum: int, frame: object) -> None:
         nonlocal term_cols, term_rows, inner_rows
         term_cols, term_rows = shutil.get_terminal_size()
         inner_rows = max(term_rows - HEADER_ROWS - FOOTER_ROWS, 5)
@@ -391,7 +392,7 @@ def render_lnav_live(log_paths: list[Path], theme_name: str, *, use_sudo: bool =
 
     try:
         while True:
-            r, _, _ = select.select([master_fd, stdin_fd], [], [], 0.05)
+            r, _writable, _errors = select.select([master_fd, stdin_fd], [], [], 0.05)
 
             if stdin_fd in r:
                 key = os.read(stdin_fd, 4096)
@@ -433,7 +434,7 @@ def render_lnav_live(log_paths: list[Path], theme_name: str, *, use_sudo: bool =
                     responder.feed(data)
                     relay_osc52(data, out_fd)
                     stream.feed(data.decode("utf-8", errors="replace"))
-                    more, _, _ = select.select([master_fd], [], [], 0.002)
+                    more, _writable, _errors = select.select([master_fd], [], [], 0.002)
                     if master_fd not in more:
                         break
 

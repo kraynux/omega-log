@@ -1,0 +1,3144 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: omega-log\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Omega-Status: validated\n"
+
+#: src/omega_log/application/commands/restore_backup.py:51 src/omega_log/domain/logs/exceptions.py:65
+#, python-brace-format
+msgid "Archive introuvable : {backup_path}"
+msgstr "ไม่พบไฟล์เก็บถาวร: {backup_path}"
+
+#: src/omega_log/application/commands/restore_backup.py:97
+#, python-brace-format
+msgid "Échec de l'extraction : {e}"
+msgstr "แตกไฟล์ไม่สำเร็จ: {e}"
+
+#: src/omega_log/application/commands/restore_backup.py:102
+msgid "L'archive extraite est vide."
+msgstr "ไฟล์เก็บถาวรที่แตกแล้วว่างเปล่า"
+
+#: src/omega_log/application/commands/restore_backup.py:120 src/omega_log/application/commands/rotate_logs.py:84
+msgid "Élévation non configurée pour cette commande."
+msgstr "ไม่ได้ตั้งค่าการยกระดับสิทธิ์สำหรับคำสั่งนี้"
+
+#: src/omega_log/application/commands/restore_backup.py:125 src/omega_log/application/commands/rotate_logs.py:89
+#, python-brace-format
+msgid "Élévation impossible : {message}"
+msgstr "ยกระดับสิทธิ์ไม่ได้: {message}"
+
+#: src/omega_log/application/commands/restore_backup.py:145 src/omega_log/application/commands/restore_backup.py:161 src/omega_log/application/use_cases/process_ip.py:139
+#, python-brace-format
+msgid "Écriture privilégiée impossible : {message}"
+msgstr "เขียนด้วยสิทธิ์พิเศษไม่ได้: {message}"
+
+#: src/omega_log/application/commands/restore_backup.py:149
+msgid "Remplacement complet (écrasement)"
+msgstr "แทนที่ทั้งหมด (เขียนทับ)"
+
+#: src/omega_log/application/commands/restore_backup.py:166
+msgid "Fusion incrémentale (ajout en fin de fichier)"
+msgstr "ผสานแบบเพิ่มทีละส่วน (ต่อท้ายไฟล์)"
+
+#: src/omega_log/application/commands/restore_backup.py:169
+msgid "Fusion incrémentale (fichier cible créé)"
+msgstr "ผสานแบบเพิ่มทีละส่วน (สร้างไฟล์เป้าหมายแล้ว)"
+
+#: src/omega_log/application/commands/restore_backup.py:171
+#, python-brace-format
+msgid "Échec de la restauration : {e}"
+msgstr "กู้คืนไม่สำเร็จ: {e}"
+
+#: src/omega_log/application/commands/restore_backup.py:177
+#, python-brace-format
+msgid "Restauration effectuée avec succès : {summary}."
+msgstr "กู้คืนสำเร็จ: {summary}"
+
+#: src/omega_log/application/commands/rotate_logs.py:43
+#, python-brace-format
+msgid "Fichier source introuvable : {source_path}"
+msgstr "ไม่พบไฟล์ต้นทาง: {source_path}"
+
+#: src/omega_log/application/commands/rotate_logs.py:101
+#, python-brace-format
+msgid "Erreur technique lors de la sauvegarde : {e}"
+msgstr "ข้อผิดพลาดทางเทคนิคขณะสำรองข้อมูล: {e}"
+
+#: src/omega_log/application/commands/rotate_logs.py:113
+#, python-brace-format
+msgid "Sauvegarde créée avec succès, mais la purge des anciennes archives a échoué : {e}"
+msgstr "สร้างข้อมูลสำรองสำเร็จ แต่ล้างไฟล์เก็บถาวรเก่าไม่สำเร็จ: {e}"
+
+#: src/omega_log/application/commands/rotate_logs.py:141
+#, python-brace-format
+msgid "Sauvegarde créée avec succès : {name}"
+msgstr "สร้างข้อมูลสำรองสำเร็จ: {name}"
+
+#: src/omega_log/application/guards/permission_guard.py:39
+#, python-brace-format
+msgid "Dossier introuvable : {check_target}"
+msgstr "ไม่พบโฟลเดอร์: {check_target}"
+
+#: src/omega_log/application/guards/permission_guard.py:48
+#, python-brace-format
+msgid "Permission d'écriture refusée sur {check_target}. Ajoutez votre utilisateur au groupe propriétaire si possible, ou relancez cette action avec les droits nécessaires (sudo)."
+msgstr "ถูกปฏิเสธสิทธิ์เขียนใน {check_target} หากทำได้ โปรดเพิ่มผู้ใช้ของคุณเข้ากลุ่มเจ้าของ หรือเรียกใช้การดำเนินการนี้อีกครั้งด้วยสิทธิ์ที่จำเป็น (sudo)"
+
+#: src/omega_log/application/use_cases/manage_favorites.py:33
+msgid "Nom requis."
+msgstr "ต้องระบุชื่อ"
+
+#: src/omega_log/application/use_cases/manage_favorites.py:35
+msgid "Au moins un log est requis."
+msgstr "ต้องมีล็อกอย่างน้อยหนึ่งรายการ"
+
+#: src/omega_log/application/use_cases/manage_favorites.py:39 src/omega_log/interfaces/tui/screens/view_logs.py:99
+#, python-brace-format
+msgid "{count} log(s) sélectionné(s) : seul {value} est compatible."
+msgstr "เลือกล็อกไว้ {count} รายการ: มีเพียง {value} ที่ใช้ได้"
+
+#: src/omega_log/application/use_cases/manage_favorites.py:43
+#, python-brace-format
+msgid "Favori '{name}' enregistré."
+msgstr "บันทึกรายการโปรด '{name}' แล้ว"
+
+#: src/omega_log/application/use_cases/process_ip.py:96
+#, python-brace-format
+msgid "Adresse IP invalide : {ip}"
+msgstr "ที่อยู่ IP ไม่ถูกต้อง: {ip}"
+
+#: src/omega_log/application/use_cases/process_ip.py:100 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:84
+#, python-brace-format
+msgid "Fichier introuvable : {path}"
+msgstr "ไม่พบไฟล์: {path}"
+
+#: src/omega_log/application/use_cases/process_ip.py:111 src/omega_log/interfaces/tui/screens/live_tail_screen.py:157 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:113
+#, python-brace-format
+msgid "Lecture privilégiée impossible : {message}"
+msgstr "อ่านด้วยสิทธิ์พิเศษไม่ได้: {message}"
+
+#: src/omega_log/application/use_cases/process_ip.py:115 src/omega_log/interfaces/tui/screens/live_tail_screen.py:194 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:94 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:152
+#, python-brace-format
+msgid "Lecture impossible : {exc}"
+msgstr "อ่านไม่ได้: {exc}"
+
+#: src/omega_log/application/use_cases/process_ip.py:120
+#, python-brace-format
+msgid "Aucune occurrence de {ip} trouvée."
+msgstr "ไม่พบ {ip} เลย"
+
+#: src/omega_log/application/use_cases/process_ip.py:143
+#, python-brace-format
+msgid "Écriture impossible : {exc}"
+msgstr "เขียนไม่ได้: {exc}"
+
+#: src/omega_log/application/use_cases/process_ip.py:145
+#, python-brace-format
+msgid "{occurrences} occurrence(s) de {ip} retirée(s)."
+msgstr "นำ {ip} ออกแล้ว {occurrences} ครั้ง"
+
+#: src/omega_log/application/use_cases/purge_logs.py:68
+#, python-brace-format
+msgid "Troncature privilégiée impossible : {message}"
+msgstr "ตัดทอนด้วยสิทธิ์พิเศษไม่ได้: {message}"
+
+#: src/omega_log/application/use_cases/purge_logs.py:70 src/omega_log/application/use_cases/purge_logs.py:80
+#, python-brace-format
+msgid "Contenu vide (fichier conservé) : {path}"
+msgstr "ล้างเนื้อหาแล้ว (เก็บไฟล์ไว้): {path}"
+
+#: src/omega_log/application/use_cases/purge_logs.py:79
+#, python-brace-format
+msgid "Troncature impossible : {exc}"
+msgstr "ตัดทอนไม่ได้: {exc}"
+
+#: src/omega_log/application/use_cases/purge_logs.py:87
+#, python-brace-format
+msgid "Recréation impossible : {exc}"
+msgstr "สร้างใหม่ไม่ได้: {exc}"
+
+#: src/omega_log/application/use_cases/purge_logs.py:88
+#, python-brace-format
+msgid "Fichier recréé vide (était absent) : {path}"
+msgstr "สร้างไฟล์ว่างใหม่แล้ว (เดิมไม่มีอยู่): {path}"
+
+#: src/omega_log/application/use_cases/remote_fetch.py:35
+#, python-brace-format
+msgid "Récupéré dans {local_dest}."
+msgstr "ดึงมาไว้ที่ {local_dest} แล้ว"
+
+#: src/omega_log/application/use_cases/remote_fetch.py:36
+#, python-brace-format
+msgid "code de retour {returncode}"
+msgstr "รหัสส่งกลับ {returncode}"
+
+#: src/omega_log/application/use_cases/remote_fetch.py:37
+#, python-brace-format
+msgid "Échec de la récupération : {detail}"
+msgstr "ดึงข้อมูลไม่สำเร็จ: {detail}"
+
+#: src/omega_log/application/use_cases/remote_sources.py:29
+msgid "Label requis."
+msgstr "ต้องระบุป้ายกำกับ"
+
+#: src/omega_log/application/use_cases/remote_sources.py:31
+msgid "Hôte requis."
+msgstr "ต้องระบุโฮสต์"
+
+#: src/omega_log/application/use_cases/remote_sources.py:33
+msgid "Chemin distant requis."
+msgstr "ต้องระบุพาธระยะไกล"
+
+#: src/omega_log/application/use_cases/remote_sources.py:35
+msgid "Port invalide (1-65535)."
+msgstr "พอร์ตไม่ถูกต้อง (1-65535)"
+
+#: src/omega_log/application/use_cases/remote_sources.py:43
+#, python-brace-format
+msgid "Source '{label}' enregistrée."
+msgstr "บันทึกแหล่งที่มา '{label}' แล้ว"
+
+#: src/omega_log/domain/logs/exceptions.py:17
+#, python-brace-format
+msgid "Fichier de log introuvable : {log_path}"
+msgstr "ไม่พบไฟล์ล็อก: {log_path}"
+
+#: src/omega_log/domain/logs/exceptions.py:26
+#, python-brace-format
+msgid "Erreur d'analyse dans {log_path}, ligne {line_number} : {reason}"
+msgstr "ข้อผิดพลาดในการวิเคราะห์ {log_path} บรรทัด {line_number}: {reason}"
+
+#: src/omega_log/domain/logs/exceptions.py:34
+#, python-brace-format
+msgid "Format de log invalide pour {log_path} : {reason}"
+msgstr "รูปแบบล็อกของ {log_path} ไม่ถูกต้อง: {reason}"
+
+#: src/omega_log/domain/logs/exceptions.py:42
+#, python-brace-format
+msgid "Erreur d'analyse ({analysis_type}) : {reason}"
+msgstr "ข้อผิดพลาดในการวิเคราะห์ ({analysis_type}): {reason}"
+
+#: src/omega_log/domain/logs/exceptions.py:50
+#, python-brace-format
+msgid "Erreur de rotation pour {log_path} : {reason}"
+msgstr "ข้อผิดพลาดในการหมุนเวียน {log_path}: {reason}"
+
+#: src/omega_log/domain/logs/exceptions.py:58
+#, python-brace-format
+msgid "Erreur de nettoyage pour {log_path} : {reason}"
+msgstr "ข้อผิดพลาดในการล้าง {log_path}: {reason}"
+
+#: src/omega_log/infrastructure/lnav/render.py:88
+msgid "Viewer 3 (lnav) — fusion multi-logs"
+msgstr "ตัวดู 3 (lnav) — ผสานหลายล็อก"
+
+#: src/omega_log/infrastructure/lnav/render.py:310
+#, python-brace-format
+msgid "OMEGA-LOG  |  {MENU_LABEL}"
+msgstr "OMEGA-LOG  |  {MENU_LABEL}"
+
+#: src/omega_log/infrastructure/lnav/render.py:320
+#, python-brace-format
+msgid "lnav  |  [up/down] Naviguer  |  [left/right] Défiler  |  [g/G] Début/Fin  |  [Ctrl-C] Marquer+Copier  |  [t] Thème: {theme_name}  |  [Ctrl-Q] Quitter"
+msgstr "lnav  |  [up/down] เลื่อนดู  |  [left/right] เลื่อนข้าง  |  [g/G] ต้น/ท้าย  |  [Ctrl-C] ทำเครื่องหมาย+คัดลอก  |  [t] ธีม: {theme_name}  |  [Ctrl-Q] ออก"
+
+#: src/omega_log/infrastructure/lnav/render.py:324
+msgid "lnav  |  "
+msgstr "lnav  |  "
+
+#: src/omega_log/infrastructure/lnav/render.py:325
+msgid "[up/down] Naviguer"
+msgstr "[up/down] เลื่อนดู"
+
+#: src/omega_log/infrastructure/lnav/render.py:327
+msgid "[left/right] Défiler"
+msgstr "[left/right] เลื่อนข้าง"
+
+#: src/omega_log/infrastructure/lnav/render.py:329
+msgid "[g/G] Début/Fin"
+msgstr "[g/G] ต้น/ท้าย"
+
+#: src/omega_log/infrastructure/lnav/render.py:331
+msgid "[Ctrl-C] Marquer+Copier"
+msgstr "[Ctrl-C] ทำเครื่องหมาย+คัดลอก"
+
+#: src/omega_log/infrastructure/lnav/render.py:333
+#, python-brace-format
+msgid "[t] Thème: {theme_name}"
+msgstr "[t] ธีม: {theme_name}"
+
+#: src/omega_log/infrastructure/lnav/render.py:335
+msgid "[Ctrl-Q] Quitter"
+msgstr "[Ctrl-Q] ออก"
+
+#: src/omega_log/infrastructure/lnav/render.py:340
+#, python-brace-format
+msgid "Fichiers ({count}) : {names}"
+msgstr "ไฟล์ ({count}): {names}"
+
+#: src/omega_log/infrastructure/privileged/elevation.py:39
+#, python-brace-format
+msgid "Permission refusée sur {path} (élévation requise)."
+msgstr "ถูกปฏิเสธสิทธิ์ใน {path} (ต้องยกระดับสิทธิ์)"
+
+#: src/omega_log/infrastructure/privileged/elevation.py:68 src/omega_log/interfaces/tui/screens/_elevation.py:28
+msgid "Authentification sudo échouée ou annulée."
+msgstr "การยืนยันตัวตน sudo ล้มเหลวหรือถูกยกเลิก"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:110 src/omega_log/application/use_cases/rotation_automation.py:112 src/omega_log/application/use_cases/rotation_automation.py:117 src/omega_log/infrastructure/privileged/privileged_file_ops.py:41 src/omega_log/infrastructure/privileged/privileged_file_ops.py:57 src/omega_log/infrastructure/privileged/privileged_file_ops.py:68 src/omega_log/infrastructure/privileged/privileged_file_ops.py:75 src/omega_log/infrastructure/privileged/privileged_file_ops.py:97 src/omega_log/infrastructure/privileged/privileged_file_ops.py:107 src/omega_log/infrastructure/privileged/privileged_file_ops.py:122 src/omega_log/infrastructure/privileged/privileged_file_ops.py:129
+#, python-brace-format
+msgid "code {returncode}"
+msgstr "รหัส {returncode}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:30
+msgid "Binaire introuvable sur le système"
+msgstr "ไม่พบไบนารีบนระบบ"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:30
+#, python-brace-format
+msgid "Composant non installé : {message}"
+msgstr "ไม่ได้ติดตั้งส่วนประกอบ: {message}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:39
+#, python-brace-format
+msgid "Binaire présent mais non fonctionnel : {message}"
+msgstr "มีไบนารีแต่ใช้งานไม่ได้: {message}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:47
+#, python-brace-format
+msgid "Binaire opérationnel ({path})"
+msgstr "ไบนารีทำงานได้ ({path})"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:66
+#, python-brace-format
+msgid "Gestionnaire de services indisponible : {message}"
+msgstr "ตัวจัดการบริการไม่พร้อมใช้งาน: {message}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:75
+msgid "Service introuvable"
+msgstr "ไม่พบบริการ"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:75
+#, python-brace-format
+msgid "Service non installé sur le système ({message})"
+msgstr "ไม่ได้ติดตั้งบริการบนระบบ ({message})"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:84
+#, python-brace-format
+msgid "Service installé mais INACTIF (arrêté) : {message}"
+msgstr "ติดตั้งบริการแล้วแต่ไม่ทำงาน (หยุดอยู่): {message}"
+
+#: src/omega_log/infrastructure/probe/capability_mapper.py:92
+#, python-brace-format
+msgid "Service actif : {message}"
+msgstr "บริการทำงานอยู่: {message}"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:30 src/omega_log/infrastructure/probe/command_probe.py:58
+#, python-brace-format
+msgid "Programme « {binary_name} » introuvable dans le PATH"
+msgstr "ไม่พบโปรแกรม “{binary_name}” ใน PATH"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:41
+#, python-brace-format
+msgid "Code de sortie {returncode}"
+msgstr "รหัสออก {returncode}"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:42
+#, python-brace-format
+msgid "Test du programme « {binary_name} » échoué : {error_msg}"
+msgstr "ทดสอบโปรแกรม “{binary_name}” ไม่ผ่าน: {error_msg}"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:44
+#, python-brace-format
+msgid "Test du programme « {binary_name} » : délai dépassé ({timeout} s)"
+msgstr "ทดสอบโปรแกรม “{binary_name}”: หมดเวลา ({timeout} วินาที)"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:46
+#, python-brace-format
+msgid "Programme « {binary_name} » disparu pendant le test"
+msgstr "โปรแกรม “{binary_name}” หายไประหว่างการทดสอบ"
+
+#: src/omega_log/infrastructure/probe/command_probe.py:48
+#, python-brace-format
+msgid "Erreur pendant le test du programme « {binary_name} » : {e}"
+msgstr "เกิดข้อผิดพลาดระหว่างทดสอบโปรแกรม “{binary_name}”: {e}"
+
+#: src/omega_log/infrastructure/probe/exceptions.py:23
+#, python-brace-format
+msgid "Échec de la sonde « {probe_name} » : {reason}"
+msgstr "โพรบ «{probe_name}» ล้มเหลว: {reason}"
+
+#: src/omega_log/infrastructure/probe/exceptions.py:40
+#, python-brace-format
+msgid "Échec de l'analyse : {reason}"
+msgstr "วิเคราะห์ไม่สำเร็จ: {reason}"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:45 src/omega_log/infrastructure/probe/log_path_catalog.py:46
+msgid "Arch : nom sans extension .log"
+msgstr "Arch: ชื่อไม่มีนามสกุล .log"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:53 src/omega_log/infrastructure/probe/log_path_catalog.py:54
+msgid "seulement si directive log explicite"
+msgstr "เฉพาะเมื่อมีคำสั่ง log ระบุชัดเจน"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:57 src/omega_log/infrastructure/probe/log_path_catalog.py:58
+msgid "chemin variable selon build"
+msgstr "พาธแตกต่างตามบิลด์"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:64 src/omega_log/infrastructure/probe/log_path_catalog.py:67
+msgid "souvent désactivé par défaut"
+msgstr "มักปิดไว้โดยค่าเริ่มต้น"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:125
+msgid "variante RHEL/Fedora de syslog"
+msgstr "syslog รุ่น RHEL/Fedora"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:127
+msgid "variante RHEL/Fedora de auth.log"
+msgstr "auth.log รุ่น RHEL/Fedora"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:129
+msgid "gestionnaire de paquets Arch/Manjaro"
+msgstr "ตัวจัดการแพ็กเกจ Arch/Manjaro"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:130 src/omega_log/infrastructure/probe/log_path_catalog.py:131
+msgid "gestionnaire de paquets Debian/Ubuntu"
+msgstr "ตัวจัดการแพ็กเกจ Debian/Ubuntu"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:132
+msgid "gestionnaire de paquets RHEL/Fedora"
+msgstr "ตัวจัดการแพ็กเกจ RHEL/Fedora"
+
+#: src/omega_log/infrastructure/probe/log_path_catalog.py:133
+msgid "root uniquement, format structuré type=... — pas de parseur dédié"
+msgstr "root เท่านั้น รูปแบบมีโครงสร้าง type=... — ไม่มีตัวแยกวิเคราะห์เฉพาะ"
+
+#: src/omega_log/infrastructure/probe/scanner.py:44
+#, python-brace-format
+msgid "Échec de l'analyse des services connus : {e}"
+msgstr "วิเคราะห์บริการที่รู้จักไม่สำเร็จ: {e}"
+
+#: src/omega_log/infrastructure/probe/scanner.py:49
+#, python-brace-format
+msgid "Échec de l'analyse des unités systemd : {e}"
+msgstr "วิเคราะห์ยูนิต systemd ไม่สำเร็จ: {e}"
+
+#: src/omega_log/infrastructure/probe/scanner.py:84
+msgid "Processus détecté"
+msgstr "ตรวจพบโปรเซส"
+
+#: src/omega_log/infrastructure/probe/scanner.py:84
+msgid "Processus non détecté"
+msgstr "ไม่พบโปรเซส"
+
+#: src/omega_log/infrastructure/probe/systemd_unit_probe.py:56
+#, python-brace-format
+msgid "Unité systemd '{unit_name}' introuvable"
+msgstr "ไม่พบยูนิต systemd '{unit_name}'"
+
+#: src/omega_log/infrastructure/probe/systemd_unit_probe.py:70
+#, python-brace-format
+msgid "Unité '{unit_name}' : {value} ({value2} au démarrage)"
+msgstr "ยูนิต '{unit_name}': {value} (ตอนบูต: {value2})"
+
+#: src/omega_log/infrastructure/probe/systemd_unit_probe.py:70
+msgid "inconnu"
+msgstr "ไม่ทราบ"
+
+#: src/omega_log/infrastructure/storage/files/archive_store.py:37
+#, python-brace-format
+msgid "Impossible de créer l'archive {archive_name} : {e}"
+msgstr "สร้างไฟล์เก็บถาวร {archive_name} ไม่ได้: {e}"
+
+#: src/omega_log/infrastructure/storage/files/archive_store.py:45
+#, python-brace-format
+msgid "Impossible d'extraire l'archive {archive_path} : {e}"
+msgstr "แตกไฟล์เก็บถาวร {archive_path} ไม่ได้: {e}"
+
+#: src/omega_log/infrastructure/storage/files/archive_store.py:61
+#, python-brace-format
+msgid "Impossible de lire les informations de {archive_path} : {e}"
+msgstr "อ่านข้อมูลของ {archive_path} ไม่ได้: {e}"
+
+#: src/omega_log/infrastructure/storage/files/persistence_adapter.py:50
+#, python-brace-format
+msgid "Échec de la sauvegarde : {e}"
+msgstr "สำรองข้อมูลไม่สำเร็จ: {e}"
+
+#: src/omega_log/infrastructure/storage/files/persistence_adapter.py:64
+#, python-brace-format
+msgid "Échec de la restauration de {path} : {e}"
+msgstr "กู้คืน {path} ไม่สำเร็จ: {e}"
+
+#: src/omega_log/infrastructure/storage/files/persistence_adapter.py:79
+#, python-brace-format
+msgid "Impossible de lister les sauvegardes de {backup_dir} : {e}"
+msgstr "แสดงรายการข้อมูลสำรองใน {backup_dir} ไม่ได้: {e}"
+
+#: src/omega_log/interfaces/tui/app.py:57 src/omega_log/interfaces/tui/screens/help_screen.py:271 src/omega_log/interfaces/tui/screens/home.py:58
+msgid "Options"
+msgstr "ตัวเลือก"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+msgid "24 dernières heures"
+msgstr "24 ชั่วโมงล่าสุด"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+msgid "30 derniers jours"
+msgstr "30 วันล่าสุด"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+msgid "7 derniers jours"
+msgstr "7 วันล่าสุด"
+
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+msgid "Go"
+msgstr "GB"
+
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+msgid "Ko"
+msgstr "KB"
+
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+msgid "Mo"
+msgstr "MB"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:125
+msgid "STATISTIQUES"
+msgstr "สถิติ"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:127 src/omega_log/interfaces/tui/screens/purge_screen.py:46
+msgid "Numéros séparés par des virgules (ex: 1,2)"
+msgstr "หมายเลขคั่นด้วยจุลภาค (เช่น 1,2)"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:141 src/omega_log/interfaces/tui/screens/export_screen.py:42 src/omega_log/interfaces/tui/screens/log_health_screen.py:114
+msgid "Thème d'export HTML"
+msgstr "ธีมการส่งออก HTML"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:146 src/omega_log/interfaces/tui/screens/export_screen.py:48 src/omega_log/interfaces/tui/screens/log_health_screen.py:119
+msgid "Exporter JSON"
+msgstr "ส่งออก JSON"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:148 src/omega_log/interfaces/tui/screens/export_screen.py:50 src/omega_log/interfaces/tui/screens/log_health_screen.py:121
+msgid "Exporter HTML"
+msgstr "ส่งออก HTML"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:171 src/omega_log/interfaces/tui/screens/process_ip_screen.py:160
+#, python-brace-format
+msgid "Sélection : {description}"
+msgstr "ที่เลือก: {description}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:189 src/omega_log/interfaces/tui/screens/process_ip_screen.py:188 src/omega_log/interfaces/tui/screens/purge_screen.py:76 src/omega_log/interfaces/tui/screens/view_logs.py:82
+msgid "Saisissez au moins un numéro de ligne."
+msgstr "ป้อนหมายเลขบรรทัดอย่างน้อยหนึ่งรายการ"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:195 src/omega_log/interfaces/tui/screens/favorites.py:148 src/omega_log/interfaces/tui/screens/process_ip_screen.py:194 src/omega_log/interfaces/tui/screens/purge_screen.py:82 src/omega_log/interfaces/tui/screens/view_logs.py:88
+#, python-brace-format
+msgid "Numéro invalide : '{token}'."
+msgstr "หมายเลขไม่ถูกต้อง: '{token}'"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:202 src/omega_log/interfaces/tui/screens/process_ip_screen.py:201 src/omega_log/interfaces/tui/screens/process_ip_screen.py:218
+msgid "Un calcul est déjà en cours, patientez."
+msgstr "มีการคำนวณที่กำลังทำงานอยู่แล้ว โปรดรอสักครู่"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:246 src/omega_log/interfaces/tui/screens/process_ip_screen.py:251 src/omega_log/interfaces/tui/screens/process_ip_screen.py:306
+msgid "Permission refusée sur au moins un log sélectionné."
+msgstr "ถูกปฏิเสธสิทธิ์ในล็อกที่เลือกอย่างน้อยหนึ่งรายการ"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:278 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:281 src/omega_log/interfaces/tui/screens/process_ip_screen.py:343
+#, python-brace-format
+msgid "Erreur de calcul : {message}"
+msgstr "ข้อผิดพลาดในการคำนวณ: {message}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:315 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:408
+msgid "tout le fichier"
+msgstr "ทั้งไฟล์"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:316
+#, python-brace-format
+msgid "── SYNTHÈSE — {period_label}, {log_count} log(s) ──\n"
+msgstr "── สรุป — {period_label}, {log_count} ล็อก ──\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:318
+msgid " Aucune ligne sur cette période.\n"
+msgstr " ไม่มีบรรทัดในช่วงเวลานี้\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:323
+#, python-brace-format
+msgid " Lignes analysées   : {total}\n"
+msgstr " บรรทัดที่วิเคราะห์      : {total}\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:324
+#, python-brace-format
+msgid " Requêtes HTTP      : {http_total}\n"
+msgstr " คำขอ HTTP          : {http_total}\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:325
+#, python-brace-format
+msgid " IPs uniques        : {unique_ips}\n"
+msgstr " IP ไม่ซ้ำ            : {unique_ips}\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:326
+#, python-brace-format
+msgid " Taux d'erreur      : {error_rate:.1f} %\n"
+msgstr " อัตราผิดพลาด         : {error_rate:.1f} %\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:327
+#, python-brace-format
+msgid " Volume transféré   : {volume}\n"
+msgstr " ปริมาณที่ส่ง           : {volume}\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:328
+#, python-brace-format
+msgid " Heure de pointe    : {peak_hour:02d}h ({peak_count} lignes)\n"
+msgstr " ชั่วโมงสูงสุด          : {peak_hour:02d} น. ({peak_count} บรรทัด)\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:329
+#, python-brace-format
+msgid ""
+" Période couverte   : {covered}\n"
+"\n"
+msgstr ""
+" ช่วงที่ครอบคลุม        : {covered}\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:332
+msgid "── STATUTS HTTP ──\n"
+msgstr "── สถานะ HTTP ──\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:335 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:143
+#, python-brace-format
+msgid "Refus {name}"
+msgstr "ปฏิเสธ {name}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:345
+msgid "TOP IP"
+msgstr "IP สูงสุด"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:347
+msgid "CHEMINS DEMANDÉS"
+msgstr "พาธที่ถูกเรียก"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:348
+msgid "CHEMINS EN 404"
+msgstr "พาธที่ได้ 404"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:355 src/omega_log/interfaces/tui/screens/live_tail_screen.py:278
+msgid "(aucun)"
+msgstr "(ไม่มี)"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:360 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:154
+#, python-brace-format
+msgid "dont {errors} en erreur"
+msgstr "ในจำนวนนี้ผิดพลาด {errors}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:370
+msgid "── RÉPARTITION HORAIRE (24 h) ──\n"
+msgstr "── การกระจายรายชั่วโมง (24 ชม.) ──\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:376
+#, python-brace-format
+msgid "── TENDANCE PAR JOUR ({count} j) ──\n"
+msgstr "── แนวโน้มรายวัน ({count} วัน) ──\n"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:384 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:401
+msgid "Calculez d'abord les statistiques (choisissez une période)."
+msgstr "โปรดคำนวณสถิติก่อน (เลือกช่วงเวลา)"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:397 src/omega_log/interfaces/tui/screens/export_screen.py:90
+#, python-brace-format
+msgid "Export JSON : {out_path}"
+msgstr "ส่งออก JSON: {out_path}"
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:417 src/omega_log/interfaces/tui/screens/export_screen.py:100
+#, python-brace-format
+msgid "Export HTML : {out_path}"
+msgstr "ส่งออก HTML: {out_path}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:41
+msgid "CONTACT ET SUPPORT"
+msgstr "ติดต่อและสนับสนุน"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:42
+msgid "Aidez le développeur : omega-log est développé et maintenu par une seule personne."
+msgstr "ช่วยเหลือนักพัฒนา: omega-log พัฒนาและดูแลโดยคนเพียงคนเดียว"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:46 src/omega_log/interfaces/tui/screens/contact_support_screen.py:50
+msgid "Payer un café"
+msgstr "เลี้ยงกาแฟ"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:47
+msgid "Un don aide à couvrir les frais des serveurs (électricité)."
+msgstr "การบริจาคช่วยครอบคลุมค่าใช้จ่ายของเซิร์ฟเวอร์ (ค่าไฟฟ้า)"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:52 src/omega_log/interfaces/tui/screens/contact_support_screen.py:59 src/omega_log/interfaces/tui/screens/contact_support_screen.py:95
+msgid "Se déclarer utilisateur (anonyme)"
+msgstr "ลงทะเบียนเป็นผู้ใช้ (นิรนาม)"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:53
+msgid "Une déclaration volontaire et anonyme, qui sert uniquement à compter les utilisateurs et, si vous le souhaitez, leur continent ou leur pays."
+msgstr "การลงทะเบียนโดยสมัครใจและนิรนาม ใช้เพื่อนับจำนวนผู้ใช้เท่านั้น และหากคุณต้องการ ทวีปหรือประเทศของผู้ใช้"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:61
+msgid "Ne plus me déclarer"
+msgstr "ไม่ต้องลงทะเบียนฉันอีก"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:63 src/omega_log/interfaces/tui/screens/contact_support_screen.py:67
+msgid "Contacter le support"
+msgstr "ติดต่อฝ่ายสนับสนุน"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:64
+#, python-brace-format
+msgid "Mail : {SUPPORT_MAIL}"
+msgstr "อีเมล: {SUPPORT_MAIL}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:65
+#, python-brace-format
+msgid "Formulaire de contact : {CONTACT_FORM_URL}"
+msgstr "แบบฟอร์มติดต่อ: {CONTACT_FORM_URL}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:94
+msgid "État : non déclaré."
+msgstr "สถานะ: ยังไม่ได้ลงทะเบียน"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:98
+#, python-brace-format
+msgid "État : déclaré le {value} (envoi : une seule fois)."
+msgstr "สถานะ: ลงทะเบียนเมื่อ {value} (ส่ง: เพียงครั้งเดียว)"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:99
+msgid "Modifier ma déclaration"
+msgstr "แก้ไขการลงทะเบียนของฉัน"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:118
+msgid "NE PLUS ME DÉCLARER ?"
+msgstr "ไม่ต้องลงทะเบียนฉันอีก?"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:119
+msgid "Votre entrée sera supprimée du compteur et la clé effacée de cette installation."
+msgstr "รายการของคุณจะถูกลบออกจากตัวนับ และคีย์จะถูกลบออกจากการติดตั้งนี้"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:124
+msgid "Ouverture dans le navigateur..."
+msgstr "กำลังเปิดในเบราว์เซอร์..."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:131
+#, python-brace-format
+msgid "Aucun navigateur disponible ici (session sans affichage) : ouvrez cette adresse vous-même : {url}"
+msgstr "ไม่มีเบราว์เซอร์ที่นี่ (เซสชันไม่มีหน้าจอ): โปรดเปิดที่อยู่นี้เอง: {url}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:146
+msgid "Vous n'êtes plus déclaré : votre entrée est supprimée et la clé effacée."
+msgstr "คุณไม่ได้ลงทะเบียนอีกต่อไป: ลบรายการของคุณแล้วและลบคีย์แล้ว"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:149
+msgid "Clé effacée. Réception injoignable : votre entrée y disparaîtra seule (1 an)."
+msgstr "ลบคีย์แล้ว ติดต่อปลายทางไม่ได้: รายการของคุณที่นั่นจะหายไปเอง (1 ปี)"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:28
+msgid "Afrique"
+msgstr "แอฟริกา"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:29
+msgid "Antarctique"
+msgstr "แอนตาร์กติกา"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:30
+msgid "Asie"
+msgstr "เอเชีย"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:31
+msgid "Europe"
+msgstr "ยุโรป"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:32
+msgid "Amérique du Nord"
+msgstr "อเมริกาเหนือ"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:33
+msgid "Océanie"
+msgstr "โอเชียเนีย"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:34
+msgid "Amérique du Sud"
+msgstr "อเมริกาใต้"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:56 src/omega_log/interfaces/tui/screens/declaration_screen.py:60
+msgid "Autre (non référencé)"
+msgstr "อื่น ๆ (ไม่อยู่ในรายการ)"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:74
+msgid "SE DÉCLARER UTILISATEUR (ANONYME)"
+msgstr "ลงทะเบียนเป็นผู้ใช้ (นิรนาม)"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:75
+msgid "Une déclaration volontaire et anonyme : elle sert uniquement à compter les utilisateurs d'omega-log et, si vous le souhaitez, leur continent ou leur pays. Une clé tirée au hasard est créée pour cette installation ; elle n'a aucun lien avec vous ni avec votre machine. Envoi : une seule fois, maintenant."
+msgstr "การลงทะเบียนโดยสมัครใจและนิรนาม: ใช้เพื่อนับจำนวนผู้ใช้ omega-log เท่านั้น และหากคุณต้องการ ทวีปหรือประเทศของผู้ใช้ ระบบจะสร้างคีย์แบบสุ่มสำหรับการติดตั้งนี้ คีย์นี้ไม่มีความเชื่อมโยงใด ๆ กับตัวคุณหรือเครื่องของคุณ การส่ง: เพียงครั้งเดียว ตอนนี้"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:81
+msgid "Continent (facultatif)"
+msgstr "ทวีป (ไม่บังคับ)"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:83 src/omega_log/interfaces/tui/screens/declaration_screen.py:86
+msgid "Non précisé"
+msgstr "ไม่ระบุ"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:84
+msgid "Pays (facultatif)"
+msgstr "ประเทศ (ไม่บังคับ)"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:88
+msgid "Message envoyé"
+msgstr "ข้อความที่ส่ง"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:90
+#, python-brace-format
+msgid "Destination : {RECEPTION_URL}"
+msgstr "ปลายทาง: {RECEPTION_URL}"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:91
+msgid "Jamais envoyés : votre nom, le nom de la machine, vos logs."
+msgstr "ไม่ส่งเด็ดขาด: ชื่อของคุณ ชื่อเครื่อง ล็อกของคุณ"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:92
+msgid "Votre adresse IP n'est pas enregistrée dans les déclarations. Comme pour toute visite d'un site, elle passe par les contrôles de sécurité et le journal technique du serveur de réception."
+msgstr "ที่อยู่ IP ของคุณไม่ถูกบันทึกในการลงทะเบียน เช่นเดียวกับการเข้าชมเว็บไซต์ทั่วไป ที่อยู่นี้จะผ่านการตรวจสอบความปลอดภัยและบันทึกทางเทคนิคของเซิร์ฟเวอร์ปลายทาง"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:95
+msgid "Vous pouvez retirer votre déclaration à tout moment depuis Contact et support."
+msgstr "คุณถอนการลงทะเบียนได้ทุกเมื่อจาก ติดต่อและสนับสนุน"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:101
+msgid "Envoyer"
+msgstr "ส่ง"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:120
+msgid "<clé tirée au hasard à l'envoi>"
+msgstr "<คีย์สุ่มที่สร้างตอนส่ง>"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:133
+msgid "Envoi en cours..."
+msgstr "กำลังส่ง..."
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:144
+msgid "Merci ! Vous êtes déclaré utilisateur anonyme."
+msgstr "ขอบคุณ! คุณลงทะเบียนเป็นผู้ใช้นิรนามแล้ว"
+
+#: src/omega_log/interfaces/tui/screens/declaration_screen.py:149
+msgid "Réception injoignable : rien n'a été enregistré, réessayez plus tard."
+msgstr "ติดต่อปลายทางไม่ได้: ไม่มีการบันทึกใด ๆ โปรดลองใหม่ภายหลัง"
+
+#: src/omega_log/interfaces/tui/screens/export_screen.py:39
+msgid "EXPORTER LA LISTE DES ARCHIVES"
+msgstr "ส่งออกรายการไฟล์เก็บถาวร"
+
+#: src/omega_log/interfaces/tui/screens/export_screen.py:57 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+msgid "Archive"
+msgstr "ไฟล์เก็บถาวร"
+
+#: src/omega_log/interfaces/tui/screens/export_screen.py:57
+msgid "Créée le"
+msgstr "สร้างเมื่อ"
+
+#: src/omega_log/interfaces/tui/screens/export_screen.py:57 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+msgid "Taille (octets)"
+msgstr "ขนาด (ไบต์)"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:33
+msgid "Classique"
+msgstr "แบบคลาสสิก"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:33
+msgid "Simple"
+msgstr "แบบง่าย"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:47
+msgid "FAVORIS"
+msgstr "รายการโปรด"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:56
+msgid "Créer un favori"
+msgstr "สร้างรายการโปรด"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:58
+msgid "Numéros séparés par des virgules (ex: 1,3)"
+msgstr "หมายเลขคั่นด้วยจุลภาค (เช่น 1,3)"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:61
+msgid "Nom du favori"
+msgstr "ชื่อรายการโปรด"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:65 src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:88
+msgid "Enregistrer"
+msgstr "บันทึก"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:73 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:103
+msgid "Logs"
+msgstr "ล็อก"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:73
+msgid "Viewer"
+msgstr "ตัวดู"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:105 src/omega_log/interfaces/tui/screens/favorites.py:122
+msgid "Sélectionnez un favori."
+msgstr "เลือกรายการโปรด"
+
+#: src/omega_log/interfaces/tui/screens/favorites.py:126
+msgid "SUPPRIMER CE FAVORI ?"
+msgstr "ลบรายการโปรดนี้?"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:40
+msgid "Activer le bouton ou le champ sélectionné"
+msgstr "เรียกใช้ปุ่มหรือช่องที่เลือก"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:40
+msgid "Entrée / Clic"
+msgstr "Enter / คลิก"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:43
+msgid "Rafraîchir la détection du terminal (adapte le profil d'affichage)"
+msgstr "รีเฟรชการตรวจจับเทอร์มินัล (ปรับโปรไฟล์การแสดงผล)"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:44
+msgid "Cette aide, accessible depuis n'importe quel écran"
+msgstr "ความช่วยเหลือนี้ เปิดได้จากทุกหน้าจอ"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:49
+msgid "Thème suivant — intercepté avant lnav, jamais transmis"
+msgstr "ธีมถัดไป — ดักไว้ก่อนถึง lnav ไม่ส่งต่อเด็ดขาด"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:50
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:50
+msgid "Marque la ligne courante et la copie (presse-papier terminal, OSC 52) — jamais transmis à lnav tel quel"
+msgstr "ทำเครื่องหมายบรรทัดปัจจุบันและคัดลอก (คลิปบอร์ดเทอร์มินัล, OSC 52) — ไม่ส่งต่อให้ lnav ตามเดิมเด็ดขาด"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:52
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:52
+msgid "Quitte lnav et revient à l'application — jamais transmis à lnav"
+msgstr "ออกจาก lnav และกลับสู่แอปพลิเคชัน — ไม่ส่งต่อให้ lnav เด็ดขาด"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:53
+msgid "Haut/Bas, g/G, /, m, q..."
+msgstr "ขึ้น/ลง, g/G, /, m, q..."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:53
+msgid "Raccourcis propres à lnav lui-même (navigation, recherche, marquage, vues) — voir sa documentation"
+msgstr "ปุ่มลัดของ lnav เอง (เลื่อนดู ค้นหา ทำเครื่องหมาย มุมมอง) — ดูเอกสารของ lnav"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:57
+msgid ""
+"1. [b]Registre des capacités[/b] : lancez un scan au premier démarrage pour\n"
+"   que l'application découvre les logs déjà présents sur la machine.\n"
+"2. Importez les logs qui vous intéressent dans la [b]Bibliothèque[/b]\n"
+"   (au détail ou en totalité depuis le Registre, ou manuellement).\n"
+"3. Ouvrez-les depuis [b]Voir les logs[/b] (ou créez un [b]Favori[/b] pour\n"
+"   un lancement direct la prochaine fois).\n"
+"4. Pour un accès root (ex. /var/log/audit/), l'application ne tourne\n"
+"   jamais en root elle-même — elle demande une authentification sudo\n"
+"   ponctuelle, UNE SEULE FOIS par log protégé, au moment précis où elle\n"
+"   en a besoin.\n"
+"5. [b]Voir et Traiter IP[/b] et [b]Statistiques[/b] pour l'analyse ;\n"
+"   [b]Rotate[/b]/[b]Purger[/b]/[b]Exporter[/b] pour la maintenance.\n"
+msgstr ""
+"1. [b]ทะเบียนความสามารถ[/b]: เรียกใช้การสแกนเมื่อเริ่มครั้งแรก\n"
+"   เพื่อให้แอปพลิเคชันค้นพบล็อกที่มีอยู่แล้วบนเครื่อง\n"
+"2. นำเข้าล็อกที่คุณสนใจไปยัง [b]คลัง[/b] (ทีละรายการหรือทั้งหมดจากทะเบียน หรือเพิ่มด้วยมือ)\n"
+"3. เปิดล็อกจาก [b]ดูล็อก[/b] (หรือสร้าง [b]รายการโปรด[/b] เพื่อเปิดได้ทันทีในครั้งถัดไป)\n"
+"4. สำหรับการเข้าถึงระดับ root (เช่น /var/log/audit/) แอปพลิเคชันเองไม่ทำงานเป็น\n"
+"   root เด็ดขาด — จะขอการยืนยันตัวตน sudo เฉพาะคราว\n"
+"   เพียงครั้งเดียวต่อล็อกที่ป้องกันไว้ ในตอนที่จำเป็นจริง ๆ เท่านั้น\n"
+"5. ใช้ [b]ดูและจัดการ IP[/b] และ [b]สถิติ[/b] สำหรับการวิเคราะห์ ใช้ [b]Rotate[/b]/[b]ล้าง[/b]/[b]ส่งออก[/b]\n"
+"   สำหรับการบำรุงรักษา\n"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:71 src/omega_log/interfaces/tui/screens/home.py:46
+msgid "Registre des capacités"
+msgstr "ทะเบียนความสามารถ"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:72
+msgid ""
+"Détecte automatiquement les services/serveurs actifs sur la machine\n"
+"(serveurs web, bases de données, mail, DNS, sécurité, omega-serv...) et\n"
+"propose l'import de leurs logs connus — fonctionne même sans aucun log\n"
+"présent, dégrade proprement.\n"
+"\n"
+"- [b]Scanner les services[/b] : sonde chaque capacité connue (~45 appels\n"
+"  système en arrière-plan, jamais sur le thread d'affichage — l'écran\n"
+"  reste réactif pendant le scan). Remplit la liste de ce qui a été\n"
+"  découvert, et sépare les logs \"suspects\" (fichier présent mais vide,\n"
+"  très probablement routé vers journald plutôt qu'un fichier classique).\n"
+"- [b]Scanner ce dossier[/b] : scan manuel non récursif d'un chemin de\n"
+"  votre choix (ex. /var/log), en complément du scan automatique.\n"
+"- Sélectionnez une ligne puis [b]Voir (simple/classique/lnav)[/b] pour\n"
+"  un aperçu immédiat SANS importer, ou [b]Importer la sélection[/b] /\n"
+"  [b]Importer tout[/b] pour les ajouter à la Bibliothèque.\n"
+"- L'état \"SUSPECT\" n'est jamais bloquant : vous pouvez importer et ouvrir\n"
+"  un log suspect normalement, l'application affichera simplement ce\n"
+"  qu'il contient réellement (potentiellement rien)."
+msgstr ""
+"ตรวจจับบริการ/เซิร์ฟเวอร์ที่ทำงานอยู่บนเครื่องโดยอัตโนมัติ (เว็บเซิร์ฟเวอร์ ฐานข้อมูล อีเมล\n"
+"DNS ความปลอดภัย omega-serv...) และเสนอให้นำเข้าล็อกที่รู้จักของบริการเหล่านั้น —\n"
+"ทำงานได้แม้ไม่มีล็อกอยู่เลย และลดระดับการทำงานอย่างเรียบร้อย\n"
+"\n"
+"- [b]สแกนบริการ[/b]: ตรวจสอบความสามารถที่รู้จักแต่ละรายการ (ราว 45 การเรียกระบบ\n"
+"  ทำงานเบื้องหลัง ไม่ทำบนเธรดแสดงผลเด็ดขาด — หน้าจอยังตอบสนองระหว่างการสแกน)\n"
+"  แสดงรายการสิ่งที่ค้นพบ และแยกล็อกที่ \"น่าสงสัย\" ออกมา (มีไฟล์แต่ว่างเปล่า\n"
+"  ซึ่งน่าจะถูกส่งไปยัง journald แทนไฟล์ทั่วไป)\n"
+"- [b]สแกนโฟลเดอร์นี้[/b]: สแกนด้วยมือแบบไม่เรียกซ้ำในพาธที่คุณเลือก (เช่น /var/log)\n"
+"  เพื่อเสริมการสแกนอัตโนมัติ\n"
+"- เลือกบรรทัด แล้วกด [b]ดู (แบบง่าย/แบบคลาสสิก/lnav)[/b] เพื่อดูตัวอย่างทันทีโดยไม่ต้องนำเข้า\n"
+"  หรือกด [b]นำเข้ารายการที่เลือก[/b] / [b]นำเข้าทั้งหมด[/b] เพื่อเพิ่มลงในคลัง\n"
+"- สถานะ \"SUSPECT\" ไม่ขัดขวางการทำงานเด็ดขาด:\n"
+"  คุณนำเข้าและเปิดล็อกที่น่าสงสัยได้ตามปกติ แอปพลิเคชันจะแสดงสิ่งที่อยู่ในไฟล์จริง ๆ\n"
+"  (ซึ่งอาจไม่มีอะไรเลย)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:111 src/omega_log/interfaces/tui/screens/help_screen.py:89 src/omega_log/interfaces/tui/screens/home.py:47
+msgid "Bibliothèque"
+msgstr "คลัง"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:90
+msgid ""
+"Hub central référençant tous les logs à traiter — point de départ de\n"
+"tous les autres écrans (Voir les logs, Favoris, Voir et Traiter IP,\n"
+"Statistiques, Rotate, Purger). Alimentée par le Registre (import au\n"
+"détail ou en totalité) OU par ajout manuel ici — jamais l'inverse.\n"
+"\n"
+"- [b]Ajouter[/b] : saisissez un chemin absolu et validez — aucune\n"
+"  vérification d'existence à l'ajout, l'état réel (OK/SUSPECT/ABSENT)\n"
+"  n'est évalué qu'à l'affichage de la liste.\n"
+"- Colonne \"État\" : [b]OK[/b] (fichier présent, non vide), [b]SUSPECT[/b]\n"
+"  (présent mais vide), [b]ABSENT[/b] (chemin introuvable — le fichier a\n"
+"  pu être supprimé, déplacé par une rotation, ou n'a jamais existé). Un log\n"
+"  ABSENT reste dans la liste (rien ne le retire automatiquement) : utile\n"
+"  si le fichier réapparaît (rotation logrotate externe, par exemple).\n"
+"- [b]Retirer la sélection[/b] : retire uniquement la référence dans la\n"
+"  Bibliothèque, après confirmation — NE TOUCHE JAMAIS au fichier réel\n"
+"  sur le disque (pour ça, voir l'écran Purger).\n"
+"- [b]Rafraîchir[/b] : relit l'état de chaque entrée sans tout re-scanner.\n"
+"- Colonnes : [b]#[/b] (numéro à cliquer ou à saisir dans les autres\n"
+"  écrans), Chemin, Service, Accès, Taille, [b]Modifié[/b] (dernière\n"
+"  écriture ; pour une copie SSH, date de la dernière récupération), État.\n"
+"- [b]Ajouter les logs connus d'Omega-Serv[/b] : cherche les installations\n"
+"  omega-serv de la machine (alias `serv` de ~/.bashrc et ~/.zshrc,\n"
+"  registre des instances ~/.config/omega-serv/instances.json, services\n"
+"  systemd) et ajoute leurs logs access et error, les alertes WAF si le\n"
+"  WAF est actif, et les 2 logs magnet si le magnet l'est aussi. Lecture\n"
+"  seule, uniquement au clic ; un log déjà présent est remplacé, jamais\n"
+"  dupliqué. Une instance supplémentaire apparaît en \"omega-serv:<nom>\".\n"
+"- [b]Sources distantes (SSH)[/b] : définissez une source (label, hôte,\n"
+"  chemin distant, utilisateur/port/clé facultatifs) puis [b]Récupérer\n"
+"  maintenant[/b] : une COPIE du log est rapatriée par scp dans\n"
+"  var/remote/ et ajoutée à la Bibliothèque (Accès \"ssh\"). Ce n'est pas\n"
+"  une lecture en direct : chaque récupération remplace la copie\n"
+"  précédente. Aucun mot de passe n'est demandé ni stocké,\n"
+"  l'authentification reste celle de votre configuration SSH."
+msgstr ""
+"ศูนย์กลางที่อ้างอิงล็อกทั้งหมดที่จะจัดการ — เป็นจุดเริ่มต้นของหน้าจออื่นทั้งหมด (ดูล็อก\n"
+"รายการโปรด ดูและจัดการ IP สถิติ Rotate ล้าง) เติมข้อมูลจากทะเบียน\n"
+"(นำเข้าทีละรายการหรือทั้งหมด) หรือเพิ่มด้วยมือที่นี่ — ไม่มีทางกลับกัน\n"
+"\n"
+"- [b]เพิ่ม[/b]: ป้อนพาธแบบสัมบูรณ์แล้วยืนยัน — ไม่ตรวจสอบว่ามีไฟล์อยู่หรือไม่ตอนเพิ่ม สถานะจริง\n"
+"  (OK/SUSPECT/ABSENT) จะประเมินเฉพาะตอนแสดงรายการ\n"
+"- คอลัมน์ \"สถานะ\": [b]OK[/b] (มีไฟล์และไม่ว่าง) [b]SUSPECT[/b] (มีแต่ว่าง) [b]ABSENT[/b] (ไม่พบพาธ —\n"
+"  ไฟล์อาจถูกลบ ถูกย้ายโดยการหมุนเวียน หรือไม่เคยมีอยู่) ล็อก ABSENT ยังคงอยู่ในรายการ\n"
+"  (ไม่มีอะไรนำออกโดยอัตโนมัติ): มีประโยชน์หากไฟล์กลับมาอีก (เช่น การหมุนเวียนด้วย\n"
+"  logrotate ภายนอก)\n"
+"- [b]นำรายการที่เลือกออก[/b]: นำออกเฉพาะการอ้างอิงในคลัง หลังจากยืนยัน —\n"
+"  ไม่แตะไฟล์จริงบนดิสก์เด็ดขาด (สำหรับไฟล์ ดูหน้าจอล้าง)\n"
+"- [b]รีเฟรช[/b]: อ่านสถานะของแต่ละรายการใหม่โดยไม่ต้องสแกนใหม่ทั้งหมด\n"
+"- คอลัมน์: [b]#[/b] (หมายเลขสำหรับคลิกหรือป้อนในหน้าจออื่น) พาธ บริการ การเข้าถึง ขนาด\n"
+"  [b]แก้ไขเมื่อ[/b] (การเขียนครั้งล่าสุด สำหรับสำเนา SSH คือวันที่ดึงข้อมูลครั้งล่าสุด) สถานะ\n"
+"- [b]เพิ่มล็อกที่รู้จักของ Omega-Serv[/b]: ค้นหาการติดตั้ง omega-serv บนเครื่อง (alias\n"
+"  `serv` ใน ~/.bashrc และ ~/.zshrc ทะเบียนอินสแตนซ์\n"
+"  ~/.config/omega-serv/instances.json บริการ systemd) แล้วเพิ่มล็อก access\n"
+"  และ error ของแต่ละรายการ การแจ้งเตือน WAF หากเปิดใช้ WAF และล็อก magnet 2\n"
+"  ไฟล์หากเปิดใช้ magnet ด้วย อ่านอย่างเดียว ทำงานเฉพาะเมื่อคลิก\n"
+"  ล็อกที่มีอยู่แล้วจะถูกแทนที่ ไม่ซ้ำกันเด็ดขาด อินสแตนซ์เพิ่มเติมจะแสดงเป็น\n"
+"  \"omega-serv:<ชื่อ>\"\n"
+"- [b]แหล่งระยะไกล (SSH)[/b]: กำหนดแหล่ง (ป้ายกำกับ โฮสต์ พาธระยะไกล\n"
+"  และผู้ใช้/พอร์ต/คีย์ซึ่งไม่บังคับ) แล้วกด [b]ดึงข้อมูลเดี๋ยวนี้[/b]: สำเนาของล็อกจะถูกดึงมาด้วย\n"
+"  scp ไว้ใน var/remote/ และเพิ่มลงในคลัง (การเข้าถึง \"ssh\")\n"
+"  นี่ไม่ใช่การอ่านแบบสด: การดึงแต่ละครั้งจะแทนที่สำเนาก่อนหน้า\n"
+"  ไม่มีการขอหรือเก็บรหัสผ่านใด ๆ การยืนยันตัวตนยังคงเป็นไปตามการตั้งค่า SSH ของคุณ"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:122 src/omega_log/interfaces/tui/screens/home.py:48
+msgid "Voir les logs"
+msgstr "ดูล็อก"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:123
+msgid ""
+"Ouvre un ou plusieurs logs DÉJÀ référencés dans la Bibliothèque\n"
+"(aucun import manuel ici — importez depuis le Registre ou la\n"
+"Bibliothèque au préalable).\n"
+"\n"
+"- Sélection au clic : un simple clic choisit la ligne ; double-clic\n"
+"  ou Entrée ajoute ou retire son numéro dans le champ (plusieurs logs,\n"
+"  ex. \"1,3\"). Le champ, s'il est rempli, a priorité.\n"
+"- Règle de compatibilité des viewers : [b]1 seul log[/b] -> les 3\n"
+"  viewers sont proposés (Simple, Classique, lnav) ; [b]2 logs ou plus[/b]\n"
+"  -> seul [b]lnav[/b] est compatible (fusion multi-fichiers), les deux\n"
+"  autres sont refusés avec une notification explicite si vous insistez.\n"
+"- Les 3 viewers sont détaillés dans leur propre section ci-dessous."
+msgstr ""
+"เปิดล็อกหนึ่งรายการขึ้นไปที่อ้างอิงอยู่ในคลังแล้ว (ที่นี่นำเข้าด้วยมือไม่ได้ —\n"
+"โปรดนำเข้าจากทะเบียนหรือคลังก่อน)\n"
+"\n"
+"- เลือกด้วยการคลิก: คลิกครั้งเดียวเพื่อเลือกบรรทัด ดับเบิลคลิกหรือ Enter\n"
+"  เพื่อเพิ่มหรือลบหมายเลขของล็อกในช่อง (หลายล็อก เช่น \"1,3\") หากกรอกช่องไว้แล้ว\n"
+"  ช่องจะมีความสำคัญกว่า\n"
+"- กฎความเข้ากันได้ของตัวดู: [b]ล็อกเพียง 1 รายการ[/b] -> มีตัวดูให้เลือกทั้ง 3 แบบ (แบบง่าย\n"
+"  แบบคลาสสิก lnav) [b]ล็อก 2 รายการขึ้นไป[/b] -> ใช้ได้เฉพาะ [b]lnav[/b] (ผสานหลายไฟล์)\n"
+"  อีกสองแบบจะถูกปฏิเสธพร้อมการแจ้งเตือนที่ชัดเจนหากคุณยืนยันจะใช้\n"
+"- ตัวดูทั้ง 3 แบบอธิบายโดยละเอียดในหัวข้อของแต่ละแบบด้านล่าง"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:134 src/omega_log/interfaces/tui/screens/home.py:49
+msgid "Favoris"
+msgstr "รายการโปรด"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:135
+msgid ""
+"Enregistre une combinaison (log(s) + viewer) sous un nom, pour un\n"
+"lancement direct sans re-sélectionner chaque fois.\n"
+"\n"
+"- Partie haute : liste des favoris existants — [b]Lancer[/b] ouvre\n"
+"  directement le viewer enregistré sur les logs enregistrés ;\n"
+"  [b]Supprimer[/b] retire le favori (après confirmation, ne touche\n"
+"  jamais aux fichiers de log réels).\n"
+"- Partie basse (\"Créer un favori\") : mêmes NUMÉROS séparés par des\n"
+"  virgules que \"Voir les logs\", + un nom + le viewer souhaité (Select),\n"
+"  puis [b]Enregistrer[/b].\n"
+"- Aucune vérification de compatibilité n'est faite à la CRÉATION (vous\n"
+"  pouvez enregistrer 3 logs + viewer \"lnav\" sans problème) — la règle\n"
+"  1 log/3 viewers vs 2+/lnav uniquement, elle, s'applique normalement au\n"
+"  moment du [b]Lancer[/b].\n"
+"- Un favori référence des CHEMINS, pas des entrées de Bibliothèque : si\n"
+"  le fichier est déplacé ou supprimé, le favori reste mais son\n"
+"  lancement échouera comme une ouverture normale sur un chemin absent."
+msgstr ""
+"บันทึกชุดค่าผสม (ล็อก + ตัวดู) ไว้ภายใต้ชื่อ เพื่อเปิดได้ทันทีโดยไม่ต้องเลือกใหม่ทุกครั้ง\n"
+"\n"
+"- ส่วนบน: รายการโปรดที่มีอยู่ — [b]เปิด[/b] เปิดล็อกที่บันทึกไว้ด้วยตัวดูที่บันทึกไว้โดยตรง [b]ลบ[/b]\n"
+"  ลบรายการโปรด (หลังจากยืนยัน ไม่แตะไฟล์ล็อกจริงเด็ดขาด)\n"
+"- ส่วนล่าง (\"สร้างรายการโปรด\"): หมายเลขคั่นด้วยจุลภาคแบบเดียวกับ \"ดูล็อก\" + ชื่อ +\n"
+"  ตัวดูที่ต้องการ (Select) แล้วกด [b]บันทึก[/b]\n"
+"- ไม่มีการตรวจสอบความเข้ากันได้ตอนสร้าง (คุณบันทึกล็อก 3 รายการ + ตัวดู \"lnav\"\n"
+"  ได้โดยไม่มีปัญหา) — ส่วนกฎ \"ล็อก 1 รายการใช้ตัวดูได้ 3 แบบ 2\n"
+"  รายการขึ้นไปใช้ได้เฉพาะ lnav\" จะมีผลตามปกติตอน [b]เปิด[/b]\n"
+"- รายการโปรดอ้างอิงถึงพาธ ไม่ใช่รายการในคลัง: หากไฟล์ถูกย้ายหรือลบ\n"
+"  รายการโปรดยังคงอยู่ แต่การเปิดจะล้มเหลวเหมือนการเปิดพาธที่ไม่มีอยู่ตามปกติ"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:150 src/omega_log/interfaces/tui/screens/home.py:50
+msgid "Voir et Traiter IP"
+msgstr "ดูและจัดการ IP"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:151
+msgid ""
+"Top 10 des adresses IP les plus actives sur une période, et suppression\n"
+"ciblée d'une IP dans un ou plusieurs logs.\n"
+"\n"
+"- Sélection des logs par numéros (comme \"Voir les logs\"), puis une\n"
+"  période : [b]24h / 7j / 30j / Tout[/b]. Le calcul se lance au clic sur\n"
+"  une période, jamais automatiquement.\n"
+"- Le calcul s'exécute en ARRIÈRE-PLAN dans un processus séparé (jamais\n"
+"  sur le thread d'affichage, même pour un gros fichier) — un indicateur\n"
+"  \"Calcul en cours...\" s'affiche pendant l'attente, les boutons de\n"
+"  période sont désactivés jusqu'à la fin pour éviter de lancer plusieurs\n"
+"  calculs en même temps sur le même écran.\n"
+"- Périodes courtes (24h/7j/30j) : lecture optimisée EN PARTANT DE LA FIN\n"
+"  du fichier, avec arrêt anticipé dès que les lignes deviennent trop\n"
+"  anciennes — très rapide même sur un fichier de plusieurs centaines de\n"
+"  milliers de lignes. \"Tout\" lit l'intégralité du fichier, forcément\n"
+"  plus lent sur un gros volume.\n"
+"- Cliquez une ligne du tableau de résultat pour la sélectionner, puis\n"
+"  [b]Retirer cette IP des logs analysés[/b] (toujours avec confirmation)\n"
+"  pour supprimer DÉFINITIVEMENT toutes les lignes contenant cette IP,\n"
+"  dans TOUS les fichiers analysés pour ce calcul.\n"
+"- Logs protégés (ex. /var/log/audit) : une authentification sudo\n"
+"  ponctuelle est demandée automatiquement au moment où elle est\n"
+"  nécessaire (lecture ou suppression), jamais à l'avance."
+msgstr ""
+"10 อันดับที่อยู่ IP ที่มีความเคลื่อนไหวมากที่สุดในช่วงเวลาหนึ่ง และการลบ IP\n"
+"ที่ระบุออกจากล็อกหนึ่งรายการขึ้นไป\n"
+"\n"
+"- เลือกล็อกด้วยหมายเลข (เหมือน \"ดูล็อก\") แล้วเลือกช่วงเวลา: [b]24 ชม. / 7 วัน / 30\n"
+"  วัน / ทั้งหมด[/b] การคำนวณเริ่มเมื่อคลิกช่วงเวลา ไม่เริ่มเองเด็ดขาด\n"
+"- การคำนวณทำงานเบื้องหลังในโปรเซสแยก (ไม่ทำบนเธรดแสดงผลเด็ดขาด\n"
+"  แม้กับไฟล์ขนาดใหญ่) — ระหว่างรอจะแสดง \"กำลังคำนวณ...\"\n"
+"  และปุ่มช่วงเวลาจะถูกปิดใช้งานจนกว่าจะเสร็จ\n"
+"  เพื่อไม่ให้เริ่มการคำนวณหลายรายการพร้อมกันบนหน้าจอเดียวกัน\n"
+"- ช่วงเวลาสั้น (24 ชม./7 วัน/30 วัน): อ่านแบบปรับแต่งโดยเริ่มจากท้ายไฟล์\n"
+"  และหยุดก่อนทันทีที่บรรทัดเก่าเกินไป — เร็วมากแม้กับไฟล์หลายแสนบรรทัด \"ทั้งหมด\"\n"
+"  อ่านทั้งไฟล์ จึงช้ากว่าแน่นอนเมื่อข้อมูลมาก\n"
+"- คลิกบรรทัดในตารางผลลัพธ์เพื่อเลือก แล้วกด [b]นำ IP นี้ออกจากล็อกที่วิเคราะห์[/b]\n"
+"  (ต้องยืนยันเสมอ) เพื่อลบทุกบรรทัดที่มี IP นี้อย่างถาวร\n"
+"  ในทุกไฟล์ที่วิเคราะห์สำหรับการคำนวณนี้\n"
+"- ล็อกที่ป้องกันไว้ (เช่น /var/log/audit): จะขอการยืนยันตัวตน sudo\n"
+"  เฉพาะคราวโดยอัตโนมัติในตอนที่จำเป็น (อ่านหรือลบ) ไม่ขอล่วงหน้าเด็ดขาด"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:180 src/omega_log/interfaces/tui/screens/home.py:51
+msgid "Statistiques (accès)"
+msgstr "สถิติ (การเข้าถึง)"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:181
+msgid ""
+"Volume, IPs uniques, taux d'erreur, top IPs, répartition horaire sur un\n"
+"ou plusieurs logs d'accès — avec export.\n"
+"\n"
+"- Mêmes principes que \"Voir et Traiter IP\" : sélection par numéros,\n"
+"  période 24h/7j/30j/Tout, calcul en arrière-plan dans un processus\n"
+"  séparé (boutons de période désactivés pendant le calcul), lecture\n"
+"  optimisée par période courte, élévation sudo ponctuelle automatique\n"
+"  sur un log protégé.\n"
+"- Le rapport affiché (présentation du rapport d'omega-fire) : une\n"
+"  [b]synthèse[/b] (lignes analysées, requêtes HTTP, IPs uniques, taux\n"
+"  d'erreur, volume transféré, heure de pointe, période couverte), les\n"
+"  [b]statuts HTTP[/b] en jauges (2xx/3xx/4xx/5xx, refus 403 et 429), les\n"
+"  [b]top IP[/b], [b]chemins demandés[/b] et [b]chemins en 404[/b] (avec la\n"
+"  part en erreur), la [b]répartition horaire[/b] (24 jauges, heure de\n"
+"  pointe en couleur d'alerte) et la [b]tendance par jour[/b] (7 j / 30 j).\n"
+"- Une valeur que le log ne fournit pas s'affiche \"-\" (jamais estimée) ;\n"
+"  pour un log non HTTP (auth.log, syslog...), statuts et chemins sont\n"
+"  absents et le taux d'erreur compte les lignes de niveau erreur.\n"
+"- [b]Exporter JSON[/b] / [b]Exporter HTML[/b] (5 thèmes graphiques au\n"
+"  choix) : le même rapport, avec cartes, histogramme horaire et jauges.\n"
+"  Nécessite d'avoir calculé au moins une fois (choisi une période) avant\n"
+"  de pouvoir exporter — le fichier produit est horodaté,\n"
+"  déposé dans var/exports/."
+msgstr ""
+"ปริมาณ IP ไม่ซ้ำ อัตราผิดพลาด IP สูงสุด การกระจายรายชั่วโมง\n"
+"ของล็อกการเข้าถึงหนึ่งรายการขึ้นไป — พร้อมการส่งออก\n"
+"\n"
+"- หลักการเดียวกับ \"ดูและจัดการ IP\": เลือกด้วยหมายเลข ช่วงเวลา 24 ชม./7 วัน/30\n"
+"  วัน/ทั้งหมด คำนวณเบื้องหลังในโปรเซสแยก (ปุ่มช่วงเวลาถูกปิดใช้งานระหว่างคำนวณ)\n"
+"  อ่านแบบปรับแต่งสำหรับช่วงเวลาสั้น ยกระดับสิทธิ์ sudo\n"
+"  เฉพาะคราวโดยอัตโนมัติสำหรับล็อกที่ป้องกันไว้\n"
+"- รายงานที่แสดง (รูปแบบรายงานของ omega-fire): [b]สรุป[/b] (บรรทัดที่วิเคราะห์ คำขอ\n"
+"  HTTP IP ไม่ซ้ำ อัตราผิดพลาด ปริมาณที่ส่ง ชั่วโมงสูงสุด ช่วงที่ครอบคลุม) [b]สถานะ HTTP[/b]\n"
+"  เป็นแถบวัด (2xx/3xx/4xx/5xx, ปฏิเสธ 403 และ 429) [b]IP สูงสุด[/b] [b]พาธที่ถูกเรียก[/b] และ\n"
+"  [b]พาธที่ได้ 404[/b] (พร้อมสัดส่วนที่ผิดพลาด) [b]การกระจายรายชั่วโมง[/b] (24 แถบวัด\n"
+"  ชั่วโมงสูงสุดแสดงด้วยสีเตือน) และ [b]แนวโน้มรายวัน[/b] (7 วัน / 30 วัน)\n"
+"- ค่าที่ล็อกไม่ได้ให้มาจะแสดงเป็น \"-\" (ไม่ประมาณเด็ดขาด) สำหรับล็อกที่ไม่ใช่ HTTP\n"
+"  (auth.log, syslog...) จะไม่มีสถานะและพาธ\n"
+"  และอัตราผิดพลาดจะนับบรรทัดระดับข้อผิดพลาด\n"
+"- [b]ส่งออก JSON[/b] / [b]ส่งออก HTML[/b] (เลือกธีมกราฟิกได้ 5 แบบ): รายงานเดียวกัน พร้อมการ์ด\n"
+"  ฮิสโทแกรมรายชั่วโมง และแถบวัด ต้องคำนวณอย่างน้อยหนึ่งครั้ง (เลือกช่วงเวลา)\n"
+"  ก่อนจึงจะส่งออกได้ — ไฟล์ที่ได้จะมีเวลากำกับ และถูกวางไว้ใน var/exports/"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:201 src/omega_log/interfaces/tui/screens/home.py:54
+msgid "Rotate"
+msgstr "Rotate"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:202
+msgid ""
+"Sauvegarde compressée d'un log et restauration depuis une archive\n"
+"précédente.\n"
+"\n"
+"- [b]Sauvegarder maintenant[/b] : numéro du log (un seul à la fois) +\n"
+"  nombre de rotations à conserver (champ \"Rotations à conserver\", 7 par\n"
+"  défaut) — au-delà de ce nombre, les archives les plus anciennes sont\n"
+"  supprimées automatiquement à chaque nouvelle sauvegarde (rétention\n"
+"  automatique, jamais d'accumulation illimitée).\n"
+"- Liste \"Archives disponibles\" : toutes les sauvegardes existantes,\n"
+"  triées des plus récentes aux plus anciennes, avec taille et date.\n"
+"- [b]Restaurer[/b] : sélectionnez une archive dans la liste, choisissez\n"
+"  le mode — [b]Fusion (append)[/b] ajoute le contenu de l'archive à la\n"
+"  fin du fichier actuel ; [b]Écrasement (overwrite)[/b] remplace\n"
+"  entièrement le contenu actuel par celui de l'archive. Une sauvegarde\n"
+"  de sécurité du fichier cible est prise automatiquement AVANT toute\n"
+"  restauration, pour pouvoir annuler en cas d'erreur.\n"
+"- [b]Supprimer l'archive[/b] : suppression définitive d'une sauvegarde\n"
+"  (après confirmation) — ne touche jamais au log source.\n"
+"- Log protégé : élévation sudo ponctuelle automatique si nécessaire,\n"
+"  pour la sauvegarde comme pour la restauration."
+msgstr ""
+"สำรองข้อมูลล็อกแบบบีบอัด และกู้คืนจากไฟล์เก็บถาวรก่อนหน้า\n"
+"\n"
+"- [b]สำรองข้อมูลเดี๋ยวนี้[/b]: หมายเลขล็อก (ทีละหนึ่งรายการ) + จำนวนรอบการหมุนเวียนที่จะเก็บ\n"
+"  (ช่อง \"จำนวนรอบที่จะเก็บ\" ค่าเริ่มต้น 7) — เมื่อเกินจำนวนนี้\n"
+"  ไฟล์เก็บถาวรที่เก่าที่สุดจะถูกลบโดยอัตโนมัติทุกครั้งที่สำรองข้อมูลใหม่ (การเก็บรักษาอัตโนมัติ\n"
+"  ไม่สะสมไม่สิ้นสุด)\n"
+"- รายการ \"ไฟล์เก็บถาวรที่มี\": ข้อมูลสำรองทั้งหมดที่มีอยู่ เรียงจากใหม่สุดไปเก่าสุด\n"
+"  พร้อมขนาดและวันที่\n"
+"- [b]กู้คืน[/b]: เลือกไฟล์เก็บถาวรในรายการ แล้วเลือกโหมด — [b]ผสาน (append)[/b]\n"
+"  ต่อเนื้อหาของไฟล์เก็บถาวรไว้ท้ายไฟล์ปัจจุบัน [b]เขียนทับ (overwrite)[/b]\n"
+"  แทนที่เนื้อหาปัจจุบันทั้งหมดด้วยเนื้อหาของไฟล์เก็บถาวร\n"
+"  ระบบจะสำรองไฟล์เป้าหมายเพื่อความปลอดภัยโดยอัตโนมัติก่อนการกู้คืนทุกครั้ง\n"
+"  เพื่อให้ย้อนกลับได้หากผิดพลาด\n"
+"- [b]ลบไฟล์เก็บถาวร[/b]: ลบข้อมูลสำรองอย่างถาวร (หลังจากยืนยัน) — ไม่แตะล็อกต้นทางเด็ดขาด\n"
+"- ล็อกที่ป้องกันไว้: ยกระดับสิทธิ์ sudo เฉพาะคราวโดยอัตโนมัติหากจำเป็น\n"
+"  ทั้งตอนสำรองและตอนกู้คืน"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:231 src/omega_log/interfaces/tui/screens/home.py:55
+msgid "Purger"
+msgstr "ล้าง"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:232
+msgid ""
+"Deux actions DISTINCTES et toutes deux irréversibles sans confirmation\n"
+"préalable — à ne jamais confondre :\n"
+"\n"
+"- [b]Vider le contenu[/b] : TRONQUE le(s) fichier(s) EN PLACE (le\n"
+"  fichier continue d'exister, vide). Méthode sûre pour un log encore\n"
+"  activement écrit par un service qui le garde ouvert (contrairement à\n"
+"  une suppression, qui casserait le descripteur de fichier du service\n"
+"  tant qu'il n'est pas redémarré).\n"
+"- [b]Supprimer le(s) fichier(s)[/b] : efface COMPLÈTEMENT le(s)\n"
+"  fichier(s) du disque — plus aucune trace, le fichier disparaît aussi\n"
+"  de la Bibliothèque.\n"
+"- Les deux actions acceptent une sélection MULTIPLE par numéros séparés\n"
+"  par des virgules, et demandent TOUJOURS confirmation avant d'agir\n"
+"  (la liste exacte des fichiers concernés est affichée dans la boîte de\n"
+"  confirmation).\n"
+"- Pensez à [b]Rotate -> Sauvegarder maintenant[/b] avant de purger si\n"
+"  vous voulez garder une trace du contenu actuel."
+msgstr ""
+"การดำเนินการสองอย่างที่แตกต่างกัน ซึ่งย้อนกลับไม่ได้ทั้งคู่และต้องยืนยันก่อนเสมอ —\n"
+"อย่าสับสนกันเด็ดขาด:\n"
+"\n"
+"- [b]ล้างเนื้อหา[/b]: ตัดทอนไฟล์ในที่เดิม (ไฟล์ยังคงอยู่แต่ว่างเปล่า)\n"
+"  เป็นวิธีที่ปลอดภัยสำหรับล็อกที่บริการยังเปิดเขียนอยู่ (ต่างจากการลบ\n"
+"  ซึ่งจะทำให้ตัวอธิบายไฟล์ของบริการเสียจนกว่าจะรีสตาร์ท)\n"
+"- [b]ลบไฟล์[/b]: ลบไฟล์ออกจากดิสก์อย่างสมบูรณ์ — ไม่เหลือร่องรอย ไฟล์จะหายไปจากคลังด้วย\n"
+"- ทั้งสองการดำเนินการรองรับการเลือกหลายรายการด้วยหมายเลขคั่นด้วยจุลภาค\n"
+"  และขอการยืนยันก่อนดำเนินการเสมอ\n"
+"  (รายการไฟล์ที่เกี่ยวข้องที่แน่นอนจะแสดงในกล่องยืนยัน)\n"
+"- หากต้องการเก็บร่องรอยของเนื้อหาปัจจุบัน ให้ใช้ [b]Rotate -> สำรองข้อมูลเดี๋ยวนี้[/b] ก่อนล้าง"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:247
+msgid ""
+"Export de la liste des ARCHIVES (sauvegardes Rotate) en JSON ou en HTML\n"
+"à thème — distinct de l'export des statistiques (présent directement\n"
+"dans l'écran Statistiques).\n"
+"\n"
+"- [b]Rafraîchir[/b] : relit la liste des archives présentes sur le\n"
+"  disque (utile si vous venez de sauvegarder ou de supprimer une archive\n"
+"  depuis l'écran Rotate).\n"
+"- [b]Exporter JSON[/b] : structure brute (nom, taille en octets, date de\n"
+"  création) de chaque archive listée.\n"
+"- [b]Exporter HTML[/b] : même contenu, mis en forme avec le thème\n"
+"  graphique choisi dans le Select au-dessus (5 thèmes disponibles,\n"
+"  mêmes palettes que l'export des Statistiques).\n"
+"- Le fichier produit est horodaté et déposé dans var/exports/ (le même\n"
+"  dossier que les exports de Statistiques)."
+msgstr ""
+"ส่งออกรายการไฟล์เก็บถาวร (ข้อมูลสำรองของ Rotate) เป็น JSON หรือ HTML แบบมีธีม —\n"
+"แยกจากการส่งออกสถิติ (ซึ่งอยู่ในหน้าจอสถิติโดยตรง)\n"
+"\n"
+"- [b]รีเฟรช[/b]: อ่านรายการไฟล์เก็บถาวรที่มีอยู่บนดิสก์ใหม่\n"
+"  (มีประโยชน์หากคุณเพิ่งสำรองหรือลบไฟล์เก็บถาวรจากหน้าจอ Rotate)\n"
+"- [b]ส่งออก JSON[/b]: โครงสร้างดิบ (ชื่อ ขนาดเป็นไบต์ วันที่สร้าง)\n"
+"  ของแต่ละไฟล์เก็บถาวรในรายการ\n"
+"- [b]ส่งออก HTML[/b]: เนื้อหาเดียวกัน จัดรูปแบบด้วยธีมกราฟิกที่เลือกใน Select ด้านบน (มี 5\n"
+"  ธีม ชุดสีเดียวกับการส่งออกสถิติ)\n"
+"- ไฟล์ที่ได้จะมีเวลากำกับ และถูกวางไว้ใน var/exports/\n"
+"  (โฟลเดอร์เดียวกับการส่งออกสถิติ)"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:272
+msgid ""
+"Réglages de l'application elle-même (pas des logs traités).\n"
+"\n"
+"- [b]Thème[/b] : 10 thèmes disponibles, appliqué IMMÉDIATEMENT à la\n"
+"  sélection, sans confirmation ni redémarrage (équivalent à appuyer\n"
+"  plusieurs fois sur la touche [b]t[/b]).\n"
+"- [b]Profil de rendu[/b] : force un niveau d'adaptation au terminal\n"
+"  (complet/standard/réduit/mono) au lieu de la détection automatique —\n"
+"  nécessite un REDÉMARRAGE de l'application pour prendre effet\n"
+"  (\"Automatique\" restaure la détection normale).\n"
+"- [b]Vider le dossier exports[/b] / [b]Vider le dossier screenshots[/b] :\n"
+"  supprime définitivement TOUS les fichiers de ces dossiers applicatifs\n"
+"  (après confirmation) — n'affecte jamais les logs surveillés ni leurs\n"
+"  archives Rotate."
+msgstr ""
+"การตั้งค่าของแอปพลิเคชันเอง (ไม่ใช่ของล็อกที่จัดการ)\n"
+"\n"
+"- [b]ธีม[/b]: มี 10 ธีม มีผลทันทีที่เลือก โดยไม่ต้องยืนยันหรือรีสตาร์ท (เหมือนกดปุ่ม [b]t[/b] หลายครั้ง)\n"
+"- [b]โปรไฟล์การแสดงผล[/b]: บังคับระดับการปรับให้เข้ากับเทอร์มินัล\n"
+"  (เต็ม/มาตรฐาน/ลดลง/ขาวดำ) แทนการตรวจจับอัตโนมัติ —\n"
+"  ต้องรีสตาร์ทแอปพลิเคชันจึงจะมีผล (\"อัตโนมัติ\" คืนค่าการตรวจจับตามปกติ)\n"
+"- [b]ล้างโฟลเดอร์ exports[/b] / [b]ล้างโฟลเดอร์ screenshots[/b]:\n"
+"  ลบไฟล์ทั้งหมดในโฟลเดอร์ของแอปพลิเคชันเหล่านี้อย่างถาวร (หลังจากยืนยัน) —\n"
+"  ไม่มีผลต่อล็อกที่เฝ้าดูหรือไฟล์เก็บถาวร Rotate ของล็อกเหล่านั้นเด็ดขาด"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:291
+msgid "Aide, export et contact"
+msgstr "ความช่วยเหลือ การส่งออก และการติดต่อ"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:292
+msgid ""
+"- [b]Exporter l'aide en HTML[/b] : toute cette aide dans un fichier\n"
+"  HTML horodaté (thème au choix, comme les autres exports), déposé dans\n"
+"  var/exports/.\n"
+"- [b]Contact et support[/b] : payer un café (PayPal), se déclarer\n"
+"  utilisateur anonyme, contacter le support (mail et formulaire du site).\n"
+"  Les adresses sont toujours affichées en clair : sans session graphique\n"
+"  (SSH), recopiez-les dans votre navigateur.\n"
+"- [b]Se déclarer utilisateur (anonyme)[/b] : volontaire, une seule fois,\n"
+"  au clic. Le message exact est affiché avant l'envoi : une clé tirée au\n"
+"  hasard, le logiciel (omega-log), sa version et, facultatifs, un\n"
+"  continent et un pays. [b]Ne plus me déclarer[/b] supprime l'entrée à la\n"
+"  réception et efface la clé locale."
+msgstr ""
+"- [b]ส่งออกความช่วยเหลือเป็น HTML[/b]: ความช่วยเหลือทั้งหมดนี้ในไฟล์ HTML ที่มีเวลากำกับ\n"
+"  (เลือกธีมได้ เหมือนการส่งออกอื่น ๆ) วางไว้ใน var/exports/\n"
+"- [b]ติดต่อและสนับสนุน[/b]: เลี้ยงกาแฟ (PayPal) ลงทะเบียนเป็นผู้ใช้นิรนาม ติดต่อฝ่ายสนับสนุน\n"
+"  (อีเมลและแบบฟอร์มของเว็บไซต์) ที่อยู่จะแสดงเป็นข้อความธรรมดาเสมอ:\n"
+"  หากไม่มีเซสชันกราฟิก (SSH) โปรดคัดลอกไปใส่ในเบราว์เซอร์ของคุณ\n"
+"- [b]ลงทะเบียนเป็นผู้ใช้ (นิรนาม)[/b]: โดยสมัครใจ เพียงครั้งเดียว เมื่อคลิก\n"
+"  ข้อความที่แน่นอนจะแสดงก่อนส่ง: คีย์ที่สุ่มขึ้น ซอฟต์แวร์ (omega-log)\n"
+"  เวอร์ชันของซอฟต์แวร์ และทวีปกับประเทศซึ่งไม่บังคับ [b]ไม่ต้องลงทะเบียนฉันอีก[/b]\n"
+"  จะลบรายการที่ปลายทางและลบคีย์ในเครื่อง"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:305
+msgid ""
+"[b]1. Simple[/b] — suivi en direct avec parsing générique (horodatage,\n"
+"niveau, IP, service détecté). Le tableau garde tout le tampon (500\n"
+"lignes, 200 chargées à l'ouverture) avec ascenseurs vertical et\n"
+"horizontal ; il suit les nouvelles lignes seulement si vous êtes déjà en\n"
+"bas. À gauche, un tableau de bord qui défile (identique à omega-serv) :\n"
+"rendement, bande passante, statuts HTTP (dont refus 403 et 429), IPs\n"
+"uniques et top 5 IP, chemins les plus demandes et chemins en 404, santé\n"
+"et tampon. Une valeur que le log ne fournit pas s'affiche \"-\", jamais\n"
+"estimée. Pour un access log HTTP reconnu\n"
+"(format Combined/Common), deux colonnes supplémentaires apparaissent\n"
+"automatiquement : [b]Code[/b] (statut HTTP, coloré 2xx vert/3xx cyan/\n"
+"4xx jaune/5xx rouge) et [b]Timeout[/b] (latence si le format source la\n"
+"fournit, coloré selon le seuil) — ces colonnes affichent \"-\" pour tout\n"
+"ce qui n'est pas un format HTTP reconnu (auth.log, syslog, fail2ban...).\n"
+"\n"
+"[b]2. Classique[/b] — affiche les dernières lignes BRUTES du fichier\n"
+"(aucun parsing, aucune coloration), avec un bouton [b]Suivre en\n"
+"direct[/b] pour basculer en mode tail -f. Le plus simple et le plus\n"
+"fiable quel que soit le format du fichier.\n"
+"\n"
+"[b]3. lnav[/b] — encapsule le programme externe `lnav` dans un terminal\n"
+"dédié (pty), pour une fusion et une analyse croisée de PLUSIEURS\n"
+"fichiers à la fois (merge automatique par horodatage). Nécessite que\n"
+"`lnav` soit installé sur le système (sudo pacman -S lnav / sudo apt\n"
+"install lnav) — sans lui, ce viewer est proposé mais refuse de se\n"
+"lancer avec un message explicite. Raccourcis spécifiques pendant une\n"
+"session lnav :"
+msgstr ""
+"[b]1. แบบง่าย[/b] — ติดตามสดพร้อมการแยกวิเคราะห์ทั่วไป (เวลา ระดับ IP บริการที่ตรวจพบ)\n"
+"ตารางเก็บบัฟเฟอร์ทั้งหมด (500 บรรทัด โหลด 200 บรรทัดตอนเปิด)\n"
+"พร้อมแถบเลื่อนแนวตั้งและแนวนอน จะติดตามบรรทัดใหม่เฉพาะเมื่อคุณอยู่ด้านล่างสุดแล้ว\n"
+"ทางซ้ายมีแดชบอร์ดที่เลื่อนได้ (เหมือนกับ omega-serv): ประสิทธิภาพ แบนด์วิดท์ สถานะ\n"
+"HTTP (รวมการปฏิเสธ 403 และ 429) IP ไม่ซ้ำและ 5 IP สูงสุด\n"
+"พาธที่ถูกเรียกมากที่สุดและพาธที่ได้ 404 สุขภาพและบัฟเฟอร์ ค่าที่ล็อกไม่ได้ให้มาจะแสดงเป็น\n"
+"\"-\" ไม่ประมาณเด็ดขาด สำหรับ access log HTTP ที่รู้จัก (รูปแบบ Combined/Common)\n"
+"จะมีคอลัมน์เพิ่มสองคอลัมน์โดยอัตโนมัติ: [b]รหัส[/b] (สถานะ HTTP ระบายสี 2xx เขียว/3xx\n"
+"ฟ้า/4xx เหลือง/5xx แดง) และ [b]Timeout[/b] (เวลาแฝง หากรูปแบบต้นทางมีให้\n"
+"ระบายสีตามเกณฑ์) — คอลัมน์เหล่านี้แสดง \"-\" สำหรับทุกอย่างที่ไม่ใช่รูปแบบ HTTP ที่รู้จัก\n"
+"(auth.log, syslog, fail2ban...)\n"
+"\n"
+"[b]2. แบบคลาสสิก[/b] — แสดงบรรทัดล่าสุดของไฟล์แบบดิบ (ไม่แยกวิเคราะห์ ไม่ระบายสี) พร้อมปุ่ม\n"
+"[b]ติดตามสด[/b] เพื่อสลับเป็นโหมด tail -f เรียบง่ายและเชื่อถือได้ที่สุด ไม่ว่าไฟล์จะมีรูปแบบใด\n"
+"\n"
+"[b]3. lnav[/b] — ห่อโปรแกรมภายนอก `lnav` ไว้ในเทอร์มินัลเฉพาะ (pty)\n"
+"เพื่อผสานและวิเคราะห์ไขว้ไฟล์หลายไฟล์พร้อมกัน (ผสานตามเวลาโดยอัตโนมัติ) ต้องติดตั้ง\n"
+"`lnav` ไว้ในระบบ (sudo pacman -S lnav / sudo apt install lnav) — หากไม่มี\n"
+"ตัวดูนี้ยังแสดงให้เลือก แต่จะปฏิเสธการเปิดพร้อมข้อความที่ชัดเจน ปุ่มลัดเฉพาะระหว่างเซสชัน\n"
+"lnav:"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:328
+msgid ""
+"[b]Élévation sudo ponctuelle[/b] — l'application ne tourne JAMAIS en\n"
+"root par défaut. Quand une action rencontre réellement une permission\n"
+"refusée (ex. /var/log/audit/, lisible seulement par root), une\n"
+"authentification sudo est demandée À CE moment précis, dans le\n"
+"terminal réel (l'interface se suspend brièvement) — jamais à l'avance,\n"
+"jamais pour des actions qui n'en ont pas besoin. Une fois authentifié\n"
+"pour un écran donné, les actions suivantes sur ce même écran réutilisent\n"
+"l'autorisation sans redemander.\n"
+"\n"
+"[b]États SUSPECT / ABSENT / OK[/b] — SUSPECT : fichier présent mais\n"
+"vide (très souvent un service qui route en réalité vers journald plutôt\n"
+"que vers un fichier classique). ABSENT : chemin introuvable au moment de\n"
+"l'affichage (supprimé, pas encore créé, ou chemin erroné). OK : fichier\n"
+"présent et non vide. Ces états sont INFORMATIFS, jamais bloquants —\n"
+"vous pouvez toujours ouvrir, exporter ou purger un log quel que soit son\n"
+"état affiché.\n"
+"\n"
+"[b]Sélection des logs[/b] — convention commune (Voir les logs, Favoris,\n"
+"Voir et Traiter IP, Statistiques, Rotate, Purger) : le tableau affiche\n"
+"un numéro par ligne. Simple clic : la ligne surlignée suffit. Double-clic\n"
+"ou Entrée : ajoute ou retire son numéro dans le champ (ex. \"1,3,4\").\n"
+"Vous pouvez aussi saisir les numéros à la main ; le champ, s'il est\n"
+"rempli, a priorité.\n"
+"\n"
+"[b]Dossier var/[/b] — tout l'état propre à l'application (bibliothèque,\n"
+"favoris, thème choisi, archives de sauvegarde, exports, journal\n"
+"applicatif) vit dans ./var/, relatif au dossier où vous lancez\n"
+"l'application (ou $OMEGA_LOG_VAR_DIR si défini) — jamais dans votre\n"
+"dossier personnel. Ce dossier est entièrement local à la machine, ne\n"
+"contient aucun des LOGS SURVEILLÉS eux-mêmes (seulement des références\n"
+"vers leurs chemins)."
+msgstr ""
+"[b]การยกระดับสิทธิ์ sudo เฉพาะคราว[/b] — โดยค่าเริ่มต้น แอปพลิเคชันไม่ทำงานเป็น root\n"
+"เด็ดขาด เมื่อการดำเนินการใดพบการปฏิเสธสิทธิ์จริง ๆ (เช่น /var/log/audit/ ซึ่ง root\n"
+"อ่านได้เท่านั้น) จะขอการยืนยันตัวตน sudo ในตอนนั้นพอดี ในเทอร์มินัลจริง\n"
+"(อินเทอร์เฟซจะหยุดชั่วครู่) — ไม่ขอล่วงหน้าเด็ดขาด\n"
+"และไม่ขอสำหรับการดำเนินการที่ไม่จำเป็นเด็ดขาด เมื่อยืนยันตัวตนแล้วสำหรับหน้าจอหนึ่ง\n"
+"การดำเนินการถัดไปบนหน้าจอเดียวกันจะใช้สิทธิ์นั้นซ้ำโดยไม่ถามอีก\n"
+"\n"
+"[b]สถานะ SUSPECT / ABSENT / OK[/b] — SUSPECT: มีไฟล์แต่ว่างเปล่า\n"
+"(บ่อยครั้งคือบริการที่จริง ๆ แล้วส่งไปยัง journald แทนไฟล์ทั่วไป) ABSENT:\n"
+"ไม่พบพาธตอนแสดงผล (ถูกลบ ยังไม่ถูกสร้าง หรือพาธผิด) OK: มีไฟล์และไม่ว่าง\n"
+"สถานะเหล่านี้เป็นเพียงข้อมูล ไม่ขัดขวางการทำงานเด็ดขาด — คุณเปิด ส่งออก\n"
+"หรือล้างล็อกได้เสมอ ไม่ว่าสถานะที่แสดงจะเป็นอย่างไร\n"
+"\n"
+"[b]การเลือกล็อก[/b] — ข้อตกลงร่วม (ดูล็อก รายการโปรด ดูและจัดการ IP สถิติ Rotate ล้าง):\n"
+"ตารางแสดงหมายเลขหนึ่งหมายเลขต่อบรรทัด คลิกครั้งเดียว: บรรทัดที่ไฮไลต์ก็เพียงพอ\n"
+"ดับเบิลคลิกหรือ Enter: เพิ่มหรือลบหมายเลขของบรรทัดนั้นในช่อง (เช่น \"1,3,4\")\n"
+"คุณป้อนหมายเลขเองก็ได้ หากกรอกช่องไว้แล้ว ช่องจะมีความสำคัญกว่า\n"
+"\n"
+"[b]โฟลเดอร์ var/[/b] — สถานะทั้งหมดของแอปพลิเคชันเอง (คลัง รายการโปรด ธีมที่เลือก\n"
+"ไฟล์เก็บถาวรสำรอง การส่งออก ล็อกของแอปพลิเคชัน) อยู่ใน ./var/\n"
+"โดยอิงกับโฟลเดอร์ที่คุณเปิดแอปพลิเคชัน (หรือ $OMEGA_LOG_VAR_DIR หากกำหนดไว้) —\n"
+"ไม่อยู่ในโฟลเดอร์ส่วนตัวของคุณเด็ดขาด โฟลเดอร์นี้อยู่ภายในเครื่องทั้งหมด\n"
+"และไม่มีล็อกที่เฝ้าดูอยู่เลย (มีเพียงการอ้างอิงถึงพาธของล็อกเหล่านั้น)"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:358
+msgid "Raccourcis pendant une session lnav"
+msgstr "ปุ่มลัดระหว่างเซสชัน lnav"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:361 src/omega_log/interfaces/tui/screens/help_screen.py:400
+msgid "Démarrage rapide"
+msgstr "เริ่มต้นอย่างรวดเร็ว"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:363 src/omega_log/interfaces/tui/screens/help_screen.py:408
+msgid "Les 3 viewers (Simple / Classique / lnav)"
+msgstr "ตัวดูทั้ง 3 แบบ (แบบง่าย / แบบคลาสสิก / lnav)"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:364 src/omega_log/interfaces/tui/screens/help_screen.py:413
+msgid "Concepts et glossaire"
+msgstr "แนวคิดและอภิธานศัพท์"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:388
+msgid "Exporter l'aide en HTML"
+msgstr "ส่งออกความช่วยเหลือเป็น HTML"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:390
+msgid "Contact et support"
+msgstr "ติดต่อและสนับสนุน"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:397
+#, python-brace-format
+msgid "{key:<16} {description}"
+msgstr "{key:<16} {description}"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:403
+msgid "Fonctions, écran par écran"
+msgstr "ฟังก์ชัน ทีละหน้าจอ"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:411
+#, python-brace-format
+msgid "  {key:<24} {description}"
+msgstr "  {key:<24} {description}"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:437
+#, python-brace-format
+msgid "Export écrit : {path}"
+msgstr "เขียนการส่งออกแล้ว: {path}"
+
+#: src/omega_log/interfaces/tui/screens/home.py:109
+msgid "MAINTENANCE"
+msgstr "การบำรุงรักษา"
+
+#: src/omega_log/interfaces/tui/screens/home.py:128
+msgid "Cet écran n'est pas encore construit (voir plan_omega_log.md, phases suivantes)."
+msgstr "หน้าจอนี้ยังไม่ได้สร้าง (ดู plan_omega_log.md ระยะถัดไป)"
+
+#: src/omega_log/interfaces/tui/screens/library.py:43
+msgid "BIBLIOTHÈQUE"
+msgstr "คลัง"
+
+#: src/omega_log/interfaces/tui/screens/library.py:46
+msgid "Chemin à ajouter manuellement"
+msgstr "พาธที่จะเพิ่มด้วยมือ"
+
+#: src/omega_log/interfaces/tui/screens/library.py:50
+msgid "Ajouter les logs connus d'Omega-Serv"
+msgstr "เพิ่มล็อกที่รู้จักของ Omega-Serv"
+
+#: src/omega_log/interfaces/tui/screens/library.py:52
+msgid "Sources distantes (SSH)"
+msgstr "แหล่งระยะไกล (SSH)"
+
+#: src/omega_log/interfaces/tui/screens/library.py:56
+msgid "Retirer la sélection"
+msgstr "นำรายการที่เลือกออก"
+
+#: src/omega_log/interfaces/tui/screens/library.py:97
+#, python-brace-format
+msgid "{count} log(s) référencé(s) — {stale} suspect(s), {missing} introuvable(s) actuellement."
+msgstr "อ้างอิง {count} ล็อก — ขณะนี้น่าสงสัย {stale} รายการ ไม่พบ {missing} รายการ"
+
+#: src/omega_log/interfaces/tui/screens/library.py:105
+msgid "Saisissez un chemin."
+msgstr "ป้อนพาธ"
+
+#: src/omega_log/interfaces/tui/screens/library.py:116
+msgid "Aucune installation d'Omega-Serv trouvée sur cette machine."
+msgstr "ไม่พบการติดตั้ง Omega-Serv บนเครื่องนี้"
+
+#: src/omega_log/interfaces/tui/screens/library.py:120
+#, python-brace-format
+msgid "{count} installation(s) d'Omega-Serv trouvée(s), {added} log(s) ajouté(s) (déjà présents remplacés, jamais dupliqués)."
+msgstr "พบการติดตั้ง Omega-Serv {count} รายการ เพิ่มล็อกแล้ว {added} รายการ (รายการที่มีอยู่แล้วถูกแทนที่ ไม่ซ้ำกันเด็ดขาด)"
+
+#: src/omega_log/interfaces/tui/screens/library.py:124
+#, python-brace-format
+msgid "Configuration illisible : {root}/config/omega-serve.json"
+msgstr "อ่านการตั้งค่าไม่ได้: {root}/config/omega-serve.json"
+
+#: src/omega_log/interfaces/tui/screens/library.py:129 src/omega_log/interfaces/tui/screens/registry.py:100 src/omega_log/interfaces/tui/screens/registry.py:106 src/omega_log/interfaces/tui/screens/registry.py:116
+msgid "Sélectionnez une ligne dans la liste."
+msgstr "เลือกบรรทัดในรายการ"
+
+#: src/omega_log/interfaces/tui/screens/library.py:133
+msgid "RETIRER DE LA BIBLIOTHÈQUE ?"
+msgstr "นำออกจากคลัง?"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:107
+#, python-brace-format
+msgid "VOIR LES LOGS — SIMPLE — {path}"
+msgstr "ดูล็อก — แบบง่าย — {path}"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Code"
+msgstr "รหัส"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Heure"
+msgstr "เวลา"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Message"
+msgstr "ข้อความ"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Niveau"
+msgstr "ระดับ"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+msgid "Timeout"
+msgstr "Timeout"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:153 src/omega_log/interfaces/tui/screens/live_tail_screen.py:183 src/omega_log/interfaces/tui/screens/rotate_screen.py:138
+#, python-brace-format
+msgid "Permission refusée sur {path}."
+msgstr "ถูกปฏิเสธสิทธิ์ใน {path}"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:190
+#, python-brace-format
+msgid "Lecture privilégiée impossible : {exc}"
+msgstr "อ่านด้วยสิทธิ์พิเศษไม่ได้: {exc}"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:226
+msgid "── RENDEMENT ──────────────\n"
+msgstr "── ประสิทธิภาพ ──────────────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:227
+#, python-brace-format
+msgid "{requests_per_second:.1f} req/s"
+msgstr "{requests_per_second:.1f} req/s"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:228
+#, python-brace-format
+msgid " ⚡ Débit        : {rps}\n"
+msgstr " ⚡ อัตรา         : {rps}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:230
+#, python-brace-format
+msgid ""
+" ⏱ Latence moy. : {none}\n"
+"\n"
+msgstr ""
+" ⏱ เวลาแฝงเฉลี่ย  : {none}\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:234
+#, python-brace-format
+msgid ""
+" ⏱ Latence moy. : {latency:.0f} ms\n"
+"\n"
+msgstr ""
+" ⏱ เวลาแฝงเฉลี่ย  : {latency:.0f} ms\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:236
+msgid "── BANDE PASSANTE ─────────\n"
+msgstr "── แบนด์วิดท์ ────────────────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:240
+#, python-brace-format
+msgid " 🌐 Débit réseau : {bps}\n"
+msgstr " 🌐 อัตราเครือข่าย  : {bps}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:241
+#, python-brace-format
+msgid " 📦 Volume total : {total}\n"
+msgstr " 📦 ปริมาณรวม     : {total}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:242
+#, python-brace-format
+msgid ""
+" 🗜 Taille moy.  : {average}\n"
+"\n"
+msgstr ""
+" 🗜 ขนาดเฉลี่ย     : {average}\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:244
+msgid "── STATUTS HTTP ───────────\n"
+msgstr "── สถานะ HTTP ─────────────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:245
+#, python-brace-format
+msgid " 📊 Requêtes     : {http_total}\n"
+msgstr " 📊 คำขอ         : {http_total}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:246
+#, python-brace-format
+msgid " √  Succès 2xx   : {status_2xx}\n"
+msgstr " √  สำเร็จ 2xx    : {status_2xx}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:247
+#, python-brace-format
+msgid " ↔  Redir. 3xx   : {status_3xx}\n"
+msgstr " ↔  เปลี่ยนทาง 3xx : {status_3xx}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:248
+#, python-brace-format
+msgid " ⚠  Erreurs 4xx  : {status_4xx}\n"
+msgstr " ⚠  ผิดพลาด 4xx   : {status_4xx}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:249
+#, python-brace-format
+msgid " ❌ Erreurs 5xx  : {status_5xx}\n"
+msgstr " ❌ ผิดพลาด 5xx   : {status_5xx}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:250
+#, python-brace-format
+msgid " ⛔ Refus 403    : {status_403}\n"
+msgstr " ⛔ ปฏิเสธ 403    : {status_403}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:251
+#, python-brace-format
+msgid ""
+" ⏳ Refus 429    : {status_429}\n"
+"\n"
+msgstr ""
+" ⏳ ปฏิเสธ 429    : {status_429}\n"
+"\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:253
+msgid "── CLIENTS & RÉSEAU ───────\n"
+msgstr "── ไคลเอนต์และเครือข่าย ──────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:254
+#, python-brace-format
+msgid " 💻 IPs uniques  : {unique_ips}\n"
+msgstr " 💻 IP ไม่ซ้ำ      : {unique_ips}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:256
+msgid " 🖧 Top 5 IP     :\n"
+msgstr " 🖧 5 IP สูงสุด    :\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:259
+msgid "── CHEMINS DEMANDÉS ───────\n"
+msgstr "── พาธที่ถูกเรียก ─────────────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:261
+msgid "── CHEMINS EN 404 ─────────\n"
+msgstr "── พาธ 404 ────────────────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:264
+msgid "── SANTÉ & TAMPON ─────────\n"
+msgstr "── สุขภาพและบัฟเฟอร์ ─────────\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:267
+msgid "DÉGRADÉ"
+msgstr "ลดระดับ"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:268
+#, python-brace-format
+msgid " 🌡 Santé        : {health}\n"
+msgstr " 🌡 สุขภาพ        : {health}\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:269
+#, python-brace-format
+msgid " ⚠  Taux d'erreur: {rate:.1f}%\n"
+msgstr " ⚠  อัตราผิดพลาด   : {rate:.1f}%\n"
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:270
+#, python-brace-format
+msgid " 📥 Tampon       : {count}/{BUFFER_SIZE}"
+msgstr " 📥 บัฟเฟอร์       : {count}/{BUFFER_SIZE}"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:65
+msgid "lnav est introuvable ou non fonctionnel sur ce système. Sur Arch/Manjaro : sudo pacman -S lnav. Sur Debian/Ubuntu : sudo apt install lnav."
+msgstr "ไม่พบ lnav หรือ lnav ใช้งานไม่ได้บนระบบนี้ บน Arch/Manjaro: sudo pacman -S lnav บน Debian/Ubuntu: sudo apt install lnav"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:79
+msgid "VOIR LES LOGS — LNAV (FUSION MULTI-LOGS)"
+msgstr "ดูล็อก — LNAV (ผสานหลายล็อก)"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:80
+#, python-brace-format
+msgid "Fichiers : {join}"
+msgstr "ไฟล์: {join}"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:84
+msgid "Lancer lnav"
+msgstr "เปิด lnav"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:104
+#, python-brace-format
+msgid "Fichier(s) introuvable(s) : {join}"
+msgstr "ไม่พบไฟล์: {join}"
+
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:110
+#, python-brace-format
+msgid "Échec du lancement de lnav : {exc}"
+msgstr "เปิด lnav ไม่สำเร็จ: {exc}"
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:57
+#, python-brace-format
+msgid "VOIR LES LOGS — CLASSIQUE — {path}"
+msgstr "ดูล็อก — แบบคลาสสิก — {path}"
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:62 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:139
+msgid "Suivre en direct"
+msgstr "ติดตามสด"
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:108
+#, python-brace-format
+msgid "Permission refusée sur {path} (authentification sudo requise)."
+msgstr "ถูกปฏิเสธสิทธิ์ใน {path} (ต้องยืนยันตัวตน sudo)"
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:127
+msgid "Rien à suivre (fichier introuvable)."
+msgstr "ไม่มีอะไรให้ติดตาม (ไม่พบไฟล์)"
+
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:130
+msgid "Arrêter le suivi"
+msgstr "หยุดติดตาม"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:114
+msgid "VOIR ET TRAITER IP"
+msgstr "ดูและจัดการ IP"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:116
+msgid "Logs à analyser (numéros ci-dessus, séparés par des virgules)"
+msgstr "ล็อกที่จะวิเคราะห์ (หมายเลขด้านบน คั่นด้วยจุลภาค)"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:117
+msgid "ex: 1,2"
+msgstr "เช่น 1,2"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:135
+msgid "Retirer cette IP des logs analysés"
+msgstr "นำ IP นี้ออกจากล็อกที่วิเคราะห์"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:142
+msgid "Occurrences"
+msgstr "จำนวนครั้ง"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:186 src/omega_log/interfaces/tui/screens/process_ip_screen.py:344 src/omega_log/interfaces/tui/screens/registry.py:169
+#, python-brace-format
+msgid "Erreur : {message}"
+msgstr "ข้อผิดพลาด: {message}"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:362
+msgid "Aucune IP trouvée dans les log(s) sélectionné(s) pour cette période."
+msgstr "ไม่พบ IP ในล็อกที่เลือกสำหรับช่วงเวลานี้"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:371
+msgid "RETIRER CETTE IP ?"
+msgstr "นำ IP นี้ออก?"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:372
+#, python-brace-format
+msgid "Retirer toutes les lignes contenant {ip} de {count} fichier(s)."
+msgstr "นำทุกบรรทัดที่มี {ip} ออกจาก {count} ไฟล์"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:388
+#, python-brace-format
+msgid "{path} : permission refusée."
+msgstr "{path}: ถูกปฏิเสธสิทธิ์"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:398
+#, python-brace-format
+msgid "{total} occurrence(s) de {ip} retirée(s) au total."
+msgstr "นำ {ip} ออกแล้วทั้งหมด {total} ครั้ง"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:39
+msgid "PURGER"
+msgstr "ล้าง"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:41
+msgid "Vider le contenu tronque le fichier EN PLACE (sécurisé pour un service qui l'a encore ouvert) ; supprimer efface complètement le(s) fichier(s)."
+msgstr "ล้างเนื้อหาจะตัดทอนไฟล์ในที่เดิม (ปลอดภัยสำหรับบริการที่ยังเปิดไฟล์อยู่) ส่วนการลบจะลบไฟล์ออกอย่างสมบูรณ์"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:50
+msgid "Vider le contenu"
+msgstr "ล้างเนื้อหา"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:52
+msgid "Supprimer le(s) fichier(s)"
+msgstr "ลบไฟล์"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:93
+msgid "VIDER LE CONTENU ?"
+msgstr "ล้างเนื้อหา?"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:94
+msgid "Le(s) fichier(s) seront conservés mais vides :\n"
+msgstr "ไฟล์จะยังคงอยู่แต่ว่างเปล่า:\n"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:109
+#, python-brace-format
+msgid "ÉCHEC — {path} : permission refusée."
+msgstr "ล้มเหลว — {path}: ถูกปฏิเสธสิทธิ์"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:113
+#, python-brace-format
+msgid "ÉCHEC — {message}"
+msgstr "ล้มเหลว — {message}"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:122
+msgid "SUPPRIMER CES FICHIERS ?"
+msgstr "ลบไฟล์เหล่านี้?"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:123
+msgid "Suppression définitive :\n"
+msgstr "ลบอย่างถาวร:\n"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:136
+msgid "Permission refusée sur au moins un fichier."
+msgstr "ถูกปฏิเสธสิทธิ์ในไฟล์อย่างน้อยหนึ่งไฟล์"
+
+#: src/omega_log/interfaces/tui/screens/purge_screen.py:141
+#, python-brace-format
+msgid "{count} fichier(s) supprimé(s)."
+msgstr "ลบแล้ว {count} ไฟล์"
+
+#: src/omega_log/interfaces/tui/screens/quit_confirm.py:21
+msgid "QUITTER OMEGA-LOG ?"
+msgstr "ออกจาก OMEGA-LOG?"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:45
+msgid "REGISTRE DES CAPACITÉS"
+msgstr "ทะเบียนความสามารถ"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:49
+msgid "Scanner les services"
+msgstr "สแกนบริการ"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:50
+msgid "Dossier à scanner (ex. /var/log)"
+msgstr "โฟลเดอร์ที่จะสแกน (เช่น /var/log)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:52
+msgid "Scanner ce dossier"
+msgstr "สแกนโฟลเดอร์นี้"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:56 src/omega_log/interfaces/tui/screens/view_logs.py:52
+msgid "Voir (simple)"
+msgstr "ดู (แบบง่าย)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:58 src/omega_log/interfaces/tui/screens/view_logs.py:54
+msgid "Voir (classique)"
+msgstr "ดู (แบบคลาสสิก)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:60 src/omega_log/interfaces/tui/screens/view_logs.py:56
+msgid "Voir (lnav)"
+msgstr "ดู (lnav)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:62
+msgid "Importer la sélection"
+msgstr "นำเข้ารายการที่เลือก"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:64
+msgid "Importer tout"
+msgstr "นำเข้าทั้งหมด"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:120
+msgid "Ligne introuvable (relancez un scan)."
+msgstr "ไม่พบบรรทัด (โปรดสแกนใหม่)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:123
+#, python-brace-format
+msgid "{selected_path} ajouté à la Bibliothèque."
+msgstr "เพิ่ม {selected_path} ลงในคลังแล้ว"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:128
+msgid "Rien à importer (lancez un scan)."
+msgstr "ไม่มีอะไรให้นำเข้า (โปรดเรียกใช้การสแกน)"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:131
+#, python-brace-format
+msgid "{count} log(s) ajouté(s) à la Bibliothèque."
+msgstr "เพิ่ม {count} ล็อกลงในคลังแล้ว"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:134
+msgid "Analyse des services en cours..."
+msgstr "กำลังวิเคราะห์บริการ..."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:150
+msgid "Indiquez un dossier à scanner."
+msgstr "โปรดระบุโฟลเดอร์ที่จะสแกน"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:154
+#, python-brace-format
+msgid "Scan de {directory} en cours..."
+msgstr "กำลังสแกน {directory}..."
+
+#: src/omega_log/interfaces/tui/screens/registry.py:176
+#, python-brace-format
+msgid "{capabilities_registered} capacités sondées — {count} log(s) découvert(s) ({count2} suspect(s)), {count3} erreur(s)."
+msgstr "ตรวจสอบความสามารถแล้ว {capabilities_registered} รายการ — พบ {count} ล็อก (น่าสงสัย {count2}) ข้อผิดพลาด {count3} รายการ"
+
+#: src/omega_log/interfaces/tui/screens/registry.py:183
+#, python-brace-format
+msgid "Scan manuel : {count} fichier(s) trouvé(s)."
+msgstr "สแกนด้วยมือ: พบ {count} ไฟล์"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:60
+msgid "SOURCES DISTANTES (SSH)"
+msgstr "แหล่งระยะไกล (SSH)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:62
+msgid "Récupère, sur demande, UNE COPIE du log d'un serveur du réseau local via scp - ce n'est jamais une consultation en direct, mais un instantané figé au moment du clic. Chaque nouvelle 'Récupération maintenant' remplace la copie précédente par une plus récente (la Bibliothèque affiche la date de cette dernière récupération, colonne 'Modifié'). Aucun mot de passe n'est jamais demandé ni stocké : une éventuelle clé privée n'est référencée que par son chemin - l'authentification reste entièrement gérée par votre propre configuration SSH."
+msgstr "ดึงสำเนาหนึ่งชุดของล็อกจากเซิร์ฟเวอร์ในเครือข่ายภายในผ่าน scp ตามต้องการ - ไม่ใช่การดูแบบสด แต่เป็นภาพนิ่งที่ตรึงไว้ ณ เวลาที่คลิก การ 'ดึงข้อมูลเดี๋ยวนี้' แต่ละครั้งจะแทนที่สำเนาเดิมด้วยสำเนาที่ใหม่กว่า (คลังแสดงวันที่ของการดึงครั้งล่าสุดนี้ คอลัมน์ 'แก้ไขเมื่อ') ไม่มีการขอหรือเก็บรหัสผ่านเลย: คีย์ส่วนตัว (หากมี) อ้างอิงด้วยพาธเท่านั้น - การยืนยันตัวตนจัดการโดยการตั้งค่า SSH ของคุณเองทั้งหมด"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:76
+msgid "Récupérer maintenant"
+msgstr "ดึงข้อมูลเดี๋ยวนี้"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:80
+msgid "Ajouter une source"
+msgstr "เพิ่มแหล่ง"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:81 src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:97
+msgid "Label"
+msgstr "ป้ายกำกับ"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:82
+msgid "Hôte (ex: backend1 ou 192.168.1.10)"
+msgstr "โฮสต์ (เช่น backend1 หรือ 192.168.1.10)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:83
+msgid "Chemin distant (ex: /var/log/nginx/access.log)"
+msgstr "พาธระยะไกล (เช่น /var/log/nginx/access.log)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:84
+msgid "Utilisateur (optionnel)"
+msgstr "ผู้ใช้ (ไม่บังคับ)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:85
+msgid "Port (optionnel)"
+msgstr "พอร์ต (ไม่บังคับ)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:86
+msgid "Chemin de la clé privée (optionnel)"
+msgstr "พาธคีย์ส่วนตัว (ไม่บังคับ)"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:97
+msgid "Chemin distant"
+msgstr "พาธระยะไกล"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:97
+msgid "Clé"
+msgstr "คีย์"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:97
+msgid "Utilisateur"
+msgstr "ผู้ใช้"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:135
+msgid "Port invalide : {port_raw!r}."
+msgstr "พอร์ตไม่ถูกต้อง: {port_raw!r}"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:163
+msgid "SUPPRIMER CETTE SOURCE ?"
+msgstr "ลบแหล่งนี้?"
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:190
+msgid "Récupération en cours..."
+msgstr "กำลังดึงข้อมูล..."
+
+#: src/omega_log/interfaces/tui/screens/remote_log_sources_screen.py:212
+msgid " Ajouté à la Bibliothèque."
+msgstr " เพิ่มลงในคลังแล้ว"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:46
+msgid "ROTATE — SAUVEGARDER / RESTAURER"
+msgstr "ROTATE — สำรอง / กู้คืน"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:50
+msgid "Numéro du log à sauvegarder (ex: 1)"
+msgstr "หมายเลขล็อกที่จะสำรอง (เช่น 1)"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:53 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:80
+msgid "Rotations à conserver"
+msgstr "จำนวนรอบที่จะเก็บ"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:55
+msgid "Sauvegarder maintenant"
+msgstr "สำรองข้อมูลเดี๋ยวนี้"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:57
+msgid "Archives disponibles"
+msgstr "ไฟล์เก็บถาวรที่มี"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:60
+msgid "Fusion (append)"
+msgstr "ผสาน (append)"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:60
+msgid "Écrasement (overwrite)"
+msgstr "เขียนทับ (overwrite)"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:63
+msgid "Restaurer"
+msgstr "กู้คืน"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:65
+msgid "Supprimer l'archive"
+msgstr "ลบไฟล์เก็บถาวร"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+msgid "Créé le"
+msgstr "สร้างเมื่อ"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+msgid "Taille"
+msgstr "ขนาด"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:119 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:177
+msgid "Numéro de log invalide."
+msgstr "หมายเลขล็อกไม่ถูกต้อง"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:147 src/omega_log/interfaces/tui/screens/rotate_screen.py:188
+msgid "Sélectionnez une archive."
+msgstr "โปรดเลือกไฟล์เก็บถาวร"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:156
+msgid "RESTAURER CETTE ARCHIVE ?"
+msgstr "กู้คืนไฟล์เก็บถาวรนี้?"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:157
+#, python-brace-format
+msgid "Mode : {mode}. Cible : {path}."
+msgstr "โหมด: {mode} เป้าหมาย: {path}"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:179
+#, python-brace-format
+msgid "Permission refusée sur {target_path}."
+msgstr "ถูกปฏิเสธสิทธิ์ใน {target_path}"
+
+#: src/omega_log/interfaces/tui/screens/rotate_screen.py:192
+msgid "SUPPRIMER CETTE ARCHIVE ?"
+msgstr "ลบไฟล์เก็บถาวรนี้?"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:45
+msgid "OPTIONS"
+msgstr "ตัวเลือก"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:60
+msgid "Maintenance des dossiers"
+msgstr "การบำรุงรักษาโฟลเดอร์"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:63
+msgid "Vider le dossier exports"
+msgstr "ล้างโฟลเดอร์ exports"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:65
+msgid "Vider le dossier screenshots"
+msgstr "ล้างโฟลเดอร์ screenshots"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:106
+#, python-brace-format
+msgid "VIDER LE DOSSIER {upper} ?"
+msgstr "ล้างโฟลเดอร์ {upper}?"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:107
+#, python-brace-format
+msgid "Supprime définitivement tous les fichiers de {directory}."
+msgstr "ลบไฟล์ทั้งหมดใน {directory} อย่างถาวร"
+
+#: src/omega_log/interfaces/tui/screens/settings_screen.py:117
+#, python-brace-format
+msgid "{deleted_count} fichier(s) supprimé(s) dans {label}/."
+msgstr "ลบแล้ว {deleted_count} ไฟล์ใน {label}/"
+
+#: src/omega_log/interfaces/tui/screens/view_logs.py:40
+msgid "VOIR LES LOGS"
+msgstr "ดูล็อก"
+
+#: src/omega_log/interfaces/tui/screens/view_logs.py:42
+msgid "Logs référencés dans la Bibliothèque uniquement — importez-en d'autres depuis le Registre ou la Bibliothèque."
+msgstr "เฉพาะล็อกที่อ้างอิงในคลังเท่านั้น — นำเข้าล็อกอื่นได้จากทะเบียนหรือคลัง"
+
+#: src/omega_log/interfaces/tui/screens/view_logs.py:47
+msgid "Sources à ouvrir (numéros ci-dessus, séparés par des virgules)"
+msgstr "แหล่งที่จะเปิด (หมายเลขด้านบน คั่นด้วยจุลภาค)"
+
+#: src/omega_log/interfaces/tui/screens/view_logs.py:48
+msgid "ex: 1,3"
+msgstr "เช่น 1,3"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+msgid "24h"
+msgstr "24 ชม."
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+msgid "30j"
+msgstr "30 วัน"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+msgid "7j"
+msgstr "7 วัน"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+msgid "Tout (fichier entier)"
+msgstr "ทั้งหมด (ทั้งไฟล์)"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:25
+msgid "24h, 7j, 30j : lecture depuis la fin du fichier, rapide. « Tout » lit le fichier entier : la durée dépend de sa taille (de quelques secondes à plusieurs minutes pour un gros log)."
+msgstr "24 ชม., 7 วัน, 30 วัน: อ่านจากท้ายไฟล์ รวดเร็ว \"ทั้งหมด\" อ่านทั้งไฟล์: เวลาที่ใช้ขึ้นอยู่กับขนาด (ตั้งแต่ไม่กี่วินาทีจนถึงหลายนาทีสำหรับล็อกขนาดใหญ่)"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:35
+msgid "Lecture du fichier entier, ligne par ligne…"
+msgstr "กำลังอ่านทั้งไฟล์ทีละบรรทัด…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:36
+msgid "Analyse des lignes (date, IP, code HTTP, chemin)…"
+msgstr "กำลังวิเคราะห์บรรทัด (วันที่, IP, รหัส HTTP, พาธ)…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:37
+msgid "Plus le fichier est gros, plus c'est long : quelques secondes à plusieurs minutes."
+msgstr "ไฟล์ยิ่งใหญ่ยิ่งใช้เวลานาน: ตั้งแต่ไม่กี่วินาทีจนถึงหลายนาที"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:38
+msgid "Échap arrête l'analyse : il faudra la relancer."
+msgstr "Esc จะหยุดการวิเคราะห์: ต้องเริ่มใหม่"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:39 src/omega_log/interfaces/tui/widgets/busy_indicator.py:44
+msgid "Toujours en cours, rien n'est bloqué…"
+msgstr "ยังทำงานอยู่ ไม่ได้ค้าง…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:42
+msgid "Lecture depuis la fin du fichier, arrêt dès que les lignes sortent de la période…"
+msgstr "กำลังอ่านจากท้ายไฟล์ จะหยุดทันทีที่บรรทัดอยู่นอกช่วงเวลา…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:43
+msgid "Analyse des lignes de la période…"
+msgstr "กำลังวิเคราะห์บรรทัดในช่วงเวลา…"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:94
+#, python-brace-format
+msgid "{count} log(s)"
+msgstr "{count} ล็อก"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:97
+msgid " (au moins)"
+msgstr " (อย่างน้อย)"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:143
+msgid "Calcul en cours"
+msgstr "กำลังคำนวณ"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:153
+#, python-brace-format
+msgid " {value:3.0f} %  ({done_parts}/{total_parts} morceaux analysés)"
+msgstr " {value:3.0f} %  (วิเคราะห์แล้ว {done_parts}/{total_parts} ส่วน)"
+
+#: src/omega_log/interfaces/tui/widgets/library_selection.py:17
+msgid "Clic : choisir un log. Double-clic ou Entrée : ajouter ou retirer son numéro dans le champ (plusieurs logs). Le champ, s'il est rempli, a priorité."
+msgstr "คลิก: เลือกล็อก ดับเบิลคลิกหรือ Enter: เพิ่มหรือลบหมายเลขของล็อกในช่อง (หลายล็อก) หากกรอกช่องไว้แล้ว ช่องจะมีความสำคัญกว่า"
+
+#: src/omega_log/interfaces/tui/widgets/library_selection.py:21
+msgid "Clic : choisir un log. Double-clic ou Entrée : mettre son numéro dans le champ. Le champ, s'il est rempli, a priorité."
+msgstr "คลิก: เลือกล็อก ดับเบิลคลิกหรือ Enter: ใส่หมายเลขของล็อกในช่อง หากกรอกช่องไว้แล้ว ช่องจะมีความสำคัญกว่า"
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+msgid "Accès"
+msgstr "การเข้าถึง"
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+msgid "Chemin"
+msgstr "พาธ"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/widgets/log_library_table.py:27
+msgid "Modifié"
+msgstr "แก้ไขเมื่อ"
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:36
+msgid "ABSENT"
+msgstr "ABSENT"
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:36 src/omega_log/interfaces/tui/widgets/log_list.py:40
+msgid "SUSPECT (vide)"
+msgstr "SUSPECT (ว่าง)"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:6
+msgid "OMEGA-LOG — Statistiques"
+msgstr "OMEGA-LOG — สถิติ"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:87
+msgid "OMEGA-LOG — Statistiques de logs"
+msgstr "OMEGA-LOG — สถิติล็อก"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:88
+#, python-brace-format
+msgid "Généré le {generated_at} · Période : {period_label} · Source(s) : {sources}"
+msgstr "สร้างเมื่อ {generated_at} · ช่วงเวลา: {period_label} · แหล่ง: {sources}"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:99
+msgid "Synthèse"
+msgstr "สรุป"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:101
+msgid "Aucune ligne sur cette période."
+msgstr "ไม่มีบรรทัดในช่วงเวลานี้"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:105
+msgid "Lignes analysées"
+msgstr "บรรทัดที่วิเคราะห์"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:106
+msgid "Requêtes HTTP"
+msgstr "คำขอ HTTP"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:107
+msgid "IPs uniques"
+msgstr "IP ไม่ซ้ำ"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:108
+msgid "Taux d'erreur"
+msgstr "อัตราผิดพลาด"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:109
+msgid "Volume transféré"
+msgstr "ปริมาณที่ส่ง"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:110
+#, python-brace-format
+msgid "Heure de pointe ({peak_count} lignes)"
+msgstr "ชั่วโมงสูงสุด ({peak_count} บรรทัด)"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:111
+msgid "Période couverte"
+msgstr "ช่วงที่ครอบคลุม"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:118
+msgid "Répartition horaire (24 h)"
+msgstr "การกระจายรายชั่วโมง (24 ชม.)"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:125
+#, python-brace-format
+msgid "{hour}h : {count} ligne(s)"
+msgstr "{hour} น.: {count} บรรทัด"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:133
+#, python-brace-format
+msgid "Tendance par jour ({daily} j)"
+msgstr "แนวโน้มรายวัน ({daily} วัน)"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:140
+msgid "Statuts HTTP"
+msgstr "สถานะ HTTP"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:156
+msgid "Aucune donnée."
+msgstr "ไม่มีข้อมูล"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:161
+msgid "Top adresses IP"
+msgstr "ที่อยู่ IP สูงสุด"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:163
+msgid "Chemins les plus demandés"
+msgstr "พาธที่ถูกเรียกมากที่สุด"
+
+#: src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:164
+msgid "Chemins en 404"
+msgstr "พาธที่ได้ 404"
+
+#: src/omega_log/infrastructure/exporters/templates/help_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/help_report.html.j2:61
+msgid "OMEGA-LOG — Aide"
+msgstr "OMEGA-LOG — ความช่วยเหลือ"
+
+#: src/omega_log/infrastructure/exporters/templates/help_report.html.j2:62
+#, python-brace-format
+msgid "Généré le {generated_at} · version {version}"
+msgstr "สร้างเมื่อ {generated_at} · เวอร์ชัน {version}"
+
+#: src/omega_log/infrastructure/exporters/templates/help_report.html.j2:82
+msgid "Aide générée par"
+msgstr "ความช่วยเหลือสร้างโดย"
+
+#: src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:55
+msgid "OMEGA-LOG — Archives de logs"
+msgstr "OMEGA-LOG — ไฟล์เก็บถาวรของล็อก"
+
+#: src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:56
+#, python-brace-format
+msgid "Généré le {generated_at} - {archives} archive(s)"
+msgstr "สร้างเมื่อ {generated_at} - {archives} ไฟล์เก็บถาวร"
+
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:97
+#, python-brace-format
+msgid "environ {lines} lignes"
+msgstr "ราว {lines} บรรทัด"
+
+#: src/omega_log/application/use_cases/health_presentation.py:22
+msgid "Attention"
+msgstr "คำเตือน"
+
+#: src/omega_log/application/use_cases/health_presentation.py:22
+msgid "Info"
+msgstr "ข้อมูล"
+
+#: src/omega_log/application/use_cases/health_presentation.py:22
+msgid "OK"
+msgstr "OK"
+
+#: src/omega_log/application/use_cases/health_presentation.py:22
+msgid "Problème"
+msgstr "ปัญหา"
+
+#: src/omega_log/application/use_cases/health_presentation.py:119
+msgid "à l'instant"
+msgstr "เมื่อสักครู่"
+
+#: src/omega_log/application/use_cases/health_presentation.py:121
+#, python-brace-format
+msgid "il y a {count} min"
+msgstr "{count} นาทีที่แล้ว"
+
+#: src/omega_log/application/use_cases/health_presentation.py:123
+#, python-brace-format
+msgid "il y a {count} h"
+msgstr "{count} ชม. ที่แล้ว"
+
+#: src/omega_log/application/use_cases/health_presentation.py:124
+#, python-brace-format
+msgid "il y a {count} j"
+msgstr "{count} วันที่แล้ว"
+
+#: src/omega_log/application/use_cases/health_presentation.py:128
+#, python-brace-format
+msgid "{size}/jour"
+msgstr "{size}/วัน"
+
+#: src/omega_log/application/use_cases/health_presentation.py:134
+msgid "Lien symbolique cassé : la cible n'existe plus."
+msgstr "ลิงก์สัญลักษณ์เสีย: เป้าหมายไม่มีอยู่แล้ว"
+
+#: src/omega_log/application/use_cases/health_presentation.py:136
+msgid "Fichier absent : le chemin de la Bibliothèque ne mène plus à rien."
+msgstr "ไม่พบไฟล์: พาธในคลังไม่ชี้ไปที่ใดแล้ว"
+
+#: src/omega_log/application/use_cases/health_presentation.py:138
+msgid "Ce n'est pas un fichier ordinaire (dossier, tube ou périphérique)."
+msgstr "ไม่ใช่ไฟล์ปกติ (โฟลเดอร์ ไปป์ หรืออุปกรณ์)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:140
+#, python-brace-format
+msgid "Illisible par votre compte (droits {mode}) : Statistiques, Voir et Traiter IP et les viewers demanderont votre mot de passe sudo."
+msgstr "อ่านไม่ได้ด้วยบัญชีของคุณ (สิทธิ์ {mode}): สถิติ, ดูและจัดการ IP และตัวแสดงผลจะขอรหัสผ่าน sudo ของคุณ"
+
+#: src/omega_log/application/use_cases/health_presentation.py:143
+#, python-brace-format
+msgid "Inscriptible par tout le monde (droits {mode}) : n'importe quel compte peut falsifier ce log."
+msgstr "ทุกคนเขียนได้ (สิทธิ์ {mode}): บัญชีใดก็ปลอมแปลงล็อกนี้ได้"
+
+#: src/omega_log/application/use_cases/health_presentation.py:146
+msgid "Fichier vide."
+msgstr "ไฟล์ว่าง"
+
+#: src/omega_log/application/use_cases/health_presentation.py:148
+#, python-brace-format
+msgid "Aucune écriture depuis {days} j."
+msgstr "ไม่มีการเขียนมา {days} วัน"
+
+#: src/omega_log/application/use_cases/health_presentation.py:150
+msgid "Octets nuls à la fin du fichier : log abîmé (coupure ou disque plein pendant une écriture)."
+msgstr "มีไบต์ศูนย์ที่ท้ายไฟล์: ล็อกเสียหาย (ไฟดับหรือดิสก์เต็มระหว่างเขียน)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:152
+#, python-brace-format
+msgid "Seules {percent} % des dernières lignes ont une date reconnue : les périodes 24h, 7j, 30j et les statistiques seront faussées."
+msgstr "มีเพียง {percent} % ของบรรทัดล่าสุดที่อ่านวันที่ได้: ช่วง 24 ชม., 7 วัน, 30 วัน และสถิติจะคลาดเคลื่อน"
+
+#: src/omega_log/application/use_cases/health_presentation.py:155
+#, python-brace-format
+msgid "Dernière ligne datée du {last}, dans le futur : horloge ou fuseau horaire faux."
+msgstr "บรรทัดล่าสุดลงวันที่ {last} ซึ่งอยู่ในอนาคต: นาฬิกาหรือเขตเวลาไม่ถูกต้อง"
+
+#: src/omega_log/application/use_cases/health_presentation.py:158
+#, python-brace-format
+msgid "{size} et aucune règle logrotate ne couvre ce fichier : il grossira sans fin."
+msgstr "{size} และไม่มีกฎ logrotate ใดครอบคลุมไฟล์นี้: ไฟล์จะโตไม่สิ้นสุด"
+
+#: src/omega_log/application/use_cases/health_presentation.py:161
+#, python-brace-format
+msgid "Même fichier que {other} (lien ou chemin en double)."
+msgstr "ไฟล์เดียวกับ {other} (ลิงก์หรือพาธซ้ำ)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:163
+#, python-brace-format
+msgid "Disque rempli à {percent} %."
+msgstr "ดิสก์เต็ม {percent} %"
+
+#: src/omega_log/application/use_cases/health_presentation.py:165
+#, python-brace-format
+msgid "À ce rythme, disque plein dans environ {days} j."
+msgstr "ด้วยอัตรานี้ ดิสก์จะเต็มในราว {days} วัน"
+
+#: src/omega_log/application/use_cases/health_presentation.py:167
+msgid "Aucune sauvegarde."
+msgstr "ไม่มีข้อมูลสำรอง"
+
+#: src/omega_log/application/use_cases/health_presentation.py:169
+#, python-brace-format
+msgid "{count} sauvegarde(s) planifiée(s), mais aucune tâche planifiée ne les exécute."
+msgstr "มีการสำรองข้อมูลตามกำหนด {count} รายการ แต่ไม่มีงานตามกำหนดใดรันมัน"
+
+#: src/omega_log/application/use_cases/health_presentation.py:172
+#, python-brace-format
+msgid "Sauvegarde planifiée de {path} en échec, en retard de {days} j : {error}"
+msgstr "การสำรองข้อมูลตามกำหนดของ {path} ล้มเหลว ล่าช้า {days} วัน: {error}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:175
+#, python-brace-format
+msgid "Sauvegarde planifiée de {path} en retard de {days} j : la tâche planifiée ne s'exécute pas (machine éteinte la nuit sans systemd, démon cron arrêté ?)."
+msgstr "การสำรองข้อมูลตามกำหนดของ {path} ล่าช้า {days} วัน: งานตามกำหนดไม่ทำงาน (เครื่องปิดตอนกลางคืนโดยไม่มี systemd, เดมอน cron หยุดอยู่?)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:185
+#, python-brace-format
+msgid "Ajoutez votre compte au groupe du fichier (ls -l {path}), puis rouvrez votre session."
+msgstr "เพิ่มบัญชีของคุณเข้ากลุ่มของไฟล์ (ls -l {path}) แล้วเข้าสู่ระบบใหม่"
+
+#: src/omega_log/application/use_cases/health_presentation.py:187
+#, python-brace-format
+msgid "Santé des logs → « Corriger les droits » (chmod o-w {path})."
+msgstr "สุขภาพล็อก → «แก้ไขสิทธิ์» (chmod o-w {path})"
+
+#: src/omega_log/application/use_cases/health_presentation.py:189
+msgid "Ajoutez une règle dans /etc/logrotate.d/ (voir man logrotate)."
+msgstr "เพิ่มกฎใน /etc/logrotate.d/ (ดู man logrotate)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:191
+msgid "Bibliothèque : retirez ce log ou corrigez son chemin."
+msgstr "คลัง: นำล็อกนี้ออกหรือแก้ไขพาธ"
+
+#: src/omega_log/application/use_cases/health_presentation.py:193
+msgid "Supprimez les vieilles sauvegardes (Rotate → « Supprimer l'archive ») ou videz les gros logs (Purger)."
+msgstr "ลบข้อมูลสำรองเก่า (Rotate → «ลบไฟล์เก็บถาวร») หรือล้างล็อกขนาดใหญ่ (ล้าง)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:196
+msgid "Vérifiez que le programme qui écrit ce log tourne encore."
+msgstr "ตรวจสอบว่าโปรแกรมที่เขียนล็อกนี้ยังทำงานอยู่"
+
+#: src/omega_log/application/use_cases/health_presentation.py:198
+msgid "Vérifiez l'heure du serveur : timedatectl"
+msgstr "ตรวจสอบเวลาของเซิร์ฟเวอร์: timedatectl"
+
+#: src/omega_log/application/use_cases/health_presentation.py:200
+msgid "Sauvegardez ce log (Rotate) puis videz-le (Purger) pour repartir d'un fichier propre."
+msgstr "สำรองล็อกนี้ (Rotate) แล้วล้างมัน (ล้าง) เพื่อเริ่มต้นด้วยไฟล์ที่สะอาด"
+
+#: src/omega_log/application/use_cases/health_presentation.py:202
+msgid "Rotate → « Sauvegardes planifiées » → « Réinstaller l'exécution »."
+msgstr "Rotate → «การสำรองข้อมูลตามกำหนด» → «ติดตั้งการทำงานใหม่»"
+
+#: src/omega_log/application/use_cases/health_presentation.py:204
+msgid "Un log protégé ne peut pas être sauvegardé la nuit sans mot de passe : sauvegardez-le depuis Rotate, ou retirez sa sauvegarde planifiée."
+msgstr "ล็อกที่ได้รับการป้องกันไม่สามารถสำรองข้อมูลตอนกลางคืนได้หากไม่มีรหัสผ่าน: สำรองจาก Rotate หรือนำการสำรองข้อมูลตามกำหนดของมันออก"
+
+#: src/omega_log/application/use_cases/health_presentation.py:217 src/omega_log/application/use_cases/health_presentation.py:291 src/omega_log/interfaces/tui/screens/log_health_screen.py:284 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:109
+msgid "Aucun problème."
+msgstr "ไม่มีปัญหา"
+
+#: src/omega_log/application/use_cases/health_presentation.py:222
+#, python-brace-format
+msgid "(+{count} autre(s))"
+msgstr "(+{count} รายการอื่น)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:229
+#, python-brace-format
+msgid "Taille {size}"
+msgstr "ขนาด {size}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:230
+#, python-brace-format
+msgid "dernière écriture {age}"
+msgstr "เขียนล่าสุด {age}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:231
+#, python-brace-format
+msgid "croissance {growth}"
+msgstr "การเติบโต {growth}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:234
+#, python-brace-format
+msgid "droits {mode}"
+msgstr "สิทธิ์ {mode}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:236
+#, python-brace-format
+msgid "format {source}"
+msgstr "รูปแบบ {source}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:245
+msgid "plus de 10 ans"
+msgstr "มากกว่า 10 ปี"
+
+#: src/omega_log/application/use_cases/health_presentation.py:246
+#, python-brace-format
+msgid "environ {days} j"
+msgstr "ราว {days} วัน"
+
+#: src/omega_log/application/use_cases/health_presentation.py:251
+#, python-brace-format
+msgid "{mount} : {free} libres sur {total} ({used} % utilisés) · croissance des logs {growth} · plein dans {days}"
+msgstr "{mount}: ว่าง {free} จาก {total} (ใช้ไป {used} %) · ล็อกเติบโต {growth} · เต็มใน {days}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:259
+msgid "Aucune sauvegarde planifiée."
+msgstr "ไม่มีการสำรองข้อมูลตามกำหนด"
+
+#: src/omega_log/application/use_cases/health_presentation.py:260
+msgid "aucune tâche planifiée"
+msgstr "ไม่มีงานตามกำหนดเวลา"
+
+#: src/omega_log/application/use_cases/health_presentation.py:260
+msgid "tâche planifiée installée"
+msgstr "ติดตั้งงานตามกำหนดเวลาแล้ว"
+
+#: src/omega_log/application/use_cases/health_presentation.py:261
+msgid "tâche planifiée non vérifiée"
+msgstr "ยังไม่ได้ตรวจสอบงานตามกำหนดเวลา"
+
+#: src/omega_log/application/use_cases/health_presentation.py:262
+#, python-brace-format
+msgid "{count} sauvegarde(s) planifiée(s) · {state}"
+msgstr "การสำรองข้อมูลตามกำหนด {count} รายการ · {state}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:267
+#, python-brace-format
+msgid "{directory} : aucune sauvegarde."
+msgstr "{directory}: ไม่มีข้อมูลสำรอง"
+
+#: src/omega_log/application/use_cases/health_presentation.py:269
+#, python-brace-format
+msgid "{directory} : {count} sauvegarde(s), {size}, la plus ancienne du {oldest}."
+msgstr "{directory}: ข้อมูลสำรอง {count} รายการ, {size}, เก่าที่สุดเมื่อ {oldest}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:279 src/omega_log/interfaces/tui/screens/help_screen.py:259 src/omega_log/interfaces/tui/screens/home.py:57 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:81
+msgid "Santé des logs"
+msgstr "สุขภาพล็อก"
+
+#: src/omega_log/application/use_cases/health_presentation.py:280 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:82
+#, python-brace-format
+msgid "Généré le {date}"
+msgstr "สร้างเมื่อ {date}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:281
+#, python-brace-format
+msgid "Résumé : {summary}"
+msgstr "สรุป: {summary}"
+
+#: src/omega_log/application/use_cases/health_presentation.py:283
+msgid "LOGS"
+msgstr "ล็อก"
+
+#: src/omega_log/application/use_cases/health_presentation.py:298 src/omega_log/interfaces/tui/screens/log_health_screen.py:107
+msgid "DISQUES"
+msgstr "ดิสก์"
+
+#: src/omega_log/application/use_cases/health_presentation.py:307 src/omega_log/interfaces/tui/screens/log_health_screen.py:109
+msgid "SAUVEGARDES"
+msgstr "ข้อมูลสำรอง"
+
+#: src/omega_log/application/use_cases/health_presentation.py:310 src/omega_log/interfaces/tui/screens/log_health_screen.py:111 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:70
+msgid "SAUVEGARDES PLANIFIÉES"
+msgstr "การสำรองข้อมูลตามกำหนด"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:95
+#, python-brace-format
+msgid "Exécution : timer systemd {timer} actif (chaque nuit)."
+msgstr "การทำงาน: Timer systemd {timer} ทำงานอยู่ (ทุกคืน)"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:96
+#, python-brace-format
+msgid "Exécution : timer systemd {timer} non installé."
+msgstr "การทำงาน: ไม่ได้ติดตั้ง Timer systemd {timer}"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:99
+msgid "Exécution : aucun planificateur (ni systemd, ni crontab)."
+msgstr "การทำงาน: ไม่มีตัวตั้งเวลา (ไม่มีทั้ง systemd และ crontab)"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:102
+msgid "Exécution : ligne crontab installée (chaque nuit)."
+msgstr "การทำงาน: ติดตั้งบรรทัด crontab แล้ว (ทุกคืน)"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:103
+msgid "Exécution : aucune ligne crontab pour ce compte."
+msgstr "การทำงาน: ไม่มีบรรทัด crontab สำหรับบัญชีนี้"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:135
+#, python-brace-format
+msgid "Timer systemd non installé : {error}"
+msgstr "ติดตั้ง Timer systemd ไม่สำเร็จ: {error}"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:136
+#, python-brace-format
+msgid "Timer systemd {timer} installé : les automatisations s'exécutent chaque nuit."
+msgstr "ติดตั้ง Timer systemd {timer} แล้ว: การทำงานอัตโนมัติจะทำงานทุกคืน"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:146 src/omega_log/application/use_cases/rotation_automation.py:172
+#, python-brace-format
+msgid "Échec de l'écriture de la crontab : {value}"
+msgstr "เขียน crontab ไม่สำเร็จ: {value}"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:148
+msgid "Ligne crontab installée : les automatisations s'exécutent chaque nuit."
+msgstr "ติดตั้งบรรทัด crontab แล้ว: การทำงานอัตโนมัติจะทำงานทุกคืน"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:162
+#, python-brace-format
+msgid "Timer systemd non retiré : {error}"
+msgstr "นำ Timer systemd ออกไม่สำเร็จ: {error}"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:163
+msgid "Plus aucune automatisation : timer systemd retiré."
+msgstr "ไม่มีการทำงานอัตโนมัติเหลืออยู่: นำ Timer systemd ออกแล้ว"
+
+#: src/omega_log/application/use_cases/rotation_automation.py:174
+msgid "Plus aucune automatisation : ligne crontab retirée."
+msgstr "ไม่มีการทำงานอัตโนมัติเหลืออยู่: นำบรรทัด crontab ออกแล้ว"
+
+#: src/omega_log/domain/logs/rotation_schedule.py:96
+#, python-brace-format
+msgid ""
+"Aucun planificateur détecté (ni systemd, ni crontab). Ajoutez cette ligne vous-même à votre planificateur (crontab -e, /etc/cron.d/, tâche OpenRC ou runit équivalente) :\n"
+"\n"
+"{cron_line}"
+msgstr ""
+"ไม่พบตัวตั้งเวลา (ไม่มีทั้ง systemd และ crontab) เพิ่มบรรทัดนี้ในตัวตั้งเวลาของคุณด้วยตนเอง (crontab -e, /etc/cron.d/, งาน OpenRC หรือ runit ที่เทียบเท่า):\n"
+"\n"
+"{cron_line}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:71 src/omega_log/interfaces/tui/screens/help_screen.py:284
+msgid "Version et mises à jour"
+msgstr "เวอร์ชันและการอัปเดต"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:72
+msgid "Compare votre version à la liste des versions publiées sur le site. Rien n'est envoyé, et rien n'est vérifié sans votre clic."
+msgstr "เปรียบเทียบเวอร์ชันของคุณกับรายการเวอร์ชันที่เผยแพร่บนเว็บไซต์ ไม่มีการส่งข้อมูลใด ๆ และไม่มีการตรวจสอบหากคุณไม่คลิก"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:74
+#, python-brace-format
+msgid "Version installée : {version}"
+msgstr "เวอร์ชันที่ติดตั้ง: {version}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:78
+msgid "Vérifier les mises à jour"
+msgstr "ตรวจสอบการอัปเดต"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:80
+msgid "Voir les nouveautés"
+msgstr "ดูว่ามีอะไรใหม่"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:156
+msgid "Vérification en cours..."
+msgstr "กำลังตรวจสอบ..."
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:173
+#, python-brace-format
+msgid ""
+"Nouvelle version disponible : {latest} (installée : {installed}).\n"
+"Archive : {url}"
+msgstr ""
+"มีเวอร์ชันใหม่: {latest} (ติดตั้งอยู่: {installed})\n"
+"ที่เก็บถาวร: {url}"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:176
+#, python-brace-format
+msgid "Vous avez la dernière version publiée ({version})."
+msgstr "คุณใช้เวอร์ชันล่าสุดที่เผยแพร่แล้ว ({version})"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:178
+#, python-brace-format
+msgid "Votre version ({installed}) est plus récente que la dernière publiée ({latest}) : version en cours, pas encore publiée."
+msgstr "เวอร์ชันของคุณ ({installed}) ใหม่กว่าเวอร์ชันล่าสุดที่เผยแพร่ ({latest}): เป็นเวอร์ชันที่กำลังพัฒนา ยังไม่เผยแพร่"
+
+#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:181
+#, python-brace-format
+msgid "Version installée : {version}. Site injoignable ou liste des versions illisible : réessayez plus tard."
+msgstr "เวอร์ชันที่ติดตั้ง: {version} เข้าถึงเว็บไซต์ไม่ได้หรืออ่านรายการเวอร์ชันไม่ได้ โปรดลองอีกครั้งภายหลัง"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:90
+msgid "SANTÉ DES LOGS"
+msgstr "สุขภาพล็อก"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:91
+msgid "Contrôle en lecture seule des logs de la Bibliothèque, du disque qui les porte, des sauvegardes et des sauvegardes planifiées. Surlignez un log pour voir le détail."
+msgstr "ตรวจสอบแบบอ่านอย่างเดียวของล็อกในคลัง ดิสก์ที่เก็บล็อก ข้อมูลสำรอง และการสำรองข้อมูลตามกำหนด เลือกล็อกเพื่อดูรายละเอียด"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:100
+msgid "Relancer l'analyse"
+msgstr "วิเคราะห์ใหม่"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:102
+msgid "Analyser avec sudo"
+msgstr "วิเคราะห์ด้วย sudo"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:104
+msgid "Corriger les droits"
+msgstr "แก้ไขสิทธิ์"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:106
+msgid "Corriger avec sudo"
+msgstr "แก้ไขด้วย sudo"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:123
+msgid "Exporter TXT"
+msgstr "ส่งออก TXT"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131
+msgid "Constat"
+msgstr "ผลตรวจ"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Log"
+msgstr "ล็อก"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:141
+msgid "Analyse en cours…"
+msgstr "กำลังวิเคราะห์…"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:208
+#, python-brace-format
+msgid "Analysé {age}."
+msgstr "วิเคราะห์เมื่อ {age}"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:211
+msgid "Résumé : "
+msgstr "สรุป: "
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:301
+msgid "CORRIGER LES DROITS ?"
+msgstr "แก้ไขสิทธิ์?"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:302
+#, python-brace-format
+msgid "{path} : retirer l'écriture pour tout le monde (droits {mode})."
+msgstr "{path}: ถอนสิทธิ์การเขียนของทุกคน (สิทธิ์ {mode})"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:314 src/omega_log/interfaces/tui/screens/log_health_screen.py:342
+#, python-brace-format
+msgid "Correction impossible : {error}"
+msgstr "แก้ไขไม่ได้: {error}"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:316
+#, python-brace-format
+msgid "Droits corrigés : {path}."
+msgstr "แก้ไขสิทธิ์แล้ว: {path}"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:327
+msgid "CORRIGER AVEC SUDO ?"
+msgstr "แก้ไขด้วย sudo?"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:328
+#, python-brace-format
+msgid ""
+"Commande lancée après votre mot de passe :\n"
+"{command}"
+msgstr ""
+"คำสั่งที่จะรันหลังใส่รหัสผ่านของคุณ:\n"
+"{command}"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:344
+#, python-brace-format
+msgid "Droits corrigés avec sudo : {path}."
+msgstr "แก้ไขสิทธิ์ด้วย sudo แล้ว: {path}"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:371
+msgid "Attendez la fin de l'analyse."
+msgstr "โปรดรอให้การวิเคราะห์เสร็จ"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:384
+#, python-brace-format
+msgid "Export écrit : {export_path}"
+msgstr "เขียนไฟล์ส่งออกแล้ว: {export_path}"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:125
+msgid "Ou cherchez une IP précise dans ces logs (fichier entier) :"
+msgstr "หรือค้นหา IP ที่ระบุในล็อกเหล่านี้ (ทั้งไฟล์):"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:127
+msgid "ex: 203.0.113.42"
+msgstr "เช่น 203.0.113.42"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:129
+msgid "Rechercher cette IP"
+msgstr "ค้นหา IP นี้"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:226
+msgid "Adresse IP invalide : {value!r}."
+msgstr "ที่อยู่ IP ไม่ถูกต้อง: {value!r}"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:274
+#, python-brace-format
+msgid "{ip} : {total} ligne(s) - {detail}"
+msgstr "{ip}: {total} บรรทัด - {detail}"
+
+#: src/omega_log/interfaces/tui/screens/process_ip_screen.py:279
+#, python-brace-format
+msgid "{ip} est absente des log(s) sélectionné(s)."
+msgstr "ไม่พบ {ip} ในล็อกที่เลือก"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:220 src/omega_log/interfaces/tui/screens/rotate_screen.py:69 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:128
+msgid "Sauvegardes planifiées"
+msgstr "การสำรองข้อมูลตามกำหนด"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:47
+msgid "Tous les jours"
+msgstr "ทุกวัน"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:47
+msgid "Tous les mois"
+msgstr "ทุกเดือน"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:47
+msgid "Toutes les semaines"
+msgstr "ทุกสัปดาห์"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:48
+#, python-brace-format
+msgid "Tous les {days} jours"
+msgstr "ทุก {days} วัน"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:71
+msgid "Chaque nuit, omega-log sauvegarde, sous votre compte, chaque log arrivé à échéance (comme « Sauvegarder maintenant »). Un log protégé (/var/log/...) ne peut pas être sauvegardé la nuit sans mot de passe : faites-le depuis Rotate."
+msgstr "ทุกคืน omega-log จะสำรองข้อมูลภายใต้บัญชีของคุณสำหรับทุกล็อกที่ถึงกำหนด (เหมือน «สำรองข้อมูลเดี๋ยวนี้») ล็อกที่ได้รับการป้องกัน (/var/log/...) ไม่สามารถสำรองข้อมูลตอนกลางคืนได้หากไม่มีรหัสผ่าน: ให้ทำจาก Rotate"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:75
+msgid "Numéro du log à planifier (ex: 1)"
+msgstr "หมายเลขล็อกที่จะกำหนดเวลา (เช่น 1)"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:82
+msgid "Planifier ce log"
+msgstr "กำหนดเวลาล็อกนี้"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:84
+msgid "Automatisations planifiées"
+msgstr "การทำงานอัตโนมัติที่ตั้งเวลาไว้"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:89
+msgid "Supprimer la sélection"
+msgstr "ลบรายการที่เลือก"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:91
+msgid "Réinstaller l'exécution"
+msgstr "ติดตั้งการทำงานใหม่"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Conservées"
+msgstr "เก็บไว้"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Dernière exécution"
+msgstr "ทำงานล่าสุด"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Fréquence"
+msgstr "ความถี่"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+msgid "Prochaine"
+msgstr "ครั้งถัดไป"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:114
+#, python-brace-format
+msgid "échec : {error}"
+msgstr "ล้มเหลว: {error}"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:120
+msgid "Utilisez « Réinstaller l'exécution »."
+msgstr "ใช้ “ติดตั้งการทำงานใหม่”"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:185
+msgid "Ce log a déjà une sauvegarde planifiée : supprimez-la d'abord."
+msgstr "ล็อกนี้มีการสำรองข้อมูลตามกำหนดอยู่แล้ว: โปรดลบก่อน"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:190
+#, python-brace-format
+msgid "Sauvegarde planifiée : {path} ({frequency})."
+msgstr "การสำรองข้อมูลตามกำหนด: {path} ({frequency})"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:198
+msgid "Sélectionnez une automatisation."
+msgstr "เลือกระบบอัตโนมัติ"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:202
+msgid "SUPPRIMER CETTE AUTOMATISATION ?"
+msgstr "ลบระบบอัตโนมัตินี้?"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:203
+msgid "Le log ne sera plus sauvegardé automatiquement. Les sauvegardes déjà faites sont conservées."
+msgstr "ล็อกจะไม่ถูกสำรองข้อมูลโดยอัตโนมัติอีกต่อไป ข้อมูลสำรองที่ทำไว้แล้วจะถูกเก็บไว้"
+
+#: src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:115
+msgid "Disques"
+msgstr "ดิสก์"
+
+#: src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:138
+msgid "Sauvegardes"
+msgstr "ข้อมูลสำรอง"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:171
+msgid "Voir et Traiter IP : chercher une IP précise"
+msgstr "ดูและจัดการ IP: ค้นหา IP ที่ระบุ"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:172
+msgid ""
+"Sans attendre qu'une IP apparaisse dans le top : saisissez-la (IPv4 ou\n"
+"IPv6) dans « Ou cherchez une IP précise », puis [b]Rechercher cette IP[/b]\n"
+"ou Entrée.\n"
+"\n"
+"- Ses lignes sont comptées dans chaque log sélectionné, fichier entier,\n"
+"  avec le total et le détail par log.\n"
+"- Ce sont exactement les lignes que le retrait supprimerait : si l'IP\n"
+"  est présente, elle est déjà sélectionnée, [b]Retirer cette IP[/b] est\n"
+"  actif, et elle est recomptée après le retrait.\n"
+"- Une IP n'est jamais confondue avec une IP plus longue (1.1.1.1 et\n"
+"  1.1.1.11), et une IPv6 terminée par « :: » est bien trouvée."
+msgstr ""
+"ไม่ต้องรอให้ IP ปรากฏในอันดับต้น ๆ: พิมพ์ IP (IPv4 หรือ\n"
+"IPv6) ใน «หรือค้นหา IP ที่ระบุ» แล้วกด [b]ค้นหา IP นี้[/b]\n"
+"หรือ Enter\n"
+"\n"
+"- นับบรรทัดของ IP ในแต่ละล็อกที่เลือก ทั้งไฟล์\n"
+"  พร้อมยอดรวมและรายละเอียดแยกตามล็อก\n"
+"- เป็นบรรทัดเดียวกับที่การนำออกจะลบ: ถ้ามี IP นั้นอยู่\n"
+"  ระบบเลือกไว้แล้ว ปุ่ม [b]นำ IP นี้ออก[/b] ใช้งานได้\n"
+"  และจะนับใหม่หลังนำออก\n"
+"- IP จะไม่สับสนกับ IP ที่ยาวกว่า (1.1.1.1 และ\n"
+"  1.1.1.11) และ IPv6 ที่ลงท้ายด้วย «::» ก็หาเจอ"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:221
+msgid ""
+"Rotate → [b]Sauvegardes planifiées[/b] : un log de la Bibliothèque est\n"
+"sauvegardé automatiquement tous les jours, toutes les semaines ou tous\n"
+"les mois, avec le nombre de sauvegardes conservées.\n"
+"\n"
+"- La première sauvegarde planifiée installe une tâche quotidienne :\n"
+"  timer systemd (mot de passe sudo demandé), sinon une ligne de votre\n"
+"  crontab (OpenRC, runit), sinon la ligne à ajouter vous-même est\n"
+"  affichée. La dernière supprimée retire la tâche.\n"
+"- Chaque nuit, [b]omega-log rotate run-automations[/b] sauvegarde, sous\n"
+"  votre compte (jamais root), chaque log arrivé à échéance ; le tableau\n"
+"  montre la dernière et la prochaine exécution.\n"
+"- Un log protégé (/var/log/...) ne peut pas être sauvegardé la nuit\n"
+"  sans mot de passe : l'échec est noté, Santé des logs le signale."
+msgstr ""
+"Rotate → [b]การสำรองข้อมูลตามกำหนด[/b]: ล็อกในคลังจะถูก\n"
+"สำรองข้อมูลโดยอัตโนมัติทุกวัน ทุกสัปดาห์ หรือทุก\n"
+"เดือน พร้อมจำนวนข้อมูลสำรองที่เก็บไว้\n"
+"\n"
+"- การสำรองข้อมูลตามกำหนดรายการแรกจะติดตั้งงานรายวัน:\n"
+"  ไทเมอร์ systemd (จะขอรหัสผ่าน sudo) หรือไม่ก็บรรทัดใน\n"
+"  crontab ของคุณ (OpenRC, runit) หรือไม่ก็แสดงบรรทัด\n"
+"  ที่คุณต้องเพิ่มเอง รายการสุดท้ายที่ลบจะถอนงานออก\n"
+"- ทุกคืน [b]omega-log rotate run-automations[/b] จะสำรองข้อมูล\n"
+"  ภายใต้บัญชีของคุณ (ไม่ใช่ root) ของทุกล็อกที่ถึงกำหนด\n"
+"  ตารางแสดงการทำงานครั้งล่าสุดและครั้งถัดไป\n"
+"- ล็อกที่ได้รับการป้องกัน (/var/log/...) ไม่สามารถสำรองข้อมูลตอนกลางคืน\n"
+"  ได้หากไม่มีรหัสผ่าน: ความล้มเหลวจะถูกบันทึก สุขภาพล็อกจะแจ้งให้ทราบ"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:260
+msgid ""
+"Contrôle en lecture seule des logs de la Bibliothèque, du disque qui les\n"
+"porte, des sauvegardes et des sauvegardes planifiées. Chaque log reçoit\n"
+"un niveau : OK, Info, Attention ou Problème, avec le geste à faire.\n"
+"\n"
+"- Contrôles : fichier absent ou lien cassé, illisible par votre compte,\n"
+"  inscriptible par tout le monde, log muet depuis plus de 7 jours, vide,\n"
+"  dates non reconnues ou dans le futur, octets nuls, gros log sans règle\n"
+"  logrotate, doublon ; disque (jours avant d'être plein) ; sauvegardes\n"
+"  planifiées en échec ou en retard.\n"
+"- [b]Analyser avec sudo[/b] : lit le début et la fin des logs illisibles.\n"
+"- [b]Corriger les droits[/b] / [b]Corriger avec sudo[/b] : retire l'écriture\n"
+"  pour tout le monde (chmod o-w), après confirmation.\n"
+"- [b]Exporter JSON / HTML / TXT[/b] : le rapport, dans la langue des\n"
+"  exports, déposé dans var/exports/."
+msgstr ""
+"ตรวจสอบแบบอ่านอย่างเดียวของล็อกในคลัง ดิสก์ที่เก็บ\n"
+"ล็อก ข้อมูลสำรอง และการสำรองข้อมูลตามกำหนด ล็อกแต่ละรายการ\n"
+"ได้ระดับหนึ่ง: OK, ข้อมูล, คำเตือน หรือ ปัญหา พร้อมสิ่งที่ควรทำ\n"
+"\n"
+"- การตรวจสอบ: ไฟล์หายหรือลิงก์เสีย บัญชีของคุณอ่านไม่ได้\n"
+"  ทุกคนเขียนได้ ล็อกเงียบมานานกว่า 7 วัน ว่างเปล่า\n"
+"  วันที่ที่ไม่รู้จักหรืออยู่ในอนาคต ไบต์ว่าง ล็อกใหญ่ที่ไม่มีกฎ\n"
+"  logrotate ล็อกซ้ำ; ดิสก์ (จำนวนวันก่อนเต็ม); การสำรองข้อมูล\n"
+"  ตามกำหนดที่ล้มเหลวหรือล่าช้า\n"
+"- [b]วิเคราะห์ด้วย sudo[/b]: อ่านส่วนต้นและส่วนท้ายของล็อกที่อ่านไม่ได้\n"
+"- [b]แก้ไขสิทธิ์[/b] / [b]แก้ไขด้วย sudo[/b]: ถอนสิทธิ์การเขียน\n"
+"  ของทุกคน (chmod o-w) หลังจากยืนยัน\n"
+"- [b]ส่งออก JSON / HTML / TXT[/b]: รายงาน ในภาษาของการส่งออก\n"
+"  วางไว้ใน var/exports/"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:285
+msgid ""
+"La version d'omega-log est affichée dans la barre de titre.\n"
+"\n"
+"- Aide → Contact et support → [b]Vérifier les mises à jour[/b] : compare\n"
+"  votre version à la liste des versions publiées sur le site. Seulement\n"
+"  sur votre clic, rien n'est envoyé.\n"
+"- Si une version plus récente existe, [b]Voir les nouveautés[/b] ouvre\n"
+"  son résumé dans votre navigateur.\n"
+"- En ligne de commande : omega-log version --check."
+msgstr ""
+"เวอร์ชันของ omega-log แสดงอยู่ในแถบชื่อเรื่อง\n"
+"\n"
+"- ช่วยเหลือ → ติดต่อและสนับสนุน → [b]ตรวจสอบการอัปเดต[/b]: เปรียบเทียบ\n"
+"  เวอร์ชันของคุณกับรายการเวอร์ชันที่เผยแพร่บนเว็บไซต์ เฉพาะ\n"
+"  เมื่อคุณคลิก ไม่มีการส่งข้อมูลใดออกไป\n"
+"- หากมีเวอร์ชันใหม่กว่า [b]ดูว่ามีอะไรใหม่[/b] จะเปิด\n"
+"  สรุปของเวอร์ชันนั้นในเบราว์เซอร์ของคุณ\n"
+"- ในบรรทัดคำสั่ง: omega-log version --check."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:93
+msgid "Désinstaller l'exécution"
+msgstr "ถอนการติดตั้งการทำงาน"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:159
+msgid "DÉSINSTALLER L'EXÉCUTION ?"
+msgstr "ถอนการติดตั้งการทำงาน?"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:160
+msgid "La tâche planifiée (timer systemd ou ligne crontab) est retirée. Vos sauvegardes planifiées restent enregistrées mais ne s'exécutent plus, jusqu'à « Réinstaller l'exécution »."
+msgstr "งานตามกำหนดเวลา (ตัวจับเวลา systemd หรือบรรทัด crontab) จะถูกนำออก การสำรองข้อมูลตามกำหนดยังคงบันทึกไว้แต่จะไม่ทำงานอีก จนกว่าจะกด “ติดตั้งการทำงานใหม่”"
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:171
+msgid "Aucune tâche planifiée à retirer."
+msgstr "ไม่มีงานตามกำหนดเวลาให้นำออก"

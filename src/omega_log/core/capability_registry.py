@@ -14,7 +14,7 @@ from omega_log.core.exceptions import CapabilityNotFoundError, InvalidCapability
 class CapabilityRegistry:
     """Central registry for system capabilities."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self._capabilities: dict[str, Capability] = {}
         self._initialized: bool = False
 

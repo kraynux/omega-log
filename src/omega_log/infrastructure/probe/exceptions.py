@@ -4,6 +4,7 @@ subsystem. Porte depuis omega-fire (infrastructure/probe/exceptions.py)
 — trimme a ce qui est reellement leve par LOG (pas de
 CapabilityMappingError, jamais levee par capability_mapper.py)."""
 from omega_log.core.exceptions import CoreError
+from omega_log.shared.i18n import _
 
 
 class ProbeError(CoreError):
@@ -19,7 +20,7 @@ class ProbeExecutionError(ProbeError):
     """Raised when a probe fails to execute."""
     def __init__(self, probe_name: str, reason: str, context: dict | None = None):
         super().__init__(
-            f"Probe '{probe_name}' execution failed: {reason}",
+            _("Échec de la sonde « {probe_name} » : {reason}").format(probe_name=probe_name, reason=reason),
             probe_name=probe_name,
             context={**(context or {}), "reason": reason},
         )
@@ -36,7 +37,7 @@ class ScannerError(ProbeError):
         context: dict | None = None,
     ):
         super().__init__(
-            f"Scanner failed: {reason}",
+            _("Échec de l'analyse : {reason}").format(reason=reason),
             probe_name="scanner",
             context={
                 **(context or {}),

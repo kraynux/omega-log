@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 from textual.app import ComposeResult
-from textual.containers import Horizontal, Vertical
+from textual.containers import Center, Container, Horizontal, Vertical
 from textual.css.query import NoMatches
 from textual.timer import Timer
 from textual.widgets import Button, Footer, Header, RichLog, Static
@@ -28,6 +28,7 @@ from omega_log.infrastructure.privileged.privileged_file_ops import read_file_pr
 from omega_log.infrastructure.tail.live_tail_reader import LiveTailReader
 from omega_log.interfaces.tui.screens._base import OmegaScreen
 from omega_log.interfaces.tui.screens._elevation import request_elevation
+from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
     from omega_log.app.dependency_container import DependencyContainer
@@ -52,12 +53,15 @@ class LogViewerScreen(OmegaScreen):
     def compose(self) -> ComposeResult:
         yield Header()
         with Vertical(classes="omega-panel"):
-            yield Static(f"VOIR LES LOGS — CLASSIQUE — {self._path}", classes="omega-title")
+            with Center():  # titre et boutons centres, cadres de boutons (comme omega-serv, 2026-11-06)
+                yield Static(_("VOIR LES LOGS — CLASSIQUE — {path}").format(path=self._path), classes="omega-title")
             yield Static("", id="viewer-error", classes="omega-hint")
             yield RichLog(id="log-content", wrap=False, highlight=False, markup=False)
-            with Horizontal(classes="omega-actions"):
-                yield Button("Suivre en direct", id="follow")
-                yield Button("Retour", id="back")
+            with Center(), Horizontal(classes="omega-actions"):
+                with Container(classes="omega-btn-frame"):
+                    yield Button(_("Suivre en direct"), id="follow")
+                with Container(classes="omega-btn-frame"):
+                    yield Button(_("Retour"), id="back")
         yield Footer()
 
     def on_mount(self) -> None:
@@ -77,7 +81,7 @@ class LogViewerScreen(OmegaScreen):
         log_widget = self.query_one("#log-content", RichLog)
         log_widget.clear()
         if not self._path.is_file():
-            self.query_one("#viewer-error", Static).update(f"Fichier introuvable : {self._path}")
+            self.query_one("#viewer-error", Static).update(_("Fichier introuvable : {path}").format(path=self._path))
             return
 
         try:
@@ -87,7 +91,7 @@ class LogViewerScreen(OmegaScreen):
             if text is None:
                 return
         except OSError as exc:
-            self.query_one("#viewer-error", Static).update(f"Lecture impossible : {exc}")
+            self.query_one("#viewer-error", Static).update(_("Lecture impossible : {exc}").format(exc=exc))
             return
 
         lines = text.splitlines()[-_INITIAL_LINES:]
@@ -101,12 +105,13 @@ class LogViewerScreen(OmegaScreen):
         PermissionError — plan §5.1, 2026-10-03."""
         if not request_elevation(self, self._container.process_runner):
             self.query_one("#viewer-error", Static).update(
-                f"Permission refusee sur {self._path} (authentification sudo requise)."
+                _("Permission refusée sur {path} (authentification sudo requise).").format(path=self._path)
             )
             return None
         result = read_file_privileged(self._container.process_runner, str(self._path))
         if not result.success:
-            self.query_one("#viewer-error", Static).update(f"Lecture privilegiee impossible : {result.message}")
+            self.query_one("#viewer-error", Static).update(_("Lecture privilégiée impossible : "
+                                                             "{message}").format(message=result.message))
             return None
         self._elevated = True
         return result.content
@@ -119,10 +124,10 @@ class LogViewerScreen(OmegaScreen):
 
     def _start_follow(self) -> None:
         if self._reader is None:
-            self.app.notify("Rien a suivre (fichier introuvable).", severity="warning")
+            self.app.notify(_("Rien à suivre (fichier introuvable)."), severity="warning")
             return
         self._following = True
-        self.query_one("#follow", Button).label = "Arreter le suivi"
+        self.query_one("#follow", Button).label = _("Arrêter le suivi")
         self._timer = self.set_interval(_TAIL_INTERVAL_SECONDS, self._poll)
 
     def _stop_follow(self) -> None:
@@ -131,7 +136,7 @@ class LogViewerScreen(OmegaScreen):
             self._timer.stop()
             self._timer = None
         try:
-            self.query_one("#follow", Button).label = "Suivre en direct"
+            self.query_one("#follow", Button).label = _("Suivre en direct")
         except NoMatches:
             pass  # l'ecran peut etre en cours de fermeture (widget deja demonte)
 
@@ -144,7 +149,7 @@ class LogViewerScreen(OmegaScreen):
             else:
                 new_lines = self._reader.read_new_lines()
         except OSError as exc:
-            self.query_one("#viewer-error", Static).update(f"Lecture impossible : {exc}")
+            self.query_one("#viewer-error", Static).update(_("Lecture impossible : {exc}").format(exc=exc))
             self._stop_follow()
             return
         if new_lines:

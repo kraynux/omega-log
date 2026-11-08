@@ -22,8 +22,10 @@ from omega_log.application.commands.select_render_profile import select_render_p
 from omega_log.application.commands.select_theme import select_theme
 from omega_log.application.exceptions import UnknownThemeError
 from omega_log.application.use_cases.clear_directory import clear_directory
+from omega_log.interfaces.tui.language_setting import LanguageSetting
 from omega_log.interfaces.tui.screens._base import OmegaScreen
 from omega_log.interfaces.tui.screens.confirm import ConfirmScreen
+from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
     from omega_log.app.dependency_container import DependencyContainer
@@ -40,28 +42,30 @@ class SettingsScreen(OmegaScreen):
         store = self._container.settings_store
         yield Header()
         with Vertical(classes="omega-form-panel"):
-            yield Static("OPTIONS", classes="omega-title")
+            yield Static(_("OPTIONS"), classes="omega-title")
 
-            yield Static("Theme", classes="omega-subtitle")
+            yield Static(_("Thème"), classes="omega-subtitle")
             yield Select([(name, name) for name in TUI_THEMES], value=self.app.theme, id="theme-select")
 
-            yield Static("Profil de rendu (redemarrage requis)", classes="omega-subtitle")
+            yield Static(_("Profil de rendu (redémarrage requis)"), classes="omega-subtitle")
             current_override = store.get("render_profile_override", "")
             yield Select(
-                [("Automatique", _AUTO)] + [(p.value, p.value) for p in RenderProfile],
+                [(_("Automatique"), _AUTO)] + [(p.value, p.value) for p in RenderProfile],
                 value=current_override or _AUTO,
                 id="render-profile-select",
             )
 
-            yield Static("Maintenance des dossiers", classes="omega-subtitle")
+            yield LanguageSetting(self._container.settings_store)
+
+            yield Static(_("Maintenance des dossiers"), classes="omega-subtitle")
             with Horizontal(classes="omega-actions"):
                 with Container(classes="omega-btn-frame"):
-                    yield Button("Vider le dossier exports", id="clear-exports", variant="error")
+                    yield Button(_("Vider le dossier exports"), id="clear-exports", variant="error")
                 with Container(classes="omega-btn-frame"):
-                    yield Button("Vider le dossier screenshots", id="clear-screenshots", variant="error")
+                    yield Button(_("Vider le dossier screenshots"), id="clear-screenshots", variant="error")
 
             with Horizontal(classes="omega-actions"), Container(classes="omega-btn-frame"):
-                yield Button("Retour", id="back")
+                yield Button(_("Retour"), id="back")
         yield Footer()
 
     def on_select_changed(self, event: Select.Changed) -> None:
@@ -94,13 +98,13 @@ class SettingsScreen(OmegaScreen):
     def _apply_render_profile(self, value: str) -> None:
         profile = None if value == _AUTO else RenderProfile(value)
         select_render_profile(settings_store=self._container.settings_store, render_profile=profile)
-        self.app.notify("Applique au prochain demarrage.", title="Profil de rendu")
+        self.app.notify(_("Appliqué au prochain démarrage."), title=_("Profil de rendu"))
 
     def _confirm_clear(self, label: str, directory: Path) -> None:
         self.app.push_screen(
             ConfirmScreen(
-                title=f"VIDER LE DOSSIER {label.upper()} ?",
-                message=f"Supprime definitivement tous les fichiers de {directory}.",
+                title=_("VIDER LE DOSSIER {upper} ?").format(upper=label.upper()),
+                message=_("Supprime définitivement tous les fichiers de {directory}.").format(directory=directory),
             ),
             lambda confirmed: self._clear_if_confirmed(confirmed, label, directory),
         )
@@ -110,6 +114,6 @@ class SettingsScreen(OmegaScreen):
             return
         result = clear_directory(directory)
         if result.success:
-            self.app.notify(f"{result.deleted_count} fichier(s) supprime(s) dans {label}/.")
+            self.app.notify(_("{deleted_count} fichier(s) supprimé(s) dans {label}/.").format(deleted_count=result.deleted_count, label=label))
         else:
             self.app.notify("; ".join(result.errors), severity="error")

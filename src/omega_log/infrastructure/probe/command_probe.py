@@ -7,6 +7,8 @@ omega-fire (infrastructure/probe/command_probe.py)."""
 import shutil
 import subprocess
 
+from omega_log.shared.i18n import _
+
 
 class CommandProbe:
     """Probes the presence and functionality of system commands."""
@@ -25,7 +27,7 @@ class CommandProbe:
     ) -> tuple[bool, str]:
         binary_path = self.get_binary_path(binary_name)
         if binary_path is None:
-            return False, f"Binary '{binary_name}' not found in PATH"
+            return False, _("Programme « {binary_name} » introuvable dans le PATH").format(binary_name=binary_name)
 
         if test_command is None:
             return True, f"Binary '{binary_name}' found at {binary_path}"
@@ -36,14 +38,14 @@ class CommandProbe:
             )
             if result.returncode == 0:
                 return True, f"Binary '{binary_name}' is functional"
-            error_msg = result.stderr.strip() or f"Exit code {result.returncode}"
-            return False, f"Binary '{binary_name}' test failed: {error_msg}"
+            error_msg = result.stderr.strip() or _("Code de sortie {returncode}").format(returncode=result.returncode)
+            return False, _("Test du programme « {binary_name} » échoué : {error_msg}").format(binary_name=binary_name, error_msg=error_msg)
         except subprocess.TimeoutExpired:
-            return False, f"Binary '{binary_name}' test timed out after {self._timeout}s"
+            return False, _("Test du programme « {binary_name} » : délai dépassé ({timeout} s)").format(binary_name=binary_name, timeout=self._timeout)
         except FileNotFoundError:
-            return False, f"Binary '{binary_name}' disappeared during test"
+            return False, _("Programme « {binary_name} » disparu pendant le test").format(binary_name=binary_name)
         except OSError as e:
-            return False, f"Binary '{binary_name}' test error: {e}"
+            return False, _("Erreur pendant le test du programme « {binary_name} » : {e}").format(binary_name=binary_name, e=e)
 
     def probe_command(self, binary_name: str, test_command: list[str] | None = None) -> dict:
         """Returns {present, functional, path, message}."""
@@ -53,7 +55,7 @@ class CommandProbe:
         if not present:
             return {
                 "present": False, "functional": False, "path": None,
-                "message": f"Binary '{binary_name}' not found in PATH",
+                "message": _("Programme « {binary_name} » introuvable dans le PATH").format(binary_name=binary_name),
             }
 
         functional, message = self.check_functionality(binary_name, test_command)

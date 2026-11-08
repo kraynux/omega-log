@@ -64,7 +64,7 @@ async def test_compute_runs_in_background_and_populates_result(container) -> Non
             await pilot.pause()
 
         assert screen._result is not None
-        assert screen._result.stats.parsed_lines == 500
+        assert screen._result.report.total == 500
 
         # L'app reste reactive PENDANT et APRES le calcul (Retour fonctionne) —
         # exactement ce que le bug rapporte cassait ("impossible de faire
@@ -80,3 +80,59 @@ async def test_compute_runs_in_background_and_populates_result(container) -> Non
             await asyncio.sleep(0.05)
             await pilot.pause()
         assert app.screen_stack[-1].__class__.__name__ != "AccessLogStatsScreen"
+
+
+@pytest.mark.asyncio
+async def test_library_table_keeps_its_rows_after_result(container) -> None:
+    """Retour utilisateur 2026-11-06 : apres le calcul, la liste des logs disparaissait (seul l'en-tete
+    restait) - tableau `height: 1fr` dans un panneau qui defile, ecrase quand le resultat le remplit."""
+    app = OmegaLogApp(container)
+    async with app.run_test(size=(120, 40)) as pilot:
+        app.push_screen(HomeScreen(container=container))
+        await pilot.pause()
+        screen = AccessLogStatsScreen(container=container)
+        app.push_screen(screen)
+        await pilot.pause()
+        screen.query_one("#selection-input").value = "1"
+        await pilot.click("#period-Tout")
+        for _ in range(50):
+            if screen._result is not None:
+                break
+            await asyncio.sleep(0.05)
+            await pilot.pause()
+        await pilot.pause()
+        table = screen.query_one("#library-table")
+        assert table.row_count == 1
+        assert table.region.height >= table.row_count + 1   # en-tete + chaque ligne visibles
+
+
+@pytest.mark.asyncio
+async def test_rich_report_on_screen_and_in_exports(container) -> None:
+    """Rapport a la omega-fire (2026-11-06) : synthese, statuts, tops, horaire, tendance par jour, a l'ecran
+    et dans les exports HTML et JSON."""
+    app = OmegaLogApp(container)
+    async with app.run_test(size=(120, 40)) as pilot:
+        app.push_screen(HomeScreen(container=container))
+        await pilot.pause()
+        screen = AccessLogStatsScreen(container=container)
+        app.push_screen(screen)
+        await pilot.pause()
+        screen.query_one("#selection-input").value = "1"
+        await pilot.click("#period-Tout")
+        for _ in range(50):
+            if screen._result is not None:
+                break
+            await asyncio.sleep(0.05)
+            await pilot.pause()
+        summary = str(screen.query_one("#stats-summary").render())
+        timeline = str(screen.query_one("#stats-hourly").render())
+        for text in ("SYNTHÈSE", "STATUTS HTTP", "TOP IP", "CHEMINS DEMANDÉS", "Heure de pointe"):
+            assert text in summary
+        assert "RÉPARTITION HORAIRE" in timeline and "TENDANCE PAR JOUR" in timeline and "█" in timeline
+        screen._export_html()
+        screen._export_json()
+    html = next(container.default_exports_dir.glob("stats-*.html")).read_text(encoding="utf-8")
+    for text in ("Synthèse", "Répartition horaire", "Tendance par jour", "Statuts HTTP", "Chemins les plus demandés"):
+        assert text in html
+    data = __import__("json").loads(next(container.default_exports_dir.glob("stats-*.json")).read_text())
+    assert data["total"] == 500 and len(data["hourly"]) == 24 and data["statuses"]["2xx"] == 500

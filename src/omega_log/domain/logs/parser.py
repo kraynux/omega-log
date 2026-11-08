@@ -37,6 +37,7 @@ causes identifiees et corrigees ici :
 construit `datetime(...)` directement a partir des groupes numeriques
 captures par les memes regex precompiles — strictement equivalent pour
 les 3 formats geres ici (tous a largeur fixe), nettement plus rapide."""
+import ipaddress
 import re
 from datetime import datetime
 
@@ -46,6 +47,7 @@ IPV4_PATTERN = r'\b(?:\d{1,3}\.){3}\d{1,3}\b'
 IPV6_PATTERN = r'\b(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\b'
 IP_PATTERN = rf'(?:{IPV4_PATTERN}|{IPV6_PATTERN})'
 _IP_RE = re.compile(IP_PATTERN)
+_IPV4_RE = re.compile(IPV4_PATTERN)
 
 SYSLOG_TIMESTAMP = r'(\w{3})\s+(\d{1,2})\s+(\d{2}):(\d{2}):(\d{2})'
 ISO_TIMESTAMP = r'(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2}):(\d{2})'
@@ -70,7 +72,7 @@ _MONTH_ABBR = {
 }
 
 COMBINED_LOG_PATTERN = re.compile(
-    r'(?P<ip>\S+)\s+\S+\s+\S+\s+\[(?P<time>[^\]]+)\]\s+'
+    r'(?<!\S)(?P<ip>\S+)\s+\S+\s+\S+\s+\[(?P<time>[^\]]+)\]\s+'
     r'"(?P<method>\S+)\s+(?P<path>\S+)[^"]*"\s+(?P<status>\d+)\s+(?P<size>\d+|-)'
 )
 """Format Combined/Common (IP - - [date] "METHODE CHEMIN HTTP/x.x" STATUT
@@ -110,7 +112,9 @@ priorite que la version precedente (boucle + regex separee par cle) —
 jamais le premier mot rencontre dans le texte, qui aurait un sens
 different (position dans la ligne plutot que priorite du niveau)."""
 
-_SERVICE_RE = re.compile(r'\w+\s+([a-zA-Z0-9_-]+)(?:\[\d+\])?:')
+_SERVICE_RE = re.compile(r'(?<!\w)\w+\s+([a-zA-Z0-9_-]+)(?:\[\d+\])?:')
+"""`(?<!\\w)` (2026-11-06, performance) : la recherche ne repart que d'un debut de mot - meme resultat
+(la correspondance la plus a gauche commence toujours a un debut de mot), ~3 fois plus rapide."""
 
 _USER_PATTERNS = [
     re.compile(r'user\s+([a-zA-Z0-9_-]+)', re.IGNORECASE),
@@ -125,15 +129,39 @@ _PORT_PATTERNS = [
 ]
 
 
-def extract_ip(line: str) -> str | None:
-    """Extract the first IP address from a log line."""
-    match = _IP_RE.search(line)
-    return match.group(0) if match else None
+_IPV6_CANDIDATE_RE = re.compile(r"(?<![0-9A-Fa-f:.])(?=[0-9A-Fa-f]{0,4}:)[0-9A-Fa-f]{0,4}(?::[0-9A-Fa-f]{0,4}){2,7}(?:\.\d{1,3}){0,3}(?![0-9A-Fa-f:])")
+"""Candidat IPv6, forme compressee comprise (2a02:8440:a501:9913::be86:aa87, ::1) - toujours valide
+ensuite par `ipaddress` : une heure (07:52:31) n'est jamais une adresse (porte depuis omega-serv)."""
 
 
 def extract_all_ips(line: str) -> list[str]:
-    """Extract all IP addresses from a log line."""
-    return _IP_RE.findall(line)
+    """IPv4 et IPv6 (forme complete OU compressee), dans l'ordre d'apparition. Avant 2026-11-02, seule
+    l'IPv6 complete (8 groupes) etait reconnue : la forme compressee, la plus courante, etait perdue."""
+    found: list[tuple[int, str]] = []
+    ipv6_spans: list[tuple[int, int]] = []
+    candidates = _IPV6_CANDIDATE_RE.finditer(line) if line.count(":") >= 2 else ()
+    for m in candidates:
+        # Sans « :: », une IPv6 a au moins 6 deux-points : une heure (22:40:04) est ecartee sans
+        # passer par ipaddress et son exception (2026-11-06, performance).
+        if "::" not in m.group(0) and m.group(0).count(":") < 6:
+            continue
+        try:
+            if ipaddress.ip_address(m.group(0)).version == 6:
+                found.append((m.start(), m.group(0)))
+                ipv6_spans.append(m.span())
+        except ValueError:
+            continue
+    for m in _IPV4_RE.finditer(line):
+        # IPv4 incluse dans une IPv6 (::ffff:192.0.2.1) : une seule adresse, jamais comptee deux fois.
+        if not any(start <= m.start() < end for start, end in ipv6_spans):
+            found.append((m.start(), m.group(0)))
+    return [ip for _, ip in sorted(found)]
+
+
+def extract_ip(line: str) -> str | None:
+    """Premiere adresse IP de la ligne (IPv4 ou IPv6)."""
+    ips = extract_all_ips(line)
+    return ips[0] if ips else None
 
 
 def extract_timestamp(line: str) -> datetime | None:
@@ -232,7 +260,12 @@ def extract_http_fields(line: str) -> tuple[str | None, str | None, int | None, 
     (ex. directive Apache "%D"/"%T") ; simplement absente du Common Log
     Format standard, d'ou `None` le plus souvent — colonne "Timeout"
     cote Viewer 1, affichee "-" dans ce cas, jamais une valeur inventee."""
-    match = COMBINED_LOG_PATTERN.search(line)
+    return _http_fields(line, COMBINED_LOG_PATTERN.search(line))
+
+
+def _http_fields(
+    line: str, match: re.Match[str] | None,
+) -> tuple[str | None, str | None, int | None, int | None]:
     if not match:
         return None, None, None, None
 
@@ -246,6 +279,18 @@ def extract_http_fields(line: str) -> tuple[str | None, str | None, int | None, 
             break
 
     return match.group("method"), match.group("path"), status, latency_ms
+
+
+def extract_response_size(line: str) -> int | None:
+    """Taille de la reponse (champ %b du Combined/Common) - None si la ligne n'est pas de ce format ou si
+    la taille vaut "-" (aucun corps) : jamais une valeur estimee."""
+    return _response_size(COMBINED_LOG_PATTERN.search(line))
+
+
+def _response_size(match: re.Match[str] | None) -> int | None:
+    if not match or not match.group("size").isdigit():
+        return None
+    return int(match.group("size"))
 
 
 def detect_log_source(line: str) -> LogSource:
@@ -290,7 +335,9 @@ def parse_log_line(
     service = extract_service(line)
     user = extract_user(line)
     port = extract_port(line)
-    http_method, http_path, http_status, latency_ms = extract_http_fields(line)
+    # Motif Combined cherche UNE fois par ligne (2026-11-06, performance), pour les champs HTTP et la taille.
+    combined = COMBINED_LOG_PATTERN.search(line)
+    http_method, http_path, http_status, latency_ms = _http_fields(line, combined)
 
     if source is None:
         source = detect_log_source(line)
@@ -318,6 +365,7 @@ def parse_log_line(
         http_path=http_path,
         http_status=http_status,
         latency_ms=latency_ms,
+        bytes_sent=_response_size(combined),
         service=service,
     )
 

@@ -62,6 +62,9 @@ class LogEntry:
     version source omega-fire telle quelle (champ equivalent nomme
     response_time_ms, jamais porte sur LogEntry lui-meme la-bas, calcule
     a la volee par le _LogProvider specifique HTTP)."""
+    bytes_sent: int | None = None
+    """Taille de la reponse (champ %b du format Combined/Common) - None si "-" ou format sans taille,
+    jamais une valeur estimee (porte depuis omega-serv, viewer Simple 2026-11-02)."""
     service: str | None = None
 
     def has_ip(self) -> bool:
@@ -202,3 +205,34 @@ class LogAnalysis:
     def get_error_entries(self) -> list[LogEntry]:
         """Get all error and critical entries."""
         return [e for e in self.entries if e.is_error()]
+
+
+@dataclass
+class TrafficStats:
+    """Barre d'etat du viewer Simple - IDENTIQUE a omega-serv (viewer de reference, 2026-11-02) :
+    rendement, bande passante, statuts HTTP, clients, sante - calculee sur le tampon, UNIQUEMENT a partir
+    de valeurs reellement lues dans le log (None sinon, jamais 350 octets ou 25 ms supposes)."""
+    total: int = 0
+    http_total: int = 0
+    status_2xx: int = 0
+    status_3xx: int = 0
+    status_4xx: int = 0
+    status_5xx: int = 0
+    span_seconds: float | None = None
+    requests_per_second: float | None = None
+    avg_latency_ms: float | None = None
+    bytes_total: int | None = None
+    bytes_per_second: float | None = None
+    avg_size: float | None = None
+    unique_ips: int = 0
+    top_ip: str | None = None
+    top_ip_count: int = 0
+    error_rate: float = 0.0
+    """% de 4xx/5xx parmi les lignes HTTP ; a defaut, % de lignes de niveau erreur."""
+    status_403: int = 0
+    status_429: int = 0
+    top_ips: list[tuple[str, int]] = field(default_factory=list)
+    """Repris d'omega-serv (2026-11-06) : top 5 (IP, requetes), puis chemins (sans la partie `?...`) les plus
+    demandes et ceux en 404 - vides si le log n'a pas de champs HTTP."""
+    top_paths: list[tuple[str, int]] = field(default_factory=list)
+    top_not_found: list[tuple[str, int]] = field(default_factory=list)

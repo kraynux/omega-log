@@ -8,20 +8,11 @@ __pycache__/
 .ruff_cache/
 *.egg-info/
 
-# Etat runtime genere localement (recree automatiquement au demarrage) —
-# donnees et config PERSONNELLES de l'utilisateur (logs reels suivis,
-# archives de sauvegarde, favoris, bibliotheque, theme choisi...), jamais
-# du code source. Les dossiers eux-memes restent presents via .gitkeep
-# pour exister dès l'extraction de l'archive, avant tout premier lancement.
-var/app.log
-var/*.jsonl
-var/favorites.json
-var/library.json
-var/settings.json
-var/backups/*
-var/exports/*
-!var/backups/.gitkeep
-!var/exports/.gitkeep
+# Etat runtime genere localement : dossier var/ ENTIER jamais publie sur GitHub (decision
+# utilisateur 2026-11-08) - donnees et config PERSONNELLES (logs suivis, sauvegardes, favoris,
+# bibliotheque, reglages, declaration anonyme, sauvegardes planifiees...). omega-log recree
+# le dossier au demarrage ; l'archive de release garde ses .gitkeep (build-release.sh).
+var/
 
 # Vendoring (reconstruit par build-release.sh, jamais versionne tel quel)
 vendor/
