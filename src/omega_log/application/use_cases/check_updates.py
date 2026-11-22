@@ -7,4 +7,6 @@ from omega_log.ports.release_source_port import ReleaseSourcePort
 
 
 def check_for_update(source: ReleaseSourcePort, installed: str) -> UpdateCheck:
-    return compare_with_published(installed, source.fetch_sha_list())
+    sha_list = source.fetch_sha_list()
+    return compare_with_published(installed, sha_list, str(getattr(source, "base_url", "")),
+                                  bool(getattr(source, "from_github", False)))
