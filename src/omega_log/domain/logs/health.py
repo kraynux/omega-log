@@ -14,6 +14,7 @@ textes sont produits a l'affichage dans la langue voulue (application/use_cases/
 from __future__ import annotations
 
 import fnmatch
+import os
 import re
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
@@ -82,6 +83,11 @@ class LogFacts:
     device: int | None = None
     logrotate_covered: bool | None = None
     duplicate_of: str | None = None
+    closed_folder: bool = False
+    """Dans un dossier ferme a votre compte (ex. /var/log/lighttpd/, 2026-11-26) ; `exists` False tant qu'il n'a pas
+    ete vu avec sudo (« Analyser avec sudo »)."""
+    folder_mode: int | None = None
+    """Droits du dossier ferme, vus avec sudo : c'est lui qui rend le log illisible, pas les droits du fichier."""
 
 
 @dataclass(frozen=True)
@@ -184,13 +190,19 @@ def evaluate_log(facts: LogFacts, now: datetime) -> LogHealth:
     findings: list[Finding] = []
     if facts.broken_link:
         return LogHealth(facts, [Finding("broken_link", HealthLevel.PROBLEM)])
+    if facts.closed_folder and not facts.exists:
+        return LogHealth(facts, [Finding("closed_folder", HealthLevel.WARNING)])
     if not facts.exists:
         return LogHealth(facts, [Finding("missing_library", HealthLevel.PROBLEM)])
     if not facts.regular:
         return LogHealth(facts, [Finding("not_regular", HealthLevel.PROBLEM)])
 
     mode = "" if facts.mode is None else f"{facts.mode:o}"
-    if not facts.readable:
+    if facts.closed_folder:  # le dossier, pas le fichier (un 644 dans un dossier 700 reste illisible)
+        folder_mode = "" if facts.folder_mode is None else f"{facts.folder_mode:o}"
+        findings.append(Finding("unreadable_folder", HealthLevel.WARNING,
+                                {"mode": folder_mode, "folder": os.path.dirname(facts.path)}))
+    elif not facts.readable:
         findings.append(Finding("unreadable", HealthLevel.WARNING, {"mode": mode}))
     if facts.world_writable:
         findings.append(Finding("world_writable", HealthLevel.WARNING, {"mode": mode}))

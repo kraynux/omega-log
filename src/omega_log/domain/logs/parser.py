@@ -112,9 +112,10 @@ priorite que la version precedente (boucle + regex separee par cle) —
 jamais le premier mot rencontre dans le texte, qui aurait un sens
 different (position dans la ligne plutot que priorite du niveau)."""
 
-_SERVICE_RE = re.compile(r'(?<!\w)\w+\s+([a-zA-Z0-9_-]+)(?:\[\d+\])?:')
-"""`(?<!\\w)` (2026-11-06, performance) : la recherche ne repart que d'un debut de mot - meme resultat
-(la correspondance la plus a gauche commence toujours a un debut de mot), ~3 fois plus rapide."""
+SERVICE_TAG_PATTERN = re.compile(r"(?:^|\s)[\w.-]+\s+([A-Za-z][\w./-]*)(?:\[\d+\])?:(?=\s|$)")
+"""Etiquette syslog `machine service[pid]:` (porte d'omega-serv le 2026-11-26 ; retour du 2026-11-20 : l'ancien motif
+prenait les heures d'une date, `Nov 20 10:00:00` -> service « 10 »). Le service commence par une lettre et les
+deux-points sont suivis d'un blanc : ni une heure, ni une URL `http://...`."""
 
 _USER_PATTERNS = [
     re.compile(r'user\s+([a-zA-Z0-9_-]+)', re.IGNORECASE),
@@ -219,7 +220,7 @@ def extract_log_level(line: str) -> LogLevel:
 
 def extract_service(line: str) -> str | None:
     """Extract service name from a syslog-style log line."""
-    match = _SERVICE_RE.search(line)
+    match = SERVICE_TAG_PATTERN.search(line)
     return match.group(1) if match else None
 
 

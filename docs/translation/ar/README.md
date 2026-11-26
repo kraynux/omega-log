@@ -8,18 +8,18 @@
 
 **مدير وعارض سجلات الخادم**
 
-> طوّره [kraynux](https://github.com/kraynux) من أجل [Omega-Server](https://kraynux.snake-mackarel.ts.net)   
+> طوّره [kraynux](https://github.com/kraynux) من أجل [Omega-Server](https://kraynux.snake-mackarel.ts.net) · [الصفحة الرسمية](https://kraynux.snake-mackarel.ts.net/omega-log/translation/ar/) · [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
 
-الصفحة الرسمية: [OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/translation/ar/) &nbsp; معاينة: [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![HTML](https://img.shields.io/badge/HTML-5-E34F26.svg)](https://developer.mozilla.org/docs/Web/HTML)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-F7DF1E.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
+![Interface](https://img.shields.io/badge/Interface-CLI%20%2B%20TUI-cyan.svg)
+[![Textual](https://img.shields.io/badge/Textual-TUI-5A5AFB.svg)](https://textual.textualize.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux-informational.svg)](https://www.linux.org/)
-[![Interface](https://img.shields.io/badge/Interface-Textual%20TUI-cyan.svg)](https://github.com/Textualize/textual)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 
 🌐 الواجهة والتوثيق والتصدير متاحة بـ **17 لغة**.  
-**اللغات:**
-<img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](README.md)
+**اللغات:** <img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](README.md)
 
 ---
 
@@ -82,7 +82,7 @@ sudo apt install lnav
 ### التثبيت
 
 ```bash
-[ -d omega-log ] && echo "ℹ️ مستخرج هنا مسبقًا، تم تخطي هذه الخطوة." || tar -xzf omega-log-1.6.0.tar.gz
+[ -d omega-log ] && echo "ℹ️ مستخرج هنا مسبقًا، تم تخطي هذه الخطوة." || tar -xzf omega-log-1.6.1.tar.gz
 cd omega-log/
 chmod +x install.sh
 ./install.sh
@@ -155,7 +155,7 @@ python -m omega_log rotate run-automations
 
 | المتغير | التأثير |
 |---|---|
-| `OMEGA_LOG_VAR_DIR` | يغيّر موقع مجلد حالة التطبيق (`./var` افتراضيًا، نسبةً إلى مجلد التشغيل) |
+| `OMEGA_LOG_VAR_DIR` | يغيّر موقع مجلد حالة التطبيق (افتراضيًا `var/` داخل مجلد التطبيق، أيًا كان مكان تشغيله) |
 | `OMEGA_LOG_LANG` | يفرض لغة الواجهة طوال الجلسة (مثل `en` و`de` و`ja`) دون تغيير الإعداد المحفوظ |
 
 ## 4. الميزات
@@ -163,14 +163,14 @@ python -m omega_log rotate run-automations
 | الشاشة | الوصف |
 |---|---|
 | **سجل القدرات** | يكشف الخدمات النشطة على الجهاز ويقترح استيراد سجلاتها المعروفة، فرادى أو دفعة واحدة. مع فحص يدوي لمجلد كإضافة. |
-| **المكتبة** | المحور المركزي الذي يضم جميع السجلات المطلوب معالجتها — تُغذّى من سجل القدرات، أو بالاستيراد اليدوي، أو بسجلات Omega-Serv المعروفة، أو بنسخة مُسترجعة عبر SSH. |
+| **المكتبة** | المحور المركزي الذي يضم جميع السجلات المطلوب معالجتها — تُغذّى من سجل القدرات، أو بالاستيراد اليدوي، أو بسجلات Omega-Serv المعروفة، أو بنسخة مُسترجعة عبر SSH. السجل المحمي (مجلد مغلق مثل `/var/log/lighttpd/`) يُتحقق منه ثم يُقرأ بكلمة مرور sudo. |
 | **عرض السجلات** | اختيار سجل واحد أو أكثر من المكتبة + اختيار العارض (سجل واحد ← العارضات الثلاثة؛ سجلّان أو أكثر ← `lnav` فقط). |
 | **المفضلة** | تركيبات سجلات + عارض محفوظة باسم، للتشغيل المباشر. |
 | **عرض ومعالجة IP** | أعلى 10 عناوين IP حسب الفترة (24 س/7 أيام/30 يومًا/الكل)، أو البحث عن IP محدد (IPv4 أو IPv6)، وحذف موجّه لعنوان IP من سجل واحد أو أكثر. |
 | **الإحصائيات (الوصول)** | الحجم، وعناوين IP الفريدة، ومعدل الأخطاء، وأعلى عناوين IP، والتوزيع حسب الساعة — تصدير JSON/HTML بـ 5 سمات. |
 | **Rotate** | نسخة احتياطية مضغوطة لسجل + احتفاظ تلقائي بالأرشيفات الزائدة + استعادة (دمج أو استبدال، مع نسخة أمان). **النسخ الاحتياطية المجدولة**: نسخ سجل احتياطيًا كل يوم أو أسبوع أو شهر، يُنفَّذ كل ليلة عبر مؤقّت systemd أو سطر في crontab الخاص بك (OpenRC، runit)، بحسابك، وليس بصلاحيات root أبدًا. |
 | **تنظيف** | يفرغ محتوى سجل (اقتطاع في المكان، آمن لخدمة لا تزال تفتحه) أو يحذف ملفًا واحدًا أو أكثر بالكامل — دائمًا مع تأكيد. |
-| **تصدير** | تصدير قائمة الأرشيفات (Rotate) بصيغة JSON أو HTML بسمة. |
+| **تصدير** | تصدير قائمة الأرشيفات (Rotate) بصيغة JSON أو HTML بسمة. «عرض التصديرات» (هنا وفي الإحصائيات وصحة السجلات والمساعدة) يفتح مجلد التصدير في المتصفح؛ وبلا متصفح تُعرض الملفات المصدّرة وتُقرأ داخل omega-log. |
 | **صحة السجلات** | فحص للقراءة فقط لسجلات المكتبة، والقرص، والنسخ الاحتياطية، والنسخ الاحتياطية المجدولة: الصلاحيات، والسجلات الصامتة أو التالفة، والتواريخ، وlogrotate، والأيام المتبقية قبل امتلاء القرص، مع الإجراء الواجب اتخاذه. تصحيح الصلاحيات المفتوحة أكثر من اللازم (مع sudo عند الحاجة)، وتصدير JSON/HTML/TXT. |
 | **الخيارات** | السمة، وملف العرض، ولغة الواجهة ولغة التصدير (17 لغة)، وتنظيف مجلدات التطبيق (exports/screenshots). |
 

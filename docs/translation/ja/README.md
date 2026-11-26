@@ -8,18 +8,18 @@
 
 **サーバーログの管理・閲覧ツール**
 
-> [kraynux](https://github.com/kraynux) が [Omega-Server](https://kraynux.snake-mackarel.ts.net) のために開発
+> [kraynux](https://github.com/kraynux) が [Omega-Server](https://kraynux.snake-mackarel.ts.net) のために開発 · [公式ページ](https://kraynux.snake-mackarel.ts.net/omega-log/translation/ja/) · [スクリーンショット](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
 
-公式ページ：[OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/translation/ja/) &nbsp; プレビュー：[スクリーンショット](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![HTML](https://img.shields.io/badge/HTML-5-E34F26.svg)](https://developer.mozilla.org/docs/Web/HTML)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-F7DF1E.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
+![Interface](https://img.shields.io/badge/Interface-CLI%20%2B%20TUI-cyan.svg)
+[![Textual](https://img.shields.io/badge/Textual-TUI-5A5AFB.svg)](https://textual.textualize.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux-informational.svg)](https://www.linux.org/)
-[![Interface](https://img.shields.io/badge/Interface-Textual%20TUI-cyan.svg)](https://github.com/Textualize/textual)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 
 🌐 インターフェース、ドキュメント、エクスポートは **17 言語** に対応しています。  
-**言語：**
-<img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
+**言語：** <img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
 
 ---
 
@@ -82,7 +82,7 @@ sudo apt install lnav
 ### インストール
 
 ```bash
-[ -d omega-log ] && echo "ℹ️ ここに展開済みのため、この手順はスキップします。" || tar -xzf omega-log-1.6.0.tar.gz
+[ -d omega-log ] && echo "ℹ️ ここに展開済みのため、この手順はスキップします。" || tar -xzf omega-log-1.6.1.tar.gz
 cd omega-log/
 chmod +x install.sh
 ./install.sh
@@ -155,7 +155,7 @@ python -m omega_log rotate run-automations
 
 | 変数 | 効果 |
 |---|---|
-| `OMEGA_LOG_VAR_DIR` | アプリケーションの状態フォルダーの場所を変更（デフォルトは `./var`、起動したフォルダーからの相対パス） |
+| `OMEGA_LOG_VAR_DIR` | アプリケーションの状態フォルダーの場所を変更（デフォルトはアプリケーションのフォルダー内の `var/`、どこから起動しても同じ） |
 | `OMEGA_LOG_LANG` | 保存された設定を変えずに、そのセッションのインターフェース言語を強制（例：`en`、`de`、`ja`） |
 
 ## 4. 機能
@@ -163,14 +163,14 @@ python -m omega_log rotate run-automations
 | 画面 | 説明 |
 |---|---|
 | **機能レジストリ** | マシン上で稼働中のサービスを検出し、それらの既知のログを個別または一括でインポートできます。フォルダーの手動スキャンも併用できます。 |
-| **ライブラリ** | 処理するすべてのログを登録する中央ハブ — 機能レジストリ、手動インポート、Omega-Serv の既知のログ、または SSH で取得したコピーから追加されます。 |
+| **ライブラリ** | 処理するすべてのログを登録する中央ハブ — 機能レジストリ、手動インポート、Omega-Serv の既知のログ、または SSH で取得したコピーから追加されます。保護されたログ（`/var/log/lighttpd/` のような閉じたフォルダー）は sudo のパスワードで確認・読み込みします。 |
 | **ログを表示** | ライブラリから 1 つまたは複数のログを選び、ビューアーを選択（ログ 1 つ → 3 つのビューアー；2 つ以上 → `lnav` のみ）。 |
 | **お気に入り** | 名前を付けて保存したログとビューアーの組み合わせで、直接起動できます。 |
 | **IP の表示と処理** | 期間ごと（24h/7d/30d/すべて）の IP 上位 10 件、または特定の IP（IPv4 または IPv6）の検索、そして 1 つまたは複数のログからの IP の対象を絞った削除。 |
 | **統計（アクセス）** | 量、ユニーク IP、エラー率、上位 IP、時間帯別の分布 — 5 つのテーマで JSON/HTML にエクスポート。 |
 | **Rotate** | ログの圧縮バックアップ + 超過したアーカイブの自動保持管理 + 復元（マージまたは上書き、安全のためのバックアップ付き）。**定期バックアップ**：ログを毎日、毎週、または毎月バックアップし、systemd タイマーまたは crontab の 1 行（OpenRC、runit）で毎晩実行します。実行はあなたのアカウントで、決して root ではありません。 |
 | **削除** | ログの内容を空にする（その場での切り詰め。まだファイルを開いているサービスにも安全）か、1 つまたは複数のファイルを完全に削除 — 必ず確認を経ます。 |
-| **エクスポート** | アーカイブ一覧（Rotate）を JSON またはテーマ付き HTML でエクスポート。 |
+| **エクスポート** | アーカイブ一覧（Rotate）を JSON またはテーマ付き HTML でエクスポート。「エクスポートを見る」（ここと統計、ログの健全性、ヘルプ）はエクスポートフォルダーをブラウザーで開きます。ブラウザーがない場合は omega-log の中で一覧表示して読みます。 |
 | **ログの健全性** | ライブラリのログ、ディスク、バックアップ、定期バックアップを読み取り専用で点検：権限、出力のない・破損したログ、日付、logrotate、ディスクが満杯になるまでの日数、そして取るべき対処。開きすぎた権限の修正（必要なら sudo で）、JSON/HTML/TXT でのエクスポート。 |
 | **オプション** | テーマ、描画プロファイル、インターフェースの言語とエクスポートの言語（17 言語）、アプリケーションフォルダー（exports/screenshots）の削除。 |
 

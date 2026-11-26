@@ -8,18 +8,18 @@
 
 **服务器日志管理与查看工具**
 
-> 由 [kraynux](https://github.com/kraynux) 为 [Omega-Server](https://kraynux.snake-mackarel.ts.net) 打造   
+> 由 [kraynux](https://github.com/kraynux) 为 [Omega-Server](https://kraynux.snake-mackarel.ts.net) 打造 · [官方页面](https://kraynux.snake-mackarel.ts.net/omega-log/translation/zh-CN/) · [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
 
-官方页面：[OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/translation/zh-CN/) &nbsp; 预览：[Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![HTML](https://img.shields.io/badge/HTML-5-E34F26.svg)](https://developer.mozilla.org/docs/Web/HTML)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-F7DF1E.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
+![Interface](https://img.shields.io/badge/Interface-CLI%20%2B%20TUI-cyan.svg)
+[![Textual](https://img.shields.io/badge/Textual-TUI-5A5AFB.svg)](https://textual.textualize.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux-informational.svg)](https://www.linux.org/)
-[![Interface](https://img.shields.io/badge/Interface-Textual%20TUI-cyan.svg)](https://github.com/Textualize/textual)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 
 🌐 界面、文档和导出提供 **17 种语言**。  
-**语言：**
-<img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
+**语言：** <img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
 
 ---
 
@@ -82,7 +82,7 @@ sudo apt install lnav
 ### 安装
 
 ```bash
-[ -d omega-log ] && echo "ℹ️ 已在此处解压，跳过此步骤。" || tar -xzf omega-log-1.6.0.tar.gz
+[ -d omega-log ] && echo "ℹ️ 已在此处解压，跳过此步骤。" || tar -xzf omega-log-1.6.1.tar.gz
 cd omega-log/
 chmod +x install.sh
 ./install.sh
@@ -155,7 +155,7 @@ python -m omega_log rotate run-automations
 
 | 变量 | 作用 |
 |---|---|
-| `OMEGA_LOG_VAR_DIR` | 更改应用状态文件夹的位置（默认 `./var`，相对于启动目录） |
+| `OMEGA_LOG_VAR_DIR` | 更改应用状态文件夹的位置（默认为应用目录下的 `var/`，无论从哪里启动） |
 | `OMEGA_LOG_LANG` | 为本次会话强制指定界面语言（如 `en`、`de`、`ja`），不更改已保存的设置 |
 
 ## 4. 功能
@@ -163,14 +163,14 @@ python -m omega_log rotate run-automations
 | 界面 | 说明 |
 |---|---|
 | **能力清单** | 检测本机上正在运行的服务，并提议逐个或全部导入它们的已知日志。另可手动扫描文件夹。 |
-| **日志库** | 汇总所有待处理日志的中心——来源包括能力清单、手动导入、Omega-Serv 的已知日志，或通过 SSH 取回的副本。 |
+| **日志库** | 汇总所有待处理日志的中心——来源包括能力清单、手动导入、Omega-Serv 的已知日志，或通过 SSH 取回的副本。受保护的日志（如 `/var/log/lighttpd/` 这样的关闭目录）用您的 sudo 密码验证并读取。 |
 | **查看日志** | 从日志库中选择一个或多个日志 + 选择查看器（1 个日志 → 3 个查看器均可用；2 个及以上 → 仅 `lnav`）。 |
 | **收藏** | 以名称保存的“日志 + 查看器”组合，用于直接启动。 |
 | **查看并处理 IP** | 按时间段（24 小时/7 天/30 天/全部）列出前 10 名 IP，或查找特定 IP（IPv4 或 IPv6），并从一个或多个日志中有针对性地删除某个 IP。 |
 | **统计（访问）** | 访问量、独立 IP、错误率、前几名 IP、按小时分布——导出为 JSON/HTML，共 5 种主题。 |
 | **Rotate** | 日志的压缩备份 + 自动清除多余归档的保留策略 + 恢复（合并或覆盖，并附带安全备份）。**计划备份**：按天、周或月备份某个日志，每晚由 systemd 定时器或您 crontab 中的一行（OpenRC、runit）执行，以您的账户运行，从不使用 root。 |
 | **清理** | 清空日志内容（就地截断，对仍打开该文件的服务是安全的）或彻底删除一个或多个文件——始终需要确认。 |
-| **导出** | 将归档列表（Rotate）导出为 JSON 或带主题的 HTML。 |
+| **导出** | 将归档列表（Rotate）导出为 JSON 或带主题的 HTML。“查看导出”（此处以及统计、日志健康和帮助中）会在浏览器中打开导出目录；没有浏览器时，在 omega-log 中列出并阅读导出。 |
 | **日志健康** | 对日志库中的日志、磁盘、备份和计划备份进行只读检查：权限、静默或损坏的日志、日期、logrotate、距磁盘写满的天数，并给出应采取的措施。修正过于宽松的权限（必要时使用 sudo），导出 JSON/HTML/TXT。 |
 | **选项** | 主题、渲染配置、界面语言和导出语言（17 种语言）、清理应用文件夹（exports/screenshots）。 |
 

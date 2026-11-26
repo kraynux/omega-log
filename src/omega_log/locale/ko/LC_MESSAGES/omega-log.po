@@ -23,16 +23,16 @@ msgstr "압축 해제 실패: {e}"
 msgid "L'archive extraite est vide."
 msgstr "압축 해제한 아카이브가 비어 있습니다."
 
-#: src/omega_log/application/commands/restore_backup.py:120 src/omega_log/application/commands/rotate_logs.py:84
+#: src/omega_log/application/commands/restore_backup.py:120 src/omega_log/application/commands/rotate_logs.py:85
 msgid "Élévation non configurée pour cette commande."
 msgstr "이 명령에는 권한 상승이 설정되어 있지 않습니다."
 
-#: src/omega_log/application/commands/restore_backup.py:125 src/omega_log/application/commands/rotate_logs.py:89
+#: src/omega_log/application/commands/restore_backup.py:125 src/omega_log/application/commands/rotate_logs.py:90
 #, python-brace-format
 msgid "Élévation impossible : {message}"
 msgstr "권한 상승 불가: {message}"
 
-#: src/omega_log/application/commands/restore_backup.py:145 src/omega_log/application/commands/restore_backup.py:161 src/omega_log/application/use_cases/process_ip.py:139
+#: src/omega_log/application/commands/restore_backup.py:145 src/omega_log/application/commands/restore_backup.py:161 src/omega_log/application/use_cases/process_ip.py:140
 #, python-brace-format
 msgid "Écriture privilégiée impossible : {message}"
 msgstr "권한 있는 쓰기 불가: {message}"
@@ -59,22 +59,22 @@ msgstr "복원 실패: {e}"
 msgid "Restauration effectuée avec succès : {summary}."
 msgstr "복원을 완료했습니다: {summary}."
 
-#: src/omega_log/application/commands/rotate_logs.py:43
+#: src/omega_log/application/commands/rotate_logs.py:44
 #, python-brace-format
 msgid "Fichier source introuvable : {source_path}"
 msgstr "원본 파일을 찾을 수 없습니다: {source_path}"
 
-#: src/omega_log/application/commands/rotate_logs.py:101
+#: src/omega_log/application/commands/rotate_logs.py:102
 #, python-brace-format
 msgid "Erreur technique lors de la sauvegarde : {e}"
 msgstr "백업 중 기술 오류: {e}"
 
-#: src/omega_log/application/commands/rotate_logs.py:113
+#: src/omega_log/application/commands/rotate_logs.py:114
 #, python-brace-format
 msgid "Sauvegarde créée avec succès, mais la purge des anciennes archives a échoué : {e}"
 msgstr "백업은 만들었지만 오래된 아카이브 정리에 실패했습니다: {e}"
 
-#: src/omega_log/application/commands/rotate_logs.py:141
+#: src/omega_log/application/commands/rotate_logs.py:142
 #, python-brace-format
 msgid "Sauvegarde créée avec succès : {name}"
 msgstr "백업을 만들었습니다: {name}"
@@ -107,62 +107,62 @@ msgstr "로그 {count}개 선택: {value}만 호환됩니다."
 msgid "Favori '{name}' enregistré."
 msgstr "즐겨찾기 '{name}'을(를) 저장했습니다."
 
-#: src/omega_log/application/use_cases/process_ip.py:96
+#: src/omega_log/application/use_cases/process_ip.py:97
 #, python-brace-format
 msgid "Adresse IP invalide : {ip}"
 msgstr "잘못된 IP 주소: {ip}"
 
-#: src/omega_log/application/use_cases/process_ip.py:100 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:84
+#: src/omega_log/application/use_cases/process_ip.py:101 src/omega_log/interfaces/tui/screens/library.py:132 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:86
 #, python-brace-format
 msgid "Fichier introuvable : {path}"
 msgstr "파일을 찾을 수 없음: {path}"
 
-#: src/omega_log/application/use_cases/process_ip.py:111 src/omega_log/interfaces/tui/screens/live_tail_screen.py:157 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:113
+#: src/omega_log/application/use_cases/process_ip.py:112 src/omega_log/interfaces/tui/screens/live_tail_screen.py:171 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:117
 #, python-brace-format
 msgid "Lecture privilégiée impossible : {message}"
 msgstr "권한 있는 읽기 불가: {message}"
 
-#: src/omega_log/application/use_cases/process_ip.py:115 src/omega_log/interfaces/tui/screens/live_tail_screen.py:194 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:94 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:152
+#: src/omega_log/application/use_cases/process_ip.py:116 src/omega_log/interfaces/tui/screens/exports.py:52 src/omega_log/interfaces/tui/screens/live_tail_screen.py:210 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:96 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:156
 #, python-brace-format
 msgid "Lecture impossible : {exc}"
 msgstr "읽을 수 없음: {exc}"
 
-#: src/omega_log/application/use_cases/process_ip.py:120
+#: src/omega_log/application/use_cases/process_ip.py:121
 #, python-brace-format
 msgid "Aucune occurrence de {ip} trouvée."
 msgstr "{ip}을(를) 찾지 못했습니다."
 
-#: src/omega_log/application/use_cases/process_ip.py:143
+#: src/omega_log/application/use_cases/process_ip.py:144
 #, python-brace-format
 msgid "Écriture impossible : {exc}"
 msgstr "쓸 수 없음: {exc}"
 
-#: src/omega_log/application/use_cases/process_ip.py:145
+#: src/omega_log/application/use_cases/process_ip.py:146
 #, python-brace-format
 msgid "{occurrences} occurrence(s) de {ip} retirée(s)."
 msgstr "{ip}의 발생 {occurrences}개를 제외했습니다."
 
-#: src/omega_log/application/use_cases/purge_logs.py:68
+#: src/omega_log/application/use_cases/purge_logs.py:69
 #, python-brace-format
 msgid "Troncature privilégiée impossible : {message}"
 msgstr "권한 있는 잘라내기 불가: {message}"
 
-#: src/omega_log/application/use_cases/purge_logs.py:70 src/omega_log/application/use_cases/purge_logs.py:80
+#: src/omega_log/application/use_cases/purge_logs.py:71 src/omega_log/application/use_cases/purge_logs.py:81
 #, python-brace-format
 msgid "Contenu vide (fichier conservé) : {path}"
 msgstr "내용을 비웠습니다(파일은 유지): {path}"
 
-#: src/omega_log/application/use_cases/purge_logs.py:79
+#: src/omega_log/application/use_cases/purge_logs.py:80
 #, python-brace-format
 msgid "Troncature impossible : {exc}"
 msgstr "잘라낼 수 없음: {exc}"
 
-#: src/omega_log/application/use_cases/purge_logs.py:87
+#: src/omega_log/application/use_cases/purge_logs.py:88
 #, python-brace-format
 msgid "Recréation impossible : {exc}"
 msgstr "다시 만들 수 없음: {exc}"
 
-#: src/omega_log/application/use_cases/purge_logs.py:88
+#: src/omega_log/application/use_cases/purge_logs.py:89
 #, python-brace-format
 msgid "Fichier recréé vide (était absent) : {path}"
 msgstr "빈 파일을 다시 만들었습니다(없었음): {path}"
@@ -286,11 +286,11 @@ msgstr "파일({count}): {names}"
 msgid "Permission refusée sur {path} (élévation requise)."
 msgstr "{path}에 대한 권한이 거부되었습니다(권한 상승 필요)."
 
-#: src/omega_log/infrastructure/privileged/elevation.py:68 src/omega_log/interfaces/tui/screens/_elevation.py:28
+#: src/omega_log/infrastructure/privileged/elevation.py:77 src/omega_log/interfaces/tui/screens/_elevation.py:28
 msgid "Authentification sudo échouée ou annulée."
 msgstr "sudo 인증이 실패했거나 취소되었습니다."
 
-#: src/omega_log/application/use_cases/rotation_automation.py:110 src/omega_log/application/use_cases/rotation_automation.py:112 src/omega_log/application/use_cases/rotation_automation.py:117 src/omega_log/infrastructure/privileged/privileged_file_ops.py:41 src/omega_log/infrastructure/privileged/privileged_file_ops.py:57 src/omega_log/infrastructure/privileged/privileged_file_ops.py:68 src/omega_log/infrastructure/privileged/privileged_file_ops.py:75 src/omega_log/infrastructure/privileged/privileged_file_ops.py:97 src/omega_log/infrastructure/privileged/privileged_file_ops.py:107 src/omega_log/infrastructure/privileged/privileged_file_ops.py:122 src/omega_log/infrastructure/privileged/privileged_file_ops.py:129
+#: src/omega_log/application/use_cases/rotation_automation.py:110 src/omega_log/application/use_cases/rotation_automation.py:112 src/omega_log/application/use_cases/rotation_automation.py:117 src/omega_log/infrastructure/privileged/privileged_file_ops.py:41 src/omega_log/infrastructure/privileged/privileged_file_ops.py:57 src/omega_log/infrastructure/privileged/privileged_file_ops.py:69 src/omega_log/infrastructure/privileged/privileged_file_ops.py:76 src/omega_log/infrastructure/privileged/privileged_file_ops.py:98 src/omega_log/infrastructure/privileged/privileged_file_ops.py:108 src/omega_log/infrastructure/privileged/privileged_file_ops.py:123 src/omega_log/infrastructure/privileged/privileged_file_ops.py:130
 #, python-brace-format
 msgid "code {returncode}"
 msgstr "코드 {returncode}"
@@ -480,125 +480,125 @@ msgstr "{path} 복원 실패: {e}"
 msgid "Impossible de lister les sauvegardes de {backup_dir} : {e}"
 msgstr "{backup_dir}의 백업 목록을 표시할 수 없습니다: {e}"
 
-#: src/omega_log/interfaces/tui/app.py:57 src/omega_log/interfaces/tui/screens/help_screen.py:271 src/omega_log/interfaces/tui/screens/home.py:58
+#: src/omega_log/interfaces/tui/app.py:57 src/omega_log/interfaces/tui/screens/help_screen.py:272 src/omega_log/interfaces/tui/screens/home.py:58
 msgid "Options"
 msgstr "옵션"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:98
 msgid "24 dernières heures"
 msgstr "최근 24시간"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:98
 msgid "30 derniers jours"
 msgstr "최근 30일"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:98
 msgid "7 derniers jours"
 msgstr "최근 7일"
 
-#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:104 src/omega_log/interfaces/tui/widgets/busy_indicator.py:50
 msgid "Go"
 msgstr "GB"
 
-#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:104 src/omega_log/interfaces/tui/widgets/busy_indicator.py:50
 msgid "Ko"
 msgstr "KB"
 
-#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:104 src/omega_log/interfaces/tui/widgets/busy_indicator.py:50
 msgid "Mo"
 msgstr "MB"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:125
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:126
 msgid "STATISTIQUES"
 msgstr "통계"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:127 src/omega_log/interfaces/tui/screens/purge_screen.py:46
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:128 src/omega_log/interfaces/tui/screens/purge_screen.py:46
 msgid "Numéros séparés par des virgules (ex: 1,2)"
 msgstr "쉼표로 구분한 번호(예: 1,2)"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:141 src/omega_log/interfaces/tui/screens/export_screen.py:42 src/omega_log/interfaces/tui/screens/log_health_screen.py:114
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:142 src/omega_log/interfaces/tui/screens/export_screen.py:43 src/omega_log/interfaces/tui/screens/log_health_screen.py:124
 msgid "Thème d'export HTML"
 msgstr "HTML 내보내기 테마"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:146 src/omega_log/interfaces/tui/screens/export_screen.py:48 src/omega_log/interfaces/tui/screens/log_health_screen.py:119
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:147 src/omega_log/interfaces/tui/screens/export_screen.py:49 src/omega_log/interfaces/tui/screens/log_health_screen.py:129
 msgid "Exporter JSON"
 msgstr "JSON 내보내기"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:148 src/omega_log/interfaces/tui/screens/export_screen.py:50 src/omega_log/interfaces/tui/screens/log_health_screen.py:121
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:149 src/omega_log/interfaces/tui/screens/export_screen.py:51 src/omega_log/interfaces/tui/screens/log_health_screen.py:131
 msgid "Exporter HTML"
 msgstr "HTML 내보내기"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:171 src/omega_log/interfaces/tui/screens/process_ip_screen.py:160
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:174 src/omega_log/interfaces/tui/screens/process_ip_screen.py:160
 #, python-brace-format
 msgid "Sélection : {description}"
 msgstr "선택: {description}"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:189 src/omega_log/interfaces/tui/screens/process_ip_screen.py:188 src/omega_log/interfaces/tui/screens/purge_screen.py:76 src/omega_log/interfaces/tui/screens/view_logs.py:82
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:194 src/omega_log/interfaces/tui/screens/process_ip_screen.py:188 src/omega_log/interfaces/tui/screens/purge_screen.py:76 src/omega_log/interfaces/tui/screens/view_logs.py:82
 msgid "Saisissez au moins un numéro de ligne."
 msgstr "행 번호를 하나 이상 입력하십시오."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:195 src/omega_log/interfaces/tui/screens/favorites.py:148 src/omega_log/interfaces/tui/screens/process_ip_screen.py:194 src/omega_log/interfaces/tui/screens/purge_screen.py:82 src/omega_log/interfaces/tui/screens/view_logs.py:88
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:200 src/omega_log/interfaces/tui/screens/favorites.py:148 src/omega_log/interfaces/tui/screens/process_ip_screen.py:194 src/omega_log/interfaces/tui/screens/purge_screen.py:82 src/omega_log/interfaces/tui/screens/view_logs.py:88
 #, python-brace-format
 msgid "Numéro invalide : '{token}'."
 msgstr "잘못된 번호: '{token}'."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:202 src/omega_log/interfaces/tui/screens/process_ip_screen.py:201 src/omega_log/interfaces/tui/screens/process_ip_screen.py:218
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:207 src/omega_log/interfaces/tui/screens/process_ip_screen.py:201 src/omega_log/interfaces/tui/screens/process_ip_screen.py:218
 msgid "Un calcul est déjà en cours, patientez."
 msgstr "이미 계산이 진행 중입니다. 잠시 기다리십시오."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:246 src/omega_log/interfaces/tui/screens/process_ip_screen.py:251 src/omega_log/interfaces/tui/screens/process_ip_screen.py:306
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:251 src/omega_log/interfaces/tui/screens/process_ip_screen.py:251 src/omega_log/interfaces/tui/screens/process_ip_screen.py:306
 msgid "Permission refusée sur au moins un log sélectionné."
 msgstr "선택한 로그 중 하나 이상에서 권한이 거부되었습니다."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:278 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:281 src/omega_log/interfaces/tui/screens/process_ip_screen.py:343
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:283 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:286 src/omega_log/interfaces/tui/screens/process_ip_screen.py:343
 #, python-brace-format
 msgid "Erreur de calcul : {message}"
 msgstr "계산 오류: {message}"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:315 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:408
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:320 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:413
 msgid "tout le fichier"
 msgstr "파일 전체"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:316
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:321
 #, python-brace-format
 msgid "── SYNTHÈSE — {period_label}, {log_count} log(s) ──\n"
 msgstr "── 요약 — {period_label}, 로그 {log_count}개 ──\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:318
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:323
 msgid " Aucune ligne sur cette période.\n"
 msgstr " 이 기간에 해당하는 행이 없습니다.\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:323
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:328
 #, python-brace-format
 msgid " Lignes analysées   : {total}\n"
 msgstr " 분석한 행 수       : {total}\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:324
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:329
 #, python-brace-format
 msgid " Requêtes HTTP      : {http_total}\n"
 msgstr " HTTP 요청          : {http_total}\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:325
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:330
 #, python-brace-format
 msgid " IPs uniques        : {unique_ips}\n"
 msgstr " 고유 IP            : {unique_ips}\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:326
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:331
 #, python-brace-format
 msgid " Taux d'erreur      : {error_rate:.1f} %\n"
 msgstr " 오류율             : {error_rate:.1f} %\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:327
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:332
 #, python-brace-format
 msgid " Volume transféré   : {volume}\n"
 msgstr " 전송량             : {volume}\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:328
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:333
 #, python-brace-format
 msgid " Heure de pointe    : {peak_hour:02d}h ({peak_count} lignes)\n"
 msgstr " 피크 시간          : {peak_hour:02d}시({peak_count}행)\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:329
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:334
 #, python-brace-format
 msgid ""
 " Période couverte   : {covered}\n"
@@ -607,245 +607,84 @@ msgstr ""
 " 대상 기간          : {covered}\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:332
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:337
 msgid "── STATUTS HTTP ──\n"
 msgstr "── HTTP 상태 ──\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:335 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:143
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:340 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:143
 #, python-brace-format
 msgid "Refus {name}"
 msgstr "{name} 거부"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:345
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:350
 msgid "TOP IP"
 msgstr "상위 IP"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:347
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:352
 msgid "CHEMINS DEMANDÉS"
 msgstr "요청된 경로"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:348
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:353
 msgid "CHEMINS EN 404"
 msgstr "404 경로"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:355 src/omega_log/interfaces/tui/screens/live_tail_screen.py:278
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:360 src/omega_log/interfaces/tui/screens/live_tail_screen.py:294
 msgid "(aucun)"
 msgstr "(없음)"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:360 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:154
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:365 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:154
 #, python-brace-format
 msgid "dont {errors} en erreur"
 msgstr "그중 {errors}개 오류"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:370
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:375
 msgid "── RÉPARTITION HORAIRE (24 h) ──\n"
 msgstr "── 시간대별 분포(24시간) ──\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:376
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:381
 #, python-brace-format
 msgid "── TENDANCE PAR JOUR ({count} j) ──\n"
 msgstr "── 일별 추이({count}일) ──\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:384 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:401
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:389 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:406
 msgid "Calculez d'abord les statistiques (choisissez une période)."
 msgstr "먼저 통계를 계산하십시오(기간 선택)."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:397 src/omega_log/interfaces/tui/screens/export_screen.py:90
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:402 src/omega_log/interfaces/tui/screens/export_screen.py:98
 #, python-brace-format
 msgid "Export JSON : {out_path}"
 msgstr "JSON 내보내기: {out_path}"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:417 src/omega_log/interfaces/tui/screens/export_screen.py:100
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:422 src/omega_log/interfaces/tui/screens/export_screen.py:108
 #, python-brace-format
 msgid "Export HTML : {out_path}"
 msgstr "HTML 내보내기: {out_path}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:41
-msgid "CONTACT ET SUPPORT"
-msgstr "문의 및 지원"
 
 #: src/omega_log/interfaces/tui/screens/contact_support_screen.py:42
 msgid "Aidez le développeur : omega-log est développé et maintenu par une seule personne."
 msgstr "개발자 돕기: omega-log는 한 사람이 개발하고 유지 관리합니다."
 
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:46 src/omega_log/interfaces/tui/screens/contact_support_screen.py:50
-msgid "Payer un café"
-msgstr "커피 한 잔 사기"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:47
-msgid "Un don aide à couvrir les frais des serveurs (électricité)."
-msgstr "후원은 서버 비용(전기 요금)을 충당하는 데 도움이 됩니다."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:52 src/omega_log/interfaces/tui/screens/contact_support_screen.py:59 src/omega_log/interfaces/tui/screens/contact_support_screen.py:95
-msgid "Se déclarer utilisateur (anonyme)"
-msgstr "사용자로 등록(익명)"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:53
-msgid "Une déclaration volontaire et anonyme, qui sert uniquement à compter les utilisateurs et, si vous le souhaitez, leur continent ou leur pays."
-msgstr "자발적이고 익명인 등록으로, 사용자 수와 원하시면 대륙 또는 국가를 세는 데만 쓰입니다."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:61
-msgid "Ne plus me déclarer"
-msgstr "등록 취소"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:63 src/omega_log/interfaces/tui/screens/contact_support_screen.py:67
-msgid "Contacter le support"
-msgstr "지원팀에 문의"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:64
-#, python-brace-format
-msgid "Mail : {SUPPORT_MAIL}"
-msgstr "메일: {SUPPORT_MAIL}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:65
-#, python-brace-format
-msgid "Formulaire de contact : {CONTACT_FORM_URL}"
-msgstr "문의 양식: {CONTACT_FORM_URL}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:94
-msgid "État : non déclaré."
-msgstr "상태: 등록되지 않음."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:98
-#, python-brace-format
-msgid "État : déclaré le {value} (envoi : une seule fois)."
-msgstr "상태: {value}에 등록됨(전송: 한 번만)."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:99
-msgid "Modifier ma déclaration"
-msgstr "내 등록 변경"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:118
-msgid "NE PLUS ME DÉCLARER ?"
-msgstr "등록을 취소하시겠습니까?"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:119
-msgid "Votre entrée sera supprimée du compteur et la clé effacée de cette installation."
-msgstr "카운터에서 항목이 삭제되고, 이 설치의 키가 지워집니다."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:124
-msgid "Ouverture dans le navigateur..."
-msgstr "브라우저에서 여는 중..."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:131
-#, python-brace-format
-msgid "Aucun navigateur disponible ici (session sans affichage) : ouvrez cette adresse vous-même : {url}"
-msgstr "여기서는 브라우저를 사용할 수 없습니다(화면 없는 세션): 이 주소를 직접 여세요: {url}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:146
-msgid "Vous n'êtes plus déclaré : votre entrée est supprimée et la clé effacée."
-msgstr "더 이상 등록되어 있지 않습니다: 항목이 삭제되고 키가 지워졌습니다."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:149
-msgid "Clé effacée. Réception injoignable : votre entrée y disparaîtra seule (1 an)."
-msgstr "키를 지웠습니다. 수신처에 연결할 수 없음: 그곳의 항목은 저절로 사라집니다(1년)."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:28
-msgid "Afrique"
-msgstr "아프리카"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:29
-msgid "Antarctique"
-msgstr "남극"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:30
-msgid "Asie"
-msgstr "아시아"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:31
-msgid "Europe"
-msgstr "유럽"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:32
-msgid "Amérique du Nord"
-msgstr "북아메리카"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:33
-msgid "Océanie"
-msgstr "오세아니아"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:34
-msgid "Amérique du Sud"
-msgstr "남아메리카"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:56 src/omega_log/interfaces/tui/screens/declaration_screen.py:60
-msgid "Autre (non référencé)"
-msgstr "기타(목록에 없음)"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:74
-msgid "SE DÉCLARER UTILISATEUR (ANONYME)"
-msgstr "사용자로 등록(익명)"
-
 #: src/omega_log/interfaces/tui/screens/declaration_screen.py:75
 msgid "Une déclaration volontaire et anonyme : elle sert uniquement à compter les utilisateurs d'omega-log et, si vous le souhaitez, leur continent ou leur pays. Une clé tirée au hasard est créée pour cette installation ; elle n'a aucun lien avec vous ni avec votre machine. Envoi : une seule fois, maintenant."
 msgstr "자발적이고 익명인 등록입니다. omega-log 사용자 수와, 원하시면 사용자의 대륙 또는 국가를 세는 데만 쓰입니다. 이 설치를 위해 무작위 키가 만들어지며, 이 키는 사용자 본인이나 사용자의 컴퓨터와 아무 관련이 없습니다. 전송: 한 번만, 지금."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:81
-msgid "Continent (facultatif)"
-msgstr "대륙(선택 사항)"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:83 src/omega_log/interfaces/tui/screens/declaration_screen.py:86
-msgid "Non précisé"
-msgstr "지정 안 함"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:84
-msgid "Pays (facultatif)"
-msgstr "국가(선택 사항)"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:88
-msgid "Message envoyé"
-msgstr "전송되는 메시지"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:90
-#, python-brace-format
-msgid "Destination : {RECEPTION_URL}"
-msgstr "수신처: {RECEPTION_URL}"
 
 #: src/omega_log/interfaces/tui/screens/declaration_screen.py:91
 msgid "Jamais envoyés : votre nom, le nom de la machine, vos logs."
 msgstr "절대 보내지 않는 정보: 이름, 컴퓨터 이름, 로그."
 
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:92
-msgid "Votre adresse IP n'est pas enregistrée dans les déclarations. Comme pour toute visite d'un site, elle passe par les contrôles de sécurité et le journal technique du serveur de réception."
-msgstr "IP 주소는 등록 정보에 기록되지 않습니다. 모든 웹사이트 방문과 마찬가지로 수신 서버의 보안 검사와 기술 로그를 거칩니다."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:95
-msgid "Vous pouvez retirer votre déclaration à tout moment depuis Contact et support."
-msgstr "등록은 「문의 및 지원」에서 언제든지 철회할 수 있습니다."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:101
-msgid "Envoyer"
-msgstr "보내기"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:120
-msgid "<clé tirée au hasard à l'envoi>"
-msgstr "<전송 시 생성되는 무작위 키>"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:133
-msgid "Envoi en cours..."
-msgstr "전송 중..."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:144
-msgid "Merci ! Vous êtes déclaré utilisateur anonyme."
-msgstr "감사합니다! 익명 사용자로 등록되었습니다."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:149
-msgid "Réception injoignable : rien n'a été enregistré, réessayez plus tard."
-msgstr "수신처에 연결할 수 없음: 아무것도 기록되지 않았습니다. 나중에 다시 시도하세요."
-
-#: src/omega_log/interfaces/tui/screens/export_screen.py:39
+#: src/omega_log/interfaces/tui/screens/export_screen.py:40
 msgid "EXPORTER LA LISTE DES ARCHIVES"
 msgstr "아카이브 목록 내보내기"
 
-#: src/omega_log/interfaces/tui/screens/export_screen.py:57 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+#: src/omega_log/interfaces/tui/screens/export_screen.py:62 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
 msgid "Archive"
 msgstr "아카이브"
 
-#: src/omega_log/interfaces/tui/screens/export_screen.py:57
+#: src/omega_log/interfaces/tui/screens/export_screen.py:62
 msgid "Créée le"
 msgstr "생성 일시"
 
-#: src/omega_log/interfaces/tui/screens/export_screen.py:57 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+#: src/omega_log/interfaces/tui/screens/export_screen.py:62 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
 msgid "Taille (octets)"
 msgstr "크기(바이트)"
 
@@ -893,51 +732,51 @@ msgstr "즐겨찾기를 선택하십시오."
 msgid "SUPPRIMER CE FAVORI ?"
 msgstr "이 즐겨찾기를 삭제하시겠습니까?"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:40
+#: src/omega_log/interfaces/tui/screens/help_screen.py:41
 msgid "Activer le bouton ou le champ sélectionné"
 msgstr "선택한 버튼 또는 입력란 실행"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:40
+#: src/omega_log/interfaces/tui/screens/help_screen.py:41
 msgid "Entrée / Clic"
 msgstr "Enter / 클릭"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:43
+#: src/omega_log/interfaces/tui/screens/help_screen.py:44
 msgid "Rafraîchir la détection du terminal (adapte le profil d'affichage)"
 msgstr "터미널 감지 새로 고침(표시 프로필 조정)"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:44
+#: src/omega_log/interfaces/tui/screens/help_screen.py:45
 msgid "Cette aide, accessible depuis n'importe quel écran"
 msgstr "이 도움말(어느 화면에서나 열 수 있음)"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:49
+#: src/omega_log/interfaces/tui/screens/help_screen.py:50
 msgid "Thème suivant — intercepté avant lnav, jamais transmis"
 msgstr "다음 테마 — lnav보다 먼저 가로채며 절대 전달되지 않음"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:50
+#: src/omega_log/interfaces/tui/screens/help_screen.py:51
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:50
+#: src/omega_log/interfaces/tui/screens/help_screen.py:51
 msgid "Marque la ligne courante et la copie (presse-papier terminal, OSC 52) — jamais transmis à lnav tel quel"
 msgstr "현재 행을 표시하고 복사(터미널 클립보드, OSC 52) — lnav에 그대로 전달되지 않음"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:52
+#: src/omega_log/interfaces/tui/screens/help_screen.py:53
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:52
+#: src/omega_log/interfaces/tui/screens/help_screen.py:53
 msgid "Quitte lnav et revient à l'application — jamais transmis à lnav"
 msgstr "lnav를 종료하고 애플리케이션으로 돌아감 — lnav에 절대 전달되지 않음"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:53
+#: src/omega_log/interfaces/tui/screens/help_screen.py:54
 msgid "Haut/Bas, g/G, /, m, q..."
 msgstr "위/아래, g/G, /, m, q..."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:53
+#: src/omega_log/interfaces/tui/screens/help_screen.py:54
 msgid "Raccourcis propres à lnav lui-même (navigation, recherche, marquage, vues) — voir sa documentation"
 msgstr "lnav 자체의 단축키(이동, 검색, 표시, 보기) — lnav 문서 참조"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:57
+#: src/omega_log/interfaces/tui/screens/help_screen.py:58
 msgid ""
 "1. [b]Registre des capacités[/b] : lancez un scan au premier démarrage pour\n"
 "   que l'application découvre les logs déjà présents sur la machine.\n"
@@ -963,11 +802,11 @@ msgstr ""
 "5. 분석에는 [b]IP 보기 및 처리[/b]와 [b]통계[/b], 유지 관리에는\n"
 "   [b]Rotate[/b]/[b]정리[/b]/[b]내보내기[/b]를 사용합니다.\n"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:71 src/omega_log/interfaces/tui/screens/home.py:46
+#: src/omega_log/interfaces/tui/screens/help_screen.py:72 src/omega_log/interfaces/tui/screens/home.py:46
 msgid "Registre des capacités"
 msgstr "기능 레지스트리"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:72
+#: src/omega_log/interfaces/tui/screens/help_screen.py:73
 msgid ""
 "Détecte automatiquement les services/serveurs actifs sur la machine\n"
 "(serveurs web, bases de données, mail, DNS, sécurité, omega-serv...) et\n"
@@ -1007,11 +846,11 @@ msgstr ""
 "  가져와서 열 수 있으며, 애플리케이션은 실제 내용(아무것도 없을 수도\n"
 "  있음)을 그대로 표시합니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:111 src/omega_log/interfaces/tui/screens/help_screen.py:89 src/omega_log/interfaces/tui/screens/home.py:47
+#: src/omega_log/application/use_cases/health_presentation.py:111 src/omega_log/interfaces/tui/screens/help_screen.py:90 src/omega_log/interfaces/tui/screens/home.py:47
 msgid "Bibliothèque"
 msgstr "라이브러리"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:90
+#: src/omega_log/interfaces/tui/screens/help_screen.py:91
 msgid ""
 "Hub central référençant tous les logs à traiter — point de départ de\n"
 "tous les autres écrans (Voir les logs, Favoris, Voir et Traiter IP,\n"
@@ -1081,11 +920,11 @@ msgstr ""
 "  교체됩니다. 비밀번호를 묻거나 저장하지 않으며, 인증은 사용자의 SSH\n"
 "  설정을 그대로 따릅니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:122 src/omega_log/interfaces/tui/screens/home.py:48
+#: src/omega_log/interfaces/tui/screens/help_screen.py:123 src/omega_log/interfaces/tui/screens/home.py:48
 msgid "Voir les logs"
 msgstr "로그 보기"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:123
+#: src/omega_log/interfaces/tui/screens/help_screen.py:124
 msgid ""
 "Ouvre un ou plusieurs logs DÉJÀ référencés dans la Bibliothèque\n"
 "(aucun import manuel ici — importez depuis le Registre ou la\n"
@@ -1111,11 +950,11 @@ msgstr ""
 "  나머지 두 뷰어를 고집하면 명확한 알림과 함께 거부됩니다.\n"
 "- 3가지 뷰어는 아래 각자의 섹션에서 자세히 설명합니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:134 src/omega_log/interfaces/tui/screens/home.py:49
+#: src/omega_log/interfaces/tui/screens/help_screen.py:135 src/omega_log/interfaces/tui/screens/home.py:49
 msgid "Favoris"
 msgstr "즐겨찾기"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:135
+#: src/omega_log/interfaces/tui/screens/help_screen.py:136
 msgid ""
 "Enregistre une combinaison (log(s) + viewer) sous un nom, pour un\n"
 "lancement direct sans re-sélectionner chaque fois.\n"
@@ -1150,11 +989,11 @@ msgstr ""
 "  이동되거나 삭제되어도 즐겨찾기는 남지만, 없는 경로를 열 때와\n"
 "  마찬가지로 실행에 실패합니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:150 src/omega_log/interfaces/tui/screens/home.py:50
+#: src/omega_log/interfaces/tui/screens/help_screen.py:151 src/omega_log/interfaces/tui/screens/home.py:50
 msgid "Voir et Traiter IP"
 msgstr "IP 보기 및 처리"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:151
+#: src/omega_log/interfaces/tui/screens/help_screen.py:152
 msgid ""
 "Top 10 des adresses IP les plus actives sur une période, et suppression\n"
 "ciblée d'une IP dans un ou plusieurs logs.\n"
@@ -1200,11 +1039,11 @@ msgstr ""
 "- 보호된 로그(예: /var/log/audit): 필요한 시점(읽기 또는 삭제)에\n"
 "  일회성 sudo 인증을 자동으로 요청하며, 절대 미리 요청하지 않습니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:180 src/omega_log/interfaces/tui/screens/home.py:51
+#: src/omega_log/interfaces/tui/screens/help_screen.py:181 src/omega_log/interfaces/tui/screens/home.py:51
 msgid "Statistiques (accès)"
 msgstr "통계(접근)"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:181
+#: src/omega_log/interfaces/tui/screens/help_screen.py:182
 msgid ""
 "Volume, IPs uniques, taux d'erreur, top IPs, répartition horaire sur un\n"
 "ou plusieurs logs d'accès — avec export.\n"
@@ -1250,11 +1089,11 @@ msgstr ""
 "  내보내기 전에 적어도 한 번은 계산(기간 선택)해야 합니다 — 생성된\n"
 "  파일에는 타임스탬프가 붙고 var/exports/에 저장됩니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:201 src/omega_log/interfaces/tui/screens/home.py:54
+#: src/omega_log/interfaces/tui/screens/help_screen.py:202 src/omega_log/interfaces/tui/screens/home.py:54
 msgid "Rotate"
 msgstr "Rotate"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:202
+#: src/omega_log/interfaces/tui/screens/help_screen.py:203
 msgid ""
 "Sauvegarde compressée d'un log et restauration depuis une archive\n"
 "précédente.\n"
@@ -1295,11 +1134,11 @@ msgstr ""
 "- 보호된 로그: 필요하면 백업과 복원 모두에서 일회성 sudo 권한 상승을\n"
 "  자동으로 요청합니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:231 src/omega_log/interfaces/tui/screens/home.py:55
+#: src/omega_log/interfaces/tui/screens/help_screen.py:232 src/omega_log/interfaces/tui/screens/home.py:55
 msgid "Purger"
 msgstr "정리"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:232
+#: src/omega_log/interfaces/tui/screens/help_screen.py:233
 msgid ""
 "Deux actions DISTINCTES et toutes deux irréversibles sans confirmation\n"
 "préalable — à ne jamais confondre :\n"
@@ -1334,7 +1173,7 @@ msgstr ""
 "- 현재 내용의 기록을 남기려면 정리하기 전에 [b]Rotate -> 지금 백업[/b]을\n"
 "  실행하십시오."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:247
+#: src/omega_log/interfaces/tui/screens/help_screen.py:248
 msgid ""
 "Export de la liste des ARCHIVES (sauvegardes Rotate) en JSON ou en HTML\n"
 "à thème — distinct de l'export des statistiques (présent directement\n"
@@ -1363,7 +1202,7 @@ msgstr ""
 "- 생성된 파일에는 타임스탬프가 붙고 var/exports/에 저장됩니다(통계\n"
 "  내보내기와 같은 폴더)."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:272
+#: src/omega_log/interfaces/tui/screens/help_screen.py:273
 msgid ""
 "Réglages de l'application elle-même (pas des logs traités).\n"
 "\n"
@@ -1390,11 +1229,11 @@ msgstr ""
 "  폴더의 모든 파일을 영구적으로 삭제합니다(확인 후) — 감시 중인 로그나\n"
 "  그 Rotate 아카이브에는 절대 영향을 주지 않습니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:291
+#: src/omega_log/interfaces/tui/screens/help_screen.py:292
 msgid "Aide, export et contact"
 msgstr "도움말, 내보내기, 문의"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:292
+#: src/omega_log/interfaces/tui/screens/help_screen.py:293
 msgid ""
 "- [b]Exporter l'aide en HTML[/b] : toute cette aide dans un fichier\n"
 "  HTML horodaté (thème au choix, comme les autres exports), déposé dans\n"
@@ -1420,159 +1259,41 @@ msgstr ""
 "  소프트웨어(omega-log), 그 버전, 그리고 선택 사항으로 대륙과 국가.\n"
 "  [b]등록 취소[/b]는 수신처의 항목을 삭제하고 로컬 키를 지웁니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:305
-msgid ""
-"[b]1. Simple[/b] — suivi en direct avec parsing générique (horodatage,\n"
-"niveau, IP, service détecté). Le tableau garde tout le tampon (500\n"
-"lignes, 200 chargées à l'ouverture) avec ascenseurs vertical et\n"
-"horizontal ; il suit les nouvelles lignes seulement si vous êtes déjà en\n"
-"bas. À gauche, un tableau de bord qui défile (identique à omega-serv) :\n"
-"rendement, bande passante, statuts HTTP (dont refus 403 et 429), IPs\n"
-"uniques et top 5 IP, chemins les plus demandes et chemins en 404, santé\n"
-"et tampon. Une valeur que le log ne fournit pas s'affiche \"-\", jamais\n"
-"estimée. Pour un access log HTTP reconnu\n"
-"(format Combined/Common), deux colonnes supplémentaires apparaissent\n"
-"automatiquement : [b]Code[/b] (statut HTTP, coloré 2xx vert/3xx cyan/\n"
-"4xx jaune/5xx rouge) et [b]Timeout[/b] (latence si le format source la\n"
-"fournit, coloré selon le seuil) — ces colonnes affichent \"-\" pour tout\n"
-"ce qui n'est pas un format HTTP reconnu (auth.log, syslog, fail2ban...).\n"
-"\n"
-"[b]2. Classique[/b] — affiche les dernières lignes BRUTES du fichier\n"
-"(aucun parsing, aucune coloration), avec un bouton [b]Suivre en\n"
-"direct[/b] pour basculer en mode tail -f. Le plus simple et le plus\n"
-"fiable quel que soit le format du fichier.\n"
-"\n"
-"[b]3. lnav[/b] — encapsule le programme externe `lnav` dans un terminal\n"
-"dédié (pty), pour une fusion et une analyse croisée de PLUSIEURS\n"
-"fichiers à la fois (merge automatique par horodatage). Nécessite que\n"
-"`lnav` soit installé sur le système (sudo pacman -S lnav / sudo apt\n"
-"install lnav) — sans lui, ce viewer est proposé mais refuse de se\n"
-"lancer avec un message explicite. Raccourcis spécifiques pendant une\n"
-"session lnav :"
-msgstr ""
-"[b]1. 단순[/b] — 범용 분석(타임스탬프, 수준, IP, 감지된 서비스)을 곁들인\n"
-"실시간 추적입니다. 표는 버퍼 전체(500행, 열 때 200행 불러옴)를\n"
-"유지하며 세로 및 가로 스크롤 막대가 있습니다. 이미 맨 아래에 있을 때만\n"
-"새 행을 따라갑니다. 왼쪽에는 스크롤되는 대시보드(omega-serv와 동일)가\n"
-"있습니다: 성능, 대역폭, HTTP 상태(403 및 429 거부 포함), 고유 IP와\n"
-"상위 5개 IP, 가장 많이 요청된 경로와 404 경로, 상태 및 버퍼. 로그가\n"
-"제공하지 않는 값은 \"-\"로 표시되며 절대 추정하지 않습니다. 인식된 HTTP\n"
-"접근 로그(Combined/Common 형식)에서는 열 두 개가 자동으로 추가됩니다:\n"
-"[b]코드[/b](HTTP 상태, 2xx 녹색/3xx 청록색/4xx 노란색/5xx 빨간색으로 표시)와\n"
-"[b]Timeout[/b](원본 형식이 제공하는 경우 지연 시간, 임계값에 따라 색 표시) —\n"
-"인식된 HTTP 형식이 아닌 것(auth.log, syslog, fail2ban...)에는 이 열이\n"
-"\"-\"로 표시됩니다.\n"
-"\n"
-"[b]2. 클래식[/b] — 파일의 마지막 행을 원본 그대로 표시합니다(분석 없음, 색\n"
-"없음). [b]실시간 추적[/b] 버튼으로 tail -f 모드로 전환할 수 있습니다. 파일\n"
-"형식과 상관없이 가장 단순하고 확실한 방법입니다.\n"
-"\n"
-"[b]3. lnav[/b] — 외부 프로그램 `lnav`를 전용 터미널(pty)에 감싸 넣어, 여러\n"
-"파일을 동시에 병합하고 교차 분석합니다(타임스탬프 기준 자동 병합).\n"
-"시스템에 `lnav`가 설치되어 있어야 합니다(sudo pacman -S lnav / sudo\n"
-"apt install lnav) — 없으면 이 뷰어는 목록에 나오지만 명확한 메시지와\n"
-"함께 실행을 거부합니다. lnav 세션 중 전용 단축키:"
-
-#: src/omega_log/interfaces/tui/screens/help_screen.py:328
-msgid ""
-"[b]Élévation sudo ponctuelle[/b] — l'application ne tourne JAMAIS en\n"
-"root par défaut. Quand une action rencontre réellement une permission\n"
-"refusée (ex. /var/log/audit/, lisible seulement par root), une\n"
-"authentification sudo est demandée À CE moment précis, dans le\n"
-"terminal réel (l'interface se suspend brièvement) — jamais à l'avance,\n"
-"jamais pour des actions qui n'en ont pas besoin. Une fois authentifié\n"
-"pour un écran donné, les actions suivantes sur ce même écran réutilisent\n"
-"l'autorisation sans redemander.\n"
-"\n"
-"[b]États SUSPECT / ABSENT / OK[/b] — SUSPECT : fichier présent mais\n"
-"vide (très souvent un service qui route en réalité vers journald plutôt\n"
-"que vers un fichier classique). ABSENT : chemin introuvable au moment de\n"
-"l'affichage (supprimé, pas encore créé, ou chemin erroné). OK : fichier\n"
-"présent et non vide. Ces états sont INFORMATIFS, jamais bloquants —\n"
-"vous pouvez toujours ouvrir, exporter ou purger un log quel que soit son\n"
-"état affiché.\n"
-"\n"
-"[b]Sélection des logs[/b] — convention commune (Voir les logs, Favoris,\n"
-"Voir et Traiter IP, Statistiques, Rotate, Purger) : le tableau affiche\n"
-"un numéro par ligne. Simple clic : la ligne surlignée suffit. Double-clic\n"
-"ou Entrée : ajoute ou retire son numéro dans le champ (ex. \"1,3,4\").\n"
-"Vous pouvez aussi saisir les numéros à la main ; le champ, s'il est\n"
-"rempli, a priorité.\n"
-"\n"
-"[b]Dossier var/[/b] — tout l'état propre à l'application (bibliothèque,\n"
-"favoris, thème choisi, archives de sauvegarde, exports, journal\n"
-"applicatif) vit dans ./var/, relatif au dossier où vous lancez\n"
-"l'application (ou $OMEGA_LOG_VAR_DIR si défini) — jamais dans votre\n"
-"dossier personnel. Ce dossier est entièrement local à la machine, ne\n"
-"contient aucun des LOGS SURVEILLÉS eux-mêmes (seulement des références\n"
-"vers leurs chemins)."
-msgstr ""
-"[b]일회성 sudo 권한 상승[/b] — 애플리케이션은 기본적으로 절대 root로 실행되지\n"
-"않습니다. 어떤 작업이 실제로 권한 거부에 부딪히면(예: root만 읽을 수\n"
-"있는 /var/log/audit/), 바로 그 순간 실제 터미널에서 sudo 인증을\n"
-"요청합니다(인터페이스가 잠시 중단됨) — 미리 요청하지 않으며, 필요 없는\n"
-"작업에는 절대 요청하지 않습니다. 한 화면에서 인증하면 같은 화면의 이후\n"
-"작업은 다시 묻지 않고 그 권한을 재사용합니다.\n"
-"\n"
-"[b]SUSPECT / ABSENT / OK 상태[/b] — SUSPECT: 파일은 있지만 비어 있음(대개\n"
-"서비스가 실제로는 일반 파일이 아니라 journald로 보내는 경우). ABSENT:\n"
-"표시 시점에 경로를 찾을 수 없음(삭제됨, 아직 만들어지지 않음, 또는\n"
-"잘못된 경로). OK: 파일이 있고 비어 있지 않음. 이 상태들은 참고용일 뿐\n"
-"절대 작업을 막지 않습니다 — 표시된 상태와 관계없이 언제든 로그를 열고,\n"
-"내보내고, 정리할 수 있습니다.\n"
-"\n"
-"[b]로그 선택[/b] — 공통 규칙(로그 보기, 즐겨찾기, IP 보기 및 처리, 통계,\n"
-"Rotate, 정리): 표에는 행마다 번호가 표시됩니다. 한 번 클릭: 강조된\n"
-"행이면 충분합니다. 더블 클릭 또는 Enter: 입력란에 해당 번호를\n"
-"추가하거나 제거합니다(예: \"1,3,4\"). 번호를 직접 입력할 수도 있으며,\n"
-"입력란이 채워져 있으면 입력란이 우선합니다.\n"
-"\n"
-"[b]var/ 폴더[/b] — 애플리케이션 고유의 모든 상태(라이브러리, 즐겨찾기, 선택한\n"
-"테마, 백업 아카이브, 내보내기, 애플리케이션 로그)는 애플리케이션을\n"
-"실행한 폴더 기준의 ./var/에 있습니다($OMEGA_LOG_VAR_DIR이 정의되어\n"
-"있으면 그곳) — 절대 홈 폴더에 있지 않습니다. 이 폴더는 완전히 컴퓨터\n"
-"안에만 있으며, 감시 중인 로그 자체는 전혀 들어 있지 않습니다(그 경로에\n"
-"대한 참조만 있음)."
-
-#: src/omega_log/interfaces/tui/screens/help_screen.py:358
+#: src/omega_log/interfaces/tui/screens/help_screen.py:397
 msgid "Raccourcis pendant une session lnav"
 msgstr "lnav 세션 중 단축키"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:361 src/omega_log/interfaces/tui/screens/help_screen.py:400
+#: src/omega_log/interfaces/tui/screens/help_screen.py:400 src/omega_log/interfaces/tui/screens/help_screen.py:441
 msgid "Démarrage rapide"
 msgstr "빠른 시작"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:363 src/omega_log/interfaces/tui/screens/help_screen.py:408
+#: src/omega_log/interfaces/tui/screens/help_screen.py:402 src/omega_log/interfaces/tui/screens/help_screen.py:449
 msgid "Les 3 viewers (Simple / Classique / lnav)"
 msgstr "3가지 뷰어(단순 / 클래식 / lnav)"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:364 src/omega_log/interfaces/tui/screens/help_screen.py:413
+#: src/omega_log/interfaces/tui/screens/help_screen.py:403 src/omega_log/interfaces/tui/screens/help_screen.py:454
 msgid "Concepts et glossaire"
 msgstr "개념 및 용어집"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:388
+#: src/omega_log/interfaces/tui/screens/help_screen.py:427
 msgid "Exporter l'aide en HTML"
 msgstr "도움말을 HTML로 내보내기"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:390
-msgid "Contact et support"
-msgstr "문의 및 지원"
-
-#: src/omega_log/interfaces/tui/screens/help_screen.py:397
+#: src/omega_log/interfaces/tui/screens/help_screen.py:438
 #, python-brace-format
 msgid "{key:<16} {description}"
 msgstr "{key:<16} {description}"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:403
+#: src/omega_log/interfaces/tui/screens/help_screen.py:444
 msgid "Fonctions, écran par écran"
 msgstr "기능(화면별)"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:411
+#: src/omega_log/interfaces/tui/screens/help_screen.py:452
 #, python-brace-format
 msgid "  {key:<24} {description}"
 msgstr "  {key:<24} {description}"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:437
+#: src/omega_log/interfaces/tui/screens/help_screen.py:480
 #, python-brace-format
 msgid "Export écrit : {path}"
 msgstr "내보내기 저장됨: {path}"
@@ -1585,107 +1306,98 @@ msgstr "유지 관리"
 msgid "Cet écran n'est pas encore construit (voir plan_omega_log.md, phases suivantes)."
 msgstr "이 화면은 아직 만들어지지 않았습니다(plan_omega_log.md의 다음 단계 참조)."
 
-#: src/omega_log/interfaces/tui/screens/library.py:43
+#: src/omega_log/interfaces/tui/screens/library.py:45
 msgid "BIBLIOTHÈQUE"
 msgstr "라이브러리"
 
-#: src/omega_log/interfaces/tui/screens/library.py:46
+#: src/omega_log/interfaces/tui/screens/library.py:48
 msgid "Chemin à ajouter manuellement"
 msgstr "수동으로 추가할 경로"
 
-#: src/omega_log/interfaces/tui/screens/library.py:50
+#: src/omega_log/interfaces/tui/screens/library.py:52
 msgid "Ajouter les logs connus d'Omega-Serv"
 msgstr "Omega-Serv의 알려진 로그 추가"
 
-#: src/omega_log/interfaces/tui/screens/library.py:52
+#: src/omega_log/interfaces/tui/screens/library.py:54
 msgid "Sources distantes (SSH)"
 msgstr "원격 소스(SSH)"
 
-#: src/omega_log/interfaces/tui/screens/library.py:56
+#: src/omega_log/interfaces/tui/screens/library.py:58
 msgid "Retirer la sélection"
 msgstr "선택 항목 제외"
 
-#: src/omega_log/interfaces/tui/screens/library.py:97
-#, python-brace-format
-msgid "{count} log(s) référencé(s) — {stale} suspect(s), {missing} introuvable(s) actuellement."
-msgstr "참조된 로그 {count}개 — 현재 의심 {stale}개, 찾을 수 없음 {missing}개."
-
-#: src/omega_log/interfaces/tui/screens/library.py:105
+#: src/omega_log/interfaces/tui/screens/library.py:108
 msgid "Saisissez un chemin."
 msgstr "경로를 입력하십시오."
 
-#: src/omega_log/interfaces/tui/screens/library.py:116
+#: src/omega_log/interfaces/tui/screens/library.py:149
 msgid "Aucune installation d'Omega-Serv trouvée sur cette machine."
 msgstr "이 컴퓨터에서 Omega-Serv 설치를 찾지 못했습니다."
 
-#: src/omega_log/interfaces/tui/screens/library.py:120
+#: src/omega_log/interfaces/tui/screens/library.py:153
 #, python-brace-format
 msgid "{count} installation(s) d'Omega-Serv trouvée(s), {added} log(s) ajouté(s) (déjà présents remplacés, jamais dupliqués)."
 msgstr "Omega-Serv 설치 {count}개를 찾았고 로그 {added}개를 추가했습니다(이미 있던 것은 교체, 절대 중복 없음)."
 
-#: src/omega_log/interfaces/tui/screens/library.py:124
+#: src/omega_log/interfaces/tui/screens/library.py:157
 #, python-brace-format
 msgid "Configuration illisible : {root}/config/omega-serve.json"
 msgstr "설정을 읽을 수 없음: {root}/config/omega-serve.json"
 
-#: src/omega_log/interfaces/tui/screens/library.py:129 src/omega_log/interfaces/tui/screens/registry.py:100 src/omega_log/interfaces/tui/screens/registry.py:106 src/omega_log/interfaces/tui/screens/registry.py:116
+#: src/omega_log/interfaces/tui/screens/library.py:162 src/omega_log/interfaces/tui/screens/registry.py:100 src/omega_log/interfaces/tui/screens/registry.py:106 src/omega_log/interfaces/tui/screens/registry.py:116
 msgid "Sélectionnez une ligne dans la liste."
 msgstr "목록에서 행을 선택하십시오."
 
-#: src/omega_log/interfaces/tui/screens/library.py:133
+#: src/omega_log/interfaces/tui/screens/library.py:166
 msgid "RETIRER DE LA BIBLIOTHÈQUE ?"
 msgstr "라이브러리에서 제외하시겠습니까?"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:107
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:116
 #, python-brace-format
 msgid "VOIR LES LOGS — SIMPLE — {path}"
 msgstr "로그 보기 — 단순 — {path}"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
 msgid "Code"
 msgstr "코드"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
 msgid "Heure"
 msgstr "시각"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
 msgid "Message"
 msgstr "메시지"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
 msgid "Niveau"
 msgstr "수준"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
-msgid "Timeout"
-msgstr "Timeout"
-
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:153 src/omega_log/interfaces/tui/screens/live_tail_screen.py:183 src/omega_log/interfaces/tui/screens/rotate_screen.py:138
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:166 src/omega_log/interfaces/tui/screens/live_tail_screen.py:199 src/omega_log/interfaces/tui/screens/rotate_screen.py:138
 #, python-brace-format
 msgid "Permission refusée sur {path}."
 msgstr "{path}에 대한 권한이 거부되었습니다."
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:190
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:206
 #, python-brace-format
 msgid "Lecture privilégiée impossible : {exc}"
 msgstr "권한 있는 읽기 불가: {exc}"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:226
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:242
 msgid "── RENDEMENT ──────────────\n"
 msgstr "── 성능 ───────────────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:227
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:243
 #, python-brace-format
 msgid "{requests_per_second:.1f} req/s"
 msgstr "{requests_per_second:.1f} req/s"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:228
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:244
 #, python-brace-format
 msgid " ⚡ Débit        : {rps}\n"
 msgstr " ⚡ 속도         : {rps}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:230
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:246
 #, python-brace-format
 msgid ""
 " ⏱ Latence moy. : {none}\n"
@@ -1694,7 +1406,7 @@ msgstr ""
 " ⏱ 평균 지연    : {none}\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:234
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:250
 #, python-brace-format
 msgid ""
 " ⏱ Latence moy. : {latency:.0f} ms\n"
@@ -1703,21 +1415,21 @@ msgstr ""
 " ⏱ 평균 지연    : {latency:.0f} ms\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:236
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:252
 msgid "── BANDE PASSANTE ─────────\n"
 msgstr "── 대역폭 ─────────────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:240
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:256
 #, python-brace-format
 msgid " 🌐 Débit réseau : {bps}\n"
 msgstr " 🌐 네트워크 속도: {bps}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:241
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:257
 #, python-brace-format
 msgid " 📦 Volume total : {total}\n"
 msgstr " 📦 총 전송량    : {total}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:242
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:258
 #, python-brace-format
 msgid ""
 " 🗜 Taille moy.  : {average}\n"
@@ -1726,41 +1438,41 @@ msgstr ""
 " 🗜 평균 크기    : {average}\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:244
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:260
 msgid "── STATUTS HTTP ───────────\n"
 msgstr "── HTTP 상태 ──────────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:245
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:261
 #, python-brace-format
 msgid " 📊 Requêtes     : {http_total}\n"
 msgstr " 📊 요청         : {http_total}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:246
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:262
 #, python-brace-format
 msgid " √  Succès 2xx   : {status_2xx}\n"
 msgstr " √  성공 2xx     : {status_2xx}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:247
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:263
 #, python-brace-format
 msgid " ↔  Redir. 3xx   : {status_3xx}\n"
 msgstr " ↔  리디렉션 3xx : {status_3xx}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:248
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:264
 #, python-brace-format
 msgid " ⚠  Erreurs 4xx  : {status_4xx}\n"
 msgstr " ⚠  오류 4xx     : {status_4xx}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:249
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:265
 #, python-brace-format
 msgid " ❌ Erreurs 5xx  : {status_5xx}\n"
 msgstr " ❌ 오류 5xx     : {status_5xx}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:250
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:266
 #, python-brace-format
 msgid " ⛔ Refus 403    : {status_403}\n"
 msgstr " ⛔ 403 거부     : {status_403}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:251
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:267
 #, python-brace-format
 msgid ""
 " ⏳ Refus 429    : {status_429}\n"
@@ -1769,96 +1481,96 @@ msgstr ""
 " ⏳ 429 거부     : {status_429}\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:253
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:269
 msgid "── CLIENTS & RÉSEAU ───────\n"
 msgstr "── 클라이언트·네트워크 ────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:254
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:270
 #, python-brace-format
 msgid " 💻 IPs uniques  : {unique_ips}\n"
 msgstr " 💻 고유 IP      : {unique_ips}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:256
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:272
 msgid " 🖧 Top 5 IP     :\n"
 msgstr " 🖧 상위 5 IP    :\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:259
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:275
 msgid "── CHEMINS DEMANDÉS ───────\n"
 msgstr "── 요청된 경로 ────────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:261
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:277
 msgid "── CHEMINS EN 404 ─────────\n"
 msgstr "── 404 경로 ───────────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:264
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:280
 msgid "── SANTÉ & TAMPON ─────────\n"
 msgstr "── 상태 및 버퍼 ───────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:267
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:283
 msgid "DÉGRADÉ"
 msgstr "저하됨"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:268
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:284
 #, python-brace-format
 msgid " 🌡 Santé        : {health}\n"
 msgstr " 🌡 상태         : {health}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:269
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:285
 #, python-brace-format
 msgid " ⚠  Taux d'erreur: {rate:.1f}%\n"
 msgstr " ⚠  오류율       : {rate:.1f}%\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:270
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:286
 #, python-brace-format
 msgid " 📥 Tampon       : {count}/{BUFFER_SIZE}"
 msgstr " 📥 버퍼         : {count}/{BUFFER_SIZE}"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:65
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:67
 msgid "lnav est introuvable ou non fonctionnel sur ce système. Sur Arch/Manjaro : sudo pacman -S lnav. Sur Debian/Ubuntu : sudo apt install lnav."
 msgstr "이 시스템에서 lnav를 찾을 수 없거나 작동하지 않습니다. Arch/Manjaro: sudo pacman -S lnav. Debian/Ubuntu: sudo apt install lnav."
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:79
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:96
 msgid "VOIR LES LOGS — LNAV (FUSION MULTI-LOGS)"
 msgstr "로그 보기 — LNAV(여러 로그 병합)"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:80
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:97
 #, python-brace-format
 msgid "Fichiers : {join}"
 msgstr "파일: {join}"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:84
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:101
 msgid "Lancer lnav"
 msgstr "lnav 실행"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:104
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:123
 #, python-brace-format
 msgid "Fichier(s) introuvable(s) : {join}"
 msgstr "파일을 찾을 수 없음: {join}"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:110
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:132
 #, python-brace-format
 msgid "Échec du lancement de lnav : {exc}"
 msgstr "lnav 실행 실패: {exc}"
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:57
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:58
 #, python-brace-format
 msgid "VOIR LES LOGS — CLASSIQUE — {path}"
 msgstr "로그 보기 — 클래식 — {path}"
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:62 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:139
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:63 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:143
 msgid "Suivre en direct"
 msgstr "실시간 추적"
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:108
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:112
 #, python-brace-format
 msgid "Permission refusée sur {path} (authentification sudo requise)."
 msgstr "{path}에 대한 권한이 거부되었습니다(sudo 인증 필요)."
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:127
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:131
 msgid "Rien à suivre (fichier introuvable)."
 msgstr "추적할 대상이 없습니다(파일을 찾을 수 없음)."
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:130
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:134
 msgid "Arrêter le suivi"
 msgstr "추적 중지"
 
@@ -1882,7 +1594,7 @@ msgstr "분석한 로그에서 이 IP 제외"
 msgid "Occurrences"
 msgstr "발생 횟수"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:186 src/omega_log/interfaces/tui/screens/process_ip_screen.py:344 src/omega_log/interfaces/tui/screens/registry.py:169
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:200 src/omega_log/interfaces/tui/screens/process_ip_screen.py:344 src/omega_log/interfaces/tui/screens/registry.py:169
 #, python-brace-format
 msgid "Erreur : {message}"
 msgstr "오류: {message}"
@@ -2150,7 +1862,7 @@ msgstr "아카이브 삭제"
 msgid "Créé le"
 msgstr "생성 일시"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+#: src/omega_log/interfaces/tui/screens/exports.py:86 src/omega_log/interfaces/tui/screens/log_health_screen.py:145 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/interfaces/tui/widgets/log_library_table.py:38 src/omega_log/interfaces/tui/widgets/log_list.py:25
 msgid "Taille"
 msgstr "크기"
 
@@ -2227,51 +1939,51 @@ msgstr "열 소스(위의 번호, 쉼표로 구분)"
 msgid "ex: 1,3"
 msgstr "예: 1,3"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:24
 msgid "24h"
 msgstr "24시간"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:24
 msgid "30j"
 msgstr "30일"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:24
 msgid "7j"
 msgstr "7일"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:24
 msgid "Tout (fichier entier)"
 msgstr "전체(파일 전체)"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:25
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:26
 msgid "24h, 7j, 30j : lecture depuis la fin du fichier, rapide. « Tout » lit le fichier entier : la durée dépend de sa taille (de quelques secondes à plusieurs minutes pour un gros log)."
 msgstr "24시간, 7일, 30일: 파일 끝에서부터 읽으므로 빠릅니다. \"전체\"는 파일 전체를 읽습니다: 소요 시간은 크기에 따라 다릅니다(큰 로그는 몇 초에서 몇 분)."
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:35
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:36
 msgid "Lecture du fichier entier, ligne par ligne…"
 msgstr "파일 전체를 한 행씩 읽는 중…"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:36
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:37
 msgid "Analyse des lignes (date, IP, code HTTP, chemin)…"
 msgstr "행 분석 중(날짜, IP, HTTP 코드, 경로)…"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:37
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:38
 msgid "Plus le fichier est gros, plus c'est long : quelques secondes à plusieurs minutes."
 msgstr "파일이 클수록 오래 걸립니다: 몇 초에서 몇 분."
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:38
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:39
 msgid "Échap arrête l'analyse : il faudra la relancer."
 msgstr "Esc를 누르면 분석이 중단됩니다: 다시 실행해야 합니다."
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:39 src/omega_log/interfaces/tui/widgets/busy_indicator.py:44
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:40 src/omega_log/interfaces/tui/widgets/busy_indicator.py:45
 msgid "Toujours en cours, rien n'est bloqué…"
 msgstr "아직 진행 중이며, 멈춘 것이 아닙니다…"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:42
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:43
 msgid "Lecture depuis la fin du fichier, arrêt dès que les lignes sortent de la période…"
 msgstr "파일 끝에서부터 읽는 중, 행이 기간을 벗어나면 바로 멈춥니다…"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:43
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:44
 msgid "Analyse des lignes de la période…"
 msgstr "기간 내 행 분석 중…"
 
@@ -2301,23 +2013,23 @@ msgstr "클릭: 로그 선택. 더블 클릭 또는 Enter: 입력란에 해당 �
 msgid "Clic : choisir un log. Double-clic ou Entrée : mettre son numéro dans le champ. Le champ, s'il est rempli, a priorité."
 msgstr "클릭: 로그 선택. 더블 클릭 또는 Enter: 해당 번호를 입력란에 넣기. 입력란이 채워져 있으면 입력란이 우선합니다."
 
-#: src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:38 src/omega_log/interfaces/tui/widgets/log_list.py:25
 msgid "Accès"
 msgstr "접근"
 
-#: src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:38 src/omega_log/interfaces/tui/widgets/log_list.py:25
 msgid "Chemin"
 msgstr "경로"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/widgets/log_library_table.py:27
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:145 src/omega_log/interfaces/tui/widgets/log_library_table.py:38
 msgid "Modifié"
 msgstr "수정 일시"
 
-#: src/omega_log/interfaces/tui/widgets/log_library_table.py:36
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:25
 msgid "ABSENT"
 msgstr "ABSENT"
 
-#: src/omega_log/interfaces/tui/widgets/log_library_table.py:36 src/omega_log/interfaces/tui/widgets/log_list.py:40
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:22
 msgid "SUSPECT (vide)"
 msgstr "SUSPECT(빈 파일)"
 
@@ -2476,234 +2188,229 @@ msgstr "{size}/일"
 msgid "Lien symbolique cassé : la cible n'existe plus."
 msgstr "심볼릭 링크가 깨졌습니다: 대상이 더 이상 없습니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:136
+#: src/omega_log/application/use_cases/health_presentation.py:139
 msgid "Fichier absent : le chemin de la Bibliothèque ne mène plus à rien."
 msgstr "파일 없음: 라이브러리의 경로가 더 이상 아무것도 가리키지 않습니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:138
+#: src/omega_log/application/use_cases/health_presentation.py:141
 msgid "Ce n'est pas un fichier ordinaire (dossier, tube ou périphérique)."
 msgstr "일반 파일이 아닙니다(폴더, 파이프 또는 장치)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:140
+#: src/omega_log/application/use_cases/health_presentation.py:147
 #, python-brace-format
 msgid "Illisible par votre compte (droits {mode}) : Statistiques, Voir et Traiter IP et les viewers demanderont votre mot de passe sudo."
 msgstr "계정으로 읽을 수 없습니다(권한 {mode}): 통계, IP 보기 및 처리, 뷰어가 sudo 비밀번호를 요청합니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:143
+#: src/omega_log/application/use_cases/health_presentation.py:150
 #, python-brace-format
 msgid "Inscriptible par tout le monde (droits {mode}) : n'importe quel compte peut falsifier ce log."
 msgstr "모든 사용자가 쓸 수 있음(권한 {mode}): 어떤 계정이든 이 로그를 위조할 수 있습니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:146
+#: src/omega_log/application/use_cases/health_presentation.py:153
 msgid "Fichier vide."
 msgstr "빈 파일입니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:148
+#: src/omega_log/application/use_cases/health_presentation.py:155
 #, python-brace-format
 msgid "Aucune écriture depuis {days} j."
 msgstr "{days}일 동안 기록 없음."
 
-#: src/omega_log/application/use_cases/health_presentation.py:150
+#: src/omega_log/application/use_cases/health_presentation.py:157
 msgid "Octets nuls à la fin du fichier : log abîmé (coupure ou disque plein pendant une écriture)."
 msgstr "파일 끝에 널 바이트: 로그 손상(기록 중 정전 또는 디스크 가득 참)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:152
+#: src/omega_log/application/use_cases/health_presentation.py:159
 #, python-brace-format
 msgid "Seules {percent} % des dernières lignes ont une date reconnue : les périodes 24h, 7j, 30j et les statistiques seront faussées."
 msgstr "최근 행 중 {percent} %만 날짜를 인식할 수 있음: 24h, 7d, 30d 기간과 통계가 부정확해집니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:155
+#: src/omega_log/application/use_cases/health_presentation.py:162
 #, python-brace-format
 msgid "Dernière ligne datée du {last}, dans le futur : horloge ou fuseau horaire faux."
 msgstr "마지막 행의 날짜가 {last}(미래): 시계 또는 시간대가 잘못되었습니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:158
+#: src/omega_log/application/use_cases/health_presentation.py:165
 #, python-brace-format
 msgid "{size} et aucune règle logrotate ne couvre ce fichier : il grossira sans fin."
 msgstr "{size}이며 이 파일을 다루는 logrotate 규칙이 없음: 끝없이 커집니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:161
+#: src/omega_log/application/use_cases/health_presentation.py:168
 #, python-brace-format
 msgid "Même fichier que {other} (lien ou chemin en double)."
 msgstr "{other}와 같은 파일입니다(링크 또는 중복 경로)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:163
+#: src/omega_log/application/use_cases/health_presentation.py:170
 #, python-brace-format
 msgid "Disque rempli à {percent} %."
 msgstr "디스크 사용률 {percent} %."
 
-#: src/omega_log/application/use_cases/health_presentation.py:165
+#: src/omega_log/application/use_cases/health_presentation.py:172
 #, python-brace-format
 msgid "À ce rythme, disque plein dans environ {days} j."
 msgstr "이 속도라면 약 {days}일 후 디스크가 가득 찹니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:167
+#: src/omega_log/application/use_cases/health_presentation.py:174
 msgid "Aucune sauvegarde."
 msgstr "백업이 없습니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:169
+#: src/omega_log/application/use_cases/health_presentation.py:176
 #, python-brace-format
 msgid "{count} sauvegarde(s) planifiée(s), mais aucune tâche planifiée ne les exécute."
 msgstr "예약 백업이 {count}개 있지만 이를 실행하는 예약 작업이 없습니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:172
+#: src/omega_log/application/use_cases/health_presentation.py:179
 #, python-brace-format
 msgid "Sauvegarde planifiée de {path} en échec, en retard de {days} j : {error}"
 msgstr "{path}의 예약 백업이 실패했으며 {days}일 지연되었습니다: {error}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:175
+#: src/omega_log/application/use_cases/health_presentation.py:182
 #, python-brace-format
 msgid "Sauvegarde planifiée de {path} en retard de {days} j : la tâche planifiée ne s'exécute pas (machine éteinte la nuit sans systemd, démon cron arrêté ?)."
 msgstr "{path}의 예약 백업이 {days}일 지연되었습니다: 예약 작업이 실행되지 않습니다(systemd 없이 밤에 기기가 꺼져 있거나 cron 데몬이 중지됨?)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:185
-#, python-brace-format
-msgid "Ajoutez votre compte au groupe du fichier (ls -l {path}), puis rouvrez votre session."
-msgstr "현재 계정을 파일의 그룹에 추가한 뒤(ls -l {path}) 세션을 다시 여십시오."
-
-#: src/omega_log/application/use_cases/health_presentation.py:187
+#: src/omega_log/application/use_cases/health_presentation.py:202
 #, python-brace-format
 msgid "Santé des logs → « Corriger les droits » (chmod o-w {path})."
 msgstr "로그 상태 → \"권한 수정\"(chmod o-w {path})."
 
-#: src/omega_log/application/use_cases/health_presentation.py:189
+#: src/omega_log/application/use_cases/health_presentation.py:204
 msgid "Ajoutez une règle dans /etc/logrotate.d/ (voir man logrotate)."
 msgstr "/etc/logrotate.d/에 규칙을 추가하십시오(man logrotate 참조)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:191
+#: src/omega_log/application/use_cases/health_presentation.py:206
 msgid "Bibliothèque : retirez ce log ou corrigez son chemin."
 msgstr "라이브러리: 이 로그를 제거하거나 경로를 수정하십시오."
 
-#: src/omega_log/application/use_cases/health_presentation.py:193
+#: src/omega_log/application/use_cases/health_presentation.py:208
 msgid "Supprimez les vieilles sauvegardes (Rotate → « Supprimer l'archive ») ou videz les gros logs (Purger)."
 msgstr "오래된 백업을 삭제하거나(Rotate → \"아카이브 삭제\") 큰 로그를 비우세요(정리)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:196
+#: src/omega_log/application/use_cases/health_presentation.py:211
 msgid "Vérifiez que le programme qui écrit ce log tourne encore."
 msgstr "이 로그를 기록하는 프로그램이 아직 실행 중인지 확인하십시오."
 
-#: src/omega_log/application/use_cases/health_presentation.py:198
+#: src/omega_log/application/use_cases/health_presentation.py:213
 msgid "Vérifiez l'heure du serveur : timedatectl"
 msgstr "서버 시간을 확인하십시오: timedatectl"
 
-#: src/omega_log/application/use_cases/health_presentation.py:200
+#: src/omega_log/application/use_cases/health_presentation.py:215
 msgid "Sauvegardez ce log (Rotate) puis videz-le (Purger) pour repartir d'un fichier propre."
 msgstr "이 로그를 백업(Rotate)한 다음 비워서(정리) 깨끗한 파일로 다시 시작하세요."
 
-#: src/omega_log/application/use_cases/health_presentation.py:202
+#: src/omega_log/application/use_cases/health_presentation.py:217
 msgid "Rotate → « Sauvegardes planifiées » → « Réinstaller l'exécution »."
 msgstr "Rotate → \"예약 백업\" → \"실행 재설치\"."
 
-#: src/omega_log/application/use_cases/health_presentation.py:204
+#: src/omega_log/application/use_cases/health_presentation.py:219
 msgid "Un log protégé ne peut pas être sauvegardé la nuit sans mot de passe : sauvegardez-le depuis Rotate, ou retirez sa sauvegarde planifiée."
 msgstr "보호된 로그는 비밀번호 없이 밤에 백업할 수 없습니다: Rotate에서 백업하거나 예약 백업을 제거하세요."
 
-#: src/omega_log/application/use_cases/health_presentation.py:217 src/omega_log/application/use_cases/health_presentation.py:291 src/omega_log/interfaces/tui/screens/log_health_screen.py:284 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:109
+#: src/omega_log/application/use_cases/health_presentation.py:232 src/omega_log/application/use_cases/health_presentation.py:306 src/omega_log/interfaces/tui/screens/log_health_screen.py:298 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:109
 msgid "Aucun problème."
 msgstr "문제 없음."
 
-#: src/omega_log/application/use_cases/health_presentation.py:222
+#: src/omega_log/application/use_cases/health_presentation.py:237
 #, python-brace-format
 msgid "(+{count} autre(s))"
 msgstr "(그 외 {count}개)"
 
-#: src/omega_log/application/use_cases/health_presentation.py:229
+#: src/omega_log/application/use_cases/health_presentation.py:244
 #, python-brace-format
 msgid "Taille {size}"
 msgstr "크기 {size}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:230
+#: src/omega_log/application/use_cases/health_presentation.py:245
 #, python-brace-format
 msgid "dernière écriture {age}"
 msgstr "마지막 기록 {age}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:231
+#: src/omega_log/application/use_cases/health_presentation.py:246
 #, python-brace-format
 msgid "croissance {growth}"
 msgstr "증가 {growth}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:234
+#: src/omega_log/application/use_cases/health_presentation.py:249
 #, python-brace-format
 msgid "droits {mode}"
 msgstr "권한 {mode}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:236
+#: src/omega_log/application/use_cases/health_presentation.py:251
 #, python-brace-format
 msgid "format {source}"
 msgstr "형식 {source}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:245
+#: src/omega_log/application/use_cases/health_presentation.py:260
 msgid "plus de 10 ans"
 msgstr "10년 이상"
 
-#: src/omega_log/application/use_cases/health_presentation.py:246
+#: src/omega_log/application/use_cases/health_presentation.py:261
 #, python-brace-format
 msgid "environ {days} j"
 msgstr "약 {days}일"
 
-#: src/omega_log/application/use_cases/health_presentation.py:251
+#: src/omega_log/application/use_cases/health_presentation.py:266
 #, python-brace-format
 msgid "{mount} : {free} libres sur {total} ({used} % utilisés) · croissance des logs {growth} · plein dans {days}"
 msgstr "{mount}: {total} 중 {free} 남음({used} % 사용) · 로그 증가 {growth} · {days} 후 가득 참"
 
-#: src/omega_log/application/use_cases/health_presentation.py:259
+#: src/omega_log/application/use_cases/health_presentation.py:274
 msgid "Aucune sauvegarde planifiée."
 msgstr "예약 백업이 없습니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:260
+#: src/omega_log/application/use_cases/health_presentation.py:275
 msgid "aucune tâche planifiée"
 msgstr "예약 작업 없음"
 
-#: src/omega_log/application/use_cases/health_presentation.py:260
+#: src/omega_log/application/use_cases/health_presentation.py:275
 msgid "tâche planifiée installée"
 msgstr "예약 작업 설치됨"
 
-#: src/omega_log/application/use_cases/health_presentation.py:261
+#: src/omega_log/application/use_cases/health_presentation.py:276
 msgid "tâche planifiée non vérifiée"
 msgstr "예약 작업 확인 안 됨"
 
-#: src/omega_log/application/use_cases/health_presentation.py:262
+#: src/omega_log/application/use_cases/health_presentation.py:277
 #, python-brace-format
 msgid "{count} sauvegarde(s) planifiée(s) · {state}"
 msgstr "예약 백업 {count}개 · {state}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:267
+#: src/omega_log/application/use_cases/health_presentation.py:282
 #, python-brace-format
 msgid "{directory} : aucune sauvegarde."
 msgstr "{directory}: 백업이 없습니다."
 
-#: src/omega_log/application/use_cases/health_presentation.py:269
+#: src/omega_log/application/use_cases/health_presentation.py:284
 #, python-brace-format
 msgid "{directory} : {count} sauvegarde(s), {size}, la plus ancienne du {oldest}."
 msgstr "{directory}: 백업 {count}개, {size}, 가장 오래된 백업: {oldest}."
 
-#: src/omega_log/application/use_cases/health_presentation.py:279 src/omega_log/interfaces/tui/screens/help_screen.py:259 src/omega_log/interfaces/tui/screens/home.py:57 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:81
+#: src/omega_log/application/use_cases/health_presentation.py:294 src/omega_log/interfaces/tui/screens/help_screen.py:260 src/omega_log/interfaces/tui/screens/home.py:57 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:81
 msgid "Santé des logs"
 msgstr "로그 상태"
 
-#: src/omega_log/application/use_cases/health_presentation.py:280 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:82
+#: src/omega_log/application/use_cases/health_presentation.py:295 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:82
 #, python-brace-format
 msgid "Généré le {date}"
 msgstr "{date}에 생성"
 
-#: src/omega_log/application/use_cases/health_presentation.py:281
+#: src/omega_log/application/use_cases/health_presentation.py:296
 #, python-brace-format
 msgid "Résumé : {summary}"
 msgstr "요약: {summary}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:283
+#: src/omega_log/application/use_cases/health_presentation.py:298
 msgid "LOGS"
 msgstr "로그"
 
-#: src/omega_log/application/use_cases/health_presentation.py:298 src/omega_log/interfaces/tui/screens/log_health_screen.py:107
+#: src/omega_log/application/use_cases/health_presentation.py:313 src/omega_log/interfaces/tui/screens/log_health_screen.py:117
 msgid "DISQUES"
 msgstr "디스크"
 
-#: src/omega_log/application/use_cases/health_presentation.py:307 src/omega_log/interfaces/tui/screens/log_health_screen.py:109
+#: src/omega_log/application/use_cases/health_presentation.py:322 src/omega_log/interfaces/tui/screens/log_health_screen.py:119
 msgid "SAUVEGARDES"
 msgstr "백업"
 
-#: src/omega_log/application/use_cases/health_presentation.py:310 src/omega_log/interfaces/tui/screens/log_health_screen.py:111 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:70
+#: src/omega_log/application/use_cases/health_presentation.py:325 src/omega_log/interfaces/tui/screens/log_health_screen.py:121 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:70
 msgid "SAUVEGARDES PLANIFIÉES"
 msgstr "예약 백업"
 
@@ -2772,128 +2479,79 @@ msgstr ""
 "\n"
 "{cron_line}"
 
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:71 src/omega_log/interfaces/tui/screens/help_screen.py:284
-msgid "Version et mises à jour"
-msgstr "버전 및 업데이트"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:72
-msgid "Compare votre version à la liste des versions publiées sur le site. Rien n'est envoyé, et rien n'est vérifié sans votre clic."
-msgstr "사용 중인 버전을 사이트에 게시된 버전 목록과 비교합니다. 아무것도 전송되지 않으며, 클릭하지 않으면 확인도 이루어지지 않습니다."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:74
-#, python-brace-format
-msgid "Version installée : {version}"
-msgstr "설치된 버전: {version}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:78
-msgid "Vérifier les mises à jour"
-msgstr "업데이트 확인"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:80
-msgid "Voir les nouveautés"
-msgstr "새로운 소식 보기"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:156
-msgid "Vérification en cours..."
-msgstr "확인 중..."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:173
-#, python-brace-format
-msgid ""
-"Nouvelle version disponible : {latest} (installée : {installed}).\n"
-"Archive : {url}"
-msgstr ""
-"새 버전이 있습니다: {latest} (설치됨: {installed}).\n"
-"아카이브: {url}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:176
-#, python-brace-format
-msgid "Vous avez la dernière version publiée ({version})."
-msgstr "게시된 최신 버전({version})을 사용하고 있습니다."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:178
-#, python-brace-format
-msgid "Votre version ({installed}) est plus récente que la dernière publiée ({latest}) : version en cours, pas encore publiée."
-msgstr "사용 중인 버전({installed})이 게시된 최신 버전({latest})보다 최신입니다: 개발 중인 버전이며 아직 게시되지 않았습니다."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:181
-#, python-brace-format
-msgid "Version installée : {version}. Site injoignable ou liste des versions illisible : réessayez plus tard."
-msgstr "설치된 버전: {version}. 사이트에 접속할 수 없거나 버전 목록을 읽을 수 없습니다: 나중에 다시 시도하세요."
-
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:90
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:100
 msgid "SANTÉ DES LOGS"
 msgstr "로그 상태"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:91
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:101
 msgid "Contrôle en lecture seule des logs de la Bibliothèque, du disque qui les porte, des sauvegardes et des sauvegardes planifiées. Surlignez un log pour voir le détail."
 msgstr "라이브러리의 로그, 로그가 있는 디스크, 백업 및 예약 백업을 읽기 전용으로 점검합니다. 로그를 강조 표시하면 상세 내용이 표시됩니다."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:100
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:110
 msgid "Relancer l'analyse"
 msgstr "다시 분석"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:102
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:112
 msgid "Analyser avec sudo"
 msgstr "sudo로 분석"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:104
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:114
 msgid "Corriger les droits"
 msgstr "권한 수정"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:106
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:116
 msgid "Corriger avec sudo"
 msgstr "sudo로 수정"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:123
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:133
 msgid "Exporter TXT"
 msgstr "TXT 내보내기"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:145
 msgid "Constat"
 msgstr "진단"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:145 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
 msgid "Log"
 msgstr "로그"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:141
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:155
 msgid "Analyse en cours…"
 msgstr "분석 중…"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:208
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:222
 #, python-brace-format
 msgid "Analysé {age}."
 msgstr "{age} 분석함."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:211
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:225
 msgid "Résumé : "
 msgstr "요약: "
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:301
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:315
 msgid "CORRIGER LES DROITS ?"
 msgstr "권한을 수정할까요?"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:302
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:316
 #, python-brace-format
 msgid "{path} : retirer l'écriture pour tout le monde (droits {mode})."
 msgstr "{path}: 모든 사용자의 쓰기 권한을 제거합니다(권한 {mode})."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:314 src/omega_log/interfaces/tui/screens/log_health_screen.py:342
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:328 src/omega_log/interfaces/tui/screens/log_health_screen.py:359 src/omega_log/interfaces/tui/screens/log_health_screen.py:389
 #, python-brace-format
 msgid "Correction impossible : {error}"
 msgstr "수정할 수 없음: {error}"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:316
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:330
 #, python-brace-format
 msgid "Droits corrigés : {path}."
 msgstr "권한을 수정했습니다: {path}."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:327
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:344
 msgid "CORRIGER AVEC SUDO ?"
 msgstr "sudo로 수정할까요?"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:328
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:345
 #, python-brace-format
 msgid ""
 "Commande lancée après votre mot de passe :\n"
@@ -2902,16 +2560,16 @@ msgstr ""
 "비밀번호 입력 후 실행되는 명령:\n"
 "{command}"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:344
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:361
 #, python-brace-format
 msgid "Droits corrigés avec sudo : {path}."
 msgstr "sudo로 권한 수정됨: {path}."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:371
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:420
 msgid "Attendez la fin de l'analyse."
 msgstr "분석이 끝날 때까지 기다리십시오."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:384
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:433
 #, python-brace-format
 msgid "Export écrit : {export_path}"
 msgstr "내보내기 기록: {export_path}"
@@ -2942,7 +2600,7 @@ msgstr "{ip}: {total}줄 - {detail}"
 msgid "{ip} est absente des log(s) sélectionné(s)."
 msgstr "선택한 로그에 {ip}이(가) 없습니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:220 src/omega_log/interfaces/tui/screens/rotate_screen.py:69 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:128
+#: src/omega_log/interfaces/tui/screens/help_screen.py:221 src/omega_log/interfaces/tui/screens/rotate_screen.py:69 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:128
 msgid "Sauvegardes planifiées"
 msgstr "예약 백업"
 
@@ -3021,15 +2679,15 @@ msgstr "이 로그에는 이미 예약 백업이 있습니다: 먼저 삭제하�
 msgid "Sauvegarde planifiée : {path} ({frequency})."
 msgstr "예약 백업: {path}({frequency})."
 
-#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:198
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:202
 msgid "Sélectionnez une automatisation."
 msgstr "자동화를 선택하세요."
 
-#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:202
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:206
 msgid "SUPPRIMER CETTE AUTOMATISATION ?"
 msgstr "이 자동화를 삭제할까요?"
 
-#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:203
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:207
 msgid "Le log ne sera plus sauvegardé automatiquement. Les sauvegardes déjà faites sont conservées."
 msgstr "이 로그는 더 이상 자동으로 백업되지 않습니다. 이미 만든 백업은 보관됩니다."
 
@@ -3041,11 +2699,11 @@ msgstr "디스크"
 msgid "Sauvegardes"
 msgstr "백업"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:171
+#: src/omega_log/interfaces/tui/screens/help_screen.py:172
 msgid "Voir et Traiter IP : chercher une IP précise"
 msgstr "IP 보기 및 처리: 특정 IP 검색"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:172
+#: src/omega_log/interfaces/tui/screens/help_screen.py:173
 msgid ""
 "Sans attendre qu'une IP apparaisse dans le top : saisissez-la (IPv4 ou\n"
 "IPv6) dans « Ou cherchez une IP précise », puis [b]Rechercher cette IP[/b]\n"
@@ -3071,7 +2729,7 @@ msgstr ""
 "- IP는 더 긴 IP와 혼동되지 않으며(1.1.1.1과\n"
 "  1.1.1.11), \"::\"로 끝나는 IPv6도 올바르게 찾습니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:221
+#: src/omega_log/interfaces/tui/screens/help_screen.py:222
 msgid ""
 "Rotate → [b]Sauvegardes planifiées[/b] : un log de la Bibliothèque est\n"
 "sauvegardé automatiquement tous les jours, toutes les semaines ou tous\n"
@@ -3101,7 +2759,7 @@ msgstr ""
 "- 보호된 로그(/var/log/...)는 비밀번호 없이 밤에\n"
 "  백업할 수 없습니다: 실패가 기록되고 로그 상태에 표시됩니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:260
+#: src/omega_log/interfaces/tui/screens/help_screen.py:261
 msgid ""
 "Contrôle en lecture seule des logs de la Bibliothèque, du disque qui les\n"
 "porte, des sauvegardes et des sauvegardes planifiées. Chaque log reçoit\n"
@@ -3133,7 +2791,7 @@ msgstr ""
 "- [b]JSON / HTML / TXT 내보내기[/b]: 보고서를 내보내기 언어로\n"
 "  var/exports/에 저장합니다."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:285
+#: src/omega_log/interfaces/tui/screens/help_screen.py:286
 msgid ""
 "La version d'omega-log est affichée dans la barre de titre.\n"
 "\n"
@@ -3168,3 +2826,245 @@ msgstr "예약 작업(systemd 타이머 또는 crontab 줄)이 제거됩니다. 
 #: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:171
 msgid "Aucune tâche planifiée à retirer."
 msgstr "제거할 예약 작업이 없습니다."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:306
+msgid ""
+"[b]1. Simple[/b] — suivi en direct avec parsing générique (horodatage,\n"
+"niveau, IP, service détecté). Le tableau garde tout le tampon (500\n"
+"lignes, 200 chargées à l'ouverture) avec ascenseurs vertical et\n"
+"horizontal ; il suit les nouvelles lignes seulement si vous êtes déjà en\n"
+"bas. À gauche, un tableau de bord qui défile (identique à omega-serv) :\n"
+"rendement, bande passante, statuts HTTP (dont refus 403 et 429), IPs\n"
+"uniques et top 5 IP, chemins les plus demandes et chemins en 404, santé\n"
+"et tampon. Une valeur que le log ne fournit pas s'affiche \"-\", jamais\n"
+"estimée."
+msgstr ""
+"[b]1. 단순[/b] — 범용 분석(타임스탬프, 수준, IP, 감지된 서비스)을 곁들인\n"
+"실시간 추적입니다. 표는 버퍼 전체(500행, 열 때 200행 불러옴)를\n"
+"유지하며 세로 및 가로 스크롤 막대가 있습니다. 이미 맨 아래에 있을 때만\n"
+"새 행을 따라갑니다. 왼쪽에는 스크롤되는 대시보드(omega-serv와 동일)가\n"
+"있습니다: 성능, 대역폭, HTTP 상태(403 및 429 거부 포함), 고유 IP와\n"
+"상위 5개 IP, 가장 많이 요청된 경로와 404 경로, 상태 및 버퍼. 로그가\n"
+"제공하지 않는 값은 \"-\"로 표시되며 절대 추정하지 않습니다."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:316
+msgid "Colonne Message : la ligne entière (l'ascenseur horizontal va jusqu'à sa fin), colorée avec les couleurs du thème : date, adresse IP, méthode, code HTTP (succès, redirection, erreur client, erreur serveur), User-Agent en italique ; référent, taille et identifiant de requête atténués. Sur un syslog : date, service, adresses et mots d'erreur ou d'avertissement."
+msgstr "메시지 열: 줄 전체(가로 스크롤바로 끝까지 이동)를 테마 색으로 표시: 날짜, IP 주소, 메서드, HTTP 코드(성공, 리디렉션, 클라이언트 오류, 서버 오류), User-Agent는 기울임꼴; 참조 페이지, 크기, 요청 식별자는 흐리게. syslog에서는 날짜, 서비스, 주소, 오류나 경고 단어."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:320
+msgid "Colonne Service : l'étiquette d'un syslog ou d'un journal système (sshd, nginx, kernel...). Un access log n'en a pas : « - »."
+msgstr "서비스 열: syslog나 시스템 저널의 태그(sshd, nginx, kernel...). access log에는 없습니다: “-”."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:322
+msgid "Colonne Code : statut HTTP d'un access log Combined/Common, coloré comme dans la colonne Message ; « - » pour un autre format (auth.log, syslog, fail2ban...)."
+msgstr "코드 열: Combined/Common access log의 HTTP 상태로, 메시지 열과 같은 색으로 표시합니다. 그 밖의 형식(auth.log, syslog, fail2ban...)은 “-”."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:324
+msgid "Colonne Durée : temps de traitement quand le format l'écrit en fin de ligne (directive Apache %D ou %T), coloré selon le seuil ; sinon « - »."
+msgstr "소요 시간 열: 형식이 줄 끝에 기록할 때의 처리 시간(Apache 지시어 %D 또는 %T)으로, 임계값에 따라 색을 입힙니다. 없으면 “-”."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:327
+msgid ""
+"[b]2. Classique[/b] — affiche les dernières lignes BRUTES du fichier\n"
+"(aucun parsing, aucune coloration), avec un bouton [b]Suivre en\n"
+"direct[/b] pour basculer en mode tail -f. Le plus simple et le plus\n"
+"fiable quel que soit le format du fichier.\n"
+"\n"
+"[b]3. lnav[/b] — encapsule le programme externe `lnav` dans un terminal\n"
+"dédié (pty), pour une fusion et une analyse croisée de PLUSIEURS\n"
+"fichiers à la fois (merge automatique par horodatage). Nécessite que\n"
+"`lnav` soit installé sur le système (sudo pacman -S lnav / sudo apt\n"
+"install lnav) — sans lui, ce viewer est proposé mais refuse de se\n"
+"lancer avec un message explicite. Raccourcis spécifiques pendant une\n"
+"session lnav :"
+msgstr ""
+"[b]2. 클래식[/b] — 파일의 마지막 행을 원본 그대로 표시합니다(분석 없음, 색\n"
+"없음). [b]실시간 추적[/b] 버튼으로 tail -f 모드로 전환할 수 있습니다. 파일\n"
+"형식과 상관없이 가장 단순하고 확실한 방법입니다.\n"
+"\n"
+"[b]3. lnav[/b] — 외부 프로그램 `lnav`를 전용 터미널(pty)에 감싸 넣어, 여러\n"
+"파일을 동시에 병합하고 교차 분석합니다(타임스탬프 기준 자동 병합).\n"
+"시스템에 `lnav`가 설치되어 있어야 합니다(sudo pacman -S lnav / sudo\n"
+"apt install lnav) — 없으면 이 뷰어는 목록에 나오지만 명확한 메시지와\n"
+"함께 실행을 거부합니다. lnav 세션 중 전용 단축키:"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:344
+msgid ""
+"[b]Élévation sudo ponctuelle[/b] — l'application ne tourne JAMAIS en\n"
+"root par défaut. Quand une action rencontre réellement une permission\n"
+"refusée (ex. /var/log/audit/, lisible seulement par root), une\n"
+"authentification sudo est demandée À CE moment précis, dans le\n"
+"terminal réel (l'interface se suspend brièvement) — jamais à l'avance,\n"
+"jamais pour des actions qui n'en ont pas besoin. Une fois authentifié\n"
+"pour un écran donné, les actions suivantes sur ce même écran réutilisent\n"
+"l'autorisation sans redemander.\n"
+"\n"
+"[b]États SUSPECT / ABSENT / OK[/b] — SUSPECT : fichier présent mais\n"
+"vide (très souvent un service qui route en réalité vers journald plutôt\n"
+"que vers un fichier classique). ABSENT : chemin introuvable au moment de\n"
+"l'affichage (supprimé, pas encore créé, ou chemin erroné). OK : fichier\n"
+"présent et non vide. Ces états sont INFORMATIFS, jamais bloquants —\n"
+"vous pouvez toujours ouvrir, exporter ou purger un log quel que soit son\n"
+"état affiché.\n"
+"\n"
+"[b]Sélection des logs[/b] — convention commune (Voir les logs, Favoris,\n"
+"Voir et Traiter IP, Statistiques, Rotate, Purger) : le tableau affiche\n"
+"un numéro par ligne. Simple clic : la ligne surlignée suffit. Double-clic\n"
+"ou Entrée : ajoute ou retire son numéro dans le champ (ex. \"1,3,4\").\n"
+"Vous pouvez aussi saisir les numéros à la main ; le champ, s'il est\n"
+"rempli, a priorité."
+msgstr ""
+"[b]일회성 sudo 권한 상승[/b] — 애플리케이션은 기본적으로 절대 root로 실행되지\n"
+"않습니다. 어떤 작업이 실제로 권한 거부에 부딪히면(예: root만 읽을 수\n"
+"있는 /var/log/audit/), 바로 그 순간 실제 터미널에서 sudo 인증을\n"
+"요청합니다(인터페이스가 잠시 중단됨) — 미리 요청하지 않으며, 필요 없는\n"
+"작업에는 절대 요청하지 않습니다. 한 화면에서 인증하면 같은 화면의 이후\n"
+"작업은 다시 묻지 않고 그 권한을 재사용합니다.\n"
+"\n"
+"[b]SUSPECT / ABSENT / OK 상태[/b] — SUSPECT: 파일은 있지만 비어 있음(대개\n"
+"서비스가 실제로는 일반 파일이 아니라 journald로 보내는 경우). ABSENT:\n"
+"표시 시점에 경로를 찾을 수 없음(삭제됨, 아직 만들어지지 않음, 또는\n"
+"잘못된 경로). OK: 파일이 있고 비어 있지 않음. 이 상태들은 참고용일 뿐\n"
+"절대 작업을 막지 않습니다 — 표시된 상태와 관계없이 언제든 로그를 열고,\n"
+"내보내고, 정리할 수 있습니다.\n"
+"\n"
+"[b]로그 선택[/b] — 공통 규칙(로그 보기, 즐겨찾기, IP 보기 및 처리, 통계,\n"
+"Rotate, 정리): 표에는 행마다 번호가 표시됩니다. 한 번 클릭: 강조된\n"
+"행이면 충분합니다. 더블 클릭 또는 Enter: 입력란에 해당 번호를\n"
+"추가하거나 제거합니다(예: \"1,3,4\"). 번호를 직접 입력할 수도 있으며,\n"
+"입력란이 채워져 있으면 입력란이 우선합니다."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:361
+msgid ""
+"[b]Dossier var/[/b] — tout l'état propre à l'application (bibliothèque,\n"
+"favoris, thème choisi, archives de sauvegarde, exports, journal\n"
+"applicatif) vit dans le var/ du dossier de\n"
+"l'application, d'où que vous la lanciez (ou $OMEGA_LOG_VAR_DIR si défini) — jamais dans votre\n"
+"dossier personnel. Ce dossier est entièrement local à la machine, ne\n"
+"contient aucun des LOGS SURVEILLÉS eux-mêmes (seulement des références\n"
+"vers leurs chemins)."
+msgstr ""
+"[b]var/ 폴더[/b] — 애플리케이션 고유의 모든 상태(라이브러리, 즐겨찾기, 선택한\n"
+"테마, 백업 아카이브, 내보내기, 애플리케이션 로그)는 어디서 실행하든\n"
+"애플리케이션 폴더의 var/에 있습니다($OMEGA_LOG_VAR_DIR이 정의되어\n"
+"있으면 그곳) — 절대 홈 폴더에 있지 않습니다. 이 폴더는 완전히 컴퓨터\n"
+"안에만 있으며, 감시 중인 로그 자체는 전혀 들어 있지 않습니다(그 경로에\n"
+"대한 참조만 있음)."
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
+msgid "Durée"
+msgstr "소요 시간"
+
+#: src/omega_log/application/use_cases/health_presentation.py:136
+msgid "Dans un dossier fermé à votre compte : visible seulement avec sudo. « Analyser avec sudo » le vérifie ; les viewers, Statistiques et Voir et Traiter IP demanderont votre mot de passe sudo."
+msgstr "계정에 닫혀 있는 폴더 안에 있습니다: sudo로만 볼 수 있습니다. “sudo로 분석”이 확인하며, 뷰어, 통계, IP 보기 및 처리는 sudo 암호를 묻습니다."
+
+#: src/omega_log/interfaces/tui/screens/library.py:100
+#, python-brace-format
+msgid "{count} log(s) référencé(s) — {stale} suspect(s), {missing} introuvable(s), {protected} protégé(s) (lus avec sudo)."
+msgstr "로그 {count}개 등록 — 의심 {stale}개, 찾을 수 없음 {missing}개, 보호됨 {protected}개(sudo로 읽음)."
+
+#: src/omega_log/interfaces/tui/screens/library.py:116
+msgid "LOG PROTÉGÉ"
+msgstr "보호된 로그"
+
+#: src/omega_log/interfaces/tui/screens/library.py:117
+#, python-brace-format
+msgid "{path} est dans un dossier fermé à votre compte. Confirmer : votre mot de passe sudo est demandé dans le terminal, omega-log vérifie que le fichier existe puis l'ajoute."
+msgstr "{path}은(는) 계정에 닫혀 있는 폴더 안에 있습니다. 확인하면 터미널에서 sudo 암호를 묻고, omega-log가 파일이 있는지 확인한 뒤 추가합니다."
+
+#: src/omega_log/interfaces/tui/screens/library.py:128
+#, python-brace-format
+msgid "Log non ajouté : {path}"
+msgstr "로그를 추가하지 않음: {path}"
+
+#: src/omega_log/interfaces/tui/screens/library.py:139
+msgid "Log protégé ajouté : il sera lu avec votre mot de passe sudo."
+msgstr "보호된 로그를 추가했습니다: sudo 암호로 읽습니다."
+
+#: src/omega_log/interfaces/tui/screens/library.py:141
+#, python-brace-format
+msgid "Ajouté, mais introuvable pour l'instant : {path}"
+msgstr "추가했지만 지금은 찾을 수 없음: {path}"
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:24
+msgid "PROTÉGÉ (sudo)"
+msgstr "보호됨(sudo)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:143
+#, python-brace-format
+msgid "Illisible par votre compte : le dossier {folder} est fermé (droits {mode}). Statistiques, Voir et Traiter IP et les viewers demanderont votre mot de passe sudo."
+msgstr "계정으로 읽을 수 없음: 폴더 {folder}이(가) 닫혀 있습니다(권한 {mode}). 통계, IP 보기 및 처리, 뷰어는 sudo 암호를 묻습니다."
+
+#: src/omega_log/application/use_cases/health_presentation.py:192
+msgid "Après « Analyser avec sudo », « Corriger avec sudo » peut vous donner la lecture seule de ce log, à vous seul : plus de mot de passe, et les sauvegardes planifiées pourront le lire la nuit."
+msgstr "“sudo로 분석” 후 “sudo로 수정”으로 이 로그의 읽기 전용 권한을 본인에게만 줄 수 있습니다. 암호가 더 필요 없고, 예약 백업도 밤에 읽을 수 있습니다."
+
+#: src/omega_log/application/use_cases/health_presentation.py:195
+msgid "« Corriger avec sudo » vous donne la lecture seule, à vous seul (ACL, setfacl) : propriétaire, groupe et droits restent les mêmes. Plus de mot de passe, et les sauvegardes planifiées pourront le lire la nuit."
+msgstr "“sudo로 수정”은 본인에게만 읽기 전용 권한을 줍니다(ACL, setfacl). 소유자, 그룹, 권한은 그대로입니다. 암호가 더 필요 없고, 예약 백업도 밤에 읽을 수 있습니다."
+
+#: src/omega_log/application/use_cases/health_presentation.py:199
+msgid "Log protégé : la sauvegarde de nuit tourne sans mot de passe. Santé des logs → « Corriger avec sudo » vous donne la lecture seule de ce log ; sinon, sauvegardez-le depuis Rotate."
+msgstr "보호된 로그: 야간 백업은 암호 없이 실행됩니다. 로그 상태 → “sudo로 수정”으로 이 로그의 읽기 전용 권한을 받으세요. 아니면 Rotate에서 백업하세요."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:370
+msgid "[b]Logs protégés — PROTÉGÉ (sudo)[/b] — un log que votre compte ne peut pas lire : droits du fichier, ou dossier fermé comme /var/log/lighttpd/ (sans sudo, omega-log ne peut même pas voir s'il existe : ni « ABSENT » ni « OK »). Bibliothèque → Ajouter : votre mot de passe sudo est demandé dans le terminal, omega-log vérifie que le fichier existe puis l'ajoute ; le Registre le propose aussi à l'import. Ensuite, chaque module (viewers, lnav, Voir et Traiter IP, Statistiques, Rotate, Purger, Santé des logs → « Analyser avec sudo ») demande votre mot de passe au moment de le lire. Les sauvegardes planifiées tournent la nuit sans mot de passe : pour elles, Santé des logs → « Corriger avec sudo » donne la lecture seule à votre compte (ACL), sans rien changer d'autre."
+msgstr "[b]보호된 로그 — 보호됨(sudo)[/b] — 계정으로 읽을 수 없는 로그입니다: 파일 권한, 또는 /var/log/lighttpd/ 같은 닫힌 폴더 때문입니다(sudo 없이는 omega-log가 존재 여부조차 알 수 없습니다: “ABSENT”도 “OK”도 아님). 라이브러리 → 추가: 터미널에서 sudo 암호를 묻고, omega-log가 파일이 있는지 확인한 뒤 추가합니다. 레지스트리도 가져오기 대상으로 보여 줍니다. 그다음 각 모듈(뷰어, lnav, IP 보기 및 처리, 통계, Rotate, 정리, 로그 상태 → “sudo로 분석”)이 읽을 때 암호를 묻습니다. 예약 백업은 밤에 암호 없이 실행되므로, 로그 상태 → “sudo로 수정”으로 계정에 읽기 전용 권한(ACL)을 주세요. 다른 것은 바뀌지 않습니다."
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:372
+msgid "RENDRE LISIBLE AVEC SUDO ?"
+msgstr "SUDO로 읽을 수 있게 할까요?"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:373
+#, python-brace-format
+msgid ""
+"Lecture seule pour votre compte ({user}) ; propriétaire, groupe et droits ne changent pas. Commandes lancées après votre mot de passe :\n"
+"{commands}"
+msgstr ""
+"계정({user})에 읽기 전용 권한을 줍니다. 소유자, 그룹, 권한은 바뀌지 않습니다. 암호 입력 후 실행되는 명령:\n"
+"{commands}"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:391
+#, python-brace-format
+msgid "Lecture accordée à votre compte : {path}."
+msgstr "계정에 읽기 권한을 주었습니다: {path}."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:193
+#, python-brace-format
+msgid "Log protégé : la sauvegarde de nuit, sans mot de passe, ne pourra pas le lire. Santé des logs → « Corriger avec sudo » vous donne la lecture seule de {path}."
+msgstr "보호된 로그: 암호 없는 야간 백업은 이 로그를 읽을 수 없습니다. 로그 상태 → “sudo로 수정”으로 {path}의 읽기 전용 권한을 받으세요."
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:151 src/omega_log/interfaces/tui/screens/export_screen.py:55 src/omega_log/interfaces/tui/screens/help_screen.py:429 src/omega_log/interfaces/tui/screens/log_health_screen.py:137
+msgid "Voir les exports"
+msgstr "내보내기 보기"
+
+#: src/omega_log/interfaces/tui/screens/exports.py:49
+#, python-brace-format
+msgid "Fichier trop volumineux pour être lu ici : {path}"
+msgstr "파일이 너무 커서 여기서 읽을 수 없음: {path}"
+
+#: src/omega_log/interfaces/tui/screens/exports.py:69
+msgid "EXPORTS"
+msgstr "내보내기"
+
+#: src/omega_log/interfaces/tui/screens/exports.py:70
+msgid "Pas de navigateur dans cette session (serveur, connexion SSH) : les exports sont listés et lus ici. Choisissez une ligne (Entrée) pour la lire."
+msgstr "이 세션에는 브라우저가 없습니다(서버, SSH 연결): 내보내기를 여기에 나열하고 여기서 읽습니다. 줄을 선택해(Enter) 읽으세요."
+
+#: src/omega_log/interfaces/tui/screens/exports.py:78
+msgid "Lire"
+msgstr "읽기"
+
+#: src/omega_log/interfaces/tui/screens/exports.py:93
+msgid "Aucun export pour l'instant."
+msgstr "아직 내보내기가 없습니다."
+
+#: src/omega_log/interfaces/tui/screens/exports.py:121
+#, python-brace-format
+msgid "Dossier des exports ouvert dans le navigateur : {path}"
+msgstr "내보내기 폴더를 브라우저에서 열었습니다: {path}"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:381
+msgid "[b]Voir les exports[/b] — Exporter, Statistiques, Santé des logs et cette Aide ont un bouton « Voir les exports » : le dossier des exports (var/exports/) s'ouvre dans votre navigateur, chaque export se lit d'un clic, sans quitter omega-log. Sans navigateur (serveur, connexion SSH), omega-log liste les exports et les lit lui-même (une page HTML est ramenée à son texte)."
+msgstr "[b]내보내기 보기[/b] — 내보내기, 통계, 로그 상태와 이 도움말에는 “내보내기 보기” 버튼이 있습니다. 내보내기 폴더(var/exports/)가 브라우저에서 열리고, omega-log를 떠나지 않고 각 내보내기를 한 번 클릭으로 읽을 수 있습니다. 브라우저가 없으면(서버, SSH 연결) omega-log가 내보내기 목록을 보여 주고 직접 읽습니다(HTML 페이지는 텍스트만 표시)."

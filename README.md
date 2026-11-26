@@ -8,18 +8,18 @@
 
 **Gestionnaire et visualisateur de logs serveur**
 
-> Élaboré par [kraynux](https://github.com/kraynux) pour [Omega-Server](https://kraynux.snake-mackarel.ts.net)   
+> Élaboré par [kraynux](https://github.com/kraynux) pour [Omega-Server](https://kraynux.snake-mackarel.ts.net) · [Page officielle](https://kraynux.snake-mackarel.ts.net/omega-log/) · [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
 
-Page officielle : [OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/) &nbsp; Aperçu : [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![HTML](https://img.shields.io/badge/HTML-5-E34F26.svg)](https://developer.mozilla.org/docs/Web/HTML)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-F7DF1E.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
+![Interface](https://img.shields.io/badge/Interface-CLI%20%2B%20TUI-cyan.svg)
+[![Textual](https://img.shields.io/badge/Textual-TUI-5A5AFB.svg)](https://textual.textualize.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux-informational.svg)](https://www.linux.org/)
-[![Interface](https://img.shields.io/badge/Interface-Textual%20TUI-cyan.svg)](https://github.com/Textualize/textual)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 🌐 Interface, documentation et exports disponibles en **17 langues**.  
-**Langues :**
-<img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](docs/translation/en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](docs/translation/es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](docs/translation/pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](docs/translation/it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](docs/translation/de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](docs/translation/nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](docs/translation/pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](docs/translation/ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](docs/translation/zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](docs/translation/vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](docs/translation/th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](docs/translation/id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](docs/translation/ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](docs/translation/ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](docs/translation/hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](docs/translation/ar/README.md)
+**Langues :** <img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](docs/translation/en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](docs/translation/es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](docs/translation/pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](docs/translation/it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](docs/translation/de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](docs/translation/nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](docs/translation/pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](docs/translation/ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](docs/translation/zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](docs/translation/vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](docs/translation/th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](docs/translation/id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](docs/translation/ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](docs/translation/ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](docs/translation/hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](docs/translation/ar/README.md)
 
 ---
 
@@ -82,7 +82,7 @@ sudo apt install lnav
 ### Installation
 
 ```bash
-[ -d omega-log ] && echo "ℹ️ Déjà extrait ici, étape ignorée." || tar -xzf omega-log-1.6.0.tar.gz
+[ -d omega-log ] && echo "ℹ️ Déjà extrait ici, étape ignorée." || tar -xzf omega-log-1.6.1.tar.gz
 cd omega-log/
 chmod +x install.sh
 ./install.sh
@@ -155,7 +155,7 @@ python -m omega_log rotate run-automations
 
 | Variable | Effet |
 |---|---|
-| `OMEGA_LOG_VAR_DIR` | Change l'emplacement du dossier d'état applicatif (`./var` par défaut, relatif au dossier de lancement) |
+| `OMEGA_LOG_VAR_DIR` | Change l'emplacement du dossier d'état applicatif (par défaut `var/` dans le dossier de l'application, d'où qu'on la lance) |
 | `OMEGA_LOG_LANG` | Force la langue de l'interface pour la session (ex. `en`, `de`, `ja`) sans changer le réglage enregistré |
 
 ## 4. Fonctionnalités
@@ -163,14 +163,14 @@ python -m omega_log rotate run-automations
 | Écran | Description |
 |---|---|
 | **Registre des capacités** | Détecte les services actifs sur la machine et propose l'import de leurs logs connus, au détail ou en totalité. Scan manuel d'un dossier en complément. |
-| **Bibliothèque** | Hub central référençant tous les logs à traiter — alimentée par le Registre, par import manuel, par les logs connus d'Omega-Serv ou par une copie récupérée en SSH. |
+| **Bibliothèque** | Hub central référençant tous les logs à traiter — alimentée par le Registre, par import manuel, par les logs connus d'Omega-Serv ou par une copie récupérée en SSH. Un log protégé (dossier fermé comme `/var/log/lighttpd/`) est vérifié puis lu avec votre mot de passe sudo. |
 | **Voir les logs** | Sélection d'un ou plusieurs logs de la Bibliothèque + choix du viewer (1 log → les 3 viewers ; 2+ logs → `lnav` uniquement). |
 | **Favoris** | Combinaisons logs + viewer enregistrées sous un nom, pour un lancement direct. |
 | **Voir et Traiter IP** | Top 10 des IP par période (24h/7j/30j/tout), ou recherche d'une IP précise (IPv4 ou IPv6), et suppression ciblée d'une IP d'un ou plusieurs logs. |
 | **Statistiques (accès)** | Volume, IPs uniques, taux d'erreur, top IP, répartition horaire — export JSON/HTML à 5 thèmes. |
 | **Rotate** | Sauvegarde compressée d'un log + rétention automatique des archives excédentaires + restauration (fusion ou écrasement, avec sauvegarde de sécurité). **Sauvegardes planifiées** : un log sauvegardé chaque jour, semaine ou mois, exécuté chaque nuit par un timer systemd ou une ligne de votre crontab (OpenRC, runit), sous votre compte, jamais root. |
 | **Purger** | Vide le contenu d'un log (troncature en place, sûre pour un service qui l'a encore ouvert) ou supprime complètement un ou plusieurs fichiers — toujours avec confirmation. |
-| **Exporter** | Export de la liste des archives (Rotate) en JSON ou HTML à thème. |
+| **Exporter** | Export de la liste des archives (Rotate) en JSON ou HTML à thème. « Voir les exports » (ici, dans Statistiques, Santé des logs et l'Aide) ouvre le dossier des exports dans le navigateur ; sans navigateur, les exports sont listés et lus dans omega-log. |
 | **Santé des logs** | Contrôle en lecture seule des logs de la Bibliothèque, du disque, des sauvegardes et des sauvegardes planifiées : droits, logs muets ou abîmés, dates, logrotate, jours avant disque plein, avec le geste à faire. Correction des droits trop ouverts (avec sudo si besoin), export JSON/HTML/TXT. |
 | **Options** | Thème, profil de rendu, langue de l'interface et langue des exports (17 langues), purge des dossiers applicatifs (exports/screenshots). |
 

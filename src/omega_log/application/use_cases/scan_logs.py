@@ -39,6 +39,7 @@ from pathlib import Path
 
 from omega_log.core.capability_registry import CapabilityRegistry
 from omega_log.domain.entities.log_file import LogFile
+from omega_log.infrastructure.privileged.file_access import probe_file
 from omega_log.infrastructure.probe.log_path_catalog import (
     DYNAMIC_SERVICE_LOG_PATHS,
     SERVICE_LOG_PATHS,
@@ -77,20 +78,18 @@ def refresh_log_file(path: str, access: str = "file", service_id: str | None = N
     une donnee figee au moment d'un scan ou d'un ajout anterieur (voir
     LibraryRecord, annuaire §0). Utilisee par scan_logs() ci-dessous ET
     par application/use_cases/library.py pour rafraichir l'affichage de
-    la Bibliotheque a chaque ouverture."""
-    try:
-        stat = Path(path).stat()
-    except OSError:
-        return LogFile(path=path, access=access, service_id=service_id, exists=False, note=note)
-
+    la Bibliotheque a chaque ouverture. Un log dans un dossier ferme est « protege », jamais « absent »
+    (demande 2026-11-26, infrastructure/privileged/file_access.py)."""
+    probe = probe_file(path)
     return LogFile(
         path=path,
         access=access,
         service_id=service_id,
-        exists=True,
-        size_bytes=stat.st_size,
-        modified_at=datetime.fromtimestamp(stat.st_mtime),
+        exists=probe.exists,
+        size_bytes=probe.size,
+        modified_at=datetime.fromtimestamp(probe.modified_at) if probe.modified_at is not None else None,
         note=note,
+        protected=probe.protected,
     )
 
 
@@ -157,8 +156,12 @@ def scan_directory(directory: Path) -> list[LogFile]:
     if not directory.is_dir():
         return []
 
+    try:
+        entries = sorted(directory.iterdir())
+    except OSError:  # dossier ferme a votre compte : rien a lister sans sudo (jamais un plantage)
+        return []
     results: list[LogFile] = []
-    for entry in sorted(directory.iterdir()):
+    for entry in entries:
         if entry.is_dir() or entry.is_symlink() and not entry.exists():
             continue
         if not _looks_like_log_file(entry.name):
@@ -190,7 +193,8 @@ def scan_logs(*, registry: CapabilityRegistry | None = None) -> ScanLogsResult:
     not_found: list[LogFile] = []
 
     def _record(log_file: LogFile) -> None:
-        if log_file.exists:
+        # Dossier ferme (ex. /var/log/lighttpd/, demande 2026-11-26) : propose a l'import, lu avec sudo.
+        if log_file.exists or log_file.protected:
             discovered.append(log_file)
         else:
             not_found.append(log_file)

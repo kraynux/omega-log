@@ -28,6 +28,7 @@ from omega_log.application.use_cases._log_reading import (
 from omega_log.domain.logs.parser import parse_log_line
 from omega_log.domain.logs.stats_accumulator import StatsAccumulator
 from omega_log.infrastructure.privileged.elevation import PermissionRequiredError
+from omega_log.infrastructure.privileged.file_access import file_size
 from omega_log.infrastructure.privileged.privileged_file_ops import read_file_privileged
 
 if TYPE_CHECKING:
@@ -76,6 +77,12 @@ def plan_read_tasks(
         try:
             size = os.path.getsize(path)
             readable = os.access(path, os.R_OK)
+        except PermissionError:  # dossier ferme (ex. /var/log/lighttpd/, 2026-11-26) : lu avec sudo, jamais saute
+            if runner is None:
+                raise PermissionRequiredError(path) from None
+            tasks.append(ReadTask(path, period=period, cutoff=cutoff, privileged=True,
+                                  weight=file_size(path, runner) or 1))
+            continue
         except OSError:
             continue  # absent : rien a lire (meme comportement qu'avant)
         if not readable:

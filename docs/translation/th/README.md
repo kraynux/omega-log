@@ -8,18 +8,18 @@
 
 **ตัวจัดการและตัวดูล็อกของเซิร์ฟเวอร์**
 
-> สร้างโดย [kraynux](https://github.com/kraynux) สำหรับ [Omega-Server](https://kraynux.snake-mackarel.ts.net)   
+> สร้างโดย [kraynux](https://github.com/kraynux) สำหรับ [Omega-Server](https://kraynux.snake-mackarel.ts.net) · [หน้าทางการ](https://kraynux.snake-mackarel.ts.net/omega-log/translation/th/) · [ภาพหน้าจอ](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
 
-หน้าทางการ: [OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/translation/th/) &nbsp; ตัวอย่าง: [ภาพหน้าจอ](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![HTML](https://img.shields.io/badge/HTML-5-E34F26.svg)](https://developer.mozilla.org/docs/Web/HTML)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-F7DF1E.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
+![Interface](https://img.shields.io/badge/Interface-CLI%20%2B%20TUI-cyan.svg)
+[![Textual](https://img.shields.io/badge/Textual-TUI-5A5AFB.svg)](https://textual.textualize.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux-informational.svg)](https://www.linux.org/)
-[![Interface](https://img.shields.io/badge/Interface-Textual%20TUI-cyan.svg)](https://github.com/Textualize/textual)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 
 🌐 อินเทอร์เฟซ เอกสาร และการส่งออก มีให้ใช้ใน **17 ภาษา**  
-**ภาษา:**
-<img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
+**ภาษา:** <img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
 
 ---
 
@@ -82,7 +82,7 @@ sudo apt install lnav
 ### การติดตั้ง
 
 ```bash
-[ -d omega-log ] && echo "ℹ️ แตกไฟล์ไว้ที่นี่แล้ว ข้ามขั้นตอนนี้" || tar -xzf omega-log-1.6.0.tar.gz
+[ -d omega-log ] && echo "ℹ️ แตกไฟล์ไว้ที่นี่แล้ว ข้ามขั้นตอนนี้" || tar -xzf omega-log-1.6.1.tar.gz
 cd omega-log/
 chmod +x install.sh
 ./install.sh
@@ -155,7 +155,7 @@ python -m omega_log rotate run-automations
 
 | ตัวแปร | ผล |
 |---|---|
-| `OMEGA_LOG_VAR_DIR` | เปลี่ยนตำแหน่งของโฟลเดอร์สถานะของแอปพลิเคชัน (ค่าเริ่มต้น `./var` สัมพัทธ์กับโฟลเดอร์ที่เปิดใช้งาน) |
+| `OMEGA_LOG_VAR_DIR` | เปลี่ยนตำแหน่งของโฟลเดอร์สถานะของแอปพลิเคชัน (ค่าเริ่มต้น `var/` ในโฟลเดอร์ของแอปพลิเคชัน ไม่ว่าจะเปิดจากที่ใด) |
 | `OMEGA_LOG_LANG` | บังคับภาษาของอินเทอร์เฟซสำหรับเซสชันนั้น (เช่น `en`, `de`, `ja`) โดยไม่เปลี่ยนค่าที่บันทึกไว้ |
 
 ## 4. ฟังก์ชัน
@@ -163,14 +163,14 @@ python -m omega_log rotate run-automations
 | หน้าจอ | คำอธิบาย |
 |---|---|
 | **ทะเบียนความสามารถ** | ตรวจหาบริการที่ทำงานอยู่บนเครื่องและเสนอให้นำเข้าล็อกที่รู้จักของบริการเหล่านั้น ทีละรายการหรือทั้งหมด พร้อมการสแกนโฟลเดอร์ด้วยตนเองเพิ่มเติม |
-| **คลัง** | ศูนย์กลางที่อ้างอิงล็อกทั้งหมดที่ต้องจัดการ — ป้อนข้อมูลจากทะเบียน จากการนำเข้าด้วยตนเอง จากล็อกที่รู้จักของ Omega-Serv หรือจากสำเนาที่ดึงมาผ่าน SSH |
+| **คลัง** | ศูนย์กลางที่อ้างอิงล็อกทั้งหมดที่ต้องจัดการ — ป้อนข้อมูลจากทะเบียน จากการนำเข้าด้วยตนเอง จากล็อกที่รู้จักของ Omega-Serv หรือจากสำเนาที่ดึงมาผ่าน SSH ล็อกที่ป้องกันไว้ (โฟลเดอร์ที่ปิดไว้เช่น `/var/log/lighttpd/`) จะตรวจสอบและอ่านด้วยรหัสผ่าน sudo ของคุณ |
 | **ดูล็อก** | เลือกล็อกหนึ่งหรือหลายรายการจากคลัง + เลือกตัวดู (1 ล็อก → ตัวดูทั้ง 3 แบบ; 2 ล็อกขึ้นไป → `lnav` เท่านั้น) |
 | **รายการโปรด** | ชุดล็อก + ตัวดู ที่บันทึกไว้ภายใต้ชื่อหนึ่ง เพื่อเปิดใช้งานได้ทันที |
 | **ดูและจัดการ IP** | 10 อันดับ IP ตามช่วงเวลา (24 ชม./7 วัน/30 วัน/ทั้งหมด) หรือค้นหา IP ที่ระบุ (IPv4 หรือ IPv6) และลบ IP แบบเจาะจงออกจากล็อกหนึ่งหรือหลายไฟล์ |
 | **สถิติ (การเข้าถึง)** | ปริมาณ IP ที่ไม่ซ้ำ อัตราข้อผิดพลาด IP อันดับต้น การกระจายรายชั่วโมง — ส่งออก JSON/HTML ได้ 5 ธีม |
 | **Rotate** | สำรองล็อกแบบบีบอัด + การเก็บรักษาอัตโนมัติที่ลบไฟล์เก็บถาวรส่วนเกิน + การกู้คืน (ผสานหรือเขียนทับ พร้อมการสำรองเพื่อความปลอดภัย) **การสำรองข้อมูลตามกำหนด**: สำรองล็อกทุกวัน ทุกสัปดาห์ หรือทุกเดือน ทำงานทุกคืนโดย timer ของ systemd หรือบรรทัดหนึ่งใน crontab ของคุณ (OpenRC, runit) ภายใต้บัญชีของคุณ ไม่ใช่ root เด็ดขาด |
 | **ล้าง** | ล้างเนื้อหาของล็อก (ตัดทอนในที่เดิม ปลอดภัยสำหรับบริการที่ยังเปิดไฟล์อยู่) หรือลบไฟล์หนึ่งหรือหลายไฟล์ทั้งหมด — ต้องยืนยันทุกครั้ง |
-| **ส่งออก** | ส่งออกรายการไฟล์เก็บถาวร (Rotate) เป็น JSON หรือ HTML ตามธีม |
+| **ส่งออก** | ส่งออกรายการไฟล์เก็บถาวร (Rotate) เป็น JSON หรือ HTML ตามธีม “ดูไฟล์ส่งออก” (ที่นี่ ในสถิติ สุขภาพล็อก และวิธีใช้) จะเปิดโฟลเดอร์ส่งออกในเบราว์เซอร์ หากไม่มีเบราว์เซอร์ จะแสดงรายการและอ่านไฟล์ส่งออกใน omega-log |
 | **สุขภาพล็อก** | ตรวจสอบแบบอ่านอย่างเดียวสำหรับล็อกในคลัง ดิสก์ การสำรอง และการสำรองข้อมูลตามกำหนด: สิทธิ์ ล็อกที่เงียบหรือเสียหาย วันที่ logrotate จำนวนวันก่อนดิสก์เต็ม พร้อมสิ่งที่ต้องทำ แก้ไขสิทธิ์ที่เปิดกว้างเกินไป (ใช้ sudo หากจำเป็น) ส่งออก JSON/HTML/TXT |
 | **ตัวเลือก** | ธีม โปรไฟล์การแสดงผล ภาษาของอินเทอร์เฟซและภาษาของการส่งออก (17 ภาษา) ล้างโฟลเดอร์ของแอปพลิเคชัน (exports/screenshots) |
 

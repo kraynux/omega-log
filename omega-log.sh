@@ -7,12 +7,7 @@
 # plan_omega_log.md §5/§5.1 : prefere la delegation par groupe systeme a
 # l'elevation complete), meme choix que omega-serv.
 # Dispatch TUI (aucun argument) / CLI (au moins un argument) gere par
-# __main__.py - meme patron que le reste de la suite omega-. Pas de
-# OMEGA_LOG_VAR_DIR a exporter ici : la racine var/ par defaut est relative
-# au repertoire courant d'execution (infrastructure/config/paths.py::
-# resolve_var_dir()), pas a l'emplacement du script - comportement voulu,
-# cf. plan_omega_log.md §5 (meme convention que CHECK/FIRE/TRACK, a la
-# difference de SERV).
+# __main__.py - meme patron que le reste de la suite omega-.
 # ==============================================================================
 
 set -e
@@ -47,6 +42,12 @@ if ! "$VENV_DIR/bin/python" -c "import omega_log" 2>/dev/null; then
     fi
     "$VENV_DIR/bin/pip" install -q -e "$SCRIPT_DIR"
 fi
+
+# Ancrer var/ (Bibliotheque, favoris, reglages, app.log, exports) sur l'emplacement du script, jamais sur le
+# repertoire courant du shell (meme ligne qu'omega-check et omega-track). Sans elle, `log` lance depuis / voulait
+# ecrire /var/app.log (PermissionError, constate sur hpc-109 le 2026-11-26), et lance depuis un autre dossier il
+# ouvrait une Bibliotheque vide. $OMEGA_LOG_VAR_DIR, s'il est deja defini, reste prioritaire.
+export OMEGA_LOG_VAR_DIR="${OMEGA_LOG_VAR_DIR:-$SCRIPT_DIR/var}"
 
 # shellcheck disable=SC1091
 source "$VENV_DIR/bin/activate"

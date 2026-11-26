@@ -29,6 +29,7 @@ from textual.widgets import Button, Collapsible, Footer, Header, Select, Static
 from omega_log.infrastructure.exporters.html_exporter import export_help_html
 from omega_log.interfaces.tui.screens._base import OmegaScreen
 from omega_log.interfaces.tui.screens.contact_support_screen import ContactSupportScreen
+from omega_log.interfaces.tui.screens.exports import view_exports
 from omega_log.shared.i18n import LANGUAGE, N_, _, translating_as
 
 if TYPE_CHECKING:
@@ -302,53 +303,91 @@ _SECTIONS: tuple[tuple[str, str], ...] = (
     ),
 )
 
-_VIEWERS = N_("[b]1. Simple[/b] — suivi en direct avec parsing générique (horodatage,\nniveau, "
-             "IP, service détecté). Le tableau garde tout le tampon (500\nlignes, 200 chargées "
-             "à l'ouverture) avec ascenseurs vertical et\nhorizontal ; il suit les nouvelles "
-             "lignes seulement si vous êtes déjà en\nbas. À gauche, un tableau de bord qui "
-             "défile (identique à omega-serv) :\nrendement, bande passante, statuts HTTP (dont "
-             "refus 403 et 429), IPs\nuniques et top 5 IP, chemins les plus demandes et "
-             "chemins en 404, santé\net tampon. Une valeur que le log ne fournit pas s'affiche "
-             "\"-\", jamais\nestimée. Pour un access log HTTP reconnu\n(format "
-             "Combined/Common), deux colonnes supplémentaires apparaissent\nautomatiquement : "
-             "[b]Code[/b] (statut HTTP, coloré 2xx vert/3xx cyan/\n4xx jaune/5xx rouge) et "
-             "[b]Timeout[/b] (latence si le format source la\nfournit, coloré selon le seuil) "
-             "— ces colonnes affichent \"-\" pour tout\nce qui n'est pas un format HTTP "
-             "reconnu (auth.log, syslog, fail2ban...).\n\n[b]2. Classique[/b] — affiche les "
-             "dernières lignes BRUTES du fichier\n(aucun parsing, aucune coloration), avec un "
-             "bouton [b]Suivre en\ndirect[/b] pour basculer en mode tail -f. Le plus simple et "
-             "le plus\nfiable quel que soit le format du fichier.\n\n[b]3. lnav[/b] — "
-             "encapsule le programme externe `lnav` dans un terminal\ndédié (pty), pour une "
-             "fusion et une analyse croisée de PLUSIEURS\nfichiers à la fois (merge "
-             "automatique par horodatage). Nécessite que\n`lnav` soit installé sur le système "
-             "(sudo pacman -S lnav / sudo apt\ninstall lnav) — sans lui, ce viewer est proposé "
-             "mais refuse de se\nlancer avec un message explicite. Raccourcis spécifiques "
-             "pendant une\nsession lnav :")
+_VIEWERS_SIMPLE = N_("[b]1. Simple[/b] — suivi en direct avec parsing générique (horodatage,\nniveau, IP, "
+                     "service détecté). Le tableau garde tout le tampon (500\nlignes, 200 chargées à "
+                     "l'ouverture) avec ascenseurs vertical et\nhorizontal ; il suit les nouvelles lignes "
+                     "seulement si vous êtes déjà en\nbas. À gauche, un tableau de bord qui défile "
+                     "(identique à omega-serv) :\nrendement, bande passante, statuts HTTP (dont refus 403 "
+                     "et 429), IPs\nuniques et top 5 IP, chemins les plus demandes et chemins en 404, "
+                     "santé\net tampon. Une valeur que le log ne fournit pas s'affiche \"-\", jamais\nestimée.")
+_VIEWERS_COLUMNS = (
+    # Colonnes du viewer Simple, couleurs du theme comme omega-serv (porte le 2026-11-26, demande). La phrase
+    # « Colonne Message » est celle d'omega-serv, mot pour mot (memes traductions).
+    N_("Colonne Message : la ligne entière (l'ascenseur horizontal va jusqu'à sa fin), colorée avec les "
+       "couleurs du thème : date, adresse IP, méthode, code HTTP (succès, redirection, erreur client, erreur "
+       "serveur), User-Agent en italique ; référent, taille et identifiant de requête atténués. Sur un "
+       "syslog : date, service, adresses et mots d'erreur ou d'avertissement."),
+    N_("Colonne Service : l'étiquette d'un syslog ou d'un journal système (sshd, nginx, kernel...). Un access "
+       "log n'en a pas : « - »."),
+    N_("Colonne Code : statut HTTP d'un access log Combined/Common, coloré comme dans la colonne Message ; "
+       "« - » pour un autre format (auth.log, syslog, fail2ban...)."),
+    N_("Colonne Durée : temps de traitement quand le format l'écrit en fin de ligne (directive Apache %D ou "
+       "%T), coloré selon le seuil ; sinon « - »."),
+)
+_VIEWERS_OTHERS = N_("[b]2. Classique[/b] — affiche les dernières lignes BRUTES du fichier\n(aucun "
+                     "parsing, aucune coloration), avec un bouton [b]Suivre en\ndirect[/b] pour basculer "
+                     "en mode tail -f. Le plus simple et le plus\nfiable quel que soit le format du "
+                     "fichier.\n\n[b]3. lnav[/b] — encapsule le programme externe `lnav` dans un "
+                     "terminal\ndédié (pty), pour une fusion et une analyse croisée de PLUSIEURS\nfichiers "
+                     "à la fois (merge automatique par horodatage). Nécessite que\n`lnav` soit installé "
+                     "sur le système (sudo pacman -S lnav / sudo apt\ninstall lnav) — sans lui, ce viewer "
+                     "est proposé mais refuse de se\nlancer avec un message explicite. Raccourcis "
+                     "spécifiques pendant une\nsession lnav :")
+
+
+def _viewers_text() -> str:
+    """Les 3 viewers, traduits morceau par morceau (le paragraphe des colonnes a change le 2026-11-26)."""
+    columns = "\n".join(_(line) for line in _VIEWERS_COLUMNS)
+    return f"{_(_VIEWERS_SIMPLE)}\n{columns}\n\n{_(_VIEWERS_OTHERS)}"
+
 
 _GLOSSARY = N_("[b]Élévation sudo ponctuelle[/b] — l'application ne tourne JAMAIS en\nroot par "
-              "défaut. Quand une action rencontre réellement une permission\nrefusée (ex. "
-              "/var/log/audit/, lisible seulement par root), une\nauthentification sudo est "
-              "demandée À CE moment précis, dans le\nterminal réel (l'interface se suspend "
-              "brièvement) — jamais à l'avance,\njamais pour des actions qui n'en ont pas "
-              "besoin. Une fois authentifié\npour un écran donné, les actions suivantes sur ce "
-              "même écran réutilisent\nl'autorisation sans redemander.\n\n[b]États SUSPECT / "
-              "ABSENT / OK[/b] — SUSPECT : fichier présent mais\nvide (très souvent un service "
-              "qui route en réalité vers journald plutôt\nque vers un fichier classique). "
-              "ABSENT : chemin introuvable au moment de\nl'affichage (supprimé, pas encore "
-              "créé, ou chemin erroné). OK : fichier\nprésent et non vide. Ces états sont "
-              "INFORMATIFS, jamais bloquants —\nvous pouvez toujours ouvrir, exporter ou "
-              "purger un log quel que soit son\nétat affiché.\n\n[b]Sélection des logs[/b] — "
-              "convention commune (Voir les logs, Favoris,\nVoir et Traiter IP, Statistiques, "
-              "Rotate, Purger) : le tableau affiche\nun numéro par ligne. Simple clic : la "
-              "ligne surlignée suffit. Double-clic\nou Entrée : ajoute ou retire son numéro "
-              "dans le champ (ex. \"1,3,4\").\nVous pouvez aussi saisir les numéros à la main "
-              "; le champ, s'il est\nrempli, a priorité.\n\n[b]Dossier var/[/b] — tout l'état "
-              "propre à l'application (bibliothèque,\nfavoris, thème choisi, archives de "
-              "sauvegarde, exports, journal\napplicatif) vit dans ./var/, relatif au dossier "
-              "où vous lancez\nl'application (ou $OMEGA_LOG_VAR_DIR si défini) — jamais dans "
-              "votre\ndossier personnel. Ce dossier est entièrement local à la machine, "
-              "ne\ncontient aucun des LOGS SURVEILLÉS eux-mêmes (seulement des "
-              "références\nvers leurs chemins).")
+               "défaut. Quand une action rencontre réellement une permission\nrefusée (ex. "
+               "/var/log/audit/, lisible seulement par root), une\nauthentification sudo est "
+               "demandée À CE moment précis, dans le\nterminal réel (l'interface se suspend "
+               "brièvement) — jamais à l'avance,\njamais pour des actions qui n'en ont pas besoin. "
+               "Une fois authentifié\npour un écran donné, les actions suivantes sur ce même écran "
+               "réutilisent\nl'autorisation sans redemander.\n\n[b]États SUSPECT / ABSENT / OK[/b] — "
+               "SUSPECT : fichier présent mais\nvide (très souvent un service qui route en réalité "
+               "vers journald plutôt\nque vers un fichier classique). ABSENT : chemin introuvable au "
+               "moment de\nl'affichage (supprimé, pas encore créé, ou chemin erroné). OK : "
+               "fichier\nprésent et non vide. Ces états sont INFORMATIFS, jamais bloquants —\nvous "
+               "pouvez toujours ouvrir, exporter ou purger un log quel que soit son\nétat "
+               "affiché.\n\n[b]Sélection des logs[/b] — convention commune (Voir les logs, "
+               "Favoris,\nVoir et Traiter IP, Statistiques, Rotate, Purger) : le tableau affiche\nun "
+               "numéro par ligne. Simple clic : la ligne surlignée suffit. Double-clic\nou Entrée : "
+               "ajoute ou retire son numéro dans le champ (ex. \"1,3,4\").\nVous pouvez aussi saisir "
+               "les numéros à la main ; le champ, s'il est\nrempli, a priorité.")
+_GLOSSARY_VAR = N_("[b]Dossier var/[/b] — tout l'état propre à l'application (bibliothèque,\nfavoris, "
+                   "thème choisi, archives de sauvegarde, exports, journal\napplicatif) vit dans le var/ "
+                   "du dossier de\nl'application, d'où que vous la lanciez (ou $OMEGA_LOG_VAR_DIR si "
+                   "défini) — jamais dans votre\ndossier personnel. Ce dossier est entièrement local à la "
+                   "machine, ne\ncontient aucun des LOGS SURVEILLÉS eux-mêmes (seulement des "
+                   "références\nvers leurs chemins).")
+"""Paragraphe a part depuis le 2026-11-26 : var/ est celui du dossier de l'application (omega-log.sh), plus le
+repertoire courant."""
+
+_GLOSSARY_PROTECTED = N_("[b]Logs protégés — PROTÉGÉ (sudo)[/b] — un log que votre compte ne peut pas lire : droits "
+                         "du fichier, ou dossier fermé comme /var/log/lighttpd/ (sans sudo, omega-log ne peut même "
+                         "pas voir s'il existe : ni « ABSENT » ni « OK »). Bibliothèque → Ajouter : votre mot de "
+                         "passe sudo est demandé dans le terminal, omega-log vérifie que le fichier existe puis "
+                         "l'ajoute ; le Registre le propose aussi à l'import. Ensuite, chaque module (viewers, lnav, "
+                         "Voir et Traiter IP, Statistiques, Rotate, Purger, Santé des logs → « Analyser avec sudo ») "
+                         "demande votre mot de passe au moment de le lire. Les sauvegardes planifiées tournent la "
+                         "nuit sans mot de passe : pour elles, Santé des logs → « Corriger avec sudo » donne la lecture "
+                         "seule à votre compte (ACL), sans rien changer d'autre.")
+"""Demande 2026-11-26 (/var/log/lighttpd/access.log, droits root)."""
+
+_GLOSSARY_EXPORTS = N_("[b]Voir les exports[/b] — Exporter, Statistiques, Santé des logs et cette Aide ont un bouton "
+                       "« Voir les exports » : le dossier des exports (var/exports/) s'ouvre dans votre navigateur, "
+                       "chaque export se lit d'un clic, sans quitter omega-log. Sans navigateur (serveur, connexion "
+                       "SSH), omega-log liste les exports et les lit lui-même (une page HTML est ramenée à son texte).")
+"""Demande 2026-11-26 : meme principe que les autres outils de la suite."""
+
+
+def _glossary_text() -> str:
+    return (f"{_(_GLOSSARY)}\n\n{_(_GLOSSARY_PROTECTED)}\n\n{_(_GLOSSARY_EXPORTS)}\n\n"
+            f"{_(_GLOSSARY_VAR)}")
 
 
 def help_export_content() -> tuple[list[dict], list[dict]]:
@@ -360,8 +399,8 @@ def help_export_content() -> tuple[list[dict], list[dict]]:
     sections = [
         {"title": _("Démarrage rapide"), "body": _(_QUICKSTART)},
         *({"title": _(title), "body": _(body)} for title, body in _SECTIONS),
-        {"title": _("Les 3 viewers (Simple / Classique / lnav)"), "body": _(_VIEWERS)},
-        {"title": _("Concepts et glossaire"), "body": _(_GLOSSARY)},
+        {"title": _("Les 3 viewers (Simple / Classique / lnav)"), "body": _viewers_text()},
+        {"title": _("Concepts et glossaire"), "body": _glossary_text()},
     ]
     return shortcut_tables, sections
 
@@ -387,6 +426,8 @@ class HelpScreen(OmegaScreen):
                 with Container(classes="omega-btn-frame"):
                     yield Button(_("Exporter l'aide en HTML"), id="export-html", variant="primary")
                 with Container(classes="omega-btn-frame"):
+                    yield Button(_("Voir les exports"), id="view-exports")
+                with Container(classes="omega-btn-frame"):
                     yield Button(_("Contact et support"), id="contact-support")
             yield Select(
                 [(name, name) for name in EXPORT_PALETTES], value=DEFAULT_EXPORT_THEME, allow_blank=False,
@@ -406,12 +447,12 @@ class HelpScreen(OmegaScreen):
                     yield Static(_(description))
 
             with Collapsible(title=_("Les 3 viewers (Simple / Classique / lnav)"), collapsed=True):
-                yield Static(_(_VIEWERS))
+                yield Static(_viewers_text())
                 for key, description in _LNAV_SHORTCUTS:
                     yield Static(_("  {key:<24} {description}").format(key=_(key), description=_(description)))
 
             with Collapsible(title=_("Concepts et glossaire"), collapsed=True):
-                yield Static(_(_GLOSSARY))
+                yield Static(_glossary_text())
 
         with Center(), Horizontal(classes="omega-actions omega-fixed-actions"), Container(classes="omega-btn-frame"):
             yield Button(_("Retour"), id="back")
@@ -420,6 +461,8 @@ class HelpScreen(OmegaScreen):
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "back":
             self.dismiss()
+        elif event.button.id == "view-exports":
+            view_exports(self, self._container)
         elif event.button.id == "contact-support":
             self.app.push_screen(ContactSupportScreen(container=self._container))
         elif event.button.id == "export-html":

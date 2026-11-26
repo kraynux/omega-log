@@ -31,7 +31,7 @@ l'affichage — exactement le symptome rapporte. Viewer 2
 Phase 4 ; Viewer 1 ne l'a jamais eue, oubli de portage, pas un choix
 delibere.
 
-Colonnes "Code"/"Timeout" + section stats "STATUTS HTTP" RETABLIES
+Colonnes "Code"/"Timeout" (« Durée » depuis le 2026-11-26) + section stats "STATUTS HTTP" RETABLIES
 (2026-10-04, retour utilisateur : "tu as modifie et enleve des elements,
 il faut reprendre la meme chose que omega-fire") : la genericite
 multi-format reste intacte (domain/logs/parser.py::extract_http_fields
@@ -58,10 +58,15 @@ from textual.widgets import Button, DataTable, Footer, Header, Static
 from omega_log.domain.logs.analytics import compute_traffic_stats
 from omega_log.domain.logs.models import LogEntry, TrafficStats
 from omega_log.domain.logs.parser import parse_log_line
+from omega_log.infrastructure.privileged.file_access import Access, probe_file
 from omega_log.infrastructure.privileged.privileged_file_ops import read_file_privileged
 from omega_log.infrastructure.tail.live_tail_reader import LiveTailReader
 from omega_log.interfaces.tui.screens._base import OmegaScreen
 from omega_log.interfaces.tui.screens._elevation import request_elevation
+from omega_log.interfaces.tui.screens.log_line_highlight import (
+    highlight_log_line,
+    palette_from_theme,
+)
 from omega_log.shared.i18n import _
 
 if TYPE_CHECKING:
@@ -70,6 +75,9 @@ if TYPE_CHECKING:
 _REFRESH_SECONDS = 2.0
 _BUFFER_SIZE = 500
 _INITIAL_LINES = 200
+_MESSAGE_MAX = 4000
+"""Ligne entiere dans « Message » (omega-serv, retour du 2026-11-20 : coupee a 80 caracteres, l'ascenseur horizontal
+s'arretait avant le User-Agent) ; borne seulement contre une ligne demesuree."""
 _TOP_WIDTH = 29
 """Largeur utile du cadre de gauche avant son premier affichage (34 colonnes, cadre et barre deduits)."""
 
@@ -98,6 +106,7 @@ class LiveTailScreen(OmegaScreen):
         self._timer: Timer | None = None
         self._elevated = False
         self._first_render = True
+        self._denied = False
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -117,9 +126,12 @@ class LiveTailScreen(OmegaScreen):
 
     def on_mount(self) -> None:
         self.query_one("#entries-table", DataTable).add_columns(
-            _("Heure"), _("Niveau"), _("Source"), _("IP"), _("Service"), _("Code"), _("Timeout"), _("Message")
+            _("Heure"), _("Niveau"), _("Source"), _("IP"), _("Service"), _("Code"), _("Durée"), _("Message")
         )
         self._load_initial()
+        if self._denied:
+            self._render_stats()
+            return
         self._poll()
         self._timer = self.set_interval(_REFRESH_SECONDS, self._poll)
 
@@ -130,7 +142,8 @@ class LiveTailScreen(OmegaScreen):
         __init__ AVANT cette lecture) : aucun doublon avec le premier
         `_poll()` qui suit."""
         path = Path(self._path)
-        if not path.is_file():
+        # Dossier ferme (ex. /var/log/lighttpd/) : `is_file()` le disait absent, sans jamais proposer sudo.
+        if probe_file(self._path).access is Access.MISSING:
             return
 
         try:
@@ -151,12 +164,15 @@ class LiveTailScreen(OmegaScreen):
     def _load_initial_privileged(self) -> str | None:
         if not request_elevation(self, self._container.process_runner):
             self.app.notify(_("Permission refusée sur {path}.").format(path=self._path), severity="error")
+            self._denied = True  # pas de seconde demande de mot de passe au premier rafraichissement
             return None
         result = read_file_privileged(self._container.process_runner, self._path)
         if not result.success:
             self.app.notify(_("Lecture privilégiée impossible : {message}").format(message=result.message), severity="error")
+            self._denied = True
             return None
         self._elevated = True
+        self._reader.sync_privileged(self._container.process_runner)  # suivi a partir de la fin vue avec sudo
         return result.content
 
     def action_back(self) -> None:
@@ -289,45 +305,41 @@ class LiveTailScreen(OmegaScreen):
         content.append("\n")
 
     def _render_table(self) -> None:
+        """Couleurs du theme courant, comme omega-serv (porte le 2026-11-26, demande) : niveau, code HTTP, duree et
+        chaque information de la colonne Message (log_line_highlight.py)."""
         table = self.query_one("#entries-table", DataTable)
         # Suivi automatique seulement si on etait deja en bas : jamais arrache d'une lecture plus haut.
         follow = table.scroll_y >= table.max_scroll_y - 1
         table.clear()
+        palette = palette_from_theme(self.app.get_css_variables())
         for entry in self._buffer:
-            level_style = {
-                "error": "red", "critical": "bold red", "warning": "yellow",
-            }.get(entry.level.value, "")
+            level_style = {"error": palette.bad, "critical": f"bold {palette.bad}",
+                           "warning": palette.warn}.get(entry.level.value, "")
 
             if entry.http_status is None:
                 code_cell: Text | str = "-"
             else:
                 status = entry.http_status
-                if 200 <= status < 300:
-                    status_style = "green"
-                elif 300 <= status < 400:
-                    status_style = "cyan"
-                elif 400 <= status < 500:
-                    status_style = "yellow"
-                else:
-                    status_style = "red"
-                code_cell = Text(str(status), style=status_style)
+                code_cell = Text(str(status), style=palette.status(status))
 
             if entry.latency_ms is None:
-                timeout_cell: Text | str = "-"
+                duration_cell: Text | str = "-"
             else:
                 latency = entry.latency_ms
-                latency_style = "green" if latency < 200 else ("yellow" if latency < 500 else "red")
-                timeout_cell = Text(f"{latency}ms", style=latency_style)
+                latency_style = palette.good if latency < 200 else (palette.warn if latency < 500 else palette.bad)
+                duration_cell = Text(f"{latency}ms", style=latency_style)
 
             table.add_row(
                 entry.timestamp.strftime("%H:%M:%S"),
                 Text(entry.level.value.upper(), style=level_style) if level_style else entry.level.value.upper(),
                 entry.source.value,
-                entry.ip or "-",
-                entry.service or "-",
+                # Texte venu du log (ligne de requete d'un client) : jamais lu comme balisage (omega-serv, scan de
+                # securite n° 2, F43).
+                Text(entry.ip or "-"),
+                Text(entry.service or "-"),
                 code_cell,
-                timeout_cell,
-                entry.message[:80],
+                duration_cell,
+                highlight_log_line(entry.message[:_MESSAGE_MAX], palette),
             )
         if follow:
             table.call_after_refresh(table.scroll_end, animate=False)

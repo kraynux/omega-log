@@ -189,6 +189,10 @@ class RotationAutomationsScreen(LibrarySelectionMixin, OmegaScreen):
                    "created_at": datetime.now().astimezone().isoformat()})
         self.app.notify(_("Sauvegarde planifiée : {path} ({frequency}).").format(
             path=path, frequency=_frequency_label(days)))
+        if self._entries[int(raw) - 1].protected:  # la tache de nuit tourne sans mot de passe (2026-11-26)
+            self.app.notify(_("Log protégé : la sauvegarde de nuit, sans mot de passe, ne pourra pas le lire. "
+                              "Santé des logs → « Corriger avec sudo » vous donne la lecture seule de {path}.").format(
+                path=path), severity="warning", timeout=15)
         if first:
             self._apply_schedule(install=True)
         self._refresh()

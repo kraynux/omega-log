@@ -88,7 +88,7 @@ def test_purge_content_falls_back_to_privileged_truncate(tmp_path: Path) -> None
     finally:
         log_path.chmod(0o644)
     assert result.success
-    assert runner.calls == [["sudo", "truncate", "-s", "0", str(log_path)]]
+    assert runner.calls == [["sudo", "truncate", "-c", "-s", "0", "--", str(log_path)]]
 
 
 def test_delete_log_files_without_runner_raises_permission_required(tmp_path: Path) -> None:

@@ -23,6 +23,7 @@ from pathlib import Path
 from omega_log.domain.logs.rotation import compute_rotations_to_delete
 from omega_log.infrastructure.exceptions import StorageError
 from omega_log.infrastructure.privileged.elevation import PermissionRequiredError
+from omega_log.infrastructure.privileged.file_access import may_exist
 from omega_log.infrastructure.privileged.privileged_file_ops import stage_protected_copy_privileged
 from omega_log.ports.persistence import PersistencePort
 from omega_log.ports.process_runner_port import ProcessRunnerPort
@@ -39,7 +40,7 @@ class RotateLogsRequest:
         errors: list[str] = []
         if not self.source_path:
             errors.append("source_path must not be empty")
-        elif not Path(self.source_path).exists():
+        elif not may_exist(self.source_path):  # dossier ferme : sauvegarde avec sudo, jamais « introuvable »
             errors.append(_("Fichier source introuvable : {source_path}").format(source_path=self.source_path))
         if self.keep < 1:
             errors.append("Keep must be at least 1")

@@ -132,10 +132,17 @@ def finding_text(finding: dict) -> str:
     code, params = finding["code"], finding.get("params", {})
     if code == "broken_link":
         return _("Lien symbolique cassé : la cible n'existe plus.")
+    if code == "closed_folder":
+        return _("Dans un dossier fermé à votre compte : visible seulement avec sudo. « Analyser avec sudo » le "
+                 "vérifie ; les viewers, Statistiques et Voir et Traiter IP demanderont votre mot de passe sudo.")
     if code == "missing_library":
         return _("Fichier absent : le chemin de la Bibliothèque ne mène plus à rien.")
     if code == "not_regular":
         return _("Ce n'est pas un fichier ordinaire (dossier, tube ou périphérique).")
+    if code == "unreadable_folder":
+        return _("Illisible par votre compte : le dossier {folder} est fermé (droits {mode}). Statistiques, Voir et "
+                 "Traiter IP et les viewers demanderont votre mot de passe sudo.").format(
+            folder=params.get("folder", "?"), mode=params.get("mode", "?"))
     if code == "unreadable":
         return _("Illisible par votre compte (droits {mode}) : Statistiques, Voir et Traiter IP et les viewers "
                  "demanderont votre mot de passe sudo.").format(mode=params.get("mode", "?"))
@@ -181,8 +188,16 @@ def finding_text(finding: dict) -> str:
 def finding_hint(finding: dict, path: str) -> str | None:
     """Ce que l'utilisateur peut faire (commande ou ecran a ouvrir) ; None si rien a proposer."""
     code = finding["code"]
-    if code == "unreadable":
-        return _("Ajoutez votre compte au groupe du fichier (ls -l {path}), puis rouvrez votre session.").format(path=path)
+    if code == "closed_folder":
+        return _("Après « Analyser avec sudo », « Corriger avec sudo » peut vous donner la lecture seule de ce log, "
+                 "à vous seul : plus de mot de passe, et les sauvegardes planifiées pourront le lire la nuit.")
+    if code in ("unreadable", "unreadable_folder"):
+        return _("« Corriger avec sudo » vous donne la lecture seule, à vous seul (ACL, setfacl) : propriétaire, groupe "
+                 "et droits restent les mêmes. Plus de mot de passe, et les sauvegardes planifiées pourront le lire la "
+                 "nuit.")
+    if code == "automation_failing" and "sudo" in str(finding.get("params", {}).get("error", "")):
+        return _("Log protégé : la sauvegarde de nuit tourne sans mot de passe. Santé des logs → « Corriger avec "
+                 "sudo » vous donne la lecture seule de ce log ; sinon, sauvegardez-le depuis Rotate.")
     if code == "world_writable":
         return _("Santé des logs → « Corriger les droits » (chmod o-w {path}).").format(path=path)
     if code == "no_logrotate":

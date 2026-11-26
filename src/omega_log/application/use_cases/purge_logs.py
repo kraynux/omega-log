@@ -33,6 +33,7 @@ from typing import TYPE_CHECKING
 
 from omega_log.application.guards.permission_guard import check_path_writable
 from omega_log.infrastructure.privileged.elevation import PermissionRequiredError
+from omega_log.infrastructure.privileged.file_access import may_exist
 from omega_log.infrastructure.privileged.privileged_file_ops import (
     delete_file_privileged,
     truncate_file_privileged,
@@ -60,7 +61,7 @@ def purge_log_content(path: str, *, runner: ProcessRunnerPort | None = None) -> 
     target = Path(path)
     check = check_path_writable(path)
     if not check.writable:
-        if target.exists():
+        if may_exist(path):  # dossier ferme compris : sudo decide
             if runner is None:
                 raise PermissionRequiredError(path)
             priv_result = truncate_file_privileged(runner, path)
@@ -105,7 +106,7 @@ def delete_log_files(paths: list[str], *, runner: ProcessRunnerPort | None = Non
     for path in paths:
         check = check_path_writable(path)
         if not check.writable:
-            if Path(path).exists():
+            if may_exist(path):
                 if runner is None:
                     raise PermissionRequiredError(path)
                 priv_result = delete_file_privileged(runner, path)

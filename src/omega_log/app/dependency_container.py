@@ -63,6 +63,9 @@ class DependencyContainer:
     """Sauvegardes planifiees (portees d'omega-serv 2.6.0, 2026-11-07), executees chaque nuit."""
     release_source: ReleaseSourcePort
     """Aide -> Contact et support -> « Verifier les mises a jour » : lit download/sha.txt, seulement sur clic."""
+    open_folder: Callable[[Path], bool] = lambda _path: False
+    """« Voir les exports » (2026-11-26) : le dossier dans le navigateur (omega-lib) ; False sans session graphique,
+    l'ecran de repli liste et lit alors les exports dans l'interface."""
 
     def close(self) -> None:
         """Rien a liberer pour l'instant (pas de connexion ouverte) —

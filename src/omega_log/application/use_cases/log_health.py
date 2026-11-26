@@ -29,6 +29,7 @@ from omega_log.domain.logs.health import (
 )
 from omega_log.domain.logs.parser import detect_log_source, extract_timestamp
 from omega_log.infrastructure.privileged.elevation import running_as_root
+from omega_log.infrastructure.privileged.file_access import privileged_stat
 
 if TYPE_CHECKING:
     from omega_log.domain.entities.log_file import LogFile
@@ -137,6 +138,8 @@ def collect_log_facts(
     base = LogFacts(path=path)
     try:
         link = os.lstat(path)
+    except PermissionError:  # dossier ferme : jamais « absent » (2026-11-26)
+        return _closed_folder_facts(base, logrotate_patterns, privileged_runner)
     except OSError:
         return base
     try:
@@ -162,6 +165,29 @@ def collect_log_facts(
     if privileged_runner is not None:  # illisible par votre compte : constat garde, le reste lu avec sudo
         return replace(facts, **_sample_facts(path, info.st_size, privileged_runner))
     return facts
+
+
+def _closed_folder_facts(
+    base: LogFacts, logrotate_patterns: list[str], privileged_runner: ProcessRunnerPort | None,
+) -> LogFacts:
+    """Log derriere un dossier ferme (ex. /var/log/lighttpd/) : vu seulement avec sudo (« Analyser avec sudo »)."""
+    seen = privileged_stat(base.path, privileged_runner) if privileged_runner is not None else None
+    if seen is None:
+        return replace(base, closed_folder=True)
+    if not seen.exists:
+        return base
+    mode = seen.mode or 0
+    folder = privileged_stat(os.path.dirname(base.path), privileged_runner)
+    facts = replace(
+        base, exists=True, regular=seen.regular, size=seen.size or 0, mode=mode, readable=False,
+        closed_folder=True, folder_mode=None if folder is None else folder.mode,
+        modified_at=None if seen.modified_at is None else datetime.fromtimestamp(seen.modified_at, tz=timezone.utc),
+        world_writable=bool(mode & stat.S_IWOTH), device=seen.device,
+        logrotate_covered=covered_by_logrotate(base.path, logrotate_patterns),
+    )
+    if not seen.regular or privileged_runner is None:
+        return facts
+    return replace(facts, **_sample_facts(base.path, facts.size, privileged_runner))
 
 
 def read_logrotate_patterns(sources: tuple[Path, ...] = LOGROTATE_SOURCES) -> list[str] | None:
@@ -261,6 +287,28 @@ def owns(path: str) -> bool:
 
 def sudo_fix_command(path: str) -> list[str]:
     return ["chmod", "o-w", "--", path]
+
+
+def grant_read_commands(path: str, user: str, *, closed_folder: bool) -> list[list[str]]:
+    """Lecture seule pour VOTRE compte, par ACL (2026-11-26, retour d'utilisation : log lighttpd illisible, rien pour
+    le corriger) : ni proprietaire, ni groupe, ni droits des autres ne changent. Dossier ferme : traverser et lister
+    le dossier, et ACL par defaut pour que les logs recrees par logrotate restent lisibles."""
+    commands: list[list[str]] = []
+    if closed_folder:
+        folder = os.path.dirname(path)
+        commands += [["setfacl", "-m", f"u:{user}:rx", "--", folder],
+                     ["setfacl", "-d", "-m", f"u:{user}:r", "--", folder]]
+    commands.append(["setfacl", "-m", f"u:{user}:r", "--", path])
+    return commands
+
+
+def run_sudo_fixes(runner: ProcessRunnerPort, commands: list[list[str]]) -> str | None:
+    """Les commandes dans l'ordre ; None si toutes passent, sinon le message de la premiere en echec."""
+    for command in commands:
+        error = run_sudo_fix(runner, command)
+        if error is not None:
+            return error
+    return None
 
 
 def shown_command(command: list[str]) -> str:

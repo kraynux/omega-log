@@ -71,6 +71,7 @@ from omega_log.infrastructure.privileged.elevation import PermissionRequiredErro
 from omega_log.interfaces.tui.screens._base import OmegaScreen
 from omega_log.interfaces.tui.screens._elevation import request_elevation
 from omega_log.interfaces.tui.screens._parallel_compute import accumulate_in_pool
+from omega_log.interfaces.tui.screens.exports import view_exports
 from omega_log.interfaces.tui.widgets.busy_indicator import (
     PERIOD_BUTTON_LABELS,
     PERIOD_HINT,
@@ -147,6 +148,8 @@ class AccessLogStatsScreen(LibrarySelectionMixin, OmegaScreen):
                 with Container(classes="omega-btn-frame"):
                     yield Button(_("Exporter HTML"), id="export-html")
                 with Container(classes="omega-btn-frame"):
+                    yield Button(_("Voir les exports"), id="view-exports")
+                with Container(classes="omega-btn-frame"):
                     yield Button(_("Retour"), id="back")
         yield Footer()
 
@@ -174,6 +177,8 @@ class AccessLogStatsScreen(LibrarySelectionMixin, OmegaScreen):
         button_id = event.button.id or ""
         if button_id == "back":
             self.dismiss()
+        elif button_id == "view-exports":
+            view_exports(self, self._container)
         elif button_id.startswith("period-"):
             label = button_id.removeprefix("period-")
             period = dict(_PERIODS)[label]

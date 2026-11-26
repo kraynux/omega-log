@@ -21,7 +21,9 @@ from omega_log.application.use_cases.library import (
 )
 from omega_log.application.use_cases.omega_serv_logs import import_omega_serv_logs
 from omega_log.domain.entities.log_file import LogFile
+from omega_log.infrastructure.privileged.file_access import Access, probe_file
 from omega_log.interfaces.tui.screens._base import OmegaScreen
+from omega_log.interfaces.tui.screens._elevation import request_elevation
 from omega_log.interfaces.tui.screens.confirm import ConfirmScreen
 from omega_log.interfaces.tui.screens.remote_log_sources_screen import RemoteLogSourcesScreen
 from omega_log.interfaces.tui.widgets.log_library_table import LogLibraryTable
@@ -92,10 +94,11 @@ class LibraryScreen(OmegaScreen):
         entries = list_library(self._container.log_repository)
         self.query_one("#log-list", LogLibraryTable).load(entries)
         stale = sum(1 for e in entries if e.is_stale)
-        missing = sum(1 for e in entries if not e.exists)
+        missing = sum(1 for e in entries if not e.exists and not e.protected)
+        protected = sum(1 for e in entries if e.protected)
         self.query_one("#library-hint", Static).update(
-            _("{count} log(s) référencé(s) — {stale} suspect(s), {missing} introuvable(s) "
-              "actuellement.").format(count=len(entries), stale=stale, missing=missing)
+            _("{count} log(s) référencé(s) — {stale} suspect(s), {missing} introuvable(s), {protected} protégé(s) "
+              "(lus avec sudo).").format(count=len(entries), stale=stale, missing=missing, protected=protected)
         )
 
     def _add_manual(self) -> None:
@@ -104,8 +107,38 @@ class LibraryScreen(OmegaScreen):
         if not raw_path:
             self.app.notify(_("Saisissez un chemin."), severity="warning")
             return
-        add_to_library(self._container.log_repository, LogFile(path=raw_path, access="file"))
         path_input.value = ""
+        probe = probe_file(raw_path)
+        if probe.protected and not probe.exists:
+            # Dossier ferme a votre compte (ex. /var/log/lighttpd/, demande 2026-11-26) : sudo verifie le fichier.
+            self.app.push_screen(
+                ConfirmScreen(
+                    title=_("LOG PROTÉGÉ"),
+                    message=_("{path} est dans un dossier fermé à votre compte. Confirmer : votre mot de passe sudo "
+                              "est demandé dans le terminal, omega-log vérifie que le fichier existe puis "
+                              "l'ajoute.").format(path=raw_path),
+                ),
+                lambda confirmed: self._add_after_sudo(confirmed, raw_path),
+            )
+            return
+        self._add_path(raw_path, probe.access)
+
+    def _add_after_sudo(self, confirmed: bool | None, path: str) -> None:
+        if not confirmed or not request_elevation(self, self._container.process_runner):
+            self.app.notify(_("Log non ajouté : {path}").format(path=path), severity="warning")
+            return
+        probe = probe_file(path, self._container.process_runner)
+        if probe.access is Access.MISSING:
+            self.app.notify(_("Fichier introuvable : {path}").format(path=path), severity="error")
+            return
+        self._add_path(path, probe.access)
+
+    def _add_path(self, path: str, access: Access) -> None:
+        add_to_library(self._container.log_repository, LogFile(path=path, access="file"))
+        if access is Access.PROTECTED:
+            self.app.notify(_("Log protégé ajouté : il sera lu avec votre mot de passe sudo."))
+        elif access is Access.MISSING:
+            self.app.notify(_("Ajouté, mais introuvable pour l'instant : {path}").format(path=path), severity="warning")
         self._refresh()
 
     def _add_known(self) -> None:

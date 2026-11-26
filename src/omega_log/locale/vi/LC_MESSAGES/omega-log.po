@@ -23,16 +23,16 @@ msgstr "Giải nén thất bại: {e}"
 msgid "L'archive extraite est vide."
 msgstr "Tệp lưu trữ đã giải nén bị trống."
 
-#: src/omega_log/application/commands/restore_backup.py:120 src/omega_log/application/commands/rotate_logs.py:84
+#: src/omega_log/application/commands/restore_backup.py:120 src/omega_log/application/commands/rotate_logs.py:85
 msgid "Élévation non configurée pour cette commande."
 msgstr "Chưa cấu hình nâng quyền cho lệnh này."
 
-#: src/omega_log/application/commands/restore_backup.py:125 src/omega_log/application/commands/rotate_logs.py:89
+#: src/omega_log/application/commands/restore_backup.py:125 src/omega_log/application/commands/rotate_logs.py:90
 #, python-brace-format
 msgid "Élévation impossible : {message}"
 msgstr "Không thể nâng quyền: {message}"
 
-#: src/omega_log/application/commands/restore_backup.py:145 src/omega_log/application/commands/restore_backup.py:161 src/omega_log/application/use_cases/process_ip.py:139
+#: src/omega_log/application/commands/restore_backup.py:145 src/omega_log/application/commands/restore_backup.py:161 src/omega_log/application/use_cases/process_ip.py:140
 #, python-brace-format
 msgid "Écriture privilégiée impossible : {message}"
 msgstr "Không thể ghi với quyền nâng cao: {message}"
@@ -59,22 +59,22 @@ msgstr "Khôi phục thất bại: {e}"
 msgid "Restauration effectuée avec succès : {summary}."
 msgstr "Khôi phục thành công: {summary}."
 
-#: src/omega_log/application/commands/rotate_logs.py:43
+#: src/omega_log/application/commands/rotate_logs.py:44
 #, python-brace-format
 msgid "Fichier source introuvable : {source_path}"
 msgstr "Không tìm thấy tệp nguồn: {source_path}"
 
-#: src/omega_log/application/commands/rotate_logs.py:101
+#: src/omega_log/application/commands/rotate_logs.py:102
 #, python-brace-format
 msgid "Erreur technique lors de la sauvegarde : {e}"
 msgstr "Lỗi kỹ thuật khi sao lưu: {e}"
 
-#: src/omega_log/application/commands/rotate_logs.py:113
+#: src/omega_log/application/commands/rotate_logs.py:114
 #, python-brace-format
 msgid "Sauvegarde créée avec succès, mais la purge des anciennes archives a échoué : {e}"
 msgstr "Đã tạo bản sao lưu thành công, nhưng dọn các tệp lưu trữ cũ thất bại: {e}"
 
-#: src/omega_log/application/commands/rotate_logs.py:141
+#: src/omega_log/application/commands/rotate_logs.py:142
 #, python-brace-format
 msgid "Sauvegarde créée avec succès : {name}"
 msgstr "Đã tạo bản sao lưu thành công: {name}"
@@ -107,62 +107,62 @@ msgstr "Đã chọn {count} log: chỉ {value} là tương thích."
 msgid "Favori '{name}' enregistré."
 msgstr "Đã lưu mục yêu thích '{name}'."
 
-#: src/omega_log/application/use_cases/process_ip.py:96
+#: src/omega_log/application/use_cases/process_ip.py:97
 #, python-brace-format
 msgid "Adresse IP invalide : {ip}"
 msgstr "Địa chỉ IP không hợp lệ: {ip}"
 
-#: src/omega_log/application/use_cases/process_ip.py:100 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:84
+#: src/omega_log/application/use_cases/process_ip.py:101 src/omega_log/interfaces/tui/screens/library.py:132 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:86
 #, python-brace-format
 msgid "Fichier introuvable : {path}"
 msgstr "Không tìm thấy tệp: {path}"
 
-#: src/omega_log/application/use_cases/process_ip.py:111 src/omega_log/interfaces/tui/screens/live_tail_screen.py:157 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:113
+#: src/omega_log/application/use_cases/process_ip.py:112 src/omega_log/interfaces/tui/screens/live_tail_screen.py:171 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:117
 #, python-brace-format
 msgid "Lecture privilégiée impossible : {message}"
 msgstr "Không thể đọc với quyền nâng cao: {message}"
 
-#: src/omega_log/application/use_cases/process_ip.py:115 src/omega_log/interfaces/tui/screens/live_tail_screen.py:194 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:94 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:152
+#: src/omega_log/application/use_cases/process_ip.py:116 src/omega_log/interfaces/tui/screens/exports.py:52 src/omega_log/interfaces/tui/screens/live_tail_screen.py:210 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:96 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:156
 #, python-brace-format
 msgid "Lecture impossible : {exc}"
 msgstr "Không thể đọc: {exc}"
 
-#: src/omega_log/application/use_cases/process_ip.py:120
+#: src/omega_log/application/use_cases/process_ip.py:121
 #, python-brace-format
 msgid "Aucune occurrence de {ip} trouvée."
 msgstr "Không tìm thấy lần xuất hiện nào của {ip}."
 
-#: src/omega_log/application/use_cases/process_ip.py:143
+#: src/omega_log/application/use_cases/process_ip.py:144
 #, python-brace-format
 msgid "Écriture impossible : {exc}"
 msgstr "Không thể ghi: {exc}"
 
-#: src/omega_log/application/use_cases/process_ip.py:145
+#: src/omega_log/application/use_cases/process_ip.py:146
 #, python-brace-format
 msgid "{occurrences} occurrence(s) de {ip} retirée(s)."
 msgstr "Đã gỡ {occurrences} lần xuất hiện của {ip}."
 
-#: src/omega_log/application/use_cases/purge_logs.py:68
+#: src/omega_log/application/use_cases/purge_logs.py:69
 #, python-brace-format
 msgid "Troncature privilégiée impossible : {message}"
 msgstr "Không thể cắt bớt với quyền nâng cao: {message}"
 
-#: src/omega_log/application/use_cases/purge_logs.py:70 src/omega_log/application/use_cases/purge_logs.py:80
+#: src/omega_log/application/use_cases/purge_logs.py:71 src/omega_log/application/use_cases/purge_logs.py:81
 #, python-brace-format
 msgid "Contenu vide (fichier conservé) : {path}"
 msgstr "Nội dung trống (giữ nguyên tệp): {path}"
 
-#: src/omega_log/application/use_cases/purge_logs.py:79
+#: src/omega_log/application/use_cases/purge_logs.py:80
 #, python-brace-format
 msgid "Troncature impossible : {exc}"
 msgstr "Không thể cắt bớt: {exc}"
 
-#: src/omega_log/application/use_cases/purge_logs.py:87
+#: src/omega_log/application/use_cases/purge_logs.py:88
 #, python-brace-format
 msgid "Recréation impossible : {exc}"
 msgstr "Không thể tạo lại: {exc}"
 
-#: src/omega_log/application/use_cases/purge_logs.py:88
+#: src/omega_log/application/use_cases/purge_logs.py:89
 #, python-brace-format
 msgid "Fichier recréé vide (était absent) : {path}"
 msgstr "Đã tạo lại tệp trống (trước đó không tồn tại): {path}"
@@ -286,11 +286,11 @@ msgstr "Tệp ({count}): {names}"
 msgid "Permission refusée sur {path} (élévation requise)."
 msgstr "Bị từ chối quyền trên {path} (cần nâng quyền)."
 
-#: src/omega_log/infrastructure/privileged/elevation.py:68 src/omega_log/interfaces/tui/screens/_elevation.py:28
+#: src/omega_log/infrastructure/privileged/elevation.py:77 src/omega_log/interfaces/tui/screens/_elevation.py:28
 msgid "Authentification sudo échouée ou annulée."
 msgstr "Xác thực sudo thất bại hoặc bị hủy."
 
-#: src/omega_log/application/use_cases/rotation_automation.py:110 src/omega_log/application/use_cases/rotation_automation.py:112 src/omega_log/application/use_cases/rotation_automation.py:117 src/omega_log/infrastructure/privileged/privileged_file_ops.py:41 src/omega_log/infrastructure/privileged/privileged_file_ops.py:57 src/omega_log/infrastructure/privileged/privileged_file_ops.py:68 src/omega_log/infrastructure/privileged/privileged_file_ops.py:75 src/omega_log/infrastructure/privileged/privileged_file_ops.py:97 src/omega_log/infrastructure/privileged/privileged_file_ops.py:107 src/omega_log/infrastructure/privileged/privileged_file_ops.py:122 src/omega_log/infrastructure/privileged/privileged_file_ops.py:129
+#: src/omega_log/application/use_cases/rotation_automation.py:110 src/omega_log/application/use_cases/rotation_automation.py:112 src/omega_log/application/use_cases/rotation_automation.py:117 src/omega_log/infrastructure/privileged/privileged_file_ops.py:41 src/omega_log/infrastructure/privileged/privileged_file_ops.py:57 src/omega_log/infrastructure/privileged/privileged_file_ops.py:69 src/omega_log/infrastructure/privileged/privileged_file_ops.py:76 src/omega_log/infrastructure/privileged/privileged_file_ops.py:98 src/omega_log/infrastructure/privileged/privileged_file_ops.py:108 src/omega_log/infrastructure/privileged/privileged_file_ops.py:123 src/omega_log/infrastructure/privileged/privileged_file_ops.py:130
 #, python-brace-format
 msgid "code {returncode}"
 msgstr "mã {returncode}"
@@ -480,125 +480,125 @@ msgstr "Khôi phục {path} thất bại: {e}"
 msgid "Impossible de lister les sauvegardes de {backup_dir} : {e}"
 msgstr "Không thể liệt kê các bản sao lưu trong {backup_dir}: {e}"
 
-#: src/omega_log/interfaces/tui/app.py:57 src/omega_log/interfaces/tui/screens/help_screen.py:271 src/omega_log/interfaces/tui/screens/home.py:58
+#: src/omega_log/interfaces/tui/app.py:57 src/omega_log/interfaces/tui/screens/help_screen.py:272 src/omega_log/interfaces/tui/screens/home.py:58
 msgid "Options"
 msgstr "Tùy chọn"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:98
 msgid "24 dernières heures"
 msgstr "24 giờ qua"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:98
 msgid "30 derniers jours"
 msgstr "30 ngày qua"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:97
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:98
 msgid "7 derniers jours"
 msgstr "7 ngày qua"
 
-#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:104 src/omega_log/interfaces/tui/widgets/busy_indicator.py:50
 msgid "Go"
 msgstr "GB"
 
-#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:104 src/omega_log/interfaces/tui/widgets/busy_indicator.py:50
 msgid "Ko"
 msgstr "KB"
 
-#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:103 src/omega_log/interfaces/tui/widgets/busy_indicator.py:49
+#: src/omega_log/application/use_cases/health_presentation.py:29 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:104 src/omega_log/interfaces/tui/widgets/busy_indicator.py:50
 msgid "Mo"
 msgstr "MB"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:125
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:126
 msgid "STATISTIQUES"
 msgstr "THỐNG KÊ"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:127 src/omega_log/interfaces/tui/screens/purge_screen.py:46
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:128 src/omega_log/interfaces/tui/screens/purge_screen.py:46
 msgid "Numéros séparés par des virgules (ex: 1,2)"
 msgstr "Các số cách nhau bằng dấu phẩy (vd: 1,2)"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:141 src/omega_log/interfaces/tui/screens/export_screen.py:42 src/omega_log/interfaces/tui/screens/log_health_screen.py:114
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:142 src/omega_log/interfaces/tui/screens/export_screen.py:43 src/omega_log/interfaces/tui/screens/log_health_screen.py:124
 msgid "Thème d'export HTML"
 msgstr "Giao diện xuất HTML"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:146 src/omega_log/interfaces/tui/screens/export_screen.py:48 src/omega_log/interfaces/tui/screens/log_health_screen.py:119
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:147 src/omega_log/interfaces/tui/screens/export_screen.py:49 src/omega_log/interfaces/tui/screens/log_health_screen.py:129
 msgid "Exporter JSON"
 msgstr "Xuất JSON"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:148 src/omega_log/interfaces/tui/screens/export_screen.py:50 src/omega_log/interfaces/tui/screens/log_health_screen.py:121
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:149 src/omega_log/interfaces/tui/screens/export_screen.py:51 src/omega_log/interfaces/tui/screens/log_health_screen.py:131
 msgid "Exporter HTML"
 msgstr "Xuất HTML"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:171 src/omega_log/interfaces/tui/screens/process_ip_screen.py:160
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:174 src/omega_log/interfaces/tui/screens/process_ip_screen.py:160
 #, python-brace-format
 msgid "Sélection : {description}"
 msgstr "Lựa chọn: {description}"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:189 src/omega_log/interfaces/tui/screens/process_ip_screen.py:188 src/omega_log/interfaces/tui/screens/purge_screen.py:76 src/omega_log/interfaces/tui/screens/view_logs.py:82
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:194 src/omega_log/interfaces/tui/screens/process_ip_screen.py:188 src/omega_log/interfaces/tui/screens/purge_screen.py:76 src/omega_log/interfaces/tui/screens/view_logs.py:82
 msgid "Saisissez au moins un numéro de ligne."
 msgstr "Hãy nhập ít nhất một số dòng."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:195 src/omega_log/interfaces/tui/screens/favorites.py:148 src/omega_log/interfaces/tui/screens/process_ip_screen.py:194 src/omega_log/interfaces/tui/screens/purge_screen.py:82 src/omega_log/interfaces/tui/screens/view_logs.py:88
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:200 src/omega_log/interfaces/tui/screens/favorites.py:148 src/omega_log/interfaces/tui/screens/process_ip_screen.py:194 src/omega_log/interfaces/tui/screens/purge_screen.py:82 src/omega_log/interfaces/tui/screens/view_logs.py:88
 #, python-brace-format
 msgid "Numéro invalide : '{token}'."
 msgstr "Số không hợp lệ: '{token}'."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:202 src/omega_log/interfaces/tui/screens/process_ip_screen.py:201 src/omega_log/interfaces/tui/screens/process_ip_screen.py:218
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:207 src/omega_log/interfaces/tui/screens/process_ip_screen.py:201 src/omega_log/interfaces/tui/screens/process_ip_screen.py:218
 msgid "Un calcul est déjà en cours, patientez."
 msgstr "Một phép tính đang chạy, vui lòng chờ."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:246 src/omega_log/interfaces/tui/screens/process_ip_screen.py:251 src/omega_log/interfaces/tui/screens/process_ip_screen.py:306
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:251 src/omega_log/interfaces/tui/screens/process_ip_screen.py:251 src/omega_log/interfaces/tui/screens/process_ip_screen.py:306
 msgid "Permission refusée sur au moins un log sélectionné."
 msgstr "Bị từ chối quyền trên ít nhất một log đã chọn."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:278 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:281 src/omega_log/interfaces/tui/screens/process_ip_screen.py:343
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:283 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:286 src/omega_log/interfaces/tui/screens/process_ip_screen.py:343
 #, python-brace-format
 msgid "Erreur de calcul : {message}"
 msgstr "Lỗi tính toán: {message}"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:315 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:408
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:320 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:413
 msgid "tout le fichier"
 msgstr "toàn bộ tệp"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:316
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:321
 #, python-brace-format
 msgid "── SYNTHÈSE — {period_label}, {log_count} log(s) ──\n"
 msgstr "── TỔNG HỢP — {period_label}, {log_count} log ──\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:318
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:323
 msgid " Aucune ligne sur cette période.\n"
 msgstr " Không có dòng nào trong khoảng thời gian này.\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:323
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:328
 #, python-brace-format
 msgid " Lignes analysées   : {total}\n"
 msgstr " Dòng đã phân tích  : {total}\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:324
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:329
 #, python-brace-format
 msgid " Requêtes HTTP      : {http_total}\n"
 msgstr " Yêu cầu HTTP       : {http_total}\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:325
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:330
 #, python-brace-format
 msgid " IPs uniques        : {unique_ips}\n"
 msgstr " IP khác nhau       : {unique_ips}\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:326
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:331
 #, python-brace-format
 msgid " Taux d'erreur      : {error_rate:.1f} %\n"
 msgstr " Tỷ lệ lỗi          : {error_rate:.1f} %\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:327
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:332
 #, python-brace-format
 msgid " Volume transféré   : {volume}\n"
 msgstr " Dữ liệu truyền     : {volume}\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:328
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:333
 #, python-brace-format
 msgid " Heure de pointe    : {peak_hour:02d}h ({peak_count} lignes)\n"
 msgstr " Giờ cao điểm       : {peak_hour:02d}h ({peak_count} dòng)\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:329
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:334
 #, python-brace-format
 msgid ""
 " Période couverte   : {covered}\n"
@@ -607,245 +607,84 @@ msgstr ""
 " Khoảng thời gian   : {covered}\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:332
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:337
 msgid "── STATUTS HTTP ──\n"
 msgstr "── TRẠNG THÁI HTTP ──\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:335 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:143
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:340 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:143
 #, python-brace-format
 msgid "Refus {name}"
 msgstr "Từ chối {name}"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:345
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:350
 msgid "TOP IP"
 msgstr "TOP IP"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:347
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:352
 msgid "CHEMINS DEMANDÉS"
 msgstr "ĐƯỜNG DẪN ĐƯỢC GỌI"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:348
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:353
 msgid "CHEMINS EN 404"
 msgstr "ĐƯỜNG DẪN TRẢ VỀ 404"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:355 src/omega_log/interfaces/tui/screens/live_tail_screen.py:278
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:360 src/omega_log/interfaces/tui/screens/live_tail_screen.py:294
 msgid "(aucun)"
 msgstr "(không có)"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:360 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:154
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:365 src/omega_log/infrastructure/exporters/templates/access_log_stats_report.html.j2:154
 #, python-brace-format
 msgid "dont {errors} en erreur"
 msgstr "trong đó {errors} lỗi"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:370
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:375
 msgid "── RÉPARTITION HORAIRE (24 h) ──\n"
 msgstr "── PHÂN BỐ THEO GIỜ (24 giờ) ──\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:376
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:381
 #, python-brace-format
 msgid "── TENDANCE PAR JOUR ({count} j) ──\n"
 msgstr "── XU HƯỚNG THEO NGÀY ({count} ngày) ──\n"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:384 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:401
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:389 src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:406
 msgid "Calculez d'abord les statistiques (choisissez une période)."
 msgstr "Hãy tính thống kê trước (chọn một khoảng thời gian)."
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:397 src/omega_log/interfaces/tui/screens/export_screen.py:90
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:402 src/omega_log/interfaces/tui/screens/export_screen.py:98
 #, python-brace-format
 msgid "Export JSON : {out_path}"
 msgstr "Xuất JSON: {out_path}"
 
-#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:417 src/omega_log/interfaces/tui/screens/export_screen.py:100
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:422 src/omega_log/interfaces/tui/screens/export_screen.py:108
 #, python-brace-format
 msgid "Export HTML : {out_path}"
 msgstr "Xuất HTML: {out_path}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:41
-msgid "CONTACT ET SUPPORT"
-msgstr "LIÊN HỆ VÀ HỖ TRỢ"
 
 #: src/omega_log/interfaces/tui/screens/contact_support_screen.py:42
 msgid "Aidez le développeur : omega-log est développé et maintenu par une seule personne."
 msgstr "Hãy giúp nhà phát triển: omega-log do một người duy nhất phát triển và duy trì."
 
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:46 src/omega_log/interfaces/tui/screens/contact_support_screen.py:50
-msgid "Payer un café"
-msgstr "Mời một ly cà phê"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:47
-msgid "Un don aide à couvrir les frais des serveurs (électricité)."
-msgstr "Một khoản ủng hộ giúp trang trải chi phí máy chủ (tiền điện)."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:52 src/omega_log/interfaces/tui/screens/contact_support_screen.py:59 src/omega_log/interfaces/tui/screens/contact_support_screen.py:95
-msgid "Se déclarer utilisateur (anonyme)"
-msgstr "Khai báo là người dùng (ẩn danh)"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:53
-msgid "Une déclaration volontaire et anonyme, qui sert uniquement à compter les utilisateurs et, si vous le souhaitez, leur continent ou leur pays."
-msgstr "Một khai báo tự nguyện và ẩn danh, chỉ dùng để đếm số người dùng và, nếu bạn muốn, châu lục hoặc quốc gia của họ."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:61
-msgid "Ne plus me déclarer"
-msgstr "Không khai báo tôi nữa"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:63 src/omega_log/interfaces/tui/screens/contact_support_screen.py:67
-msgid "Contacter le support"
-msgstr "Liên hệ hỗ trợ"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:64
-#, python-brace-format
-msgid "Mail : {SUPPORT_MAIL}"
-msgstr "Thư: {SUPPORT_MAIL}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:65
-#, python-brace-format
-msgid "Formulaire de contact : {CONTACT_FORM_URL}"
-msgstr "Biểu mẫu liên hệ: {CONTACT_FORM_URL}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:94
-msgid "État : non déclaré."
-msgstr "Trạng thái: chưa khai báo."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:98
-#, python-brace-format
-msgid "État : déclaré le {value} (envoi : une seule fois)."
-msgstr "Trạng thái: đã khai báo ngày {value} (gửi: một lần duy nhất)."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:99
-msgid "Modifier ma déclaration"
-msgstr "Sửa khai báo của tôi"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:118
-msgid "NE PLUS ME DÉCLARER ?"
-msgstr "KHÔNG KHAI BÁO TÔI NỮA?"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:119
-msgid "Votre entrée sera supprimée du compteur et la clé effacée de cette installation."
-msgstr "Mục của bạn sẽ bị xóa khỏi bộ đếm và khóa sẽ bị xóa khỏi bản cài đặt này."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:124
-msgid "Ouverture dans le navigateur..."
-msgstr "Đang mở trong trình duyệt..."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:131
-#, python-brace-format
-msgid "Aucun navigateur disponible ici (session sans affichage) : ouvrez cette adresse vous-même : {url}"
-msgstr "Không có trình duyệt ở đây (phiên không có màn hình): hãy tự mở địa chỉ này: {url}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:146
-msgid "Vous n'êtes plus déclaré : votre entrée est supprimée et la clé effacée."
-msgstr "Bạn không còn được khai báo: mục của bạn đã bị xóa và khóa đã bị xóa bỏ."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:149
-msgid "Clé effacée. Réception injoignable : votre entrée y disparaîtra seule (1 an)."
-msgstr "Khóa đã bị xóa. Không kết nối được nơi nhận: mục của bạn ở đó sẽ tự biến mất (1 năm)."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:28
-msgid "Afrique"
-msgstr "Châu Phi"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:29
-msgid "Antarctique"
-msgstr "Châu Nam Cực"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:30
-msgid "Asie"
-msgstr "Châu Á"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:31
-msgid "Europe"
-msgstr "Châu Âu"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:32
-msgid "Amérique du Nord"
-msgstr "Bắc Mỹ"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:33
-msgid "Océanie"
-msgstr "Châu Đại Dương"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:34
-msgid "Amérique du Sud"
-msgstr "Nam Mỹ"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:56 src/omega_log/interfaces/tui/screens/declaration_screen.py:60
-msgid "Autre (non référencé)"
-msgstr "Khác (không có trong danh sách)"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:74
-msgid "SE DÉCLARER UTILISATEUR (ANONYME)"
-msgstr "KHAI BÁO LÀ NGƯỜI DÙNG (ẨN DANH)"
-
 #: src/omega_log/interfaces/tui/screens/declaration_screen.py:75
 msgid "Une déclaration volontaire et anonyme : elle sert uniquement à compter les utilisateurs d'omega-log et, si vous le souhaitez, leur continent ou leur pays. Une clé tirée au hasard est créée pour cette installation ; elle n'a aucun lien avec vous ni avec votre machine. Envoi : une seule fois, maintenant."
 msgstr "Một khai báo tự nguyện và ẩn danh: chỉ dùng để đếm số người dùng omega-log và, nếu bạn muốn, châu lục hoặc quốc gia của họ. Một khóa ngẫu nhiên được tạo cho bản cài đặt này; nó không liên quan gì đến bạn hay máy của bạn. Gửi: một lần duy nhất, ngay bây giờ."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:81
-msgid "Continent (facultatif)"
-msgstr "Châu lục (không bắt buộc)"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:83 src/omega_log/interfaces/tui/screens/declaration_screen.py:86
-msgid "Non précisé"
-msgstr "Không nêu"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:84
-msgid "Pays (facultatif)"
-msgstr "Quốc gia (không bắt buộc)"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:88
-msgid "Message envoyé"
-msgstr "Thông điệp được gửi"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:90
-#, python-brace-format
-msgid "Destination : {RECEPTION_URL}"
-msgstr "Đích: {RECEPTION_URL}"
 
 #: src/omega_log/interfaces/tui/screens/declaration_screen.py:91
 msgid "Jamais envoyés : votre nom, le nom de la machine, vos logs."
 msgstr "Không bao giờ gửi: tên của bạn, tên máy, các log của bạn."
 
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:92
-msgid "Votre adresse IP n'est pas enregistrée dans les déclarations. Comme pour toute visite d'un site, elle passe par les contrôles de sécurité et le journal technique du serveur de réception."
-msgstr "Địa chỉ IP của bạn không được ghi trong các khai báo. Như với bất kỳ lượt truy cập trang web nào, nó đi qua các kiểm tra bảo mật và nhật ký kỹ thuật của máy chủ nhận."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:95
-msgid "Vous pouvez retirer votre déclaration à tout moment depuis Contact et support."
-msgstr "Bạn có thể rút lại khai báo bất cứ lúc nào trong Liên hệ và hỗ trợ."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:101
-msgid "Envoyer"
-msgstr "Gửi"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:120
-msgid "<clé tirée au hasard à l'envoi>"
-msgstr "<khóa ngẫu nhiên tạo khi gửi>"
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:133
-msgid "Envoi en cours..."
-msgstr "Đang gửi..."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:144
-msgid "Merci ! Vous êtes déclaré utilisateur anonyme."
-msgstr "Cảm ơn! Bạn đã được khai báo là người dùng ẩn danh."
-
-#: src/omega_log/interfaces/tui/screens/declaration_screen.py:149
-msgid "Réception injoignable : rien n'a été enregistré, réessayez plus tard."
-msgstr "Không kết nối được nơi nhận: chưa có gì được ghi lại, hãy thử lại sau."
-
-#: src/omega_log/interfaces/tui/screens/export_screen.py:39
+#: src/omega_log/interfaces/tui/screens/export_screen.py:40
 msgid "EXPORTER LA LISTE DES ARCHIVES"
 msgstr "XUẤT DANH SÁCH BẢN LƯU TRỮ"
 
-#: src/omega_log/interfaces/tui/screens/export_screen.py:57 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+#: src/omega_log/interfaces/tui/screens/export_screen.py:62 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
 msgid "Archive"
 msgstr "Bản lưu trữ"
 
-#: src/omega_log/interfaces/tui/screens/export_screen.py:57
+#: src/omega_log/interfaces/tui/screens/export_screen.py:62
 msgid "Créée le"
 msgstr "Tạo lúc"
 
-#: src/omega_log/interfaces/tui/screens/export_screen.py:57 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
+#: src/omega_log/interfaces/tui/screens/export_screen.py:62 src/omega_log/infrastructure/exporters/templates/log_archives_report.html.j2:61
 msgid "Taille (octets)"
 msgstr "Kích thước (byte)"
 
@@ -893,51 +732,51 @@ msgstr "Hãy chọn một mục yêu thích."
 msgid "SUPPRIMER CE FAVORI ?"
 msgstr "XÓA MỤC YÊU THÍCH NÀY?"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:40
+#: src/omega_log/interfaces/tui/screens/help_screen.py:41
 msgid "Activer le bouton ou le champ sélectionné"
 msgstr "Kích hoạt nút hoặc trường đang chọn"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:40
+#: src/omega_log/interfaces/tui/screens/help_screen.py:41
 msgid "Entrée / Clic"
 msgstr "Enter / Nhấp"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:43
+#: src/omega_log/interfaces/tui/screens/help_screen.py:44
 msgid "Rafraîchir la détection du terminal (adapte le profil d'affichage)"
 msgstr "Làm mới việc nhận diện terminal (điều chỉnh hồ sơ hiển thị)"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:44
+#: src/omega_log/interfaces/tui/screens/help_screen.py:45
 msgid "Cette aide, accessible depuis n'importe quel écran"
 msgstr "Trợ giúp này, truy cập được từ mọi màn hình"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:49
+#: src/omega_log/interfaces/tui/screens/help_screen.py:50
 msgid "Thème suivant — intercepté avant lnav, jamais transmis"
 msgstr "Giao diện tiếp theo — bị chặn trước lnav, không bao giờ chuyển tiếp"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:50
+#: src/omega_log/interfaces/tui/screens/help_screen.py:51
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:50
+#: src/omega_log/interfaces/tui/screens/help_screen.py:51
 msgid "Marque la ligne courante et la copie (presse-papier terminal, OSC 52) — jamais transmis à lnav tel quel"
 msgstr "Đánh dấu dòng hiện tại và sao chép nó (bộ nhớ tạm của terminal, OSC 52) — không bao giờ chuyển nguyên cho lnav"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:52
+#: src/omega_log/interfaces/tui/screens/help_screen.py:53
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:52
+#: src/omega_log/interfaces/tui/screens/help_screen.py:53
 msgid "Quitte lnav et revient à l'application — jamais transmis à lnav"
 msgstr "Thoát lnav và quay lại ứng dụng — không bao giờ chuyển cho lnav"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:53
+#: src/omega_log/interfaces/tui/screens/help_screen.py:54
 msgid "Haut/Bas, g/G, /, m, q..."
 msgstr "Lên/Xuống, g/G, /, m, q..."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:53
+#: src/omega_log/interfaces/tui/screens/help_screen.py:54
 msgid "Raccourcis propres à lnav lui-même (navigation, recherche, marquage, vues) — voir sa documentation"
 msgstr "Phím tắt riêng của chính lnav (di chuyển, tìm kiếm, đánh dấu, chế độ xem) — xem tài liệu của lnav"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:57
+#: src/omega_log/interfaces/tui/screens/help_screen.py:58
 msgid ""
 "1. [b]Registre des capacités[/b] : lancez un scan au premier démarrage pour\n"
 "   que l'application découvre les logs déjà présents sur la machine.\n"
@@ -964,11 +803,11 @@ msgstr ""
 "5. [b]Xem và xử lý IP[/b] và [b]Thống kê[/b] để phân tích;\n"
 "   [b]Rotate[/b]/[b]Dọn[/b]/[b]Xuất[/b] để bảo trì.\n"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:71 src/omega_log/interfaces/tui/screens/home.py:46
+#: src/omega_log/interfaces/tui/screens/help_screen.py:72 src/omega_log/interfaces/tui/screens/home.py:46
 msgid "Registre des capacités"
 msgstr "Sổ đăng ký khả năng"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:72
+#: src/omega_log/interfaces/tui/screens/help_screen.py:73
 msgid ""
 "Détecte automatiquement les services/serveurs actifs sur la machine\n"
 "(serveurs web, bases de données, mail, DNS, sécurité, omega-serv...) et\n"
@@ -1008,11 +847,11 @@ msgstr ""
 "  log đáng ngờ như bình thường, ứng dụng chỉ đơn giản hiển thị những\n"
 "  gì nó thực sự chứa (có thể là không có gì)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:111 src/omega_log/interfaces/tui/screens/help_screen.py:89 src/omega_log/interfaces/tui/screens/home.py:47
+#: src/omega_log/application/use_cases/health_presentation.py:111 src/omega_log/interfaces/tui/screens/help_screen.py:90 src/omega_log/interfaces/tui/screens/home.py:47
 msgid "Bibliothèque"
 msgstr "Thư viện"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:90
+#: src/omega_log/interfaces/tui/screens/help_screen.py:91
 msgid ""
 "Hub central référençant tous les logs à traiter — point de départ de\n"
 "tous les autres écrans (Voir les logs, Favoris, Voir et Traiter IP,\n"
@@ -1085,11 +924,11 @@ msgstr ""
 "  tải về sẽ thay thế bản sao trước đó. Không có mật khẩu nào được yêu\n"
 "  cầu hay lưu trữ, việc xác thực vẫn theo cấu hình SSH của bạn."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:122 src/omega_log/interfaces/tui/screens/home.py:48
+#: src/omega_log/interfaces/tui/screens/help_screen.py:123 src/omega_log/interfaces/tui/screens/home.py:48
 msgid "Voir les logs"
 msgstr "Xem log"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:123
+#: src/omega_log/interfaces/tui/screens/help_screen.py:124
 msgid ""
 "Ouvre un ou plusieurs logs DÉJÀ référencés dans la Bibliothèque\n"
 "(aucun import manuel ici — importez depuis le Registre ou la\n"
@@ -1116,11 +955,11 @@ msgstr ""
 "  trình xem còn lại bị từ chối kèm thông báo rõ ràng nếu bạn vẫn cố.\n"
 "- 3 trình xem được trình bày chi tiết trong phần riêng bên dưới."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:134 src/omega_log/interfaces/tui/screens/home.py:49
+#: src/omega_log/interfaces/tui/screens/help_screen.py:135 src/omega_log/interfaces/tui/screens/home.py:49
 msgid "Favoris"
 msgstr "Yêu thích"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:135
+#: src/omega_log/interfaces/tui/screens/help_screen.py:136
 msgid ""
 "Enregistre une combinaison (log(s) + viewer) sous un nom, pour un\n"
 "lancement direct sans re-sélectionner chaque fois.\n"
@@ -1158,11 +997,11 @@ msgstr ""
 "  việc khởi chạy sẽ thất bại như khi mở bình thường một đường dẫn\n"
 "  không tồn tại."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:150 src/omega_log/interfaces/tui/screens/home.py:50
+#: src/omega_log/interfaces/tui/screens/help_screen.py:151 src/omega_log/interfaces/tui/screens/home.py:50
 msgid "Voir et Traiter IP"
 msgstr "Xem và xử lý IP"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:151
+#: src/omega_log/interfaces/tui/screens/help_screen.py:152
 msgid ""
 "Top 10 des adresses IP les plus actives sur une période, et suppression\n"
 "ciblée d'une IP dans un ou plusieurs logs.\n"
@@ -1209,11 +1048,11 @@ msgstr ""
 "- Log được bảo vệ (vd: /var/log/audit): xác thực sudo tạm thời được\n"
 "  yêu cầu tự động vào lúc cần (đọc hoặc xóa), không bao giờ trước."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:180 src/omega_log/interfaces/tui/screens/home.py:51
+#: src/omega_log/interfaces/tui/screens/help_screen.py:181 src/omega_log/interfaces/tui/screens/home.py:51
 msgid "Statistiques (accès)"
 msgstr "Thống kê (truy cập)"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:181
+#: src/omega_log/interfaces/tui/screens/help_screen.py:182
 msgid ""
 "Volume, IPs uniques, taux d'erreur, top IPs, répartition horaire sur un\n"
 "ou plusieurs logs d'accès — avec export.\n"
@@ -1263,11 +1102,11 @@ msgstr ""
 "  nhất một lần (chọn một khoảng thời gian) trước khi có thể xuất — tệp\n"
 "  tạo ra có gắn dấu thời gian, được đặt trong var/exports/."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:201 src/omega_log/interfaces/tui/screens/home.py:54
+#: src/omega_log/interfaces/tui/screens/help_screen.py:202 src/omega_log/interfaces/tui/screens/home.py:54
 msgid "Rotate"
 msgstr "Rotate"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:202
+#: src/omega_log/interfaces/tui/screens/help_screen.py:203
 msgid ""
 "Sauvegarde compressée d'un log et restauration depuis une archive\n"
 "précédente.\n"
@@ -1309,11 +1148,11 @@ msgstr ""
 "- Log được bảo vệ: tự động nâng quyền sudo tạm thời nếu cần, cho cả\n"
 "  sao lưu lẫn khôi phục."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:231 src/omega_log/interfaces/tui/screens/home.py:55
+#: src/omega_log/interfaces/tui/screens/help_screen.py:232 src/omega_log/interfaces/tui/screens/home.py:55
 msgid "Purger"
 msgstr "Dọn"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:232
+#: src/omega_log/interfaces/tui/screens/help_screen.py:233
 msgid ""
 "Deux actions DISTINCTES et toutes deux irréversibles sans confirmation\n"
 "préalable — à ne jamais confondre :\n"
@@ -1348,7 +1187,7 @@ msgstr ""
 "- Hãy nhớ dùng [b]Rotate -> Sao lưu ngay[/b] trước khi dọn nếu bạn\n"
 "  muốn giữ lại dấu vết của nội dung hiện tại."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:247
+#: src/omega_log/interfaces/tui/screens/help_screen.py:248
 msgid ""
 "Export de la liste des ARCHIVES (sauvegardes Rotate) en JSON ou en HTML\n"
 "à thème — distinct de l'export des statistiques (présent directement\n"
@@ -1379,7 +1218,7 @@ msgstr ""
 "- Tệp tạo ra có gắn dấu thời gian và được đặt trong var/exports/ (cùng\n"
 "  thư mục với các bản xuất Thống kê)."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:272
+#: src/omega_log/interfaces/tui/screens/help_screen.py:273
 msgid ""
 "Réglages de l'application elle-même (pas des logs traités).\n"
 "\n"
@@ -1409,11 +1248,11 @@ msgstr ""
 "  dụng này (sau khi xác nhận) — không bao giờ ảnh hưởng đến các log\n"
 "  được giám sát hay các bản lưu trữ Rotate của chúng."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:291
+#: src/omega_log/interfaces/tui/screens/help_screen.py:292
 msgid "Aide, export et contact"
 msgstr "Trợ giúp, xuất và liên hệ"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:292
+#: src/omega_log/interfaces/tui/screens/help_screen.py:293
 msgid ""
 "- [b]Exporter l'aide en HTML[/b] : toute cette aide dans un fichier\n"
 "  HTML horodaté (thème au choix, comme les autres exports), déposé dans\n"
@@ -1441,166 +1280,41 @@ msgstr ""
 "  của nó và, tùy chọn, một châu lục và một quốc gia. [b]Không khai báo\n"
 "  tôi nữa[/b] xóa mục ở nơi nhận và xóa khóa cục bộ."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:305
-msgid ""
-"[b]1. Simple[/b] — suivi en direct avec parsing générique (horodatage,\n"
-"niveau, IP, service détecté). Le tableau garde tout le tampon (500\n"
-"lignes, 200 chargées à l'ouverture) avec ascenseurs vertical et\n"
-"horizontal ; il suit les nouvelles lignes seulement si vous êtes déjà en\n"
-"bas. À gauche, un tableau de bord qui défile (identique à omega-serv) :\n"
-"rendement, bande passante, statuts HTTP (dont refus 403 et 429), IPs\n"
-"uniques et top 5 IP, chemins les plus demandes et chemins en 404, santé\n"
-"et tampon. Une valeur que le log ne fournit pas s'affiche \"-\", jamais\n"
-"estimée. Pour un access log HTTP reconnu\n"
-"(format Combined/Common), deux colonnes supplémentaires apparaissent\n"
-"automatiquement : [b]Code[/b] (statut HTTP, coloré 2xx vert/3xx cyan/\n"
-"4xx jaune/5xx rouge) et [b]Timeout[/b] (latence si le format source la\n"
-"fournit, coloré selon le seuil) — ces colonnes affichent \"-\" pour tout\n"
-"ce qui n'est pas un format HTTP reconnu (auth.log, syslog, fail2ban...).\n"
-"\n"
-"[b]2. Classique[/b] — affiche les dernières lignes BRUTES du fichier\n"
-"(aucun parsing, aucune coloration), avec un bouton [b]Suivre en\n"
-"direct[/b] pour basculer en mode tail -f. Le plus simple et le plus\n"
-"fiable quel que soit le format du fichier.\n"
-"\n"
-"[b]3. lnav[/b] — encapsule le programme externe `lnav` dans un terminal\n"
-"dédié (pty), pour une fusion et une analyse croisée de PLUSIEURS\n"
-"fichiers à la fois (merge automatique par horodatage). Nécessite que\n"
-"`lnav` soit installé sur le système (sudo pacman -S lnav / sudo apt\n"
-"install lnav) — sans lui, ce viewer est proposé mais refuse de se\n"
-"lancer avec un message explicite. Raccourcis spécifiques pendant une\n"
-"session lnav :"
-msgstr ""
-"[b]1. Đơn giản[/b] — theo dõi trực tiếp với phân tích chung (dấu thời\n"
-"gian, mức độ, IP, dịch vụ phát hiện được). Bảng giữ toàn bộ bộ đệm\n"
-"(500 dòng, 200 dòng nạp khi mở) với thanh cuộn dọc và ngang; nó chỉ\n"
-"theo các dòng mới nếu bạn đang ở cuối bảng. Bên trái là một bảng điều\n"
-"khiển có thể cuộn (giống omega-serv): hiệu suất, băng thông, trạng\n"
-"thái HTTP (gồm từ chối 403 và 429), IP khác nhau và top 5 IP, đường\n"
-"dẫn được gọi nhiều nhất và đường dẫn 404, sức khỏe và bộ đệm. Một giá\n"
-"trị mà log không cung cấp được hiển thị \"-\", không bao giờ ước tính.\n"
-"Với một access log HTTP được nhận diện (định dạng Combined/Common),\n"
-"hai cột bổ sung tự động xuất hiện: [b]Code[/b] (trạng thái HTTP, tô\n"
-"màu 2xx xanh lá/3xx xanh lơ/4xx vàng/5xx đỏ) và [b]Timeout[/b] (độ trễ\n"
-"nếu định dạng nguồn cung cấp, tô màu theo ngưỡng) — các cột này hiển\n"
-"thị \"-\" cho mọi thứ không phải là định dạng HTTP được nhận diện\n"
-"(auth.log, syslog, fail2ban...).\n"
-"\n"
-"[b]2. Cổ điển[/b] — hiển thị các dòng THÔ cuối cùng của tệp (không\n"
-"phân tích, không tô màu), với nút [b]Theo dõi trực tiếp[/b] để chuyển\n"
-"sang chế độ tail -f. Đơn giản nhất và đáng tin cậy nhất bất kể định\n"
-"dạng tệp.\n"
-"\n"
-"[b]3. lnav[/b] — bao bọc chương trình bên ngoài `lnav` trong một\n"
-"terminal riêng (pty), để hợp nhất và phân tích chéo NHIỀU tệp cùng lúc\n"
-"(tự động gộp theo dấu thời gian). Cần cài `lnav` trên hệ thống (sudo\n"
-"pacman -S lnav / sudo apt install lnav) — nếu không có, trình xem này\n"
-"vẫn được đề xuất nhưng từ chối khởi chạy kèm thông báo rõ ràng. Phím\n"
-"tắt riêng trong một phiên lnav:"
-
-#: src/omega_log/interfaces/tui/screens/help_screen.py:328
-msgid ""
-"[b]Élévation sudo ponctuelle[/b] — l'application ne tourne JAMAIS en\n"
-"root par défaut. Quand une action rencontre réellement une permission\n"
-"refusée (ex. /var/log/audit/, lisible seulement par root), une\n"
-"authentification sudo est demandée À CE moment précis, dans le\n"
-"terminal réel (l'interface se suspend brièvement) — jamais à l'avance,\n"
-"jamais pour des actions qui n'en ont pas besoin. Une fois authentifié\n"
-"pour un écran donné, les actions suivantes sur ce même écran réutilisent\n"
-"l'autorisation sans redemander.\n"
-"\n"
-"[b]États SUSPECT / ABSENT / OK[/b] — SUSPECT : fichier présent mais\n"
-"vide (très souvent un service qui route en réalité vers journald plutôt\n"
-"que vers un fichier classique). ABSENT : chemin introuvable au moment de\n"
-"l'affichage (supprimé, pas encore créé, ou chemin erroné). OK : fichier\n"
-"présent et non vide. Ces états sont INFORMATIFS, jamais bloquants —\n"
-"vous pouvez toujours ouvrir, exporter ou purger un log quel que soit son\n"
-"état affiché.\n"
-"\n"
-"[b]Sélection des logs[/b] — convention commune (Voir les logs, Favoris,\n"
-"Voir et Traiter IP, Statistiques, Rotate, Purger) : le tableau affiche\n"
-"un numéro par ligne. Simple clic : la ligne surlignée suffit. Double-clic\n"
-"ou Entrée : ajoute ou retire son numéro dans le champ (ex. \"1,3,4\").\n"
-"Vous pouvez aussi saisir les numéros à la main ; le champ, s'il est\n"
-"rempli, a priorité.\n"
-"\n"
-"[b]Dossier var/[/b] — tout l'état propre à l'application (bibliothèque,\n"
-"favoris, thème choisi, archives de sauvegarde, exports, journal\n"
-"applicatif) vit dans ./var/, relatif au dossier où vous lancez\n"
-"l'application (ou $OMEGA_LOG_VAR_DIR si défini) — jamais dans votre\n"
-"dossier personnel. Ce dossier est entièrement local à la machine, ne\n"
-"contient aucun des LOGS SURVEILLÉS eux-mêmes (seulement des références\n"
-"vers leurs chemins)."
-msgstr ""
-"[b]Nâng quyền sudo tạm thời[/b] — theo mặc định ứng dụng KHÔNG BAO GIỜ\n"
-"chạy dưới quyền root. Khi một thao tác thực sự gặp lỗi bị từ chối\n"
-"quyền (vd: /var/log/audit/, chỉ root đọc được), xác thực sudo được yêu\n"
-"cầu ĐÚNG lúc đó, trong terminal thực (giao diện tạm dừng trong giây\n"
-"lát) — không bao giờ trước, không bao giờ cho các thao tác không cần\n"
-"đến. Khi đã xác thực cho một màn hình, các thao tác tiếp theo trên\n"
-"cùng màn hình đó dùng lại quyền mà không hỏi lại.\n"
-"\n"
-"[b]Trạng thái ĐÁNG NGỜ / KHÔNG CÓ / OK[/b] — ĐÁNG NGỜ: tệp có nhưng trống\n"
-"(rất thường là một dịch vụ thực ra ghi vào journald thay vì một tệp\n"
-"thông thường). KHÔNG CÓ: không tìm thấy đường dẫn vào lúc hiển thị (đã\n"
-"bị xóa, chưa được tạo, hoặc đường dẫn sai). OK: tệp có và không trống.\n"
-"Các trạng thái này chỉ mang tính THÔNG TIN, không bao giờ chặn — bạn\n"
-"luôn có thể mở, xuất hoặc dọn một log bất kể trạng thái hiển thị của\n"
-"nó.\n"
-"\n"
-"[b]Chọn log[/b] — quy ước chung (Xem log, Yêu thích, Xem và xử lý IP,\n"
-"Thống kê, Rotate, Dọn): bảng hiển thị một số trên mỗi dòng. Nhấp một\n"
-"lần: dòng được tô sáng là đủ. Nhấp đúp hoặc Enter: thêm hoặc gỡ số của\n"
-"nó trong trường (vd: \"1,3,4\"). Bạn cũng có thể tự nhập các số; nếu\n"
-"trường đã được điền, trường được ưu tiên.\n"
-"\n"
-"[b]Thư mục var/[/b] — toàn bộ trạng thái riêng của ứng dụng (thư viện,\n"
-"mục yêu thích, giao diện đã chọn, bản lưu trữ sao lưu, bản xuất, nhật\n"
-"ký ứng dụng) nằm trong ./var/, tương đối với thư mục nơi bạn khởi chạy\n"
-"ứng dụng (hoặc $OMEGA_LOG_VAR_DIR nếu được định nghĩa) — không bao giờ\n"
-"trong thư mục cá nhân của bạn. Thư mục này hoàn toàn cục bộ trên máy,\n"
-"không chứa bất kỳ LOG ĐƯỢC GIÁM SÁT nào (chỉ chứa các tham chiếu đến\n"
-"đường dẫn của chúng)."
-
-#: src/omega_log/interfaces/tui/screens/help_screen.py:358
+#: src/omega_log/interfaces/tui/screens/help_screen.py:397
 msgid "Raccourcis pendant une session lnav"
 msgstr "Phím tắt trong một phiên lnav"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:361 src/omega_log/interfaces/tui/screens/help_screen.py:400
+#: src/omega_log/interfaces/tui/screens/help_screen.py:400 src/omega_log/interfaces/tui/screens/help_screen.py:441
 msgid "Démarrage rapide"
 msgstr "Bắt đầu nhanh"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:363 src/omega_log/interfaces/tui/screens/help_screen.py:408
+#: src/omega_log/interfaces/tui/screens/help_screen.py:402 src/omega_log/interfaces/tui/screens/help_screen.py:449
 msgid "Les 3 viewers (Simple / Classique / lnav)"
 msgstr "3 trình xem (Đơn giản / Cổ điển / lnav)"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:364 src/omega_log/interfaces/tui/screens/help_screen.py:413
+#: src/omega_log/interfaces/tui/screens/help_screen.py:403 src/omega_log/interfaces/tui/screens/help_screen.py:454
 msgid "Concepts et glossaire"
 msgstr "Khái niệm và thuật ngữ"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:388
+#: src/omega_log/interfaces/tui/screens/help_screen.py:427
 msgid "Exporter l'aide en HTML"
 msgstr "Xuất trợ giúp ra HTML"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:390
-msgid "Contact et support"
-msgstr "Liên hệ và hỗ trợ"
-
-#: src/omega_log/interfaces/tui/screens/help_screen.py:397
+#: src/omega_log/interfaces/tui/screens/help_screen.py:438
 #, python-brace-format
 msgid "{key:<16} {description}"
 msgstr "{key:<16} {description}"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:403
+#: src/omega_log/interfaces/tui/screens/help_screen.py:444
 msgid "Fonctions, écran par écran"
 msgstr "Các chức năng, theo từng màn hình"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:411
+#: src/omega_log/interfaces/tui/screens/help_screen.py:452
 #, python-brace-format
 msgid "  {key:<24} {description}"
 msgstr "  {key:<24} {description}"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:437
+#: src/omega_log/interfaces/tui/screens/help_screen.py:480
 #, python-brace-format
 msgid "Export écrit : {path}"
 msgstr "Đã ghi bản xuất: {path}"
@@ -1613,107 +1327,98 @@ msgstr "BẢO TRÌ"
 msgid "Cet écran n'est pas encore construit (voir plan_omega_log.md, phases suivantes)."
 msgstr "Màn hình này chưa được xây dựng (xem plan_omega_log.md, các giai đoạn tiếp theo)."
 
-#: src/omega_log/interfaces/tui/screens/library.py:43
+#: src/omega_log/interfaces/tui/screens/library.py:45
 msgid "BIBLIOTHÈQUE"
 msgstr "THƯ VIỆN"
 
-#: src/omega_log/interfaces/tui/screens/library.py:46
+#: src/omega_log/interfaces/tui/screens/library.py:48
 msgid "Chemin à ajouter manuellement"
 msgstr "Đường dẫn cần thêm thủ công"
 
-#: src/omega_log/interfaces/tui/screens/library.py:50
+#: src/omega_log/interfaces/tui/screens/library.py:52
 msgid "Ajouter les logs connus d'Omega-Serv"
 msgstr "Thêm các log đã biết của Omega-Serv"
 
-#: src/omega_log/interfaces/tui/screens/library.py:52
+#: src/omega_log/interfaces/tui/screens/library.py:54
 msgid "Sources distantes (SSH)"
 msgstr "Nguồn từ xa (SSH)"
 
-#: src/omega_log/interfaces/tui/screens/library.py:56
+#: src/omega_log/interfaces/tui/screens/library.py:58
 msgid "Retirer la sélection"
 msgstr "Gỡ mục đã chọn"
 
-#: src/omega_log/interfaces/tui/screens/library.py:97
-#, python-brace-format
-msgid "{count} log(s) référencé(s) — {stale} suspect(s), {missing} introuvable(s) actuellement."
-msgstr "{count} log được tham chiếu — hiện có {stale} đáng ngờ, {missing} không tìm thấy."
-
-#: src/omega_log/interfaces/tui/screens/library.py:105
+#: src/omega_log/interfaces/tui/screens/library.py:108
 msgid "Saisissez un chemin."
 msgstr "Hãy nhập một đường dẫn."
 
-#: src/omega_log/interfaces/tui/screens/library.py:116
+#: src/omega_log/interfaces/tui/screens/library.py:149
 msgid "Aucune installation d'Omega-Serv trouvée sur cette machine."
 msgstr "Không tìm thấy bản cài đặt Omega-Serv nào trên máy này."
 
-#: src/omega_log/interfaces/tui/screens/library.py:120
+#: src/omega_log/interfaces/tui/screens/library.py:153
 #, python-brace-format
 msgid "{count} installation(s) d'Omega-Serv trouvée(s), {added} log(s) ajouté(s) (déjà présents remplacés, jamais dupliqués)."
 msgstr "Đã tìm thấy {count} bản cài đặt Omega-Serv, đã thêm {added} log (log đã có được thay thế, không bao giờ trùng lặp)."
 
-#: src/omega_log/interfaces/tui/screens/library.py:124
+#: src/omega_log/interfaces/tui/screens/library.py:157
 #, python-brace-format
 msgid "Configuration illisible : {root}/config/omega-serve.json"
 msgstr "Không đọc được cấu hình: {root}/config/omega-serve.json"
 
-#: src/omega_log/interfaces/tui/screens/library.py:129 src/omega_log/interfaces/tui/screens/registry.py:100 src/omega_log/interfaces/tui/screens/registry.py:106 src/omega_log/interfaces/tui/screens/registry.py:116
+#: src/omega_log/interfaces/tui/screens/library.py:162 src/omega_log/interfaces/tui/screens/registry.py:100 src/omega_log/interfaces/tui/screens/registry.py:106 src/omega_log/interfaces/tui/screens/registry.py:116
 msgid "Sélectionnez une ligne dans la liste."
 msgstr "Hãy chọn một dòng trong danh sách."
 
-#: src/omega_log/interfaces/tui/screens/library.py:133
+#: src/omega_log/interfaces/tui/screens/library.py:166
 msgid "RETIRER DE LA BIBLIOTHÈQUE ?"
 msgstr "GỠ KHỎI THƯ VIỆN?"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:107
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:116
 #, python-brace-format
 msgid "VOIR LES LOGS — SIMPLE — {path}"
 msgstr "XEM LOG — ĐƠN GIẢN — {path}"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
 msgid "Code"
 msgstr "Mã"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
 msgid "Heure"
 msgstr "Giờ"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
 msgid "Message"
 msgstr "Thông báo"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
 msgid "Niveau"
 msgstr "Mức"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:120
-msgid "Timeout"
-msgstr "Timeout"
-
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:153 src/omega_log/interfaces/tui/screens/live_tail_screen.py:183 src/omega_log/interfaces/tui/screens/rotate_screen.py:138
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:166 src/omega_log/interfaces/tui/screens/live_tail_screen.py:199 src/omega_log/interfaces/tui/screens/rotate_screen.py:138
 #, python-brace-format
 msgid "Permission refusée sur {path}."
 msgstr "Bị từ chối quyền trên {path}."
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:190
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:206
 #, python-brace-format
 msgid "Lecture privilégiée impossible : {exc}"
 msgstr "Không thể đọc với quyền nâng cao: {exc}"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:226
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:242
 msgid "── RENDEMENT ──────────────\n"
 msgstr "── HIỆU SUẤT ──────────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:227
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:243
 #, python-brace-format
 msgid "{requests_per_second:.1f} req/s"
 msgstr "{requests_per_second:.1f} req/s"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:228
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:244
 #, python-brace-format
 msgid " ⚡ Débit        : {rps}\n"
 msgstr " ⚡ Tốc độ       : {rps}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:230
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:246
 #, python-brace-format
 msgid ""
 " ⏱ Latence moy. : {none}\n"
@@ -1722,7 +1427,7 @@ msgstr ""
 " ⏱ Độ trễ TB    : {none}\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:234
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:250
 #, python-brace-format
 msgid ""
 " ⏱ Latence moy. : {latency:.0f} ms\n"
@@ -1731,21 +1436,21 @@ msgstr ""
 " ⏱ Độ trễ TB    : {latency:.0f} ms\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:236
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:252
 msgid "── BANDE PASSANTE ─────────\n"
 msgstr "── BĂNG THÔNG ─────────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:240
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:256
 #, python-brace-format
 msgid " 🌐 Débit réseau : {bps}\n"
 msgstr " 🌐 Lưu lượng    : {bps}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:241
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:257
 #, python-brace-format
 msgid " 📦 Volume total : {total}\n"
 msgstr " 📦 Tổng dữ liệu : {total}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:242
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:258
 #, python-brace-format
 msgid ""
 " 🗜 Taille moy.  : {average}\n"
@@ -1754,41 +1459,41 @@ msgstr ""
 " 🗜 Cỡ TB        : {average}\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:244
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:260
 msgid "── STATUTS HTTP ───────────\n"
 msgstr "── TRẠNG THÁI HTTP ────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:245
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:261
 #, python-brace-format
 msgid " 📊 Requêtes     : {http_total}\n"
 msgstr " 📊 Yêu cầu      : {http_total}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:246
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:262
 #, python-brace-format
 msgid " √  Succès 2xx   : {status_2xx}\n"
 msgstr " √  Đạt 2xx      : {status_2xx}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:247
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:263
 #, python-brace-format
 msgid " ↔  Redir. 3xx   : {status_3xx}\n"
 msgstr " ↔  Chuyển 3xx   : {status_3xx}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:248
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:264
 #, python-brace-format
 msgid " ⚠  Erreurs 4xx  : {status_4xx}\n"
 msgstr " ⚠  Lỗi 4xx      : {status_4xx}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:249
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:265
 #, python-brace-format
 msgid " ❌ Erreurs 5xx  : {status_5xx}\n"
 msgstr " ❌ Lỗi 5xx      : {status_5xx}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:250
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:266
 #, python-brace-format
 msgid " ⛔ Refus 403    : {status_403}\n"
 msgstr " ⛔ Từ chối 403  : {status_403}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:251
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:267
 #, python-brace-format
 msgid ""
 " ⏳ Refus 429    : {status_429}\n"
@@ -1797,96 +1502,96 @@ msgstr ""
 " ⏳ Từ chối 429  : {status_429}\n"
 "\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:253
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:269
 msgid "── CLIENTS & RÉSEAU ───────\n"
 msgstr "── MÁY KHÁCH & MẠNG ───────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:254
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:270
 #, python-brace-format
 msgid " 💻 IPs uniques  : {unique_ips}\n"
 msgstr " 💻 IP khác nhau : {unique_ips}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:256
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:272
 msgid " 🖧 Top 5 IP     :\n"
 msgstr " 🖧 Top 5 IP     :\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:259
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:275
 msgid "── CHEMINS DEMANDÉS ───────\n"
 msgstr "── ĐƯỜNG DẪN ĐƯỢC GỌI ─────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:261
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:277
 msgid "── CHEMINS EN 404 ─────────\n"
 msgstr "── ĐƯỜNG DẪN 404 ──────────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:264
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:280
 msgid "── SANTÉ & TAMPON ─────────\n"
 msgstr "── SỨC KHỎE & BỘ ĐỆM ──────\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:267
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:283
 msgid "DÉGRADÉ"
 msgstr "HẠN CHẾ"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:268
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:284
 #, python-brace-format
 msgid " 🌡 Santé        : {health}\n"
 msgstr " 🌡 Sức khỏe     : {health}\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:269
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:285
 #, python-brace-format
 msgid " ⚠  Taux d'erreur: {rate:.1f}%\n"
 msgstr " ⚠  Tỷ lệ lỗi    : {rate:.1f}%\n"
 
-#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:270
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:286
 #, python-brace-format
 msgid " 📥 Tampon       : {count}/{BUFFER_SIZE}"
 msgstr " 📥 Bộ đệm       : {count}/{BUFFER_SIZE}"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:65
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:67
 msgid "lnav est introuvable ou non fonctionnel sur ce système. Sur Arch/Manjaro : sudo pacman -S lnav. Sur Debian/Ubuntu : sudo apt install lnav."
 msgstr "Không tìm thấy lnav hoặc lnav không hoạt động trên hệ thống này. Trên Arch/Manjaro: sudo pacman -S lnav. Trên Debian/Ubuntu: sudo apt install lnav."
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:79
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:96
 msgid "VOIR LES LOGS — LNAV (FUSION MULTI-LOGS)"
 msgstr "XEM LOG — LNAV (HỢP NHẤT NHIỀU LOG)"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:80
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:97
 #, python-brace-format
 msgid "Fichiers : {join}"
 msgstr "Tệp: {join}"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:84
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:101
 msgid "Lancer lnav"
 msgstr "Khởi chạy lnav"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:104
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:123
 #, python-brace-format
 msgid "Fichier(s) introuvable(s) : {join}"
 msgstr "Không tìm thấy tệp: {join}"
 
-#: src/omega_log/interfaces/tui/screens/lnav_screen.py:110
+#: src/omega_log/interfaces/tui/screens/lnav_screen.py:132
 #, python-brace-format
 msgid "Échec du lancement de lnav : {exc}"
 msgstr "Khởi chạy lnav thất bại: {exc}"
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:57
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:58
 #, python-brace-format
 msgid "VOIR LES LOGS — CLASSIQUE — {path}"
 msgstr "XEM LOG — CỔ ĐIỂN — {path}"
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:62 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:139
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:63 src/omega_log/interfaces/tui/screens/log_viewer_screen.py:143
 msgid "Suivre en direct"
 msgstr "Theo dõi trực tiếp"
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:108
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:112
 #, python-brace-format
 msgid "Permission refusée sur {path} (authentification sudo requise)."
 msgstr "Bị từ chối quyền trên {path} (cần xác thực sudo)."
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:127
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:131
 msgid "Rien à suivre (fichier introuvable)."
 msgstr "Không có gì để theo dõi (không tìm thấy tệp)."
 
-#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:130
+#: src/omega_log/interfaces/tui/screens/log_viewer_screen.py:134
 msgid "Arrêter le suivi"
 msgstr "Dừng theo dõi"
 
@@ -1910,7 +1615,7 @@ msgstr "Gỡ IP này khỏi các log đã phân tích"
 msgid "Occurrences"
 msgstr "Số lần xuất hiện"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:186 src/omega_log/interfaces/tui/screens/process_ip_screen.py:344 src/omega_log/interfaces/tui/screens/registry.py:169
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:200 src/omega_log/interfaces/tui/screens/process_ip_screen.py:344 src/omega_log/interfaces/tui/screens/registry.py:169
 #, python-brace-format
 msgid "Erreur : {message}"
 msgstr "Lỗi: {message}"
@@ -2178,7 +1883,7 @@ msgstr "Xóa bản lưu trữ"
 msgid "Créé le"
 msgstr "Tạo lúc"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+#: src/omega_log/interfaces/tui/screens/exports.py:86 src/omega_log/interfaces/tui/screens/log_health_screen.py:145 src/omega_log/interfaces/tui/screens/rotate_screen.py:76 src/omega_log/interfaces/tui/widgets/log_library_table.py:38 src/omega_log/interfaces/tui/widgets/log_list.py:25
 msgid "Taille"
 msgstr "Kích thước"
 
@@ -2255,51 +1960,51 @@ msgstr "Các nguồn cần mở (số ở trên, cách nhau bằng dấu phẩy)
 msgid "ex: 1,3"
 msgstr "vd: 1,3"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:24
 msgid "24h"
 msgstr "24 giờ"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:24
 msgid "30j"
 msgstr "30 ngày"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:24
 msgid "7j"
 msgstr "7 ngày"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:23
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:24
 msgid "Tout (fichier entier)"
 msgstr "Tất cả (toàn bộ tệp)"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:25
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:26
 msgid "24h, 7j, 30j : lecture depuis la fin du fichier, rapide. « Tout » lit le fichier entier : la durée dépend de sa taille (de quelques secondes à plusieurs minutes pour un gros log)."
 msgstr "24 giờ, 7 ngày, 30 ngày: đọc từ cuối tệp, nhanh. « Tất cả » đọc toàn bộ tệp: thời gian phụ thuộc vào kích thước (từ vài giây đến vài phút với một log lớn)."
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:35
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:36
 msgid "Lecture du fichier entier, ligne par ligne…"
 msgstr "Đang đọc toàn bộ tệp, từng dòng một…"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:36
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:37
 msgid "Analyse des lignes (date, IP, code HTTP, chemin)…"
 msgstr "Đang phân tích các dòng (ngày, IP, mã HTTP, đường dẫn)…"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:37
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:38
 msgid "Plus le fichier est gros, plus c'est long : quelques secondes à plusieurs minutes."
 msgstr "Tệp càng lớn thì càng lâu: từ vài giây đến vài phút."
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:38
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:39
 msgid "Échap arrête l'analyse : il faudra la relancer."
 msgstr "Esc dừng phân tích: sẽ phải chạy lại."
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:39 src/omega_log/interfaces/tui/widgets/busy_indicator.py:44
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:40 src/omega_log/interfaces/tui/widgets/busy_indicator.py:45
 msgid "Toujours en cours, rien n'est bloqué…"
 msgstr "Vẫn đang chạy, không có gì bị treo…"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:42
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:43
 msgid "Lecture depuis la fin du fichier, arrêt dès que les lignes sortent de la période…"
 msgstr "Đang đọc từ cuối tệp, dừng ngay khi các dòng nằm ngoài khoảng thời gian…"
 
-#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:43
+#: src/omega_log/interfaces/tui/widgets/busy_indicator.py:44
 msgid "Analyse des lignes de la période…"
 msgstr "Đang phân tích các dòng trong khoảng thời gian…"
 
@@ -2329,23 +2034,23 @@ msgstr "Nhấp: chọn một log. Nhấp đúp hoặc Enter: thêm hoặc bỏ s
 msgid "Clic : choisir un log. Double-clic ou Entrée : mettre son numéro dans le champ. Le champ, s'il est rempli, a priorité."
 msgstr "Nhấp: chọn một log. Nhấp đúp hoặc Enter: đưa số của nó vào trường. Nếu trường đã được điền, trường được ưu tiên."
 
-#: src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:38 src/omega_log/interfaces/tui/widgets/log_list.py:25
 msgid "Accès"
 msgstr "Truy cập"
 
-#: src/omega_log/interfaces/tui/widgets/log_library_table.py:27 src/omega_log/interfaces/tui/widgets/log_list.py:24
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:38 src/omega_log/interfaces/tui/widgets/log_list.py:25
 msgid "Chemin"
 msgstr "Đường dẫn"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/widgets/log_library_table.py:27
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:145 src/omega_log/interfaces/tui/widgets/log_library_table.py:38
 msgid "Modifié"
 msgstr "Đã sửa"
 
-#: src/omega_log/interfaces/tui/widgets/log_library_table.py:36
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:25
 msgid "ABSENT"
 msgstr "KHÔNG CÓ"
 
-#: src/omega_log/interfaces/tui/widgets/log_library_table.py:36 src/omega_log/interfaces/tui/widgets/log_list.py:40
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:22
 msgid "SUSPECT (vide)"
 msgstr "ĐÁNG NGỜ (trống)"
 
@@ -2504,234 +2209,229 @@ msgstr "{size}/ngày"
 msgid "Lien symbolique cassé : la cible n'existe plus."
 msgstr "Liên kết tượng trưng bị hỏng: đích không còn tồn tại."
 
-#: src/omega_log/application/use_cases/health_presentation.py:136
+#: src/omega_log/application/use_cases/health_presentation.py:139
 msgid "Fichier absent : le chemin de la Bibliothèque ne mène plus à rien."
 msgstr "Không có tệp: đường dẫn trong Thư viện không còn trỏ tới đâu."
 
-#: src/omega_log/application/use_cases/health_presentation.py:138
+#: src/omega_log/application/use_cases/health_presentation.py:141
 msgid "Ce n'est pas un fichier ordinaire (dossier, tube ou périphérique)."
 msgstr "Đây không phải là tệp thông thường (thư mục, ống dẫn hoặc thiết bị)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:140
+#: src/omega_log/application/use_cases/health_presentation.py:147
 #, python-brace-format
 msgid "Illisible par votre compte (droits {mode}) : Statistiques, Voir et Traiter IP et les viewers demanderont votre mot de passe sudo."
 msgstr "Tài khoản của bạn không đọc được (quyền {mode}): Thống kê, Xem và xử lý IP và các trình xem sẽ hỏi mật khẩu sudo."
 
-#: src/omega_log/application/use_cases/health_presentation.py:143
+#: src/omega_log/application/use_cases/health_presentation.py:150
 #, python-brace-format
 msgid "Inscriptible par tout le monde (droits {mode}) : n'importe quel compte peut falsifier ce log."
 msgstr "Ai cũng ghi được (quyền {mode}): bất kỳ tài khoản nào cũng có thể làm giả log này."
 
-#: src/omega_log/application/use_cases/health_presentation.py:146
+#: src/omega_log/application/use_cases/health_presentation.py:153
 msgid "Fichier vide."
 msgstr "Tệp trống."
 
-#: src/omega_log/application/use_cases/health_presentation.py:148
+#: src/omega_log/application/use_cases/health_presentation.py:155
 #, python-brace-format
 msgid "Aucune écriture depuis {days} j."
 msgstr "Không có ghi mới từ {days} ngày."
 
-#: src/omega_log/application/use_cases/health_presentation.py:150
+#: src/omega_log/application/use_cases/health_presentation.py:157
 msgid "Octets nuls à la fin du fichier : log abîmé (coupure ou disque plein pendant une écriture)."
 msgstr "Byte rỗng ở cuối tệp: log bị hỏng (mất điện hoặc đầy đĩa khi đang ghi)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:152
+#: src/omega_log/application/use_cases/health_presentation.py:159
 #, python-brace-format
 msgid "Seules {percent} % des dernières lignes ont une date reconnue : les périodes 24h, 7j, 30j et les statistiques seront faussées."
 msgstr "Chỉ {percent} % số dòng gần nhất có ngày nhận dạng được: các khoảng 24h, 7d, 30d và thống kê sẽ bị sai lệch."
 
-#: src/omega_log/application/use_cases/health_presentation.py:155
+#: src/omega_log/application/use_cases/health_presentation.py:162
 #, python-brace-format
 msgid "Dernière ligne datée du {last}, dans le futur : horloge ou fuseau horaire faux."
 msgstr "Dòng cuối có ngày {last}, ở tương lai: đồng hồ hoặc múi giờ bị sai."
 
-#: src/omega_log/application/use_cases/health_presentation.py:158
+#: src/omega_log/application/use_cases/health_presentation.py:165
 #, python-brace-format
 msgid "{size} et aucune règle logrotate ne couvre ce fichier : il grossira sans fin."
 msgstr "{size} và không có quy tắc logrotate nào áp dụng cho tệp này: nó sẽ phình to mãi."
 
-#: src/omega_log/application/use_cases/health_presentation.py:161
+#: src/omega_log/application/use_cases/health_presentation.py:168
 #, python-brace-format
 msgid "Même fichier que {other} (lien ou chemin en double)."
 msgstr "Cùng một tệp với {other} (liên kết hoặc đường dẫn trùng)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:163
+#: src/omega_log/application/use_cases/health_presentation.py:170
 #, python-brace-format
 msgid "Disque rempli à {percent} %."
 msgstr "Đĩa đã đầy {percent} %."
 
-#: src/omega_log/application/use_cases/health_presentation.py:165
+#: src/omega_log/application/use_cases/health_presentation.py:172
 #, python-brace-format
 msgid "À ce rythme, disque plein dans environ {days} j."
 msgstr "Với tốc độ này, đĩa sẽ đầy sau khoảng {days} ngày."
 
-#: src/omega_log/application/use_cases/health_presentation.py:167
+#: src/omega_log/application/use_cases/health_presentation.py:174
 msgid "Aucune sauvegarde."
 msgstr "Không có bản sao lưu nào."
 
-#: src/omega_log/application/use_cases/health_presentation.py:169
+#: src/omega_log/application/use_cases/health_presentation.py:176
 #, python-brace-format
 msgid "{count} sauvegarde(s) planifiée(s), mais aucune tâche planifiée ne les exécute."
 msgstr "Có {count} bản sao lưu theo lịch, nhưng không có tác vụ theo lịch nào thực thi chúng."
 
-#: src/omega_log/application/use_cases/health_presentation.py:172
+#: src/omega_log/application/use_cases/health_presentation.py:179
 #, python-brace-format
 msgid "Sauvegarde planifiée de {path} en échec, en retard de {days} j : {error}"
 msgstr "Sao lưu theo lịch của {path} thất bại, trễ {days} ngày: {error}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:175
+#: src/omega_log/application/use_cases/health_presentation.py:182
 #, python-brace-format
 msgid "Sauvegarde planifiée de {path} en retard de {days} j : la tâche planifiée ne s'exécute pas (machine éteinte la nuit sans systemd, démon cron arrêté ?)."
 msgstr "Sao lưu theo lịch của {path} trễ {days} ngày: tác vụ theo lịch không chạy (máy tắt ban đêm mà không có systemd, hoặc tiến trình cron đã dừng?)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:185
-#, python-brace-format
-msgid "Ajoutez votre compte au groupe du fichier (ls -l {path}), puis rouvrez votre session."
-msgstr "Thêm tài khoản của bạn vào nhóm của tệp (ls -l {path}), rồi mở lại phiên đăng nhập."
-
-#: src/omega_log/application/use_cases/health_presentation.py:187
+#: src/omega_log/application/use_cases/health_presentation.py:202
 #, python-brace-format
 msgid "Santé des logs → « Corriger les droits » (chmod o-w {path})."
 msgstr "Tình trạng log → \"Sửa quyền\" (chmod o-w {path})."
 
-#: src/omega_log/application/use_cases/health_presentation.py:189
+#: src/omega_log/application/use_cases/health_presentation.py:204
 msgid "Ajoutez une règle dans /etc/logrotate.d/ (voir man logrotate)."
 msgstr "Thêm một quy tắc vào /etc/logrotate.d/ (xem man logrotate)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:191
+#: src/omega_log/application/use_cases/health_presentation.py:206
 msgid "Bibliothèque : retirez ce log ou corrigez son chemin."
 msgstr "Thư viện: gỡ log này hoặc sửa đường dẫn của nó."
 
-#: src/omega_log/application/use_cases/health_presentation.py:193
+#: src/omega_log/application/use_cases/health_presentation.py:208
 msgid "Supprimez les vieilles sauvegardes (Rotate → « Supprimer l'archive ») ou videz les gros logs (Purger)."
 msgstr "Hãy xóa các bản sao lưu cũ (Rotate → \"Xóa bản lưu trữ\") hoặc làm trống các log lớn (Dọn)."
 
-#: src/omega_log/application/use_cases/health_presentation.py:196
+#: src/omega_log/application/use_cases/health_presentation.py:211
 msgid "Vérifiez que le programme qui écrit ce log tourne encore."
 msgstr "Kiểm tra xem chương trình ghi log này còn chạy không."
 
-#: src/omega_log/application/use_cases/health_presentation.py:198
+#: src/omega_log/application/use_cases/health_presentation.py:213
 msgid "Vérifiez l'heure du serveur : timedatectl"
 msgstr "Kiểm tra giờ của máy chủ: timedatectl"
 
-#: src/omega_log/application/use_cases/health_presentation.py:200
+#: src/omega_log/application/use_cases/health_presentation.py:215
 msgid "Sauvegardez ce log (Rotate) puis videz-le (Purger) pour repartir d'un fichier propre."
 msgstr "Hãy sao lưu log này (Rotate) rồi làm trống nó (Dọn) để bắt đầu lại với một tệp sạch."
 
-#: src/omega_log/application/use_cases/health_presentation.py:202
+#: src/omega_log/application/use_cases/health_presentation.py:217
 msgid "Rotate → « Sauvegardes planifiées » → « Réinstaller l'exécution »."
 msgstr "Rotate → \"Sao lưu theo lịch\" → \"Cài lại thực thi\"."
 
-#: src/omega_log/application/use_cases/health_presentation.py:204
+#: src/omega_log/application/use_cases/health_presentation.py:219
 msgid "Un log protégé ne peut pas être sauvegardé la nuit sans mot de passe : sauvegardez-le depuis Rotate, ou retirez sa sauvegarde planifiée."
 msgstr "Log được bảo vệ không thể sao lưu ban đêm nếu không có mật khẩu: hãy sao lưu từ Rotate, hoặc gỡ sao lưu theo lịch của nó."
 
-#: src/omega_log/application/use_cases/health_presentation.py:217 src/omega_log/application/use_cases/health_presentation.py:291 src/omega_log/interfaces/tui/screens/log_health_screen.py:284 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:109
+#: src/omega_log/application/use_cases/health_presentation.py:232 src/omega_log/application/use_cases/health_presentation.py:306 src/omega_log/interfaces/tui/screens/log_health_screen.py:298 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:109
 msgid "Aucun problème."
 msgstr "Không có sự cố."
 
-#: src/omega_log/application/use_cases/health_presentation.py:222
+#: src/omega_log/application/use_cases/health_presentation.py:237
 #, python-brace-format
 msgid "(+{count} autre(s))"
 msgstr "(+{count} mục khác)"
 
-#: src/omega_log/application/use_cases/health_presentation.py:229
+#: src/omega_log/application/use_cases/health_presentation.py:244
 #, python-brace-format
 msgid "Taille {size}"
 msgstr "Kích thước {size}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:230
+#: src/omega_log/application/use_cases/health_presentation.py:245
 #, python-brace-format
 msgid "dernière écriture {age}"
 msgstr "ghi lần cuối {age}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:231
+#: src/omega_log/application/use_cases/health_presentation.py:246
 #, python-brace-format
 msgid "croissance {growth}"
 msgstr "tăng {growth}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:234
+#: src/omega_log/application/use_cases/health_presentation.py:249
 #, python-brace-format
 msgid "droits {mode}"
 msgstr "quyền {mode}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:236
+#: src/omega_log/application/use_cases/health_presentation.py:251
 #, python-brace-format
 msgid "format {source}"
 msgstr "định dạng {source}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:245
+#: src/omega_log/application/use_cases/health_presentation.py:260
 msgid "plus de 10 ans"
 msgstr "hơn 10 năm"
 
-#: src/omega_log/application/use_cases/health_presentation.py:246
+#: src/omega_log/application/use_cases/health_presentation.py:261
 #, python-brace-format
 msgid "environ {days} j"
 msgstr "khoảng {days} ngày"
 
-#: src/omega_log/application/use_cases/health_presentation.py:251
+#: src/omega_log/application/use_cases/health_presentation.py:266
 #, python-brace-format
 msgid "{mount} : {free} libres sur {total} ({used} % utilisés) · croissance des logs {growth} · plein dans {days}"
 msgstr "{mount}: còn trống {free} / {total} (đã dùng {used} %) · log tăng {growth} · đầy sau {days}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:259
+#: src/omega_log/application/use_cases/health_presentation.py:274
 msgid "Aucune sauvegarde planifiée."
 msgstr "Không có sao lưu theo lịch nào."
 
-#: src/omega_log/application/use_cases/health_presentation.py:260
+#: src/omega_log/application/use_cases/health_presentation.py:275
 msgid "aucune tâche planifiée"
 msgstr "không có tác vụ lên lịch"
 
-#: src/omega_log/application/use_cases/health_presentation.py:260
+#: src/omega_log/application/use_cases/health_presentation.py:275
 msgid "tâche planifiée installée"
 msgstr "đã cài tác vụ lên lịch"
 
-#: src/omega_log/application/use_cases/health_presentation.py:261
+#: src/omega_log/application/use_cases/health_presentation.py:276
 msgid "tâche planifiée non vérifiée"
 msgstr "chưa kiểm tra tác vụ lên lịch"
 
-#: src/omega_log/application/use_cases/health_presentation.py:262
+#: src/omega_log/application/use_cases/health_presentation.py:277
 #, python-brace-format
 msgid "{count} sauvegarde(s) planifiée(s) · {state}"
 msgstr "{count} sao lưu theo lịch · {state}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:267
+#: src/omega_log/application/use_cases/health_presentation.py:282
 #, python-brace-format
 msgid "{directory} : aucune sauvegarde."
 msgstr "{directory}: không có bản sao lưu nào."
 
-#: src/omega_log/application/use_cases/health_presentation.py:269
+#: src/omega_log/application/use_cases/health_presentation.py:284
 #, python-brace-format
 msgid "{directory} : {count} sauvegarde(s), {size}, la plus ancienne du {oldest}."
 msgstr "{directory}: {count} bản sao lưu, {size}, bản cũ nhất ngày {oldest}."
 
-#: src/omega_log/application/use_cases/health_presentation.py:279 src/omega_log/interfaces/tui/screens/help_screen.py:259 src/omega_log/interfaces/tui/screens/home.py:57 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:81
+#: src/omega_log/application/use_cases/health_presentation.py:294 src/omega_log/interfaces/tui/screens/help_screen.py:260 src/omega_log/interfaces/tui/screens/home.py:57 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:6 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:81
 msgid "Santé des logs"
 msgstr "Tình trạng log"
 
-#: src/omega_log/application/use_cases/health_presentation.py:280 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:82
+#: src/omega_log/application/use_cases/health_presentation.py:295 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:82
 #, python-brace-format
 msgid "Généré le {date}"
 msgstr "Tạo lúc {date}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:281
+#: src/omega_log/application/use_cases/health_presentation.py:296
 #, python-brace-format
 msgid "Résumé : {summary}"
 msgstr "Tóm tắt: {summary}"
 
-#: src/omega_log/application/use_cases/health_presentation.py:283
+#: src/omega_log/application/use_cases/health_presentation.py:298
 msgid "LOGS"
 msgstr "LOG"
 
-#: src/omega_log/application/use_cases/health_presentation.py:298 src/omega_log/interfaces/tui/screens/log_health_screen.py:107
+#: src/omega_log/application/use_cases/health_presentation.py:313 src/omega_log/interfaces/tui/screens/log_health_screen.py:117
 msgid "DISQUES"
 msgstr "ĐĨA"
 
-#: src/omega_log/application/use_cases/health_presentation.py:307 src/omega_log/interfaces/tui/screens/log_health_screen.py:109
+#: src/omega_log/application/use_cases/health_presentation.py:322 src/omega_log/interfaces/tui/screens/log_health_screen.py:119
 msgid "SAUVEGARDES"
 msgstr "SAO LƯU"
 
-#: src/omega_log/application/use_cases/health_presentation.py:310 src/omega_log/interfaces/tui/screens/log_health_screen.py:111 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:70
+#: src/omega_log/application/use_cases/health_presentation.py:325 src/omega_log/interfaces/tui/screens/log_health_screen.py:121 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:70
 msgid "SAUVEGARDES PLANIFIÉES"
 msgstr "SAO LƯU THEO LỊCH"
 
@@ -2800,128 +2500,79 @@ msgstr ""
 "\n"
 "{cron_line}"
 
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:71 src/omega_log/interfaces/tui/screens/help_screen.py:284
-msgid "Version et mises à jour"
-msgstr "Phiên bản và cập nhật"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:72
-msgid "Compare votre version à la liste des versions publiées sur le site. Rien n'est envoyé, et rien n'est vérifié sans votre clic."
-msgstr "So sánh phiên bản của bạn với danh sách các phiên bản đã phát hành trên trang web. Không có gì được gửi đi, và không có gì được kiểm tra nếu bạn không nhấp."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:74
-#, python-brace-format
-msgid "Version installée : {version}"
-msgstr "Phiên bản đã cài: {version}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:78
-msgid "Vérifier les mises à jour"
-msgstr "Kiểm tra cập nhật"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:80
-msgid "Voir les nouveautés"
-msgstr "Xem có gì mới"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:156
-msgid "Vérification en cours..."
-msgstr "Đang kiểm tra..."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:173
-#, python-brace-format
-msgid ""
-"Nouvelle version disponible : {latest} (installée : {installed}).\n"
-"Archive : {url}"
-msgstr ""
-"Có phiên bản mới: {latest} (đã cài: {installed}).\n"
-"Tệp lưu trữ: {url}"
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:176
-#, python-brace-format
-msgid "Vous avez la dernière version publiée ({version})."
-msgstr "Bạn đang dùng phiên bản mới nhất đã phát hành ({version})."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:178
-#, python-brace-format
-msgid "Votre version ({installed}) est plus récente que la dernière publiée ({latest}) : version en cours, pas encore publiée."
-msgstr "Phiên bản của bạn ({installed}) mới hơn phiên bản mới nhất đã phát hành ({latest}): đây là phiên bản đang phát triển, chưa được phát hành."
-
-#: src/omega_log/interfaces/tui/screens/contact_support_screen.py:181
-#, python-brace-format
-msgid "Version installée : {version}. Site injoignable ou liste des versions illisible : réessayez plus tard."
-msgstr "Phiên bản đã cài: {version}. Không truy cập được trang web hoặc không đọc được danh sách phiên bản: hãy thử lại sau."
-
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:90
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:100
 msgid "SANTÉ DES LOGS"
 msgstr "TÌNH TRẠNG LOG"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:91
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:101
 msgid "Contrôle en lecture seule des logs de la Bibliothèque, du disque qui les porte, des sauvegardes et des sauvegardes planifiées. Surlignez un log pour voir le détail."
 msgstr "Kiểm tra chỉ đọc các log của Thư viện, ổ đĩa chứa chúng, các bản sao lưu và sao lưu theo lịch. Đánh dấu một log để xem chi tiết."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:100
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:110
 msgid "Relancer l'analyse"
 msgstr "Phân tích lại"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:102
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:112
 msgid "Analyser avec sudo"
 msgstr "Phân tích bằng sudo"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:104
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:114
 msgid "Corriger les droits"
 msgstr "Sửa quyền"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:106
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:116
 msgid "Corriger avec sudo"
 msgstr "Sửa bằng sudo"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:123
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:133
 msgid "Exporter TXT"
 msgstr "Xuất TXT"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:145
 msgid "Constat"
 msgstr "Nhận định"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:131 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:145 src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:103
 msgid "Log"
 msgstr "Log"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:141
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:155
 msgid "Analyse en cours…"
 msgstr "Đang phân tích…"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:208
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:222
 #, python-brace-format
 msgid "Analysé {age}."
 msgstr "Đã phân tích {age}."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:211
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:225
 msgid "Résumé : "
 msgstr "Tóm tắt: "
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:301
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:315
 msgid "CORRIGER LES DROITS ?"
 msgstr "SỬA QUYỀN?"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:302
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:316
 #, python-brace-format
 msgid "{path} : retirer l'écriture pour tout le monde (droits {mode})."
 msgstr "{path}: gỡ quyền ghi của mọi người (quyền {mode})."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:314 src/omega_log/interfaces/tui/screens/log_health_screen.py:342
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:328 src/omega_log/interfaces/tui/screens/log_health_screen.py:359 src/omega_log/interfaces/tui/screens/log_health_screen.py:389
 #, python-brace-format
 msgid "Correction impossible : {error}"
 msgstr "Không thể sửa: {error}"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:316
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:330
 #, python-brace-format
 msgid "Droits corrigés : {path}."
 msgstr "Đã sửa quyền: {path}."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:327
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:344
 msgid "CORRIGER AVEC SUDO ?"
 msgstr "SỬA BẰNG SUDO?"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:328
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:345
 #, python-brace-format
 msgid ""
 "Commande lancée après votre mot de passe :\n"
@@ -2930,16 +2581,16 @@ msgstr ""
 "Lệnh được chạy sau khi nhập mật khẩu của bạn:\n"
 "{command}"
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:344
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:361
 #, python-brace-format
 msgid "Droits corrigés avec sudo : {path}."
 msgstr "Đã sửa quyền bằng sudo: {path}."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:371
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:420
 msgid "Attendez la fin de l'analyse."
 msgstr "Vui lòng chờ phân tích kết thúc."
 
-#: src/omega_log/interfaces/tui/screens/log_health_screen.py:384
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:433
 #, python-brace-format
 msgid "Export écrit : {export_path}"
 msgstr "Đã ghi bản xuất: {export_path}"
@@ -2970,7 +2621,7 @@ msgstr "{ip}: {total} dòng - {detail}"
 msgid "{ip} est absente des log(s) sélectionné(s)."
 msgstr "{ip} không có trong các log đã chọn."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:220 src/omega_log/interfaces/tui/screens/rotate_screen.py:69 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:128
+#: src/omega_log/interfaces/tui/screens/help_screen.py:221 src/omega_log/interfaces/tui/screens/rotate_screen.py:69 src/omega_log/infrastructure/exporters/templates/log_health_report.html.j2:128
 msgid "Sauvegardes planifiées"
 msgstr "Sao lưu theo lịch"
 
@@ -3049,15 +2700,15 @@ msgstr "Log này đã có sao lưu theo lịch: hãy xóa nó trước."
 msgid "Sauvegarde planifiée : {path} ({frequency})."
 msgstr "Sao lưu theo lịch: {path} ({frequency})."
 
-#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:198
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:202
 msgid "Sélectionnez une automatisation."
 msgstr "Hãy chọn một tự động hóa."
 
-#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:202
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:206
 msgid "SUPPRIMER CETTE AUTOMATISATION ?"
 msgstr "XÓA TỰ ĐỘNG HÓA NÀY?"
 
-#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:203
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:207
 msgid "Le log ne sera plus sauvegardé automatiquement. Les sauvegardes déjà faites sont conservées."
 msgstr "Log sẽ không còn được sao lưu tự động. Các bản sao lưu đã có được giữ lại."
 
@@ -3069,11 +2720,11 @@ msgstr "Đĩa"
 msgid "Sauvegardes"
 msgstr "Sao lưu"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:171
+#: src/omega_log/interfaces/tui/screens/help_screen.py:172
 msgid "Voir et Traiter IP : chercher une IP précise"
 msgstr "Xem và xử lý IP: tìm một IP cụ thể"
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:172
+#: src/omega_log/interfaces/tui/screens/help_screen.py:173
 msgid ""
 "Sans attendre qu'une IP apparaisse dans le top : saisissez-la (IPv4 ou\n"
 "IPv6) dans « Ou cherchez une IP précise », puis [b]Rechercher cette IP[/b]\n"
@@ -3099,7 +2750,7 @@ msgstr ""
 "- Một IP không bao giờ bị nhầm với một IP dài hơn (1.1.1.1 và\n"
 "  1.1.1.11), và IPv6 kết thúc bằng « :: » vẫn được tìm thấy đúng."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:221
+#: src/omega_log/interfaces/tui/screens/help_screen.py:222
 msgid ""
 "Rotate → [b]Sauvegardes planifiées[/b] : un log de la Bibliothèque est\n"
 "sauvegardé automatiquement tous les jours, toutes les semaines ou tous\n"
@@ -3129,7 +2780,7 @@ msgstr ""
 "- Log được bảo vệ (/var/log/...) không thể sao lưu ban đêm\n"
 "  nếu không có mật khẩu: lỗi được ghi lại, Tình trạng log sẽ báo."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:260
+#: src/omega_log/interfaces/tui/screens/help_screen.py:261
 msgid ""
 "Contrôle en lecture seule des logs de la Bibliothèque, du disque qui les\n"
 "porte, des sauvegardes et des sauvegardes planifiées. Chaque log reçoit\n"
@@ -3161,7 +2812,7 @@ msgstr ""
 "- [b]Xuất JSON / HTML / TXT[/b]: báo cáo, theo ngôn ngữ xuất,\n"
 "  đặt trong var/exports/."
 
-#: src/omega_log/interfaces/tui/screens/help_screen.py:285
+#: src/omega_log/interfaces/tui/screens/help_screen.py:286
 msgid ""
 "La version d'omega-log est affichée dans la barre de titre.\n"
 "\n"
@@ -3196,3 +2847,251 @@ msgstr "Tác vụ theo lịch (bộ hẹn giờ systemd hoặc dòng crontab) s�
 #: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:171
 msgid "Aucune tâche planifiée à retirer."
 msgstr "Không có tác vụ theo lịch nào để gỡ."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:306
+msgid ""
+"[b]1. Simple[/b] — suivi en direct avec parsing générique (horodatage,\n"
+"niveau, IP, service détecté). Le tableau garde tout le tampon (500\n"
+"lignes, 200 chargées à l'ouverture) avec ascenseurs vertical et\n"
+"horizontal ; il suit les nouvelles lignes seulement si vous êtes déjà en\n"
+"bas. À gauche, un tableau de bord qui défile (identique à omega-serv) :\n"
+"rendement, bande passante, statuts HTTP (dont refus 403 et 429), IPs\n"
+"uniques et top 5 IP, chemins les plus demandes et chemins en 404, santé\n"
+"et tampon. Une valeur que le log ne fournit pas s'affiche \"-\", jamais\n"
+"estimée."
+msgstr ""
+"[b]1. Đơn giản[/b] — theo dõi trực tiếp với phân tích chung (dấu thời\n"
+"gian, mức độ, IP, dịch vụ phát hiện được). Bảng giữ toàn bộ bộ đệm\n"
+"(500 dòng, 200 dòng nạp khi mở) với thanh cuộn dọc và ngang; nó chỉ\n"
+"theo các dòng mới nếu bạn đang ở cuối bảng. Bên trái là một bảng điều\n"
+"khiển có thể cuộn (giống omega-serv): hiệu suất, băng thông, trạng\n"
+"thái HTTP (gồm từ chối 403 và 429), IP khác nhau và top 5 IP, đường\n"
+"dẫn được gọi nhiều nhất và đường dẫn 404, sức khỏe và bộ đệm. Một giá\n"
+"trị mà log không cung cấp được hiển thị \"-\", không bao giờ ước tính."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:316
+msgid "Colonne Message : la ligne entière (l'ascenseur horizontal va jusqu'à sa fin), colorée avec les couleurs du thème : date, adresse IP, méthode, code HTTP (succès, redirection, erreur client, erreur serveur), User-Agent en italique ; référent, taille et identifiant de requête atténués. Sur un syslog : date, service, adresses et mots d'erreur ou d'avertissement."
+msgstr "Cột Thông báo: toàn bộ dòng (thanh cuộn ngang đi đến hết dòng), tô bằng màu của giao diện: ngày, địa chỉ IP, phương thức, mã HTTP (thành công, chuyển hướng, lỗi máy khách, lỗi máy chủ), User-Agent in nghiêng; trang giới thiệu, kích thước và mã định danh yêu cầu được làm mờ. Với syslog: ngày, dịch vụ, địa chỉ và các từ lỗi hoặc cảnh báo."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:320
+msgid "Colonne Service : l'étiquette d'un syslog ou d'un journal système (sshd, nginx, kernel...). Un access log n'en a pas : « - »."
+msgstr "Cột Dịch vụ: nhãn của syslog hoặc nhật ký hệ thống (sshd, nginx, kernel...). Access log không có: “-”."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:322
+msgid "Colonne Code : statut HTTP d'un access log Combined/Common, coloré comme dans la colonne Message ; « - » pour un autre format (auth.log, syslog, fail2ban...)."
+msgstr "Cột Mã: trạng thái HTTP của access log Combined/Common, tô màu như trong cột Thông báo; “-” với mọi định dạng khác (auth.log, syslog, fail2ban...)."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:324
+msgid "Colonne Durée : temps de traitement quand le format l'écrit en fin de ligne (directive Apache %D ou %T), coloré selon le seuil ; sinon « - »."
+msgstr "Cột Thời lượng: thời gian xử lý khi định dạng ghi nó ở cuối dòng (chỉ thị Apache %D hoặc %T), tô màu theo ngưỡng; nếu không thì “-”."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:327
+msgid ""
+"[b]2. Classique[/b] — affiche les dernières lignes BRUTES du fichier\n"
+"(aucun parsing, aucune coloration), avec un bouton [b]Suivre en\n"
+"direct[/b] pour basculer en mode tail -f. Le plus simple et le plus\n"
+"fiable quel que soit le format du fichier.\n"
+"\n"
+"[b]3. lnav[/b] — encapsule le programme externe `lnav` dans un terminal\n"
+"dédié (pty), pour une fusion et une analyse croisée de PLUSIEURS\n"
+"fichiers à la fois (merge automatique par horodatage). Nécessite que\n"
+"`lnav` soit installé sur le système (sudo pacman -S lnav / sudo apt\n"
+"install lnav) — sans lui, ce viewer est proposé mais refuse de se\n"
+"lancer avec un message explicite. Raccourcis spécifiques pendant une\n"
+"session lnav :"
+msgstr ""
+"[b]2. Cổ điển[/b] — hiển thị các dòng THÔ cuối cùng của tệp (không\n"
+"phân tích, không tô màu), với nút [b]Theo dõi trực tiếp[/b] để chuyển\n"
+"sang chế độ tail -f. Đơn giản nhất và đáng tin cậy nhất bất kể định\n"
+"dạng tệp.\n"
+"\n"
+"[b]3. lnav[/b] — bao bọc chương trình bên ngoài `lnav` trong một\n"
+"terminal riêng (pty), để hợp nhất và phân tích chéo NHIỀU tệp cùng lúc\n"
+"(tự động gộp theo dấu thời gian). Cần cài `lnav` trên hệ thống (sudo\n"
+"pacman -S lnav / sudo apt install lnav) — nếu không có, trình xem này\n"
+"vẫn được đề xuất nhưng từ chối khởi chạy kèm thông báo rõ ràng. Phím\n"
+"tắt riêng trong một phiên lnav:"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:344
+msgid ""
+"[b]Élévation sudo ponctuelle[/b] — l'application ne tourne JAMAIS en\n"
+"root par défaut. Quand une action rencontre réellement une permission\n"
+"refusée (ex. /var/log/audit/, lisible seulement par root), une\n"
+"authentification sudo est demandée À CE moment précis, dans le\n"
+"terminal réel (l'interface se suspend brièvement) — jamais à l'avance,\n"
+"jamais pour des actions qui n'en ont pas besoin. Une fois authentifié\n"
+"pour un écran donné, les actions suivantes sur ce même écran réutilisent\n"
+"l'autorisation sans redemander.\n"
+"\n"
+"[b]États SUSPECT / ABSENT / OK[/b] — SUSPECT : fichier présent mais\n"
+"vide (très souvent un service qui route en réalité vers journald plutôt\n"
+"que vers un fichier classique). ABSENT : chemin introuvable au moment de\n"
+"l'affichage (supprimé, pas encore créé, ou chemin erroné). OK : fichier\n"
+"présent et non vide. Ces états sont INFORMATIFS, jamais bloquants —\n"
+"vous pouvez toujours ouvrir, exporter ou purger un log quel que soit son\n"
+"état affiché.\n"
+"\n"
+"[b]Sélection des logs[/b] — convention commune (Voir les logs, Favoris,\n"
+"Voir et Traiter IP, Statistiques, Rotate, Purger) : le tableau affiche\n"
+"un numéro par ligne. Simple clic : la ligne surlignée suffit. Double-clic\n"
+"ou Entrée : ajoute ou retire son numéro dans le champ (ex. \"1,3,4\").\n"
+"Vous pouvez aussi saisir les numéros à la main ; le champ, s'il est\n"
+"rempli, a priorité."
+msgstr ""
+"[b]Nâng quyền sudo tạm thời[/b] — theo mặc định ứng dụng KHÔNG BAO GIỜ\n"
+"chạy dưới quyền root. Khi một thao tác thực sự gặp lỗi bị từ chối\n"
+"quyền (vd: /var/log/audit/, chỉ root đọc được), xác thực sudo được yêu\n"
+"cầu ĐÚNG lúc đó, trong terminal thực (giao diện tạm dừng trong giây\n"
+"lát) — không bao giờ trước, không bao giờ cho các thao tác không cần\n"
+"đến. Khi đã xác thực cho một màn hình, các thao tác tiếp theo trên\n"
+"cùng màn hình đó dùng lại quyền mà không hỏi lại.\n"
+"\n"
+"[b]Trạng thái ĐÁNG NGỜ / KHÔNG CÓ / OK[/b] — ĐÁNG NGỜ: tệp có nhưng trống\n"
+"(rất thường là một dịch vụ thực ra ghi vào journald thay vì một tệp\n"
+"thông thường). KHÔNG CÓ: không tìm thấy đường dẫn vào lúc hiển thị (đã\n"
+"bị xóa, chưa được tạo, hoặc đường dẫn sai). OK: tệp có và không trống.\n"
+"Các trạng thái này chỉ mang tính THÔNG TIN, không bao giờ chặn — bạn\n"
+"luôn có thể mở, xuất hoặc dọn một log bất kể trạng thái hiển thị của\n"
+"nó.\n"
+"\n"
+"[b]Chọn log[/b] — quy ước chung (Xem log, Yêu thích, Xem và xử lý IP,\n"
+"Thống kê, Rotate, Dọn): bảng hiển thị một số trên mỗi dòng. Nhấp một\n"
+"lần: dòng được tô sáng là đủ. Nhấp đúp hoặc Enter: thêm hoặc gỡ số của\n"
+"nó trong trường (vd: \"1,3,4\"). Bạn cũng có thể tự nhập các số; nếu\n"
+"trường đã được điền, trường được ưu tiên."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:361
+msgid ""
+"[b]Dossier var/[/b] — tout l'état propre à l'application (bibliothèque,\n"
+"favoris, thème choisi, archives de sauvegarde, exports, journal\n"
+"applicatif) vit dans le var/ du dossier de\n"
+"l'application, d'où que vous la lanciez (ou $OMEGA_LOG_VAR_DIR si défini) — jamais dans votre\n"
+"dossier personnel. Ce dossier est entièrement local à la machine, ne\n"
+"contient aucun des LOGS SURVEILLÉS eux-mêmes (seulement des références\n"
+"vers leurs chemins)."
+msgstr ""
+"[b]Thư mục var/[/b] — toàn bộ trạng thái riêng của ứng dụng (thư viện,\n"
+"mục yêu thích, giao diện đã chọn, bản lưu trữ sao lưu, bản xuất, nhật\n"
+"ký ứng dụng) nằm trong var/ của thư mục ứng dụng, dù bạn khởi chạy\n"
+"ứng dụng từ đâu (hoặc $OMEGA_LOG_VAR_DIR nếu được định nghĩa) — không bao giờ\n"
+"trong thư mục cá nhân của bạn. Thư mục này hoàn toàn cục bộ trên máy,\n"
+"không chứa bất kỳ LOG ĐƯỢC GIÁM SÁT nào (chỉ chứa các tham chiếu đến\n"
+"đường dẫn của chúng)."
+
+#: src/omega_log/interfaces/tui/screens/live_tail_screen.py:129
+msgid "Durée"
+msgstr "Thời lượng"
+
+#: src/omega_log/application/use_cases/health_presentation.py:136
+msgid "Dans un dossier fermé à votre compte : visible seulement avec sudo. « Analyser avec sudo » le vérifie ; les viewers, Statistiques et Voir et Traiter IP demanderont votre mot de passe sudo."
+msgstr "Trong một thư mục bị đóng với tài khoản của bạn: chỉ thấy được bằng sudo. “Phân tích bằng sudo” kiểm tra nó; các trình xem, Thống kê và Xem và xử lý IP sẽ hỏi mật khẩu sudo của bạn."
+
+#: src/omega_log/interfaces/tui/screens/library.py:100
+#, python-brace-format
+msgid "{count} log(s) référencé(s) — {stale} suspect(s), {missing} introuvable(s), {protected} protégé(s) (lus avec sudo)."
+msgstr "{count} log được tham chiếu — {stale} đáng ngờ, {missing} không tìm thấy, {protected} được bảo vệ (đọc bằng sudo)."
+
+#: src/omega_log/interfaces/tui/screens/library.py:116
+msgid "LOG PROTÉGÉ"
+msgstr "LOG ĐƯỢC BẢO VỆ"
+
+#: src/omega_log/interfaces/tui/screens/library.py:117
+#, python-brace-format
+msgid "{path} est dans un dossier fermé à votre compte. Confirmer : votre mot de passe sudo est demandé dans le terminal, omega-log vérifie que le fichier existe puis l'ajoute."
+msgstr "{path} nằm trong một thư mục bị đóng với tài khoản của bạn. Xác nhận: mật khẩu sudo được hỏi trong terminal, omega-log kiểm tra tệp có tồn tại rồi thêm nó."
+
+#: src/omega_log/interfaces/tui/screens/library.py:128
+#, python-brace-format
+msgid "Log non ajouté : {path}"
+msgstr "Chưa thêm log: {path}"
+
+#: src/omega_log/interfaces/tui/screens/library.py:139
+msgid "Log protégé ajouté : il sera lu avec votre mot de passe sudo."
+msgstr "Đã thêm log được bảo vệ: nó sẽ được đọc bằng mật khẩu sudo của bạn."
+
+#: src/omega_log/interfaces/tui/screens/library.py:141
+#, python-brace-format
+msgid "Ajouté, mais introuvable pour l'instant : {path}"
+msgstr "Đã thêm, nhưng hiện chưa tìm thấy: {path}"
+
+#: src/omega_log/interfaces/tui/widgets/log_library_table.py:24
+msgid "PROTÉGÉ (sudo)"
+msgstr "ĐƯỢC BẢO VỆ (sudo)"
+
+#: src/omega_log/application/use_cases/health_presentation.py:143
+#, python-brace-format
+msgid "Illisible par votre compte : le dossier {folder} est fermé (droits {mode}). Statistiques, Voir et Traiter IP et les viewers demanderont votre mot de passe sudo."
+msgstr "Tài khoản của bạn không đọc được: thư mục {folder} bị đóng (quyền {mode}). Thống kê, Xem và xử lý IP và các trình xem sẽ hỏi mật khẩu sudo của bạn."
+
+#: src/omega_log/application/use_cases/health_presentation.py:192
+msgid "Après « Analyser avec sudo », « Corriger avec sudo » peut vous donner la lecture seule de ce log, à vous seul : plus de mot de passe, et les sauvegardes planifiées pourront le lire la nuit."
+msgstr "Sau “Phân tích bằng sudo”, “Sửa bằng sudo” có thể cấp cho riêng bạn quyền chỉ đọc log này: không cần mật khẩu nữa, và các bản sao lưu theo lịch có thể đọc nó vào ban đêm."
+
+#: src/omega_log/application/use_cases/health_presentation.py:195
+msgid "« Corriger avec sudo » vous donne la lecture seule, à vous seul (ACL, setfacl) : propriétaire, groupe et droits restent les mêmes. Plus de mot de passe, et les sauvegardes planifiées pourront le lire la nuit."
+msgstr "“Sửa bằng sudo” cấp cho riêng bạn quyền chỉ đọc (ACL, setfacl): chủ sở hữu, nhóm và quyền vẫn giữ nguyên. Không cần mật khẩu nữa, và các bản sao lưu theo lịch có thể đọc nó vào ban đêm."
+
+#: src/omega_log/application/use_cases/health_presentation.py:199
+msgid "Log protégé : la sauvegarde de nuit tourne sans mot de passe. Santé des logs → « Corriger avec sudo » vous donne la lecture seule de ce log ; sinon, sauvegardez-le depuis Rotate."
+msgstr "Log được bảo vệ: bản sao lưu ban đêm chạy không có mật khẩu. Tình trạng log → “Sửa bằng sudo” cấp cho bạn quyền chỉ đọc log này; nếu không, hãy sao lưu nó từ Rotate."
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:370
+msgid "[b]Logs protégés — PROTÉGÉ (sudo)[/b] — un log que votre compte ne peut pas lire : droits du fichier, ou dossier fermé comme /var/log/lighttpd/ (sans sudo, omega-log ne peut même pas voir s'il existe : ni « ABSENT » ni « OK »). Bibliothèque → Ajouter : votre mot de passe sudo est demandé dans le terminal, omega-log vérifie que le fichier existe puis l'ajoute ; le Registre le propose aussi à l'import. Ensuite, chaque module (viewers, lnav, Voir et Traiter IP, Statistiques, Rotate, Purger, Santé des logs → « Analyser avec sudo ») demande votre mot de passe au moment de le lire. Les sauvegardes planifiées tournent la nuit sans mot de passe : pour elles, Santé des logs → « Corriger avec sudo » donne la lecture seule à votre compte (ACL), sans rien changer d'autre."
+msgstr "[b]Log được bảo vệ — ĐƯỢC BẢO VỆ (sudo)[/b] — một log mà tài khoản của bạn không đọc được: quyền của tệp, hoặc một thư mục bị đóng như /var/log/lighttpd/ (không có sudo, omega-log thậm chí không thấy nó có tồn tại hay không: không phải “KHÔNG CÓ” cũng không phải “OK”). Thư viện → Thêm: mật khẩu sudo được hỏi trong terminal, omega-log kiểm tra tệp có tồn tại rồi thêm nó; Sổ đăng ký cũng đề xuất nhập nó. Sau đó, mỗi mô-đun (trình xem, lnav, Xem và xử lý IP, Thống kê, Rotate, Dọn, Tình trạng log → “Phân tích bằng sudo”) hỏi mật khẩu khi đọc nó. Sao lưu theo lịch chạy ban đêm không có mật khẩu: để dùng chúng, Tình trạng log → “Sửa bằng sudo” cấp cho tài khoản của bạn quyền chỉ đọc (ACL), không thay đổi gì khác."
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:372
+msgid "RENDRE LISIBLE AVEC SUDO ?"
+msgstr "CHO PHÉP ĐỌC BẰNG SUDO?"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:373
+#, python-brace-format
+msgid ""
+"Lecture seule pour votre compte ({user}) ; propriétaire, groupe et droits ne changent pas. Commandes lancées après votre mot de passe :\n"
+"{commands}"
+msgstr ""
+"Chỉ đọc cho tài khoản của bạn ({user}); chủ sở hữu, nhóm và quyền không thay đổi. Các lệnh chạy sau khi nhập mật khẩu:\n"
+"{commands}"
+
+#: src/omega_log/interfaces/tui/screens/log_health_screen.py:391
+#, python-brace-format
+msgid "Lecture accordée à votre compte : {path}."
+msgstr "Đã cấp quyền đọc cho tài khoản của bạn: {path}."
+
+#: src/omega_log/interfaces/tui/screens/rotation_automations_screen.py:193
+#, python-brace-format
+msgid "Log protégé : la sauvegarde de nuit, sans mot de passe, ne pourra pas le lire. Santé des logs → « Corriger avec sudo » vous donne la lecture seule de {path}."
+msgstr "Log được bảo vệ: bản sao lưu ban đêm không có mật khẩu sẽ không đọc được nó. Tình trạng log → “Sửa bằng sudo” cấp cho bạn quyền chỉ đọc {path}."
+
+#: src/omega_log/interfaces/tui/screens/access_log_stats_screen.py:151 src/omega_log/interfaces/tui/screens/export_screen.py:55 src/omega_log/interfaces/tui/screens/help_screen.py:429 src/omega_log/interfaces/tui/screens/log_health_screen.py:137
+msgid "Voir les exports"
+msgstr "Xem các bản xuất"
+
+#: src/omega_log/interfaces/tui/screens/exports.py:49
+#, python-brace-format
+msgid "Fichier trop volumineux pour être lu ici : {path}"
+msgstr "Tệp quá lớn để đọc ở đây: {path}"
+
+#: src/omega_log/interfaces/tui/screens/exports.py:69
+msgid "EXPORTS"
+msgstr "BẢN XUẤT"
+
+#: src/omega_log/interfaces/tui/screens/exports.py:70
+msgid "Pas de navigateur dans cette session (serveur, connexion SSH) : les exports sont listés et lus ici. Choisissez une ligne (Entrée) pour la lire."
+msgstr "Không có trình duyệt trong phiên này (máy chủ, kết nối SSH): các bản xuất được liệt kê và đọc ở đây. Chọn một dòng (Enter) để đọc."
+
+#: src/omega_log/interfaces/tui/screens/exports.py:78
+msgid "Lire"
+msgstr "Đọc"
+
+#: src/omega_log/interfaces/tui/screens/exports.py:93
+msgid "Aucun export pour l'instant."
+msgstr "Chưa có bản xuất nào."
+
+#: src/omega_log/interfaces/tui/screens/exports.py:121
+#, python-brace-format
+msgid "Dossier des exports ouvert dans le navigateur : {path}"
+msgstr "Đã mở thư mục xuất trong trình duyệt: {path}"
+
+#: src/omega_log/interfaces/tui/screens/help_screen.py:381
+msgid "[b]Voir les exports[/b] — Exporter, Statistiques, Santé des logs et cette Aide ont un bouton « Voir les exports » : le dossier des exports (var/exports/) s'ouvre dans votre navigateur, chaque export se lit d'un clic, sans quitter omega-log. Sans navigateur (serveur, connexion SSH), omega-log liste les exports et les lit lui-même (une page HTML est ramenée à son texte)."
+msgstr "[b]Xem các bản xuất[/b] — Xuất, Thống kê, Tình trạng log và phần Trợ giúp này có nút “Xem các bản xuất”: thư mục bản xuất (var/exports/) mở trong trình duyệt của bạn, mỗi bản xuất đọc bằng một cú nhấp, không cần rời omega-log. Không có trình duyệt (máy chủ, kết nối SSH), omega-log tự liệt kê và đọc các bản xuất (trang HTML được rút gọn thành văn bản)."

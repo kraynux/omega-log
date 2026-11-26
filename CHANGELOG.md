@@ -3,9 +3,64 @@
 Format inspiré de [Keep a Changelog](https://keepachangelog.com/).
 
 
-## À venir (pas encore dans une archive)
+## [1.6.1] — 2026-11-26
 
-- **Vérifier les mises à jour : trois sources** (procédure de l'auteur, 2026-11-22) : la Release GitHub ; si
+- **« Voir les exports »** (demande, 2026-11-26 : même principe que les autres outils de la suite) : bouton dans
+  Exporter, Statistiques, Santé des logs et l'Aide. Le dossier des exports (`var/exports/`) s'ouvre dans le
+  navigateur, chaque export se lit d'un clic, sans quitter omega-log. Sans navigateur (serveur, connexion SSH) : un
+  écran liste les exports (jamais un lien ni un sous-dossier) et les lit sur place (texte et JSON tels quels, page
+  HTML ramenée à son texte, rien interprété comme balisage). Exporter et Santé des logs : « Voir les exports » et
+  « Retour » sur une seconde rangée (la rangée unique dépassait 80 colonnes). Aide F1 (glossaire), README ×17,
+  16 langues.
+- **Navigateur ouvert par omega-lib** : l'ouverture d'une adresse (Contact et support) et du dossier des exports
+  passe par `omega_lib.infrastructure.desktop.browser_opener`, qui porte le correctif F2 du scan de sécurité
+  d'omega-fire (navigateur ouvert seulement dans la session graphique de l'utilisateur, jamais sur l'écran d'un
+  autre compte). La copie locale d'omega-log, sans ce correctif, est retirée.
+- **Corrigé : lancement depuis un autre dossier** (constaté sur hpc-109, 2026-11-26) : `omega-log.sh` (alias
+  `log`) prenait `var/` dans le dossier courant du terminal. Lancé depuis `/`, il voulait écrire `/var/app.log` et
+  s'arrêtait sur « Permission denied » ; lancé depuis un autre dossier, il ouvrait une Bibliothèque vide. `var/`
+  est maintenant toujours celui du dossier de l'application, comme omega-check et omega-track
+  (`OMEGA_LOG_VAR_DIR`, s'il est défini, reste prioritaire). Aide (glossaire « Dossier var/ ») et README ×17 :
+  la phrase « relatif au dossier de lancement » est corrigée.
+- **Logs protégés : dossier fermé à votre compte** (demande, 2026-11-26 : `/var/log/lighttpd/access.log`, droits
+  root) : dans un dossier fermé (droits 750), même `stat()` est refusé, et chaque module prenait le log pour un
+  fichier absent. La Bibliothèque affichait « ABSENT », le Registre l'écartait, les viewers disaient « Fichier
+  introuvable » sans proposer sudo, Statistiques et Voir et Traiter IP le sautaient sans rien dire, Rotate disait
+  « Fichier source introuvable », Santé des logs « Fichier absent ». Maintenant :
+  - nouvel état **« PROTÉGÉ (sudo) »** (Bibliothèque, Registre, écrans de sélection), jamais confondu avec ABSENT ;
+    une fois sudo accordé dans la session, taille et date sont lues avec `sudo -n stat` (jamais d'invite, et jamais
+    de sudo tenté avant une authentification) ;
+  - **Bibliothèque → Ajouter** un chemin derrière un dossier fermé : confirmation, mot de passe sudo dans le
+    terminal, vérification que le fichier existe, puis ajout ; le **Registre** propose aussi ces logs à l'import
+    (lighttpd, nginx…) et ne plante plus sur un dossier fermé ;
+  - **tous les modules** le lisent avec sudo : viewers Simple et Classique (une seule demande de mot de passe, suivi
+    en direct par `sudo -n stat` + `sudo tail`), lnav (lancé avec sudo), Voir et Traiter IP, Statistiques, Rotate,
+    Purger (`sudo truncate -c` : ne crée jamais un fichier), Santé des logs (constat « dans un dossier fermé »,
+    puis « Analyser avec sudo » le contrôle entièrement) ;
+  - **Santé des logs, « Corriger avec sudo » rend le log lisible** (retour d'utilisation sur hpc-109 : « le log
+    reste illisible et Corriger avec sudo reste grisé ») : le bouton ne servait qu'à `chmod o-w`. Pour un log
+    illisible, il donne maintenant la lecture seule à votre seul compte par ACL (`setfacl -m u:<vous>:r` ; dossier
+    fermé : aussi `u:<vous>:rx` sur le dossier et une ACL par défaut pour les logs recréés par logrotate) ;
+    propriétaire, groupe et droits ne changent pas, commandes montrées avant. Le constat cite le dossier fermé et
+    ses droits (« le dossier /var/log/lighttpd est fermé (droits 700) ») au lieu des droits du fichier (un 644
+    dans un dossier 700 restait « illisible (droits 644) ») ;
+  - **sauvegardes planifiées** : elles tournent la nuit sans mot de passe ; à la création pour un log protégé, et
+    dans Santé des logs en cas d'échec, omega-log renvoie vers « Corriger avec sudo » (le conseil « ajoutez votre
+    compte au groupe » ne suffisait pas avec un dossier en 700).
+  Module central `infrastructure/privileged/file_access.py` ; aide F1 (glossaire « Logs protégés »), README ×17,
+  16 langues.
+- **Viewer Simple aux couleurs du thème, comme omega-serv** (demande, 2026-11-26) : la colonne Message montre la
+  ligne entière (avant : coupée à 80 caractères), colorée avec les couleurs du thème choisi : date, adresse IP,
+  méthode, code HTTP (succès, redirection, erreur client, erreur serveur), User-Agent en italique ; référent, taille
+  et identifiant de requête atténués ; sur un syslog : date, service, adresses et mots d'erreur ou d'avertissement.
+  Niveau, Code et Durée suivent aussi le thème (avant : rouge, jaune, vert et cyan fixes). La colonne « Timeout »
+  s'appelle « Durée ». Le texte d'un log n'est jamais lu comme du balisage (une ligne contenant `[bold red]`
+  s'affiche telle quelle). Module `log_line_highlight.py` repris d'omega-serv.
+- **Colonne Service** : l'étiquette syslog `machine service[pid]:` (motif d'omega-serv) ; avant, l'heure d'une date
+  syslog était prise pour le service (`Nov 20 10:00:00` -> « 10 »). Aide F1 (Les 3 viewers) : une ligne par
+  colonne, 16 langues.
+
+- **Vérifier les mises à jour : trois sources** (procédure, 2026-11-22) : la Release GitHub ; si
   absente ou injoignable, le site kraynux ; si absent ou injoignable, le site craftdark. Les liens d'archive et
   de nouveautés sont ceux de la source qui a répondu (avant : le seul site kraynux).
 

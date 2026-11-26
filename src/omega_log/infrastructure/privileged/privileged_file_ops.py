@@ -63,7 +63,8 @@ def truncate_file_privileged(runner: ProcessRunnerPort, path: str) -> Privileged
     proprietaire/permissions inchanges (equivalent privilegie de
     purge_logs.py::purge_log_content, meme raisonnement : un service qui
     garde ce fichier ouvert ne doit jamais perdre son descripteur)."""
-    result = runner.run(["sudo", "truncate", "-s", "0", path], timeout=_TIMEOUT_SECONDS)
+    # -c : ne cree jamais le fichier (un chemin derriere un dossier ferme peut ne pas exister, 2026-11-26)
+    result = runner.run(["sudo", "truncate", "-c", "-s", "0", "--", path], timeout=_TIMEOUT_SECONDS)
     if not result.ok:
         return PrivilegedOpResult(success=False, message=result.stderr.strip() or _("code {returncode}").format(returncode=result.returncode))
     return PrivilegedOpResult(success=True)

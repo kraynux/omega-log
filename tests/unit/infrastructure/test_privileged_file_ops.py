@@ -71,7 +71,7 @@ def test_truncate_file_privileged_uses_sudo_truncate_in_place() -> None:
     runner = FakeProcessRunner()
     result = truncate_file_privileged(runner, "/var/log/x")
     assert result.success
-    assert runner.calls == [["sudo", "truncate", "-s", "0", "/var/log/x"]]
+    assert runner.calls == [["sudo", "truncate", "-c", "-s", "0", "--", "/var/log/x"]]
 
 
 def test_delete_file_privileged_uses_sudo_rm() -> None:

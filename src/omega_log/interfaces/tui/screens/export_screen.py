@@ -17,6 +17,7 @@ from textual.widgets import Button, DataTable, Footer, Header, Select, Static
 
 from omega_log.infrastructure.exporters.html_exporter import export_log_archives_html
 from omega_log.interfaces.tui.screens._base import OmegaScreen
+from omega_log.interfaces.tui.screens.exports import view_exports
 from omega_log.shared.i18n import LANGUAGE, _, translating_as
 
 if TYPE_CHECKING:
@@ -48,6 +49,10 @@ class ExportScreen(OmegaScreen):
                     yield Button(_("Exporter JSON"), id="export-json")
                 with Container(classes="omega-btn-frame"):
                     yield Button(_("Exporter HTML"), id="export-html")
+            # Seconde rangee : une seule depassait 80 colonnes (profil reduit 80x24) avec « Voir les exports ».
+            with Horizontal(classes="omega-actions"):
+                with Container(classes="omega-btn-frame"):
+                    yield Button(_("Voir les exports"), id="view-exports")
                 with Container(classes="omega-btn-frame"):
                     yield Button(_("Retour"), id="back")
         yield Footer()
@@ -72,6 +77,9 @@ class ExportScreen(OmegaScreen):
         button_id = event.button.id
         if button_id == "back":
             self.dismiss()
+            return
+        if button_id == "view-exports":
+            view_exports(self, self._container)
             return
         if button_id == "refresh":
             self._refresh()

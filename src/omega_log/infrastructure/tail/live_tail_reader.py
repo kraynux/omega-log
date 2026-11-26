@@ -14,6 +14,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from omega_log.infrastructure.privileged.file_access import file_size
 from omega_log.infrastructure.privileged.privileged_file_ops import read_new_bytes_privileged
 
 if TYPE_CHECKING:
@@ -21,14 +22,30 @@ if TYPE_CHECKING:
 
 
 class LiveTailReader:
+    """Dossier ferme (ex. /var/log/lighttpd/, demande 2026-11-26) : `stat()` leve PermissionError, qui remonte a
+    l'ecran (il demande sudo) au lieu d'etre prise pour un fichier absent ; la suite est lue avec `sudo -n stat`
+    + `sudo tail` (infrastructure/privileged/file_access.py)."""
+
     def __init__(self, path: Path) -> None:
         self._path = path
-        self._offset = path.stat().st_size if path.exists() else 0
+        try:
+            self._offset = path.stat().st_size
+        except OSError:  # absent, ou dossier ferme : recale par sync_privileged() apres la lecture sudo
+            self._offset = 0
+
+    def sync_privileged(self, runner: ProcessRunnerPort) -> None:
+        """Place le suivi a la fin actuelle du fichier, vue avec sudo (apres une lecture initiale privilegiee)."""
+        size = file_size(str(self._path), runner)
+        if size is not None:
+            self._offset = size
 
     def read_new_lines(self) -> list[str]:
-        if not self._path.exists():
+        try:
+            size = self._path.stat().st_size
+        except PermissionError:
+            raise
+        except OSError:
             return []
-        size = self._path.stat().st_size
         if size < self._offset:
             self._offset = 0
         if size == self._offset:
@@ -40,9 +57,9 @@ class LiveTailReader:
         return data.splitlines()
 
     def read_new_lines_privileged(self, runner: ProcessRunnerPort) -> list[str]:
-        if not self._path.exists():
+        size = file_size(str(self._path), runner)
+        if size is None:  # absent, ou sudo expire : rien de nouveau a ce tour
             return []
-        size = self._path.stat().st_size
         if size < self._offset:
             self._offset = 0
         if size == self._offset:

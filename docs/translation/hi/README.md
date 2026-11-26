@@ -8,18 +8,18 @@
 
 **सर्वर लॉग का प्रबंधक और व्यूअर**
 
-> [kraynux](https://github.com/kraynux) द्वारा [Omega-Server](https://kraynux.snake-mackarel.ts.net) के लिए विकसित   
+> [kraynux](https://github.com/kraynux) द्वारा [Omega-Server](https://kraynux.snake-mackarel.ts.net) के लिए विकसित · [आधिकारिक पेज](https://kraynux.snake-mackarel.ts.net/omega-log/translation/hi/) · [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
 
-आधिकारिक पेज: [OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/translation/hi/) &nbsp; झलक: [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![HTML](https://img.shields.io/badge/HTML-5-E34F26.svg)](https://developer.mozilla.org/docs/Web/HTML)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-F7DF1E.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
+![Interface](https://img.shields.io/badge/Interface-CLI%20%2B%20TUI-cyan.svg)
+[![Textual](https://img.shields.io/badge/Textual-TUI-5A5AFB.svg)](https://textual.textualize.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux-informational.svg)](https://www.linux.org/)
-[![Interface](https://img.shields.io/badge/Interface-Textual%20TUI-cyan.svg)](https://github.com/Textualize/textual)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 
 🌐 इंटरफ़ेस, दस्तावेज़ और एक्सपोर्ट **17 भाषाओं** में उपलब्ध।  
-**भाषाएँ:**
-<img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
+**भाषाएँ:** <img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
 
 ---
 
@@ -82,7 +82,7 @@ sudo apt install lnav
 ### इंस्टॉलेशन
 
 ```bash
-[ -d omega-log ] && echo "ℹ️ यहाँ पहले से एक्सट्रैक्ट है, यह चरण छोड़ा गया।" || tar -xzf omega-log-1.6.0.tar.gz
+[ -d omega-log ] && echo "ℹ️ यहाँ पहले से एक्सट्रैक्ट है, यह चरण छोड़ा गया।" || tar -xzf omega-log-1.6.1.tar.gz
 cd omega-log/
 chmod +x install.sh
 ./install.sh
@@ -155,7 +155,7 @@ python -m omega_log rotate run-automations
 
 | वेरिएबल | प्रभाव |
 |---|---|
-| `OMEGA_LOG_VAR_DIR` | एप्लिकेशन स्थिति फ़ोल्डर का स्थान बदलता है (डिफ़ॉल्ट `./var`, लॉन्च फ़ोल्डर के सापेक्ष) |
+| `OMEGA_LOG_VAR_DIR` | एप्लिकेशन स्थिति फ़ोल्डर का स्थान बदलता है (डिफ़ॉल्ट एप्लिकेशन के फ़ोल्डर में `var/`, चाहे उसे कहीं से भी चलाया जाए) |
 | `OMEGA_LOG_LANG` | सत्र के लिए इंटरफ़ेस की भाषा तय करता है (उदा. `en`, `de`, `ja`), सहेजी गई सेटिंग बदले बिना |
 
 ## 4. सुविधाएँ
@@ -163,14 +163,14 @@ python -m omega_log rotate run-automations
 | स्क्रीन | विवरण |
 |---|---|
 | **क्षमता रजिस्टर** | मशीन पर सक्रिय सेवाओं का पता लगाता है और उनके ज्ञात लॉग को एक-एक करके या सभी को इम्पोर्ट करने का प्रस्ताव देता है। अतिरिक्त रूप से किसी फ़ोल्डर का मैनुअल स्कैन। |
-| **लाइब्रेरी** | संसाधित किए जाने वाले सभी लॉग का संदर्भ रखने वाला केंद्रीय हब — रजिस्टर, मैनुअल इम्पोर्ट, Omega-Serv के ज्ञात लॉग या SSH से प्राप्त प्रति द्वारा भरा जाता है। |
+| **लाइब्रेरी** | संसाधित किए जाने वाले सभी लॉग का संदर्भ रखने वाला केंद्रीय हब — रजिस्टर, मैनुअल इम्पोर्ट, Omega-Serv के ज्ञात लॉग या SSH से प्राप्त प्रति द्वारा भरा जाता है। संरक्षित लॉग (`/var/log/lighttpd/` जैसा बंद फ़ोल्डर) आपके sudo पासवर्ड से जाँचा और पढ़ा जाता है। |
 | **लॉग देखें** | लाइब्रेरी से एक या अधिक लॉग का चयन + व्यूअर का चुनाव (1 लॉग → तीनों व्यूअर; 2+ लॉग → केवल `lnav`)। |
 | **पसंदीदा** | किसी नाम से सहेजे गए लॉग + व्यूअर के संयोजन, सीधे खोलने के लिए। |
 | **IP देखें और संसाधित करें** | अवधि के अनुसार शीर्ष 10 IP (24 घं/7 दिन/30 दिन/सब), या किसी विशिष्ट IP की खोज (IPv4 या IPv6), और एक या अधिक लॉग से किसी IP को लक्षित रूप से हटाना। |
 | **आँकड़े (एक्सेस)** | मात्रा, अद्वितीय IP, त्रुटि दर, शीर्ष IP, प्रति घंटा वितरण — 5 थीम में JSON/HTML एक्सपोर्ट। |
 | **Rotate** | किसी लॉग का संपीड़ित बैकअप + अतिरिक्त आर्काइव का स्वचालित रिटेंशन + रिस्टोर (मर्ज या प्रतिस्थापन, सुरक्षा बैकअप के साथ)। **निर्धारित बैकअप**: किसी लॉग का हर दिन, हफ़्ते या महीने बैकअप, जो हर रात systemd टाइमर या आपकी crontab की एक पंक्ति (OpenRC, runit) द्वारा चलाया जाता है, आपके खाते से, कभी root से नहीं। |
 | **साफ़ करें** | किसी लॉग की सामग्री खाली करता है (उसी जगह ट्रंकेशन, उस सेवा के लिए सुरक्षित जिसने उसे अभी भी खोल रखा है) या एक या अधिक फ़ाइलों को पूरी तरह हटाता है — हमेशा पुष्टि के साथ। |
-| **एक्सपोर्ट** | आर्काइव की सूची (Rotate) को JSON या थीम वाले HTML में एक्सपोर्ट करना। |
+| **एक्सपोर्ट** | आर्काइव की सूची (Rotate) को JSON या थीम वाले HTML में एक्सपोर्ट करना। “एक्सपोर्ट देखें” (यहाँ, आँकड़े, लॉग स्वास्थ्य और सहायता में) एक्सपोर्ट फ़ोल्डर को ब्राउज़र में खोलता है; ब्राउज़र न होने पर एक्सपोर्ट omega-log में ही सूचीबद्ध होकर पढ़े जाते हैं। |
 | **लॉग स्वास्थ्य** | लाइब्रेरी के लॉग, डिस्क, बैकअप और निर्धारित बैकअप की केवल-पठन जाँच: अनुमतियाँ, मौन या क्षतिग्रस्त लॉग, तिथियाँ, logrotate, डिस्क भरने में बचे दिन, साथ में करने योग्य कदम। बहुत खुली अनुमतियों का सुधार (ज़रूरत हो तो sudo के साथ), JSON/HTML/TXT एक्सपोर्ट। |
 | **विकल्प** | थीम, रेंडरिंग प्रोफ़ाइल, इंटरफ़ेस की भाषा और एक्सपोर्ट की भाषा (17 भाषाएँ), एप्लिकेशन फ़ोल्डरों (exports/screenshots) की सफ़ाई। |
 

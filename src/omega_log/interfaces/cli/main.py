@@ -104,7 +104,8 @@ def _run_rotation_automations(container: DependencyContainer) -> int:
         try:
             result = command.execute(RotateLogsRequest(source_path=path, keep=int(keep) if isinstance(keep, int) else 7))
         except PermissionRequiredError:
-            return False, "log protégé : sauvegarde impossible sans sudo la nuit, faites-la depuis Rotate"
+            return False, ("log protégé : sauvegarde impossible sans sudo la nuit ; Santé des logs → « Corriger avec sudo » "
+                           "donne la lecture à votre compte, ou faites-la depuis Rotate")
         return result.success, result.message
 
     runs = run_due_automations(container.rotation_automation_store, datetime.now().astimezone(), backup)

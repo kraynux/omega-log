@@ -61,10 +61,20 @@ def bootstrap(*, var_dir: Path | None = None, console_logging: bool = True) -> D
         var_dir=base.resolve(),
         rotation_automation_store=RotationAutomationStore(base / "rotation_automations.json"),
         release_source=HttpsReleaseSource(version),
+        open_folder=_open_folder,
     )
 
 
 def _open_url(url: str) -> bool:
-    from omega_log.infrastructure.desktop.browser_opener import open_in_browser
+    # omega-lib (2026-11-26) : la copie locale d'omega-log n'avait pas le correctif F2 du scan d'omega-fire
+    # (navigateur ouvert seulement dans la session graphique de l'utilisateur, jamais sur l'ecran d'un autre compte).
+    from omega_lib.infrastructure.desktop.browser_opener import open_in_browser
 
     return open_in_browser(url).ok
+
+
+def _open_folder(path: Path) -> bool:
+    """« Voir les exports » : le dossier dans le navigateur de l'utilisateur (omega-lib, meme mecanique)."""
+    from omega_lib.infrastructure.desktop.browser_opener import open_path_in_browser
+
+    return open_path_in_browser(path).ok

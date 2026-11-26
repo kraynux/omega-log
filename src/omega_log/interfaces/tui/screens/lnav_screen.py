@@ -55,6 +55,7 @@ from textual.widgets import Button, Footer, Header, Static
 
 from omega_log.application.commands.select_theme import select_theme
 from omega_log.application.exceptions import UnknownThemeError
+from omega_log.infrastructure.privileged.file_access import Access, probe_file
 from omega_log.infrastructure.probe.lnav_capability import probe_lnav
 from omega_log.interfaces.tui.screens._base import OmegaScreen
 from omega_log.shared.i18n import _
@@ -116,7 +117,8 @@ class LnavScreen(OmegaScreen):
             self.query_one("#lnav-error", Static).update(_ERROR_MESSAGE)
             return False
 
-        missing = [p for p in self._paths if not Path(p).is_file()]
+        # Un log dans un dossier ferme n'est pas absent : lnav est alors lance avec sudo (use_sudo plus bas).
+        missing = [p for p in self._paths if probe_file(p).access is Access.MISSING]
         if missing:
             message = _("Fichier(s) introuvable(s) : {join}").format(join=', '.join(missing))
             self.app.notify(message, severity="error")

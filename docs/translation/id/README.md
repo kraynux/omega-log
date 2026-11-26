@@ -8,18 +8,18 @@
 
 **Pengelola dan penampil log server**
 
-> Dibuat oleh [kraynux](https://github.com/kraynux) untuk [Omega-Server](https://kraynux.snake-mackarel.ts.net)   
+> Dibuat oleh [kraynux](https://github.com/kraynux) untuk [Omega-Server](https://kraynux.snake-mackarel.ts.net) · [Halaman resmi](https://kraynux.snake-mackarel.ts.net/omega-log/translation/id/) · [Tangkapan layar](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
 
-Halaman resmi: [OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/translation/id/) &nbsp; Pratinjau: [Tangkapan layar](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![HTML](https://img.shields.io/badge/HTML-5-E34F26.svg)](https://developer.mozilla.org/docs/Web/HTML)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-F7DF1E.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
+![Interface](https://img.shields.io/badge/Interface-CLI%20%2B%20TUI-cyan.svg)
+[![Textual](https://img.shields.io/badge/Textual-TUI-5A5AFB.svg)](https://textual.textualize.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux-informational.svg)](https://www.linux.org/)
-[![Interface](https://img.shields.io/badge/Interface-Textual%20TUI-cyan.svg)](https://github.com/Textualize/textual)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 
 🌐 Antarmuka, dokumentasi, dan ekspor tersedia dalam **17 bahasa**.  
-**Bahasa:**
-<img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
+**Bahasa:** <img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](../nl/README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
 
 ---
 
@@ -82,7 +82,7 @@ sudo apt install lnav
 ### Instalasi
 
 ```bash
-[ -d omega-log ] && echo "ℹ️ Sudah diekstrak di sini, langkah dilewati." || tar -xzf omega-log-1.6.0.tar.gz
+[ -d omega-log ] && echo "ℹ️ Sudah diekstrak di sini, langkah dilewati." || tar -xzf omega-log-1.6.1.tar.gz
 cd omega-log/
 chmod +x install.sh
 ./install.sh
@@ -155,7 +155,7 @@ python -m omega_log rotate run-automations
 
 | Variabel | Efek |
 |---|---|
-| `OMEGA_LOG_VAR_DIR` | Mengubah lokasi folder status aplikasi (bawaan `./var`, relatif terhadap folder tempat dijalankan) |
+| `OMEGA_LOG_VAR_DIR` | Mengubah lokasi folder status aplikasi (bawaan `var/` di folder aplikasi, dari mana pun dijalankan) |
 | `OMEGA_LOG_LANG` | Memaksa bahasa antarmuka untuk sesi tersebut (mis. `en`, `de`, `ja`) tanpa mengubah pengaturan yang tersimpan |
 
 ## 4. Fitur
@@ -163,14 +163,14 @@ python -m omega_log rotate run-automations
 | Layar | Deskripsi |
 |---|---|
 | **Registri kapabilitas** | Mendeteksi layanan yang aktif di mesin dan menawarkan impor log-log yang dikenal, satu per satu atau sekaligus. Pemindaian manual folder sebagai pelengkap. |
-| **Pustaka** | Hub pusat yang merujuk semua log yang akan ditangani — diisi oleh Registri, impor manual, log yang dikenal dari Omega-Serv, atau salinan yang diambil lewat SSH. |
+| **Pustaka** | Hub pusat yang merujuk semua log yang akan ditangani — diisi oleh Registri, impor manual, log yang dikenal dari Omega-Serv, atau salinan yang diambil lewat SSH. Log terlindungi (folder tertutup seperti `/var/log/lighttpd/`) diperiksa lalu dibaca dengan kata sandi sudo Anda. |
 | **Lihat log** | Pemilihan satu atau beberapa log dari Pustaka + pilihan viewer (1 log → ketiga viewer; 2+ log → hanya `lnav`). |
 | **Favorit** | Kombinasi log + viewer yang disimpan dengan sebuah nama, untuk dijalankan langsung. |
 | **Lihat dan tangani IP** | 10 IP teratas per periode (24 jam/7 hari/30 hari/semua), atau pencarian IP tertentu (IPv4 atau IPv6), dan penghapusan terarah suatu IP dari satu atau beberapa log. |
 | **Statistik (akses)** | Volume, IP unik, tingkat galat, IP teratas, distribusi per jam — ekspor JSON/HTML dengan 5 tema. |
 | **Rotate** | Cadangan terkompresi suatu log + retensi otomatis arsip berlebih + pemulihan (penggabungan atau timpa, dengan cadangan pengaman). **Cadangan terjadwal**: sebuah log dicadangkan setiap hari, minggu, atau bulan, dijalankan setiap malam oleh timer systemd atau satu baris di crontab Anda (OpenRC, runit), di bawah akun Anda, tidak pernah root. |
 | **Bersihkan** | Mengosongkan isi suatu log (pemotongan di tempat, aman untuk layanan yang masih membukanya) atau menghapus sepenuhnya satu atau beberapa berkas — selalu dengan konfirmasi. |
-| **Ekspor** | Ekspor daftar arsip (Rotate) ke JSON atau HTML bertema. |
+| **Ekspor** | Ekspor daftar arsip (Rotate) ke JSON atau HTML bertema. “Lihat ekspor” (di sini, di Statistik, Kesehatan log, dan Bantuan) membuka folder ekspor di peramban; tanpa peramban, ekspor ditampilkan dan dibaca di omega-log. |
 | **Kesehatan log** | Pemeriksaan hanya-baca atas log di Pustaka, disk, cadangan, dan cadangan terjadwal: hak akses, log yang diam atau rusak, tanggal, logrotate, hari sebelum disk penuh, beserta tindakan yang perlu dilakukan. Perbaikan hak akses yang terlalu terbuka (dengan sudo bila perlu), ekspor JSON/HTML/TXT. |
 | **Opsi** | Tema, profil tampilan, bahasa antarmuka dan bahasa ekspor (17 bahasa), pembersihan folder aplikasi (exports/screenshots). |
 

@@ -112,3 +112,25 @@ def test_selection_helpers() -> None:
     assert selection_or_cursor("", 0, 2) == "1"
     assert selection_or_cursor(" 2 ", 0, 2) == "2"
     assert selection_or_cursor("", 0, 0) == ""
+
+
+@pytest.mark.asyncio
+async def test_simple_viewer_theme_colours_like_omega_serv(container) -> None:
+    """Demande 2026-11-26 : couleurs du theme comme omega-serv - colonne « Durée », ligne entiere coloree,
+    code HTTP aux couleurs du theme (plus de rouge/jaune/vert fixes)."""
+    app = OmegaLogApp(container)
+    async with app.run_test(size=(120, 45)) as pilot:
+        screen = LiveTailScreen(container=container, path=str(container.tmp_path / "access.log"))
+        app.push_screen(screen)
+        await pilot.pause()
+        await pilot.pause()
+        table = screen.query_one("#entries-table", DataTable)
+        labels = [str(column.label) for column in table.columns.values()]
+        assert labels == ["Heure", "Niveau", "Source", "IP", "Service", "Code", "Durée", "Message"]
+        variables = app.get_css_variables()
+        row = table.get_row_at(0)          # 1re ligne : statut 404
+        code, message = row[5], row[7]
+        assert code.plain == "404"
+        assert code.style.color.name.lower() == variables["text-warning"].lower()
+        assert message.plain.endswith('"-" "curl"')            # ligne entiere, plus coupee a 80
+        assert any("italic" in str(span.style) for span in message.spans)  # User-Agent

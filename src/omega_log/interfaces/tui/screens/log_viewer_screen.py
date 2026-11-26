@@ -24,6 +24,7 @@ from textual.css.query import NoMatches
 from textual.timer import Timer
 from textual.widgets import Button, Footer, Header, RichLog, Static
 
+from omega_log.infrastructure.privileged.file_access import Access, probe_file
 from omega_log.infrastructure.privileged.privileged_file_ops import read_file_privileged
 from omega_log.infrastructure.tail.live_tail_reader import LiveTailReader
 from omega_log.interfaces.tui.screens._base import OmegaScreen
@@ -80,7 +81,8 @@ class LogViewerScreen(OmegaScreen):
     def _load_initial(self) -> None:
         log_widget = self.query_one("#log-content", RichLog)
         log_widget.clear()
-        if not self._path.is_file():
+        # Dossier ferme (ex. /var/log/lighttpd/) : `is_file()` le disait absent, sans jamais proposer sudo.
+        if probe_file(str(self._path)).access is Access.MISSING:
             self.query_one("#viewer-error", Static).update(_("Fichier introuvable : {path}").format(path=self._path))
             return
 
@@ -99,6 +101,8 @@ class LogViewerScreen(OmegaScreen):
             log_widget.write(line)
 
         self._reader = LiveTailReader(self._path)
+        if self._elevated:
+            self._reader.sync_privileged(self._container.process_runner)
 
     def _load_privileged(self) -> str | None:
         """Repli sur une lecture privilegiee (sudo ponctuel) apres un

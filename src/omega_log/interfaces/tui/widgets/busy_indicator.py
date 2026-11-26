@@ -18,6 +18,7 @@ from rich.text import Text
 from textual.timer import Timer
 from textual.widgets import Static
 
+from omega_log.infrastructure.privileged.file_access import file_size
 from omega_log.shared.i18n import N_, _
 
 PERIOD_BUTTON_LABELS = {"24h": N_("24h"), "7j": N_("7j"), "30j": N_("30j"), "Tout": N_("Tout (fichier entier)")}
@@ -78,9 +79,8 @@ def describe_selection(paths: list[str]) -> str:
     total_size, total_lines, unknown = 0, 0, False
     for raw in paths:
         path = Path(raw)
-        try:
-            size = path.stat().st_size
-        except OSError:
+        size = file_size(raw)  # avec sudo -n si le log est protege et sudo deja accorde
+        if size is None:
             unknown = True
             continue
         total_size += size

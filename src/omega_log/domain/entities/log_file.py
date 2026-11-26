@@ -25,6 +25,14 @@ class LogFile:
     size_bytes: int | None = None
     modified_at: datetime | None = None
     note: str = ""
+    protected: bool = False
+    """Illisible par votre compte (droits du fichier ou dossier ferme, ex. /var/log/lighttpd/) : lu avec sudo.
+    Avec `exists=False`, l'existence n'est pas encore verifiee (dossier ferme, sudo pas encore accorde)."""
+
+    @property
+    def unverified(self) -> bool:
+        """Derriere un dossier ferme, sudo pas encore accorde : ni « absent » ni « OK »."""
+        return self.protected and not self.exists
 
     @property
     def is_stale(self) -> bool:

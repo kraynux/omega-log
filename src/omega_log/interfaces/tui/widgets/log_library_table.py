@@ -14,6 +14,17 @@ from omega_log.domain.entities.log_file import LogFile
 from omega_log.shared.i18n import _
 
 
+def log_state_label(log_file: LogFile) -> str:
+    """Etat d'un log, le meme dans la Bibliotheque, le Registre et chaque ecran qui choisit des logs. « PROTÉGÉ
+    (sudo) » (demande 2026-11-26) : illisible par votre compte ou dans un dossier ferme (/var/log/lighttpd/) - lu
+    avec votre mot de passe sudo, jamais confondu avec ABSENT."""
+    if log_file.is_stale:
+        return _("SUSPECT (vide)")
+    if log_file.protected:
+        return _("PROTÉGÉ (sudo)")
+    return _("ABSENT") if not log_file.exists else "OK"
+
+
 class LogLibraryTable(DataTable):
     """Table #/Chemin/Service/Acces/Taille/Modifie/Etat. `Modifie` : pour une copie recuperee par SSH
     (access="ssh"), c'est la date de la derniere recuperation (scp sans -p), jamais celle du fichier
@@ -33,5 +44,5 @@ class LogLibraryTable(DataTable):
         for index, log_file in enumerate(log_files, start=1):
             size = f"{log_file.size_bytes} o" if log_file.size_bytes is not None else "?"
             modified = log_file.modified_at.strftime("%Y-%m-%d %H:%M") if log_file.modified_at else "-"
-            state = _("SUSPECT (vide)") if log_file.is_stale else (_("ABSENT") if not log_file.exists else "OK")
-            self.add_row(str(index), log_file.path, log_file.service_id or "-", log_file.access, size, modified, state)
+            self.add_row(str(index), log_file.path, log_file.service_id or "-", log_file.access, size, modified,
+                         log_state_label(log_file))

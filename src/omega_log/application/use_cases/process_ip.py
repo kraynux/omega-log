@@ -31,6 +31,7 @@ from omega_log.application.use_cases.log_tasks import accumulate_paths
 from omega_log.domain.logs.ip_match import ip_line_pattern, line_contains_ip
 from omega_log.domain.logs.models import TopIP
 from omega_log.infrastructure.privileged.elevation import PermissionRequiredError
+from omega_log.infrastructure.privileged.file_access import may_exist
 from omega_log.infrastructure.privileged.privileged_file_ops import (
     overwrite_file_privileged,
     read_file_privileged,
@@ -96,7 +97,7 @@ def remove_ip_from_file(path: str, ip: str, *, runner: ProcessRunnerPort | None 
         return RemoveIpResult(success=False, message=_("Adresse IP invalide : {ip}").format(ip=ip))
 
     target = Path(path)
-    if not target.is_file():
+    if not may_exist(path):  # un dossier ferme n'est pas un fichier absent : lu ci-dessous avec sudo
         return RemoveIpResult(success=False, message=_("Fichier introuvable : {path}").format(path=path))
 
     pattern = ip_line_pattern(ip)

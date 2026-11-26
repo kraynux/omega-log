@@ -8,18 +8,18 @@
 
 **Beheer en weergave van serverlogs**
 
-> Ontwikkeld door [kraynux](https://github.com/kraynux) voor [Omega-Server](https://kraynux.snake-mackarel.ts.net)   
+> Ontwikkeld door [kraynux](https://github.com/kraynux) voor [Omega-Server](https://kraynux.snake-mackarel.ts.net) · [Officiële pagina](https://kraynux.snake-mackarel.ts.net/omega-log/translation/nl/) · [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
 
-Officiële pagina: [OMEGA-LOG](https://kraynux.snake-mackarel.ts.net/omega-log/translation/nl/) &nbsp; Voorbeeld: [Screenshots](https://kraynux.snake-mackarel.ts.net/omega-log/screenshots/)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![HTML](https://img.shields.io/badge/HTML-5-E34F26.svg)](https://developer.mozilla.org/docs/Web/HTML)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-F7DF1E.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
+![Interface](https://img.shields.io/badge/Interface-CLI%20%2B%20TUI-cyan.svg)
+[![Textual](https://img.shields.io/badge/Textual-TUI-5A5AFB.svg)](https://textual.textualize.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux-informational.svg)](https://www.linux.org/)
-[![Interface](https://img.shields.io/badge/Interface-Textual%20TUI-cyan.svg)](https://github.com/Textualize/textual)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../../LICENSE)
 
 🌐 Interface, documentatie en exports beschikbaar in **17 talen**.  
-**Talen:**
-<img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
+**Talen:** <img src="https://flagcdn.com/w20/fr.png" alt="France" style="height:14px;"> [Français](../../../README.md) · <img src="https://flagcdn.com/w20/gb.png" alt="English" style="height:14px;"> [English](../en/README.md) · <img src="https://flagcdn.com/w20/es.png" alt="Español" style="height:14px;"> [Español](../es/README.md) · <img src="https://flagcdn.com/w20/br.png" alt="Português (Brasil)" style="height:14px;"> [Português (Brasil)](../pt-BR/README.md) · <img src="https://flagcdn.com/w20/it.png" alt="Italiano" style="height:14px;"> [Italiano](../it/README.md) · <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" style="height:14px;"> [Deutsch](../de/README.md) · <img src="https://flagcdn.com/w20/nl.png" alt="Nederlands" style="height:14px;"> [Nederlands](README.md) · <img src="https://flagcdn.com/w20/pl.png" alt="Polski" style="height:14px;"> [Polski](../pl/README.md) · <img src="https://flagcdn.com/w20/ru.png" alt="Русский" style="height:14px;"> [Русский](../ru/README.md) · <img src="https://flagcdn.com/w20/cn.png" alt="中文" style="height:14px;"> [中文](../zh-CN/README.md) · <img src="https://flagcdn.com/w20/vn.png" alt="Tiếng Việt" style="height:14px;"> [Tiếng Việt](../vi/README.md) · <img src="https://flagcdn.com/w20/th.png" alt="ไทย" style="height:14px;"> [ไทย](../th/README.md) · <img src="https://flagcdn.com/w20/id.png" alt="Bahasa Indonesia" style="height:14px;"> [Bahasa Indonesia](../id/README.md) · <img src="https://flagcdn.com/w20/jp.png" alt="日本語" style="height:14px;"> [日本語](../ja/README.md) · <img src="https://flagcdn.com/w20/kr.png" alt="한국어" style="height:14px;"> [한국어](../ko/README.md) · <img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" style="height:14px;"> [हिन्दी](../hi/README.md) · <img src="https://flagcdn.com/w20/ae.png" alt="العربية" style="height:14px;"> [العربية](../ar/README.md)
 
 ---
 
@@ -82,7 +82,7 @@ sudo apt install lnav
 ### Installatie
 
 ```bash
-[ -d omega-log ] && echo "ℹ️ Hier al uitgepakt, stap overgeslagen." || tar -xzf omega-log-1.6.0.tar.gz
+[ -d omega-log ] && echo "ℹ️ Hier al uitgepakt, stap overgeslagen." || tar -xzf omega-log-1.6.1.tar.gz
 cd omega-log/
 chmod +x install.sh
 ./install.sh
@@ -155,7 +155,7 @@ python -m omega_log rotate run-automations
 
 | Variabele | Effect |
 |---|---|
-| `OMEGA_LOG_VAR_DIR` | Wijzigt de locatie van de map met de toepassingsstatus (standaard `./var`, relatief aan de startmap) |
+| `OMEGA_LOG_VAR_DIR` | Wijzigt de locatie van de map met de toepassingsstatus (standaard `var/` in de map van de toepassing, waar die ook gestart wordt) |
 | `OMEGA_LOG_LANG` | Dwingt de taal van de interface af voor de sessie (bv. `en`, `de`, `ja`) zonder de opgeslagen instelling te wijzigen |
 
 ## 4. Functies
@@ -163,14 +163,14 @@ python -m omega_log rotate run-automations
 | Scherm | Beschrijving |
 |---|---|
 | **Capaciteitenregister** | Detecteert de actieve diensten op de machine en biedt aan hun bekende logs te importeren, afzonderlijk of allemaal. Aanvullend handmatige scan van een map. |
-| **Bibliotheek** | Centrale hub die alle te behandelen logs verwijst — gevoed door het Register, door handmatige import, door de bekende logs van Omega-Serv of door een via SSH opgehaalde kopie. |
+| **Bibliotheek** | Centrale hub die alle te behandelen logs verwijst — gevoed door het Register, door handmatige import, door de bekende logs van Omega-Serv of door een via SSH opgehaalde kopie. Een beschermde log (gesloten map zoals `/var/log/lighttpd/`) wordt met uw sudo-wachtwoord gecontroleerd en gelezen. |
 | **Logs bekijken** | Selectie van één of meerdere logs uit de Bibliotheek + keuze van de viewer (1 log → de 3 viewers; 2+ logs → alleen `lnav`). |
 | **Favorieten** | Combinaties van logs + viewer opgeslagen onder een naam, om ze direct te starten. |
 | **IP bekijken en behandelen** | Top 10 van IP's per periode (24 u/7 d/30 d/alles), of zoeken naar een specifiek IP (IPv4 of IPv6), en gericht verwijderen van een IP uit één of meerdere logs. |
 | **Statistieken (toegang)** | Volume, unieke IP's, foutpercentage, top-IP's, verdeling per uur — export als JSON/HTML met 5 thema's. |
 | **Rotate** | Gecomprimeerde back-up van een log + automatische bewaring van overtollige archieven + herstel (samenvoegen of overschrijven, met veiligheidsback-up). **Geplande back-ups**: een log dat elke dag, week of maand wordt geback-upt, elke nacht uitgevoerd door een systemd-timer of een regel in uw crontab (OpenRC, runit), onder uw account, nooit als root. |
 | **Opschonen** | Maakt de inhoud van een log leeg (ter plaatse inkorten, veilig voor een dienst die het nog open heeft) of verwijdert één of meerdere bestanden volledig — altijd met bevestiging. |
-| **Exporteren** | Export van de lijst met archieven (Rotate) als JSON of HTML met thema. |
+| **Exporteren** | Export van de lijst met archieven (Rotate) als JSON of HTML met thema. „Exports bekijken” (hier, in Statistieken, Loggezondheid en Help) opent de exportmap in de browser; zonder browser worden de exports in omega-log opgesomd en gelezen. |
 | **Loggezondheid** | Alleen-lezen controle van de logs in de Bibliotheek, de schijf, de back-ups en de geplande back-ups: rechten, stille of beschadigde logs, datums, logrotate, dagen tot de schijf vol is, met de te nemen stap. Correctie van te ruime rechten (met sudo indien nodig), export als JSON/HTML/TXT. |
 | **Opties** | Thema, weergaveprofiel, taal van de interface en taal van de exports (17 talen), opschonen van de toepassingsmappen (exports/screenshots). |
 

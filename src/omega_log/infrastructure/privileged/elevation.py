@@ -43,6 +43,15 @@ class PermissionRequiredError(OSError):
         return (self.__class__, (self.path,))
 
 
+_SESSION = {"granted": False}
+"""sudo accorde dans CE processus (authenticate_sudo reussi) : file_access.py ne tente `sudo -n` qu'apres, jamais
+avant (une tentative refusee laisserait une ligne d'echec dans le journal d'authentification)."""
+
+
+def elevation_active() -> bool:
+    return running_as_root() or _SESSION["granted"]
+
+
 def running_as_root() -> bool:
     """`os.getuid` n'existe pas hors POSIX - retourne False dans ce cas
     plutot que de lever (meme choix que omega-serv)."""
@@ -67,4 +76,5 @@ def authenticate_sudo(runner: ProcessRunnerPort) -> ElevationResult:
     if code != 0:
         return ElevationResult(success=False, message=_("Authentification sudo échouée ou "
                                                         "annulée."))
+    _SESSION["granted"] = True
     return ElevationResult(success=True)

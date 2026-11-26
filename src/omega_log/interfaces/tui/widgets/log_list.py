@@ -10,6 +10,7 @@ from typing import Any
 from textual.widgets import DataTable
 
 from omega_log.domain.entities.log_file import LogFile
+from omega_log.interfaces.tui.widgets.log_library_table import log_state_label
 from omega_log.shared.i18n import _
 
 
@@ -37,5 +38,4 @@ class LogList(DataTable):
         self.clear()
         for log_file in log_files:
             size = f"{log_file.size_bytes} o" if log_file.size_bytes is not None else "?"
-            state = _("SUSPECT (vide)") if log_file.is_stale else "OK"
-            self.add_row(log_file.path, log_file.service_id or "-", log_file.access, size, state)
+            self.add_row(log_file.path, log_file.service_id or "-", log_file.access, size, log_state_label(log_file))

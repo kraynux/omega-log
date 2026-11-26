@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import getpass
 import json
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -49,9 +50,11 @@ from omega_log.application.use_cases.log_health import (
     archive_facts,
     collect_log_health,
     fix_world_writable,
+    grant_read_commands,
     health_paths,
     owns,
     run_sudo_fix,
+    run_sudo_fixes,
     shown_command,
     sudo_fix_command,
 )
@@ -61,6 +64,7 @@ from omega_log.infrastructure.exporters.html_exporter import export_log_health_h
 from omega_log.interfaces.tui.screens._base import OmegaScreen
 from omega_log.interfaces.tui.screens._elevation import request_elevation
 from omega_log.interfaces.tui.screens.confirm import ConfirmScreen
+from omega_log.interfaces.tui.screens.exports import view_exports
 from omega_log.shared.i18n import LANGUAGE, _, translating_as
 
 if TYPE_CHECKING:
@@ -74,6 +78,12 @@ def _export_timestamp() -> str:
 
 def _world_writable(log: dict) -> bool:
     return any(finding["code"] == "world_writable" for finding in log["findings"])
+
+
+def _unreadable(log: dict) -> bool:
+    """Illisible par votre compte, et corrigeable par ACL (setfacl present) : « Corriger avec sudo » (2026-11-26)."""
+    codes = {finding["code"] for finding in log["findings"]}
+    return bool(codes & {"unreadable", "unreadable_folder"}) and shutil.which("setfacl") is not None
 
 
 class LogHealthScreen(OmegaScreen):
@@ -121,6 +131,10 @@ class LogHealthScreen(OmegaScreen):
                     yield Button(_("Exporter HTML"), id="export-html")
                 with Container(classes="omega-btn-frame"):
                     yield Button(_("Exporter TXT"), id="export-txt")
+            # Seconde rangee : une seule depassait 80 colonnes (profil reduit 80x24) avec « Voir les exports ».
+            with Horizontal(classes="omega-actions"):
+                with Container(classes="omega-btn-frame"):
+                    yield Button(_("Voir les exports"), id="view-exports")
                 with Container(classes="omega-btn-frame"):
                     yield Button(_("Retour"), id="back")
         yield Footer()
@@ -225,7 +239,7 @@ class LogHealthScreen(OmegaScreen):
             )
         if data["logs"]:
             table.move_cursor(row=min(cursor, len(data["logs"]) - 1))
-        unreadable = any(f["code"] == "unreadable" for log in data["logs"] for f in log["findings"])
+        unreadable = any(f["code"] in ("unreadable", "closed_folder") for log in data["logs"] for f in log["findings"])
         self.query_one("#analyse-sudo", Button).disabled = not unreadable or self._runner is not None
         self._show_detail(table.cursor_row)
 
@@ -287,7 +301,7 @@ class LogHealthScreen(OmegaScreen):
         self.query_one("#health-detail", Static).update(content)
         writable = _world_writable(log)
         fix_button.disabled = not (writable and owns(log["path"]))
-        sudo_button.disabled = not (writable and not owns(log["path"]))
+        sudo_button.disabled = not ((writable and not owns(log["path"])) or _unreadable(log))
 
     # ---- correction des droits ---------------------------------------------
 
@@ -318,6 +332,9 @@ class LogHealthScreen(OmegaScreen):
 
     def _fix_with_sudo(self) -> None:
         log = self._selected_log()
+        if log is not None and not _world_writable(log) and _unreadable(log):
+            self._grant_read(log)
+            return
         if log is None or not _world_writable(log):
             return
         path = log["path"]
@@ -344,12 +361,44 @@ class LogHealthScreen(OmegaScreen):
         self.app.notify(_("Droits corrigés avec sudo : {path}.").format(path=path))
         self._analyse()
 
+    def _grant_read(self, log: dict) -> None:
+        """Lecture seule pour votre compte, par ACL (retour d'utilisation 2026-11-26 : log lighttpd « illisible » et
+        « Corriger avec sudo » grise). Commandes montrees avant, comme pour les droits."""
+        path = log["path"]
+        closed = any(finding["code"] == "unreadable_folder" for finding in log["findings"])
+        commands = grant_read_commands(path, getpass.getuser(), closed_folder=closed)
+        self.app.push_screen(
+            ConfirmScreen(
+                title=_("RENDRE LISIBLE AVEC SUDO ?"),
+                message=_("Lecture seule pour votre compte ({user}) ; propriétaire, groupe et droits ne changent pas. "
+                          "Commandes lancées après votre mot de passe :\n{commands}").format(
+                    user=getpass.getuser(), commands="\n".join(shown_command(command) for command in commands)),
+            ),
+            lambda confirmed: self._grant_read_if_confirmed(confirmed, path, commands),
+        )
+
+    def _grant_read_if_confirmed(self, confirmed: bool | None, path: str, commands: list[list[str]]) -> None:
+        if not confirmed:
+            return
+        runner = self._container.process_runner
+        if not request_elevation(self, runner):  # sans mot de passe si sudo est encore valide
+            return
+        self._runner = runner
+        error = run_sudo_fixes(runner, commands)
+        if error is not None:
+            self.app.notify(_("Correction impossible : {error}").format(error=error), severity="error")
+            return
+        self.app.notify(_("Lecture accordée à votre compte : {path}.").format(path=path))
+        self._analyse()
+
     # ---- boutons et exports ------------------------------------------------
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         button_id = event.button.id or ""
         if button_id == "back":
             self.dismiss()
+        elif button_id == "view-exports":
+            view_exports(self, self._container)
         elif button_id == "refresh":
             self._analyse()
         elif button_id == "fix":
